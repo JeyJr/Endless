@@ -16,7 +16,7 @@ public class PlayerMeleeAtk : MonoBehaviour
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                float dmg = GameData.LoadAttributes("atk");
+                float dmg = GameData.GetDMG();
                 hit[i].collider.GetComponent<TakeDmg>().TakeDamage(Random.Range(dmg, dmg * 1.5f));
             }
         }

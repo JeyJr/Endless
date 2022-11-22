@@ -209,14 +209,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: SubStatusPoint
-        m_Mode: 3
+        m_MethodName: SubAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: agi
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &66942474
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 76987625}
   - component: {fileID: 76987624}
   m_Layer: 6
-  m_Name: txtVidaTotalMoney
+  m_Name: txtVitGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 99658539}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -458,8 +458,8 @@ RectTransform:
   - {fileID: 1197900871}
   - {fileID: 1912464522}
   - {fileID: 105768812}
-  - {fileID: 1185753102}
   - {fileID: 76987623}
+  - {fileID: 1185753102}
   m_Father: {fileID: 384675039}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 105768814}
   - component: {fileID: 105768813}
   m_Layer: 6
-  m_Name: txtTotalVida
+  m_Name: txtVitAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 127353792}
   - component: {fileID: 127353791}
   m_Layer: 6
-  m_Name: txtTotalMoney
+  m_Name: txtAtkGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,7 +748,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1984527893}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1591,14 +1591,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: AddStatusPoint
-        m_Mode: 3
+        m_MethodName: AddAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: def
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &386101972
@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 394856604}
   - component: {fileID: 394856603}
   m_Layer: 6
-  m_Name: txtAgilidadeTotalMoney
+  m_Name: txtAgiGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1670,7 +1670,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1522221775}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1836,22 +1836,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelAttributes: {fileID: 384675038}
-  mult: 1
-  atkSlider: {fileID: 169445571}
-  atkAmount: {fileID: 1700679103}
-  atkGold: {fileID: 127353791}
-  defSlider: {fileID: 2046114198}
-  defAmount: {fileID: 1817583574}
-  defGold: {fileID: 921588765}
-  vitSlider: {fileID: 1912464523}
-  vitAmount: {fileID: 105768813}
-  vitGold: {fileID: 76987624}
-  agiSlider: {fileID: 1282345414}
-  agiAmount: {fileID: 897756020}
-  agiGold: {fileID: 394856603}
-  criSlider: {fileID: 1649117683}
-  criAmount: {fileID: 1147900373}
-  criGold: {fileID: 1521776574}
+  sliders:
+  - {fileID: 169445571}
+  - {fileID: 2046114198}
+  - {fileID: 1912464523}
+  - {fileID: 1282345414}
+  - {fileID: 1649117683}
+  textAttributeAmount:
+  - {fileID: 1700679103}
+  - {fileID: 1817583574}
+  - {fileID: 105768813}
+  - {fileID: 897756020}
+  - {fileID: 1147900373}
+  textGoldAmount:
+  - {fileID: 127353791}
+  - {fileID: 921588765}
+  - {fileID: 76987624}
+  - {fileID: 394856603}
+  - {fileID: 1521776574}
 --- !u!1 &409091665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,8 +1965,8 @@ RectTransform:
   - {fileID: 535263665}
   - {fileID: 1649117682}
   - {fileID: 1147900372}
-  - {fileID: 1098007043}
   - {fileID: 1521776573}
+  - {fileID: 1098007043}
   m_Father: {fileID: 384675039}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2249,14 +2251,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: SubStatusPoint
-        m_Mode: 3
+        m_MethodName: SubAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: cri
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &535263667
@@ -2328,7 +2330,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121883435}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -3129,8 +3131,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: SubStatusPoint
-        m_Mode: 3
+        m_MethodName: SubAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3719,7 +3721,7 @@ GameObject:
   - component: {fileID: 897756021}
   - component: {fileID: 897756020}
   m_Layer: 6
-  m_Name: txtTotalAgilidade
+  m_Name: txtAgiAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3854,7 +3856,7 @@ GameObject:
   - component: {fileID: 921588766}
   - component: {fileID: 921588765}
   m_Layer: 6
-  m_Name: txtDefesaTotalMoney
+  m_Name: txtDefGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3873,7 +3875,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2121883435}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4667,7 +4669,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421603484}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4724,7 +4726,7 @@ GameObject:
   - component: {fileID: 1147900374}
   - component: {fileID: 1147900373}
   m_Layer: 6
-  m_Name: txtTotalCritico
+  m_Name: txtCriAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4878,7 +4880,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 99658539}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -5009,14 +5011,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: SubStatusPoint
-        m_Mode: 3
+        m_MethodName: SubAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: vit
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1197900873
@@ -5669,14 +5671,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: AddStatusPoint
-        m_Mode: 3
+        m_MethodName: AddAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: vit
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1345898154
@@ -6331,7 +6333,7 @@ GameObject:
   - component: {fileID: 1521776575}
   - component: {fileID: 1521776574}
   m_Layer: 6
-  m_Name: txtCriticoTotalMoney
+  m_Name: txtCriGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6350,7 +6352,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421603484}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -6489,8 +6491,8 @@ RectTransform:
   - {fileID: 66942472}
   - {fileID: 1282345413}
   - {fileID: 897756019}
-  - {fileID: 2005675297}
   - {fileID: 394856602}
+  - {fileID: 2005675297}
   m_Father: {fileID: 384675039}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6842,7 +6844,7 @@ GameObject:
   - component: {fileID: 1700679104}
   - component: {fileID: 1700679103}
   m_Layer: 6
-  m_Name: txtTotalAtk
+  m_Name: txtAtkAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7051,14 +7053,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: AddStatusPoint
-        m_Mode: 3
+        m_MethodName: AddAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: cri
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1760625309
@@ -7220,7 +7222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1fff68110f1ba42b0ad2afe3588dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySpeed: 2
+  delaySpeed: 0.5
   delayBar: {fileID: 653730257}
   anim: {fileID: 1771796597}
   animsName:
@@ -7376,14 +7378,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: SubStatusPoint
-        m_Mode: 3
+        m_MethodName: SubAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: def
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1796593361
@@ -7512,7 +7514,7 @@ GameObject:
   - component: {fileID: 1817583575}
   - component: {fileID: 1817583574}
   m_Layer: 6
-  m_Name: txtTotalDefesa
+  m_Name: txtDefAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7721,14 +7723,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: AddStatusPoint
-        m_Mode: 3
+        m_MethodName: AddAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: agi
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1821760903
@@ -8870,7 +8872,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1984527893}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -8950,8 +8952,8 @@ RectTransform:
   - {fileID: 823466962}
   - {fileID: 169445570}
   - {fileID: 1700679102}
-  - {fileID: 1984244067}
   - {fileID: 127353790}
+  - {fileID: 1984244067}
   m_Father: {fileID: 384675039}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9164,7 +9166,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1522221775}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -9295,15 +9297,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406017006}
         m_TargetAssemblyTypeName: PanelAttributes, Assembly-CSharp
-        m_MethodName: AddStatusPoint
-        m_Mode: 3
+        m_MethodName: AddAttribute
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: atk
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2036380027
 MonoBehaviour:
@@ -9657,8 +9659,8 @@ RectTransform:
   - {fileID: 1796593359}
   - {fileID: 2046114197}
   - {fileID: 1817583573}
-  - {fileID: 544584096}
   - {fileID: 921588764}
+  - {fileID: 544584096}
   m_Father: {fileID: 384675039}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -33,9 +33,9 @@ public class PlayerHand : MonoBehaviour
 
         anim.Play($"Base Layer.{animsName[0]}", 0); //Idle
 
-        for (float i = 0; i < delaySpeed; i+= .02f)
+        for (float i = 0; i < delaySpeed; i+= .01f)
         {
-            yield return new WaitForSeconds(.02f);
+            yield return new WaitForSeconds(.01f);
             delayBar.value = i;
         }
 
