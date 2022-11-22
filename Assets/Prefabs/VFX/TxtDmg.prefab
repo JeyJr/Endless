@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7674327104211106878}
   - component: {fileID: 7674327104211106879}
   - component: {fileID: 7674327104211106867}
-  - component: {fileID: 7674327104211106864}
   - component: {fileID: 7674327104211106866}
   m_Layer: 0
   m_Name: TxtDmg
@@ -103,7 +102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999999
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94d45c33f7d26234da187ac1cae8e9d9, type: 2}
   m_sharedMaterial: {fileID: 5102967703945589250, guid: 94d45c33f7d26234da187ac1cae8e9d9, type: 2}
@@ -176,18 +175,6 @@ MonoBehaviour:
   m_renderer: {fileID: 7674327104211106878}
   m_maskType: 0
 --- !u!114 &7674327104211106867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674327104211106876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c346d7843d47a2458b90abb3e500eed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7674327104211106864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

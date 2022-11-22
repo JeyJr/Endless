@@ -8,9 +8,6 @@ public class PlayerMeleeAtk : MonoBehaviour
     [SerializeField] private float atkRange;
     [SerializeField] private LayerMask enemyMask;
 
-    //Deletar
-    public float damage;
-
     public void Atk()
     {
         RaycastHit2D[] hit = Physics2D.RaycastAll(startPosition.position, startPosition.right, atkRange, enemyMask);
@@ -19,7 +16,8 @@ public class PlayerMeleeAtk : MonoBehaviour
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                hit[i].collider.GetComponent<TakeDmg>().TakeDamage(damage);
+                float dmg = GameData.LoadAttributes("atk");
+                hit[i].collider.GetComponent<TakeDmg>().TakeDamage(Random.Range(dmg, dmg * 1.5f));
             }
         }
     }
