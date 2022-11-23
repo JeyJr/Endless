@@ -18,7 +18,6 @@ public class UIControl : MonoBehaviour
 
     private void Start()
     {
-        
         StartPanels();
         GoldAmount();
     }

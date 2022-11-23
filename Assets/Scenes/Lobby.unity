@@ -1308,6 +1308,7 @@ GameObject:
   - component: {fileID: 328063532}
   - component: {fileID: 328063534}
   - component: {fileID: 328063535}
+  - component: {fileID: 328063536}
   m_Layer: 7
   m_Name: Tronco 1
   m_TagString: Untagged
@@ -1424,6 +1425,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
   spawnPosition: {fileID: 89048766}
+--- !u!114 &328063536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328063531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 200
+  life: 200
+  defense: 5
+  spawnTextDMG: {fileID: 328063535}
 --- !u!1 &384675038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,6 +3444,7 @@ GameObject:
   - component: {fileID: 845117380}
   - component: {fileID: 845117379}
   - component: {fileID: 845117378}
+  - component: {fileID: 845117382}
   m_Layer: 7
   m_Name: Tronco 2
   m_TagString: Untagged
@@ -3543,6 +3561,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845117382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845117377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 200
+  life: 200
+  defense: 5
+  spawnTextDMG: {fileID: 845117378}
 --- !u!1 &865336237
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,6 +5228,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198180913}
   m_CullTransparentMesh: 1
+--- !u!1 &1207039358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207039359}
+  m_Layer: 6
+  m_Name: SpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1207039359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207039358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.168, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1961238117}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1265853067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7222,7 +7287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1fff68110f1ba42b0ad2afe3588dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySpeed: 0.5
   delayBar: {fileID: 653730257}
   anim: {fileID: 1771796597}
   animsName:
@@ -7859,6 +7923,7 @@ GameObject:
   - component: {fileID: 1827522062}
   - component: {fileID: 1827522061}
   - component: {fileID: 1827522060}
+  - component: {fileID: 1827522064}
   m_Layer: 7
   m_Name: Tronco 3
   m_TagString: Untagged
@@ -7975,6 +8040,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827522064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827522059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 200
+  life: 200
+  defense: 5
+  spawnTextDMG: {fileID: 1827522060}
 --- !u!1 &1828671631
 GameObject:
   m_ObjectHideFlags: 0
@@ -8814,6 +8895,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1961238117}
+  - component: {fileID: 1961238118}
+  - component: {fileID: 1961238119}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -8838,9 +8921,40 @@ Transform:
   - {fileID: 1771796596}
   - {fileID: 844782087}
   - {fileID: 1610834001}
+  - {fileID: 1207039359}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961238118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961238116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e8ad90443dd0e4b86b649027f0c4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 0
+  life: 0
+  defense: 0
+  spawnTextDMG: {fileID: 0}
+--- !u!114 &1961238119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961238116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c19c4fff70f834cbd77e10de4b13b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
+  spawnPosition: {fileID: 1207039359}
 --- !u!1 &1984244066
 GameObject:
   m_ObjectHideFlags: 0

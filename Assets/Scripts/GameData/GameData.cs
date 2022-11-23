@@ -13,7 +13,7 @@ public class GameData : MonoBehaviour
     public static float LoadGold()
     {
         if (!PlayerPrefs.HasKey("gold"))
-            PlayerPrefs.SetFloat("gold", 100000);
+            PlayerPrefs.SetFloat("gold", 100000000);
 
         return PlayerPrefs.GetFloat("gold");
     }
@@ -34,6 +34,9 @@ public class GameData : MonoBehaviour
 
             SetDMG();
             SetDefense();
+            SetMaxLife();
+            SetAtkSpeed();
+            SetCritical();
         }
     }
 
@@ -43,7 +46,7 @@ public class GameData : MonoBehaviour
 
         if (add)
         {
-            if (LoadGold() > GetGoldCost(key) && value < 100)
+            if (LoadGold() >= GetGoldCost(key) && value < 100)
             {
                 SubGold(GetGoldCost(key));
                 PlayerPrefs.SetFloat(key, value + 1);
@@ -60,6 +63,9 @@ public class GameData : MonoBehaviour
 
         if (key == "atk") SetDMG();
         if (key == "def") SetDefense();
+        if (key == "vit") SetMaxLife();
+        if (key == "agi") SetAtkSpeed();
+        if (key == "cri") SetCritical();
     }
 
     public static float GetAttribute(string key)
@@ -96,4 +102,41 @@ public class GameData : MonoBehaviour
     }
     #endregion
 
+    #region MaxLife
+    //1 vit == 100 maxLife
+    public static void SetMaxLife()
+    {
+        PlayerPrefs.SetFloat("maxLife", GetAttribute("vit") * 100);
+    }
+    public static float GetMaxLife()
+    {
+        return PlayerPrefs.GetFloat("maxLife");
+    }
+    #endregion
+
+    #region AtkSpeed
+    //1 vit == 100 maxLife
+    public static void SetAtkSpeed()
+    {
+        PlayerPrefs.SetFloat("atkSpeed", GetAttribute("agi") * .03f);
+    }
+    public static float GetAtkSpeed()
+    {
+        return 3.1f - PlayerPrefs.GetFloat("atkSpeed");
+    }
+    #endregion
+
+    #region CriticalDMG
+    //1 cri == 1 critic
+    public static void SetCritical()
+    {
+        PlayerPrefs.SetFloat("critic", GetAttribute("cri"));
+    }
+
+    public static bool GetCritical()
+    {
+        float value = Random.Range(0, 100);
+        return value <= PlayerPrefs.GetFloat("cri");
+    }
+    #endregion
 }

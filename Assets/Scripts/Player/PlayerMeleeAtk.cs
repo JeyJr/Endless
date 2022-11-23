@@ -16,12 +16,22 @@ public class PlayerMeleeAtk : MonoBehaviour
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                float dmg = GameData.GetDMG();
-                hit[i].collider.GetComponent<TakeDmg>().TakeDamage(Random.Range(dmg, dmg * 1.5f));
+                if (GameData.GetCritical())
+                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(CriticalDMG(), true);
+                else
+                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(SimpleDMG(), false);
             }
         }
     }
 
+    float CriticalDMG() 
+    {
+        return Random.Range(GameData.GetDMG() * 2, (GameData.GetDMG() * 2) * 1.2f);
+    }
+    float SimpleDMG()
+    {
+        return Random.Range(GameData.GetDMG(), GameData.GetDMG()* 1.2f);
+    }
 
     private void OnDrawGizmos()
     {
