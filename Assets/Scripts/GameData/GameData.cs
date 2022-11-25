@@ -7,10 +7,10 @@ public class GameData : MonoBehaviour
 {
 
     #region Gold
-    public static void AddGold(float amount) => PlayerPrefs.SetFloat("gold", LoadGold() + amount);
-    public static void SubGold(float amount) => PlayerPrefs.SetFloat("gold", LoadGold() - amount);
+    public static void AddGold(float amount) => PlayerPrefs.SetFloat("gold", GetGold() + amount);
+    public static void SubGold(float amount) => PlayerPrefs.SetFloat("gold", GetGold() - amount);
 
-    public static float LoadGold()
+    public static float GetGold()
     {
         if (!PlayerPrefs.HasKey("gold"))
             PlayerPrefs.SetFloat("gold", 100000000);
@@ -46,7 +46,7 @@ public class GameData : MonoBehaviour
 
         if (add)
         {
-            if (LoadGold() >= GetGoldCost(key) && value < 100)
+            if (GetGold() >= GetGoldCost(key) && value < 100)
             {
                 SubGold(GetGoldCost(key));
                 PlayerPrefs.SetFloat(key, value + 1);
@@ -78,15 +78,18 @@ public class GameData : MonoBehaviour
         return PlayerPrefs.GetFloat(key) * 200;
     }
 
+    #region Attributes
+
     #region Damage
     //1 atk == 5 damage
     public static void SetDMG()
     {
         PlayerPrefs.SetFloat("damage", GetAttribute("atk") * 5);
     }
+
     public static float GetDMG()
     {
-        return PlayerPrefs.GetFloat("damage");
+        return PlayerPrefs.GetFloat("damage") + WeaponData.GetWeaponDMG();
     }
     #endregion
 
@@ -115,14 +118,14 @@ public class GameData : MonoBehaviour
     #endregion
 
     #region AtkSpeed
-    //1 vit == 100 maxLife
+    //1 agi == 0.03f
     public static void SetAtkSpeed()
     {
         PlayerPrefs.SetFloat("atkSpeed", GetAttribute("agi") * .03f);
     }
     public static float GetAtkSpeed()
     {
-        return 3.1f - PlayerPrefs.GetFloat("atkSpeed");
+        return WeaponData.GetWeaponAtkSpeed() - PlayerPrefs.GetFloat("atkSpeed");
     }
     #endregion
 
@@ -139,4 +142,8 @@ public class GameData : MonoBehaviour
         return value <= PlayerPrefs.GetFloat("cri");
     }
     #endregion
+
+    #endregion
+    
+    
 }

@@ -16,8 +16,6 @@ public class PanelAttributes : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.DeleteAll();
-        GameData.FirstTime();
         SliderControl();
         TextAttributeAmount();
         TextGold();

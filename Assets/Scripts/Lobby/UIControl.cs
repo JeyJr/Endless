@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class UIControl : MonoBehaviour
 {
-    //Panels--------------------------
-    [Header("Titulo")]
-    public TextMeshProUGUI textTitle;
-
     [Header("Panels")]
     public GameObject[] panels;
 
@@ -18,6 +14,8 @@ public class UIControl : MonoBehaviour
 
     private void Start()
     {
+        GameData.FirstTime();
+
         StartPanels();
         GoldAmount();
     }
@@ -28,17 +26,17 @@ public class UIControl : MonoBehaviour
         {
             panels[i].SetActive(false);
         }
-
-        textTitle.text = "";
     }
 
     public void AtivarDesativarPanels(int i)
     {
-        panels[i].SetActive(!panels[i].activeSelf);
-
-        if (i == 0) textTitle.text = "Atributos";
-
-        if (!panels[i].activeSelf) textTitle.text = "";
+        for (int j = 0; j < panels.Length; j++)
+        {
+            if (j == i) 
+                panels[i].SetActive(!panels[i].activeSelf);
+            else 
+                panels[j].SetActive(false);
+        }
     }
     #endregion
 
@@ -48,6 +46,6 @@ public class UIControl : MonoBehaviour
     }
 
     void GoldAmount(){
-        textTotalGold.text = GameData.LoadGold().ToString("F0");
+        textTotalGold.text = GameData.GetGold().ToString("F0");
     }
 }

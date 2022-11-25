@@ -8,8 +8,8 @@ public class PlayerHand : MonoBehaviour
     public Slider delayBar;
     public Animator anim;
     [SerializeField] private string[] animsName;
-
     bool isAtk;
+
 
     private void Start()
     {
@@ -25,6 +25,20 @@ public class PlayerHand : MonoBehaviour
         }
     }
 
+    #region EquipWeapon
+    public void EquipWeapon(GameObject weapon)
+    {
+        GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<SpriteRenderer>().sprite;
+
+        WeaponAttributes weaponAttributes = weapon.GetComponent<WeaponAttributes>();
+
+        WeaponData.SetWeaponDMG(weaponAttributes.WeaponAtk);
+        WeaponData.SetWeaponAtkSpeed(weaponAttributes.WeaponSpeedAtk);
+        WeaponData.SetWeaponID(weaponAttributes.WeaponIndex);
+    }
+
+    #endregion
+    #region ATK
     IEnumerator StartDelay()
     {
         float atkSpeed = GameData.GetAtkSpeed();
@@ -38,14 +52,8 @@ public class PlayerHand : MonoBehaviour
             yield return new WaitForSeconds(.01f);
             delayBar.value += .01f;
         }
-        //for (float i = 0; i < atkSpeed; i+= .01f)
-        //{
-        //    yield return new WaitForSeconds(.01f);
-        //    delayBar.value = i;
-        //}
-
         anim.Play($"Base Layer.{animsName[1]}", 0); //MeleeAtk
     }
-
     public void SetIsAtk() => isAtk = !isAtk;
+    #endregion
 }
