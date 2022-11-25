@@ -25,12 +25,8 @@ public class WeaponLibrary : MonoBehaviour
         yield return null;
     }
 
-    public void BtnWeaponToEquip(WeaponAttributes weaponAttributes)
+    public void BtnWeaponToEquip(int index)
     {
-        foreach (var item in weapons)
-        {
-            if (item.GetComponent<WeaponAttributes>().WeaponIndex == weaponAttributes.WeaponIndex)
-                player.GetComponentInChildren<PlayerHand>().EquipWeapon(item);
-        }
+        player.GetComponentInChildren<PlayerHand>().EquipWeapon(weapons[index]);
     }
 }

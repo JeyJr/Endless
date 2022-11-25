@@ -99,4 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAtk: 200
   weaponSpeedAtk: 4.1
-  weaponID: 84652
+  imgWeapon: {fileID: 21300000, guid: 9d17f47cfec13d143a297a78cf0925c2, type: 3}
+  weaponName: Fim de Festa

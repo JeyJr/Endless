@@ -99,4 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAtk: 400
   weaponSpeedAtk: 4.1
-  weaponID: 4583
+  imgWeapon: {fileID: 21300000, guid: ab78882b47f970f4e89c32c4083bd7ce, type: 3}
+  weaponName: "Taco Bolad\xE3o"
