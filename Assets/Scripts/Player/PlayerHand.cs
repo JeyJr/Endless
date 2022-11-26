@@ -34,7 +34,8 @@ public class PlayerHand : MonoBehaviour
 
         WeaponData.SetWeaponDMG(weaponAttributes.WeaponAtk);
         WeaponData.SetWeaponAtkSpeed(weaponAttributes.WeaponSpeedAtk);
-        WeaponData.SetWeaponID(weaponAttributes.WeaponIndex);
+        WeaponData.SetWeaponIndex(weaponAttributes.WeaponIndex);
+        WeaponData.SetWeaponAtkRange(weaponAttributes.WeaponAtkRange);
     }
 
     #endregion

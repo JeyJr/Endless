@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WeaponLibrary : MonoBehaviour
 {
@@ -10,7 +11,28 @@ public class WeaponLibrary : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EquipWeapon());
+
+
+        if (WeaponData.GetFirstTimeWeapon())
+            StartCoroutine(FirstTime());
     }
+
+    IEnumerator FirstTime()
+    {
+        WeaponData.SetWeaponPurchased(weapons[0].GetComponent<WeaponAttributes>().WeaponID, 1);
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            //0: not - 1: yes
+            WeaponData.SetWeaponPurchased(weapons[i].GetComponent<WeaponAttributes>().WeaponID, 0);
+
+        }
+        WeaponData.SetFirstTime();
+        yield return null;
+    }
+
+
+
 
     IEnumerator EquipWeapon()
     {
@@ -20,7 +42,7 @@ public class WeaponLibrary : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponentInChildren<PlayerHand>().EquipWeapon(weapons[WeaponData.GetWeaponID()]);
+        player.GetComponentInChildren<PlayerHand>().EquipWeapon(weapons[WeaponData.GetWeaponIndex()]);
 
         yield return null;
     }

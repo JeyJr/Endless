@@ -99,5 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAtk: 200
   weaponSpeedAtk: 4.1
-  imgWeapon: {fileID: 21300000, guid: 9d17f47cfec13d143a297a78cf0925c2, type: 3}
+  weaponAtkRange: 1.5
+  imgWeapon: {fileID: 21300000, guid: 28380826b2e430f4b969988151eceff9, type: 3}
   weaponName: Fim de Festa
+  weaponID: 1001
+  goldCost: 350

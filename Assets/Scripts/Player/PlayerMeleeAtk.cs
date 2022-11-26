@@ -10,6 +10,7 @@ public class PlayerMeleeAtk : MonoBehaviour
 
     public void Atk()
     {
+        atkRange = WeaponData.GetWeaponAtkRange();
         RaycastHit2D[] hit = Physics2D.RaycastAll(startPosition.position, startPosition.right, atkRange, enemyMask);
 
         if(hit != null)

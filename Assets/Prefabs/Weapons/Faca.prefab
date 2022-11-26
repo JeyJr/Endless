@@ -99,5 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAtk: 300
   weaponSpeedAtk: 3.1
-  imgWeapon: {fileID: 21300000, guid: e35fff84a3718e44fb4d7605dd3ba5db, type: 3}
+  weaponAtkRange: 2
+  imgWeapon: {fileID: 21300000, guid: 5b55db81c765ee3469ec309f1ee79249, type: 3}
   weaponName: Faca Simples
+  weaponID: 1002
+  goldCost: 3500
