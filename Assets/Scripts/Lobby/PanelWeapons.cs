@@ -41,9 +41,11 @@ public class PanelWeapons : MonoBehaviour
 
     public void BtnPurchase()
     {
-        if (GameData.GetGold() >= weaponAttributes.GoldCost)
+        GameData gameData = ManagerData.Load();
+
+        if (gameData.gold >= weaponAttributes.GoldCost)
         {
-            GameData.SubGold(weaponAttributes.GoldCost);
+            gameData.gold -= weaponAttributes.GoldCost;
             WeaponData.SetWeaponPurchased(weaponAttributes.WeaponID, 1);
             Btns(false, true);
         }
@@ -58,10 +60,5 @@ public class PanelWeapons : MonoBehaviour
     public void BtnEquip()
     {
         weaponLibrary.BtnWeaponToEquip(weaponAttributes.WeaponIndex);
-    }
-
-    public void BtnClose()
-    {
-        panelWeaponInfo.SetActive(false);
     }
 }

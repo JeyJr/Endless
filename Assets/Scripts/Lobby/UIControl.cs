@@ -14,7 +14,24 @@ public class UIControl : MonoBehaviour
 
     private void Start()
     {
-        GameData.FirstTime();
+        //ManagerData.DeleteData(); 
+
+        if (ManagerData.Load().firstTime)
+        {
+            Debug.Log("Primeira vez!");
+
+            GameData d = new();
+
+            d.gold = 9999999;
+            d.firstTime = false;
+            d.atk = 1;
+            d.def = 1;
+            d.vit = 1;
+            d.agi = 1;
+            d.cri = 1;
+
+            ManagerData.Save(d);
+        }
 
         StartPanels();
         GoldAmount();
@@ -40,12 +57,15 @@ public class UIControl : MonoBehaviour
     }
     #endregion
 
-    private void Update()
-    {
-        GoldAmount();
+    public void GoldAmount(){
+        GameData data = ManagerData.Load();
+        textTotalGold.text = data.gold.ToString();
     }
 
-    void GoldAmount(){
-        textTotalGold.text = GameData.GetGold().ToString("F0");
+    public void GoldAmount(string text)
+    {
+        textTotalGold.text = text;
     }
+
+    public void BtnClose(GameObject obj) => obj.SetActive(!obj.activeSelf);
 }

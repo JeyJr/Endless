@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 100
-  weaponSpeedAtk: 3.8
+  weaponAtk: 5
+  weaponSpeedAtk: 4.8
   weaponAtkRange: 4
   imgWeapon: {fileID: 21300000, guid: c6a1bbabaac38774fb3f91817ba379dc, type: 3}
-  weaponName: "Peda\xE7o de Madeira"
+  weaponName: Madeira
   weaponID: 1000
   goldCost: 0

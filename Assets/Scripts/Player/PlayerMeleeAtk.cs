@@ -17,21 +17,23 @@ public class PlayerMeleeAtk : MonoBehaviour
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                if (GameData.GetCritical())
-                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(CriticalDMG(), true);
+                GameData gameData = ManagerData.Load();
+
+                if (gameData.CriticalDMG)
+                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(CriticalDMG(gameData.Damage), true);
                 else
-                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(SimpleDMG(), false);
+                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(SimpleDMG(gameData.Damage), false);
             }
         }
     }
 
-    float CriticalDMG() 
+    float CriticalDMG(float damage) 
     {
-        return Random.Range(GameData.GetDMG() * 2, (GameData.GetDMG() * 2) * 1.2f);
+        return Random.Range(damage * 2, (damage * 2) * 1.2f);
     }
-    float SimpleDMG()
+    float SimpleDMG(float damage)
     {
-        return Random.Range(GameData.GetDMG(), GameData.GetDMG()* 1.2f);
+        return Random.Range(damage, damage * 1.2f);
     }
 
     private void OnDrawGizmos()

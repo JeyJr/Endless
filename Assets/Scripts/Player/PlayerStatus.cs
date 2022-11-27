@@ -12,15 +12,11 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        maxLife = GameData.GetMaxLife();
-        life = maxLife;
-        defense = GameData.GetDefense();
-    }
+        GameData gameData = ManagerData.Load();
 
-    private void Update()
-    {
-        maxLife = GameData.GetMaxLife();
-        defense = GameData.GetDefense();
+        maxLife = gameData.MaxLife;
+        life = maxLife;
+        defense = gameData.Defense;
     }
 
 

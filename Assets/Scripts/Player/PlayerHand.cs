@@ -42,7 +42,9 @@ public class PlayerHand : MonoBehaviour
     #region ATK
     IEnumerator StartDelay()
     {
-        float atkSpeed = GameData.GetAtkSpeed();
+        GameData gameData = ManagerData.Load();
+
+        float atkSpeed = gameData.AtkSpeed;
         delayBar.maxValue = atkSpeed;
         delayBar.value = 0;
 
@@ -53,6 +55,9 @@ public class PlayerHand : MonoBehaviour
             yield return new WaitForSeconds(.01f);
             delayBar.value += .01f;
         }
+
+        float value = Random.Range(0, 3);
+
         anim.Play($"Base Layer.{animsName[1]}", 0); //MeleeAtk
     }
     public void SetIsAtk() => isAtk = !isAtk;
