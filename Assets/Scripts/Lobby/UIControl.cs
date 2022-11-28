@@ -26,7 +26,7 @@ public class UIControl : MonoBehaviour
 
             GameData d = new();
 
-            d.gold = 100000;
+            d.gold = 1000000;
             d.firstTime = false;
             d.atk = 1;
             d.def = 1;
@@ -37,6 +37,15 @@ public class UIControl : MonoBehaviour
             d.purchasedWeaponsIds = new List<int>();
             d.purchasedWeaponsIds.Add(1000); //Pedaço de madeira
             d.equipedWeaponId = d.purchasedWeaponsIds[0];
+
+
+            d.skillLevelBonusDmg = 0;
+            d.skillLevelBonusDef = 0;
+            d.skillLevelBonusLife = 0;
+            d.skillLevelBonusAtkSpeed = 0;
+            d.skillLevelBonusRange = 0;
+            d.skillLevelBonusGold = 0;
+
             ManagerData.Save(d);
         }
 

@@ -49,11 +49,19 @@ public class GameData
 
 
     //SkillsPassivas
+    public float skillLevelBonusDmg;
+    public float skillLevelBonusDef;
+    public float skillLevelBonusLife;
+    public float skillLevelBonusAtkSpeed;
+    public float skillLevelBonusRange;
+    public float skillLevelBonusGold;
+
     public float bonusDmg;
-    public float bonusLife;
     public float bonusDefense;
+    public float bonusLife;
     public float bonusRangeAtk;
     public float bonusAtkSpeed;
+    public float bonusGold;
 
 
 }
