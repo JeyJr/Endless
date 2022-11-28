@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 
 public class UIControl : MonoBehaviour
@@ -12,9 +13,12 @@ public class UIControl : MonoBehaviour
     [Header("Top Bar")]
     public TextMeshProUGUI textTotalGold;
 
+    [SerializeField] private bool deletar;
+
     private void Start()
     {
-        //ManagerData.DeleteData(); 
+        if (deletar)
+            ManagerData.DeleteData();
 
         if (ManagerData.Load().firstTime)
         {
@@ -22,7 +26,7 @@ public class UIControl : MonoBehaviour
 
             GameData d = new();
 
-            d.gold = 9999999;
+            d.gold = 100000;
             d.firstTime = false;
             d.atk = 1;
             d.def = 1;
@@ -30,14 +34,18 @@ public class UIControl : MonoBehaviour
             d.agi = 1;
             d.cri = 1;
 
+            d.purchasedWeaponsIds = new List<int>();
+            d.purchasedWeaponsIds.Add(1000); //Pedaço de madeira
+            d.equipedWeaponId = d.purchasedWeaponsIds[0];
             ManagerData.Save(d);
         }
 
         StartPanels();
         GoldAmount();
     }
+
     #region PanelsControl
-    void StartPanels()
+    public void StartPanels()
     {
         for (int i = 0; i < panels.Length; i++)
         {

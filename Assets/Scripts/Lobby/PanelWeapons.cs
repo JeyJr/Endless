@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,37 +29,52 @@ public class PanelWeapons : MonoBehaviour
         imgWeapon.sprite = weaponAttributes.ImgWeapon;
 
         //Verificar se a arma ja foi comprada
-        if (WeaponData.GetWeaponPurchased(weaponAttributes.WeaponID))
+
+        GameData gameData = ManagerData.Load();
+
+        foreach (int id in gameData.purchasedWeaponsIds)
         {
-            Btns(false, true);
+            if(id == weaponAttributes.WeaponID)
+            {
+                btnBuy.SetActive(false);
+                btnEquip.SetActive(true);
+                break;
+            }
+            else
+            {
+                btnBuy.SetActive(true);
+                btnEquip.SetActive(false);
+                txtGoldCost.text = weaponAttributes.GoldCost.ToString();
+            }
         }
-        else
-        {
-            Btns(true, false);
-            txtGoldCost.text = weaponAttributes.GoldCost.ToString();
-        }
+
     }
 
     public void BtnPurchase()
     {
+        
         GameData gameData = ManagerData.Load();
 
         if (gameData.gold >= weaponAttributes.GoldCost)
         {
             gameData.gold -= weaponAttributes.GoldCost;
-            WeaponData.SetWeaponPurchased(weaponAttributes.WeaponID, 1);
-            Btns(false, true);
+            gameData.purchasedWeaponsIds.Add(weaponAttributes.WeaponID);
+            
+            btnBuy.SetActive(false);
+            btnEquip.SetActive(true);
+            GetComponent<UIControl>().GoldAmount(gameData.gold.ToString());
+            ManagerData.Save(gameData);
         }
-    }
 
-    void Btns(bool buy, bool equip)
-    {
-        btnBuy.SetActive(buy);
-        btnEquip.SetActive(equip);
+        Debug.Log("Quantidade de armas: " + gameData.purchasedWeaponsIds.Count);
+        for (int i = 0; i < gameData.purchasedWeaponsIds.Count; i++)
+        {
+            Debug.Log($"{i} - {gameData.purchasedWeaponsIds[i]}");
+        }
     }
 
     public void BtnEquip()
     {
-        weaponLibrary.BtnWeaponToEquip(weaponAttributes.WeaponIndex);
+        weaponLibrary.BtnWeaponToEquip(weaponAttributes.WeaponID);
     }
 }

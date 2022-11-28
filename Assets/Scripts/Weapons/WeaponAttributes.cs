@@ -8,11 +8,9 @@ public class WeaponAttributes : MonoBehaviour
     [SerializeField] private float weaponSpeedAtk;
     [SerializeField] private float weaponAtkRange;
 
-    private int weaponIndex;
     public float WeaponAtk{ get => weaponAtk; }
     public float WeaponSpeedAtk { get => weaponSpeedAtk; }
     public float WeaponAtkRange { get => weaponAtkRange; }
-    public int WeaponIndex { get => weaponIndex; set => weaponIndex = value; }
 
 
     //UI

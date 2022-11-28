@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 100
-  weaponSpeedAtk: 3.5
+  weaponAtk: 400
+  weaponSpeedAtk: 4.5
   weaponAtkRange: 2
   imgWeapon: {fileID: 21300000, guid: d8e38dbf1f34cf549b88d5c120c52d36, type: 3}
   weaponName: Chinelo de Madeira

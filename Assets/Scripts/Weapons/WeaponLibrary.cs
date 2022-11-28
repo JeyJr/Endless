@@ -11,44 +11,23 @@ public class WeaponLibrary : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EquipWeapon());
-
-
-        if (WeaponData.GetFirstTimeWeapon())
-            StartCoroutine(FirstTime());
     }
-
-    IEnumerator FirstTime()
-    {
-        WeaponData.SetWeaponPurchased(weapons[0].GetComponent<WeaponAttributes>().WeaponID, 1);
-
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            //0: not - 1: yes
-            WeaponData.SetWeaponPurchased(weapons[i].GetComponent<WeaponAttributes>().WeaponID, 0);
-
-        }
-        WeaponData.SetFirstTime();
-        yield return null;
-    }
-
-
-
 
     IEnumerator EquipWeapon()
     {
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            weapons[i].GetComponent<WeaponAttributes>().WeaponIndex = i;
-        }
-
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponentInChildren<PlayerHand>().EquipWeapon(weapons[WeaponData.GetWeaponIndex()]);
+        GameData gameData = ManagerData.Load();
+        BtnWeaponToEquip(gameData.equipedWeaponId);
 
         yield return null;
     }
 
-    public void BtnWeaponToEquip(int index)
+    public void BtnWeaponToEquip(int id)
     {
-        player.GetComponentInChildren<PlayerHand>().EquipWeapon(weapons[index]);
+        foreach(var weapon in weapons)
+        {
+            if(weapon.GetComponent<WeaponAttributes>().WeaponID == id)
+                player.GetComponentInChildren<PlayerHand>().EquipWeapon(weapon);
+        }
     }
 }

@@ -32,10 +32,13 @@ public class PlayerHand : MonoBehaviour
 
         WeaponAttributes weaponAttributes = weapon.GetComponent<WeaponAttributes>();
 
-        WeaponData.SetWeaponDMG(weaponAttributes.WeaponAtk);
-        WeaponData.SetWeaponAtkSpeed(weaponAttributes.WeaponSpeedAtk);
-        WeaponData.SetWeaponIndex(weaponAttributes.WeaponIndex);
-        WeaponData.SetWeaponAtkRange(weaponAttributes.WeaponAtkRange);
+        GameData gameData = ManagerData.Load();
+
+        gameData.weaponDmg = weaponAttributes.WeaponAtk;
+        gameData.weaponSpeedAtk = weaponAttributes.WeaponSpeedAtk;
+        gameData.weaponRangeAtk = weaponAttributes.WeaponAtkRange;
+        gameData.equipedWeaponId = weaponAttributes.WeaponID;
+        ManagerData.Save(gameData);
     }
 
     #endregion

@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 35
-  weaponSpeedAtk: 5
+  weaponAtk: 600
+  weaponSpeedAtk: 6
   weaponAtkRange: 6
   imgWeapon: {fileID: 21300000, guid: 0cb4f5704f979c44dbd970690801b3e4, type: 3}
   weaponName: Vassoura

@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 70
-  weaponSpeedAtk: 4.1
+  weaponAtk: 500
+  weaponSpeedAtk: 5.3
   weaponAtkRange: 5
   imgWeapon: {fileID: 21300000, guid: a9e6327c95dc6414d977988b81dccc0a, type: 3}
   weaponName: Taco Bolado

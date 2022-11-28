@@ -3344,6 +3344,7 @@ MonoBehaviour:
   - {fileID: 384675038}
   - {fileID: 983775407}
   textTotalGold: {fileID: 865336239}
+  deletar: 0
 --- !u!114 &406017006
 MonoBehaviour:
   m_ObjectHideFlags: 0

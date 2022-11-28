@@ -10,21 +10,28 @@ public class PlayerMeleeAtk : MonoBehaviour
 
     public void Atk()
     {
-        atkRange = WeaponData.GetWeaponAtkRange();
+        GameData gameData = ManagerData.Load();
+        atkRange = gameData.weaponRangeAtk;
+
         RaycastHit2D[] hit = Physics2D.RaycastAll(startPosition.position, startPosition.right, atkRange, enemyMask);
 
         if(hit != null)
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                GameData gameData = ManagerData.Load();
 
-                if (gameData.CriticalDMG)
+                if (Critical(gameData.CriticalDMG))
                     hit[i].collider.GetComponent<EnemyStatus>().LoseLife(CriticalDMG(gameData.Damage), true);
                 else
                     hit[i].collider.GetComponent<EnemyStatus>().LoseLife(SimpleDMG(gameData.Damage), false);
             }
         }
+    }
+
+    bool Critical(float cri)
+    {
+        float value = Random.Range(0, 100);
+        return value <= cri;
     }
 
     float CriticalDMG(float damage) 
