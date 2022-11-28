@@ -89,21 +89,27 @@ public class PanelPassives : MonoBehaviour
         {
             case "dmg":
                 gameData.skillLevelBonusDmg++;
+                gameData.bonusDmg = gameData.skillLevelBonusDmg * p.SkillBonus;
                 break;
             case "def":
                 gameData.skillLevelBonusDef++;
+                gameData.bonusDefense = gameData.skillLevelBonusDef * p.SkillBonus;
                 break;
             case "life":
                 gameData.skillLevelBonusLife++;
+                gameData.bonusLife = gameData.skillLevelBonusLife * p.SkillBonus;
                 break;
             case "speed":
                 gameData.skillLevelBonusAtkSpeed++;
+                gameData.bonusAtkSpeed = gameData.skillLevelBonusAtkSpeed * p.SkillBonus;
                 break;
             case "range":
                 gameData.skillLevelBonusRange++;
+                gameData.bonusRangeAtk = gameData.skillLevelBonusRange * p.SkillBonus;
                 break;
             case "gold":
                 gameData.skillLevelBonusGold++;
+                gameData.bonusGold = gameData.skillLevelBonusGold * p.SkillBonus;
                 break;
             default:
                 throw new ArgumentException("SkillShortName Invalido!", nameof(skillShortName));

@@ -26,7 +26,7 @@ public class UIControl : MonoBehaviour
 
             GameData d = new();
 
-            d.gold = 1000000;
+            d.gold = 99999999999999;
             d.firstTime = false;
             d.atk = 1;
             d.def = 1;
@@ -71,6 +71,9 @@ public class UIControl : MonoBehaviour
             else 
                 panels[j].SetActive(false);
         }
+
+        if (i == 3)
+            GetComponent<PanelPlayerInfo>().PanelPlayerInfoIsActive();
     }
     #endregion
 

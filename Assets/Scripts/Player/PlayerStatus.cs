@@ -8,6 +8,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private float life;
     [SerializeField] private float defense;
 
+
     public SpawnTextDMG spawnTextDMG;
 
     private void Start()
@@ -18,7 +19,6 @@ public class PlayerStatus : MonoBehaviour
         life = maxLife;
         defense = gameData.Defense;
     }
-
 
     public void LoseLife(float dmg, bool critical)
     {

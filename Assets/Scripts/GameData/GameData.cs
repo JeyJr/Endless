@@ -20,11 +20,11 @@ public class GameData
     }
     public float Defense
     {
-        get => def / 2 + bonusDefense;
+        get => def / 2 + weaponDefense +bonusDefense;
     }
     public float MaxLife
     {
-        get => vit * 2 + bonusLife;
+        get => vit * 50 + weaponLife +bonusLife;
     }
     public float AtkSpeed
     {
@@ -32,7 +32,7 @@ public class GameData
     }
     public float CriticalDMG
     {
-        get => cri;
+        get => cri / 2 + weaponCritical;
     }
     public float RangeAtk
     {
@@ -44,7 +44,10 @@ public class GameData
     public int equipedWeaponId;
 
     public float weaponDmg;
+    public float weaponDefense;
+    public float weaponLife;
     public float weaponSpeedAtk;
+    public float weaponCritical;
     public float weaponRangeAtk;
 
 

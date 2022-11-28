@@ -7,6 +7,10 @@ public class WeaponAttributes : MonoBehaviour
     [SerializeField] private float weaponAtk;
     [SerializeField] private float weaponSpeedAtk;
     [SerializeField] private float weaponAtkRange;
+    [SerializeField] private float weaponDefense;
+    [SerializeField] private float weaponLife;
+    [SerializeField] private float weaponCritical;
+
 
     public float WeaponAtk{ get => weaponAtk; }
     public float WeaponSpeedAtk { get => weaponSpeedAtk; }
