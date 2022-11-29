@@ -46,6 +46,7 @@ public class UIControl : MonoBehaviour
             d.skillLevelBonusRange = 0;
             d.skillLevelBonusGold = 0;
 
+            d.levelUnlock = 0;
             ManagerData.Save(d);
         }
 
@@ -72,8 +73,11 @@ public class UIControl : MonoBehaviour
                 panels[j].SetActive(false);
         }
 
-        if (i == 3)
+        if (i == 3) 
             GetComponent<PanelPlayerInfo>().PanelPlayerInfoIsActive();
+
+        if (i == 4)
+            GetComponent<PanelLevel>().EnableLevel();
     }
     #endregion
 

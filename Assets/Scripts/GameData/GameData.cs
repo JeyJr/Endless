@@ -66,5 +66,6 @@ public class GameData
     public float bonusAtkSpeed;
     public float bonusGold;
 
-
+    //Level
+    public float levelUnlock;
 }
