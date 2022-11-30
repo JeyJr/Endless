@@ -21,7 +21,7 @@ public class NivelCompletadoModeloSimples : MonoBehaviour
 
     IEnumerator BackLobby()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Lobby");
     }
 }

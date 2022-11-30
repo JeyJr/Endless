@@ -8,6 +8,12 @@ public class PlayerMeleeAtk : MonoBehaviour
     [SerializeField] private float atkRange;
     [SerializeField] private LayerMask enemyMask;
 
+    private void Start()
+    {
+        GameData gameData = ManagerData.Load();
+        atkRange = gameData.weaponRangeAtk;
+    }
+
     public void Atk()
     {
         GameData gameData = ManagerData.Load();
@@ -15,7 +21,7 @@ public class PlayerMeleeAtk : MonoBehaviour
 
         RaycastHit2D[] hit = Physics2D.RaycastAll(startPosition.position, startPosition.right, atkRange, enemyMask);
 
-        if(hit != null)
+        if (hit != null)
         {
             for (int i = 0; i < hit.Length; i++)
             {
@@ -27,6 +33,8 @@ public class PlayerMeleeAtk : MonoBehaviour
             }
         }
     }
+
+
 
     bool Critical(float cri)
     {

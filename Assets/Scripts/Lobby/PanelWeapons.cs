@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class PanelWeapons : MonoBehaviour
 {
-    public GameObject panelWeaponInfo;
+    public GameObject panelWeaponInfo, player;
     public TextMeshProUGUI txtWeaponName,txtWeaponAtk, txtWeaponSpeedAtk, txtWeaponAtkRange, txtGoldCost;
     public GameObject btnEquip, btnBuy; //Comprar?
     public Image imgWeapon;
 
-    public WeaponLibrary weaponLibrary;
     public WeaponAttributes weaponAttributes;
     public float goldCost;
+
 
     public void BtnWeapon(WeaponAttributes weaponAttributes)
     {
@@ -65,16 +65,15 @@ public class PanelWeapons : MonoBehaviour
             GetComponent<UIControl>().GoldAmount(gameData.gold.ToString());
             ManagerData.Save(gameData);
         }
-
-        Debug.Log("Quantidade de armas: " + gameData.purchasedWeaponsIds.Count);
-        for (int i = 0; i < gameData.purchasedWeaponsIds.Count; i++)
-        {
-            Debug.Log($"{i} - {gameData.purchasedWeaponsIds[i]}");
-        }
     }
 
     public void BtnEquip()
     {
-        weaponLibrary.BtnWeaponToEquip(weaponAttributes.WeaponID);
+        GameData gameData = ManagerData.Load();
+        gameData.equipedWeaponId = weaponAttributes.WeaponID;
+        Debug.Log("Adicionado ID da arma e realizdo o save" + gameData.equipedWeaponId);
+        ManagerData.Save(gameData);
+
+        player.GetComponentInChildren<PlayerHand>().EquipWeapon();
     }
 }

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class PlayerHand : MonoBehaviour
 {
+    public List<GameObject> weapons;
+    public GameObject weaponSprite;
     public Slider delayBar;
     public Animator anim;
     [SerializeField] private string[] animsName;
@@ -14,6 +17,7 @@ public class PlayerHand : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        EquipWeapon();
     }
 
     private void Update()
@@ -26,18 +30,26 @@ public class PlayerHand : MonoBehaviour
     }
 
     #region EquipWeapon
-    public void EquipWeapon(GameObject weapon)
+    public void EquipWeapon()
     {
-        GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<SpriteRenderer>().sprite;
-
-        WeaponAttributes weaponAttributes = weapon.GetComponent<WeaponAttributes>();
-
         GameData gameData = ManagerData.Load();
+        Debug.Log("Equipe weapon acionado!");
+        foreach (var weapon in weapons)
+        {
+            
+            if (weapon.GetComponent<WeaponAttributes>().WeaponID == gameData.equipedWeaponId)
+            {
+                Debug.Log("Encontrou a arma pelo ID e atribuiu os status");
+                var w = weapon.GetComponent<WeaponAttributes>();
+                gameData.weaponDmg = w.WeaponAtk;
+                gameData.weaponSpeedAtk = w.WeaponSpeedAtk;
+                gameData.weaponRangeAtk = w.WeaponAtkRange;
+                gameData.equipedWeaponId = w.WeaponID;
 
-        gameData.weaponDmg = weaponAttributes.WeaponAtk;
-        gameData.weaponSpeedAtk = weaponAttributes.WeaponSpeedAtk;
-        gameData.weaponRangeAtk = weaponAttributes.WeaponAtkRange;
-        gameData.equipedWeaponId = weaponAttributes.WeaponID;
+                weaponSprite.GetComponent<SpriteRenderer>().sprite = w.GetComponent<SpriteRenderer>().sprite;
+            }
+        }
+
         ManagerData.Save(gameData);
     }
 
