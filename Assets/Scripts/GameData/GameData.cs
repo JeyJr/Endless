@@ -37,7 +37,7 @@ public class GameData
     }
     public float AtkSpeed
     {
-        get =>  (weaponSpeedAtk - agi * .03f) - bonusAtkSpeed;
+        get => (weaponSpeedAtk - agi * .03f) - (weaponSpeedAtk * bonusAtkSpeed / 100);
     }
     public float CriticalDMG
     {

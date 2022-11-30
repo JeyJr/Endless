@@ -77,7 +77,7 @@ public class PanelPassives : MonoBehaviour
             case "range":
                 return gameData.skillLevelBonusRange;
             case "cri":
-                return gameData.skillLevelBonusRange;
+                return gameData.skillLevelCritical;
             case "gold":
                 return gameData.skillLevelBonusGold;
             default:
@@ -105,11 +105,11 @@ public class PanelPassives : MonoBehaviour
                 gameData.skillLevelBonusAtkSpeed++;
                 gameData.bonusAtkSpeed = gameData.skillLevelBonusAtkSpeed * p.SkillBonus;
                 break;
-            case "range":
+            case "cri":
                 gameData.skillLevelCritical++;
                 gameData.bonusCritical = gameData.skillLevelCritical * p.SkillBonus;
                 break;
-            case "cri":
+            case "range":
                 gameData.skillLevelBonusRange++;
                 gameData.bonusRangeAtk = gameData.skillLevelBonusRange * p.SkillBonus;
                 break;
