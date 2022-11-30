@@ -37,6 +37,7 @@ public class UIControl : MonoBehaviour
             d.purchasedWeaponsIds.Add(1000); //Pedaço de madeira
             d.equipedWeaponId = d.purchasedWeaponsIds[0];
 
+            
 
             d.skillLevelBonusDmg = 0;
             d.skillLevelBonusDef = 0;
@@ -47,6 +48,8 @@ public class UIControl : MonoBehaviour
 
             d.levelUnlock = 0;
             ManagerData.Save(d);
+
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerHand>().EquipWeapon();
         }
 
         StartPanels();

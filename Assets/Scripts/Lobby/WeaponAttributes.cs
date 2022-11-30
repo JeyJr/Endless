@@ -15,6 +15,9 @@ public class WeaponAttributes : MonoBehaviour
     public float WeaponAtk{ get => weaponAtk; }
     public float WeaponSpeedAtk { get => weaponSpeedAtk; }
     public float WeaponAtkRange { get => weaponAtkRange; }
+    public float WeaponDefense { get => weaponDefense; }
+    public float WeaponLife { get => weaponLife; }
+    public float WeaponCritical { get => weaponCritical; }
 
 
     //UI

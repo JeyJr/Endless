@@ -45,6 +45,9 @@ public class PlayerHand : MonoBehaviour
                 gameData.weaponSpeedAtk = w.WeaponSpeedAtk;
                 gameData.weaponRangeAtk = w.WeaponAtkRange;
                 gameData.equipedWeaponId = w.WeaponID;
+                gameData.weaponLife = w.WeaponLife;
+                gameData.weaponDefense = w.WeaponDefense;
+                gameData.weaponCritical = w.WeaponCritical;
 
                 weaponSprite.GetComponent<SpriteRenderer>().sprite = w.GetComponent<SpriteRenderer>().sprite;
             }

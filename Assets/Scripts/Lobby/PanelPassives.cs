@@ -42,7 +42,7 @@ public class PanelPassives : MonoBehaviour
         {
             txtSkillName.text = passive.SkillName;
             txtSkillLevel.text = $"LEVEL: {level}";
-            txtSkillDescription.text = $"{passive.SkillDesc}{bonus}";
+            txtSkillDescription.text = $"{passive.SkillDesc}" + bonus.ToString("F2");
             txtGoldCost.text = skillGoldCost.ToString();
             imgWeapon.sprite = passive.ImgWeapon;
 
@@ -76,6 +76,8 @@ public class PanelPassives : MonoBehaviour
                 return gameData.skillLevelBonusAtkSpeed;
             case "range":
                 return gameData.skillLevelBonusRange;
+            case "cri":
+                return gameData.skillLevelBonusRange;
             case "gold":
                 return gameData.skillLevelBonusGold;
             default:
@@ -104,6 +106,10 @@ public class PanelPassives : MonoBehaviour
                 gameData.bonusAtkSpeed = gameData.skillLevelBonusAtkSpeed * p.SkillBonus;
                 break;
             case "range":
+                gameData.skillLevelCritical++;
+                gameData.bonusCritical = gameData.skillLevelCritical * p.SkillBonus;
+                break;
+            case "cri":
                 gameData.skillLevelBonusRange++;
                 gameData.bonusRangeAtk = gameData.skillLevelBonusRange * p.SkillBonus;
                 break;

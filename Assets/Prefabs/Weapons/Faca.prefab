@@ -99,7 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAtk: 300
   weaponSpeedAtk: 4.2
-  weaponAtkRange: 2
+  weaponAtkRange: 3
+  weaponDefense: 0
+  weaponLife: 0
+  weaponCritical: 20
   imgWeapon: {fileID: 21300000, guid: 5b55db81c765ee3469ec309f1ee79249, type: 3}
   weaponName: Faca Simples
   weaponID: 1002

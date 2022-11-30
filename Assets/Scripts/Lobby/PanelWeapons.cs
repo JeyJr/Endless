@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PanelWeapons : MonoBehaviour
 {
     public GameObject panelWeaponInfo, player;
-    public TextMeshProUGUI txtWeaponName,txtWeaponAtk, txtWeaponSpeedAtk, txtWeaponAtkRange, txtGoldCost;
+    public TextMeshProUGUI txtName,txtAtk, txtSpeedAtk, txtAtkRange, txtGoldCost, txtDef, txtLife, txtCri;
     public GameObject btnEquip, btnBuy; //Comprar?
     public Image imgWeapon;
 
@@ -22,10 +22,13 @@ public class PanelWeapons : MonoBehaviour
         panelWeaponInfo.SetActive(true); //Habilita o painel
 
         
-        txtWeaponName.text = weaponAttributes.WeaponName;
-        txtWeaponAtk.text = "Atk: " + weaponAttributes.WeaponAtk.ToString("F0");
-        txtWeaponSpeedAtk.text = "Speed Atk: " + weaponAttributes.WeaponSpeedAtk.ToString("F2") + "s";
-        txtWeaponAtkRange.text = "Atk Range: " + weaponAttributes.WeaponAtkRange.ToString("F2") + "m";
+        txtName.text = weaponAttributes.WeaponName;
+        txtAtk.text = "Atk: " + weaponAttributes.WeaponAtk.ToString("F0");
+        txtSpeedAtk.text = "Speed Atk: " + weaponAttributes.WeaponSpeedAtk.ToString("F2") + "s";
+        txtAtkRange.text = "Atk Range: " + weaponAttributes.WeaponAtkRange.ToString("F2") + "m";
+        txtDef.text = "Defense: " + weaponAttributes.WeaponDefense.ToString("F0") + "%";
+        txtLife.text = "Life: " + weaponAttributes.WeaponLife.ToString("F0") + "%";
+        txtCri.text = "Critical: " + weaponAttributes.WeaponCritical.ToString("F0") + "%";
         imgWeapon.sprite = weaponAttributes.ImgWeapon;
 
         //Verificar se a arma ja foi comprada

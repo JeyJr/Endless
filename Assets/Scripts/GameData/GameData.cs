@@ -16,15 +16,24 @@ public class GameData
 
     public float Damage 
     {
-        get => (atk * 5) + weaponDmg + bonusDmg;
+        get {
+            float totalAtk = atk * 5;
+            return totalAtk + (totalAtk * bonusDmg / 100) + weaponDmg;
+        } 
     }
     public float Defense
     {
-        get => def / 2 + weaponDefense +bonusDefense;
+        get {
+            float totalDef = def / 2;
+            return totalDef + (totalDef * weaponDefense / 100) + (totalDef * bonusDefense / 100);
+        }
     }
     public float MaxLife
     {
-        get => vit * 50 + weaponLife +bonusLife;
+        get {
+            float totalLife = vit * 50;
+            return totalLife + (totalLife * weaponLife / 100) + (totalLife * bonusLife / 100);
+        }
     }
     public float AtkSpeed
     {
@@ -32,7 +41,10 @@ public class GameData
     }
     public float CriticalDMG
     {
-        get => cri / 2 + weaponCritical;
+        get {
+            float totalCritic = cri / 2;
+            return totalCritic + (totalCritic * weaponCritical / 100) + (totalCritic * bonusCritical / 100);
+        }
     }
     public float RangeAtk
     {
@@ -57,6 +69,7 @@ public class GameData
     public float skillLevelBonusLife;
     public float skillLevelBonusAtkSpeed;
     public float skillLevelBonusRange;
+    public float skillLevelCritical;
     public float skillLevelBonusGold;
 
     public float bonusDmg;
@@ -64,6 +77,7 @@ public class GameData
     public float bonusLife;
     public float bonusRangeAtk;
     public float bonusAtkSpeed;
+    public float bonusCritical;
     public float bonusGold;
 
     //Level
