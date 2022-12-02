@@ -1,38 +1,50 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class PanelPassives : MonoBehaviour
 {
-    private float goldCost = 200;
+    private float goldCost = 2000;
     private float maxLevel = 11;
 
     public GameObject panelSkillInfo;
-    public TextMeshProUGUI txtSkillName, txtSkillLevel, txtSkillDescription, txtGoldCost;
+    public TextMeshProUGUI txtSkillName, txtDescription, txtGoldCost;
     public Button btnBuy;
     public Image imgWeapon;
 
     PassivesAttributes p;
-    public float level, bonus, skillGoldCost, gold;
+    float level, bonus, skillGoldCost, gold;
 
     public void OpenPanelSkillInfo(PassivesAttributes passive)
     {
         p = passive;
 
         level = GetSkillLevel(passive.SkillShortName) + 1;
-        bonus = level * passive.SkillBonus;
-        skillGoldCost = level * this.goldCost;
 
-        panelSkillInfo.SetActive(true);
+        passive.txtLevel.text = GetSkillLevel(passive.SkillShortName).ToString();
+
+        bonus = level >= maxLevel ? 10 * passive.SkillBonus : level * passive.SkillBonus;
+        skillGoldCost = level * this.goldCost;
+        
+
+        string skillLevel = $"<b>LEVEL: </b></b>{level}";
+        string description;
+        if (passive.SkillShortName == "range")
+            description = $"Add " + bonus.ToString("F2") + "m" + $" to { passive.SkillDesc}";
+        else if(passive.SkillShortName == "gold")
+            description = $"Add " + bonus.ToString("F2") + $" to {passive.SkillDesc}";
+        else
+            description = $"Add " + bonus.ToString("F2") + "%" + $" to {passive.SkillDesc}";
 
         if (level >= maxLevel)
         {
+
             txtSkillName.text = passive.SkillName;
-            txtSkillLevel.text = "LEVEL MAX";
-            txtSkillDescription.text = $"{passive.SkillDesc}{10 * passive.SkillBonus }";
+            txtDescription.text = $"LEVEL MAX <br></b>{description}";
             txtGoldCost.text = "LEVEL MAX";
             imgWeapon.sprite = passive.ImgWeapon;
 
@@ -40,15 +52,14 @@ public class PanelPassives : MonoBehaviour
         }
         else
         {
-            txtSkillName.text = passive.SkillName;
-            txtSkillLevel.text = $"LEVEL: {level}";
-            txtSkillDescription.text = $"{passive.SkillDesc}" + bonus.ToString("F2");
-            txtGoldCost.text = skillGoldCost.ToString();
+            txtDescription.text = $"{skillLevel}<br>{description}";
+            txtGoldCost.text = $"PRICE: {skillGoldCost}";
             imgWeapon.sprite = passive.ImgWeapon;
 
             btnBuy.interactable = true;
         }
 
+        panelSkillInfo.SetActive(true);
     }
 
     public void BtnBuy()
@@ -60,7 +71,7 @@ public class PanelPassives : MonoBehaviour
         }
     }
 
-    float GetSkillLevel(string skillShortName)
+    public float GetSkillLevel(string skillShortName)
     {
         GameData gameData = ManagerData.Load();
         gold = gameData.gold;
@@ -84,7 +95,7 @@ public class PanelPassives : MonoBehaviour
                 throw new ArgumentException("SkillShortName Invalido!", nameof(skillShortName));
         }
     }
-    void SetSkillLevel(string skillShortName)
+    public void SetSkillLevel(string skillShortName)
     {
         GameData gameData = ManagerData.Load();
         switch (skillShortName)

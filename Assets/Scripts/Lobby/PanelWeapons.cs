@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,33 +9,74 @@ using UnityEngine.UI;
 public class PanelWeapons : MonoBehaviour
 {
     public GameObject panelWeaponInfo, player;
-    public TextMeshProUGUI txtName,txtAtk, txtSpeedAtk, txtAtkRange, txtGoldCost, txtDef, txtLife, txtCri;
+    public TextMeshProUGUI txtName, txtWeaponAttributes, txtGoldCost;
     public GameObject btnEquip, btnBuy; //Comprar?
     public Image imgWeapon;
 
     public WeaponAttributes weaponAttributes;
     public float goldCost;
 
+    public List<RectTransform> btnPosition;
+    public List<GameObject> btns;
+    
+    public GameObject orderByImg, orderByDescImg;
+
+    private void Start()
+    {
+        OrganizingTheBtnSequence(true);
+    }
+
+
+    public void OrganizingTheBtnSequence(bool value)
+    {
+        if(value)
+        {
+            orderByImg.SetActive(false);
+            orderByDescImg.SetActive(true);
+            btns = btns.OrderBy(obj => obj.name).ToList();
+        }
+        else
+        {
+            orderByImg.SetActive(true);
+            orderByDescImg.SetActive(false);
+            btns = btns.OrderByDescending(obj => obj.name).ToList();
+        }
+
+        for (int i = 0; i < btns.Count; i++)
+        {
+            btns[i].GetComponent<RectTransform>().transform.position = btnPosition[i].transform.position;
+        }
+    }
+
 
     public void BtnWeapon(WeaponAttributes weaponAttributes)
     {
+        GameData gameData = ManagerData.Load();
         this.weaponAttributes = weaponAttributes;
         panelWeaponInfo.SetActive(true); //Habilita o painel
 
-        
+        string atk = "ATK: " + weaponAttributes.WeaponAtk.ToString("F0") + "<br>";
+        string speedAtk = "SPEED ATK: " + weaponAttributes.WeaponSpeedAtk.ToString("F2") + "s" + "<br>";
+        string atkRange = "RANGE:  " + weaponAttributes.WeaponAtkRange.ToString("F2") + "m" + "<br>";
+        string life = "";
+        string defense = "";
+        string critical = "";
+
+        if(weaponAttributes.WeaponLife > 0)
+            life = "LIFE: " + weaponAttributes.WeaponLife.ToString("F2") + "%" + "<br>";
+
+        if(weaponAttributes.WeaponDefense > 0)
+            defense = "DEF: " + weaponAttributes.WeaponDefense.ToString("F2") + "%" + "<br>";
+
+        if (weaponAttributes.WeaponCritical > 0)
+            critical = "CRITICAL: " + weaponAttributes.WeaponCritical.ToString("F2") + "%" + "<br>";
+
         txtName.text = weaponAttributes.WeaponName;
-        txtAtk.text = "Atk: " + weaponAttributes.WeaponAtk.ToString("F0");
-        txtSpeedAtk.text = "Speed Atk: " + weaponAttributes.WeaponSpeedAtk.ToString("F2") + "s";
-        txtAtkRange.text = "Atk Range: " + weaponAttributes.WeaponAtkRange.ToString("F2") + "m";
-        txtDef.text = "Defense: " + weaponAttributes.WeaponDefense.ToString("F0") + "%";
-        txtLife.text = "Life: " + weaponAttributes.WeaponLife.ToString("F0") + "%";
-        txtCri.text = "Critical: " + weaponAttributes.WeaponCritical.ToString("F0") + "%";
+        txtWeaponAttributes.text = $"{atk}{speedAtk}{atkRange}{life}{defense}{critical}";
+
         imgWeapon.sprite = weaponAttributes.ImgWeapon;
 
         //Verificar se a arma ja foi comprada
-
-        GameData gameData = ManagerData.Load();
-
         foreach (int id in gameData.purchasedWeaponsIds)
         {
             if(id == weaponAttributes.WeaponID)
@@ -47,7 +89,7 @@ public class PanelWeapons : MonoBehaviour
             {
                 btnBuy.SetActive(true);
                 btnEquip.SetActive(false);
-                txtGoldCost.text = weaponAttributes.GoldCost.ToString();
+                txtGoldCost.text = $"<b>PRICE: </b>{weaponAttributes.GoldCost}";
             }
         }
 
@@ -74,7 +116,6 @@ public class PanelWeapons : MonoBehaviour
     {
         GameData gameData = ManagerData.Load();
         gameData.equipedWeaponId = weaponAttributes.WeaponID;
-        Debug.Log("Adicionado ID da arma e realizdo o save" + gameData.equipedWeaponId);
         ManagerData.Save(gameData);
 
         player.GetComponentInChildren<PlayerHand>().EquipWeapon();

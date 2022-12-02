@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8350164742061320317
+--- !u!1 &1427328986484828031
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6383780168064273099}
-  - component: {fileID: 6811254420821676744}
-  - component: {fileID: 6435838339637478440}
+  - component: {fileID: 4087267953297458633}
+  - component: {fileID: 4515198924220734922}
+  - component: {fileID: -9138315089494455816}
   m_Layer: 0
-  m_Name: Faca
+  m_Name: 6TacoBeisebol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6383780168064273099
+--- !u!4 &4087267953297458633
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350164742061320317}
+  m_GameObject: {fileID: 1427328986484828031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.962, y: -0.389, z: -2}
-  m_LocalScale: {x: 0.4078, y: 0.4078, z: 0.4078}
+  m_LocalPosition: {x: -1.826, y: -0.383, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6811254420821676744
+--- !u!212 &4515198924220734922
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350164742061320317}
+  m_GameObject: {fileID: 1427328986484828031}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 106511f25a405314c8f54cfd6a34714e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07b8390a26f279a4e8bf6fc60337b15b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,25 +85,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6435838339637478440
+--- !u!114 &-9138315089494455816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350164742061320317}
+  m_GameObject: {fileID: 1427328986484828031}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 300
-  weaponSpeedAtk: 4.2
-  weaponAtkRange: 3
-  weaponDefense: 0
-  weaponLife: 0
-  weaponCritical: 20
-  imgWeapon: {fileID: 21300000, guid: 5b55db81c765ee3469ec309f1ee79249, type: 3}
-  weaponName: Faca Simples
-  weaponID: 1002
-  goldCost: 1500
+  weaponAtk: 60
+  weaponSpeedAtk: 5.3
+  weaponAtkRange: 10
+  weaponDefense: 10
+  weaponLife: 20
+  weaponCritical: 30
+  imgWeapon: {fileID: 21300000, guid: a9e6327c95dc6414d977988b81dccc0a, type: 3}
+  weaponName: Taco Bolado
+  weaponID: 1005
+  goldCost: 15000
