@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PanelLevel : MonoBehaviour
 {
-    public Button[] btnLevel;
+    [SerializeField]
+    private Button[] btnLevel;
+
+    [SerializeField]
+    private GameObject panelLevelStart;
+    [SerializeField]
+    private TextMeshProUGUI txtTitle;
+    string levelName;
 
     public void EnableLevel()
     {
@@ -20,11 +28,16 @@ public class PanelLevel : MonoBehaviour
                 btnLevel[i].interactable = false;
         }
     }
-
-
-    public void BtnLoadLevel(GameObject go)
+    public void BtnOpenPanelLevelStart(GameObject go)
     {
         int num = go.name.IndexOf("l");
-        SceneManager.LoadScene($"Level{go.name.Substring(num + 1)}");
+        levelName = $"Level{go.name.Substring(num + 1)}";
+        txtTitle.text = levelName;
+        panelLevelStart.SetActive(true);
+    }
+
+    public void BtnLoadLevel()
+    {
+        SceneManager.LoadScene(levelName);
     }
 }

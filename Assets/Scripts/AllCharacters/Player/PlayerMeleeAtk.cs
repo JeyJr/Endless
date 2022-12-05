@@ -1,31 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMeleeAtk : MonoBehaviour
 {
-    public Transform startPosition;
-    [SerializeField] private float atkRange;
+    [SerializeField] private float atkRange; //DELETAR
     [SerializeField] private LayerMask enemyMask;
 
-    private void Start()
-    {
-        GameData gameData = ManagerData.Load();
-        atkRange = gameData.weaponRangeAtk;
-    }
+    [SerializeField] private Transform atkPosition;
+    [SerializeField] private Vector3 boxScale;
+    [SerializeField] private Vector3 boxDirection;
+    float maxDistance;
+    [SerializeField] private float x;
+    public bool PlayerMirrored { get; set; }
+
 
     public void Atk()
     {
         GameData gameData = ManagerData.Load();
-        atkRange = gameData.weaponRangeAtk;
 
-        RaycastHit2D[] hit = Physics2D.RaycastAll(startPosition.position, startPosition.right, atkRange, enemyMask);
+        x = 0;
+        if (PlayerMirrored)
+            x = -gameData.RangeAtk;
+        else
+            x = +gameData.RangeAtk;
+
+
+        Vector3 pos = atkPosition.position;
+        pos.x += x;
+
+        RaycastHit[] hit = Physics.BoxCastAll(pos, boxScale, boxDirection, atkPosition.rotation, maxDistance, enemyMask);
 
         if (hit != null)
         {
             for (int i = 0; i < hit.Length; i++)
             {
-
                 if (Critical(gameData.CriticalDMG))
                     hit[i].collider.GetComponent<EnemyStatus>().LoseLife(CriticalDMG(gameData.Damage), true);
                 else
@@ -41,8 +52,7 @@ public class PlayerMeleeAtk : MonoBehaviour
         float value = Random.Range(0, 100);
         return value <= cri;
     }
-
-    float CriticalDMG(float damage) 
+    float CriticalDMG(float damage)
     {
         return Random.Range(damage * 2, (damage * 2) * 1.2f);
     }
@@ -53,6 +63,15 @@ public class PlayerMeleeAtk : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(startPosition.position, startPosition.right * atkRange, Color.red);
+        //Debug.DrawRay(atkPosition.position, atkPosition.right * atkRange, Color.red);
+
+        Gizmos.color = Color.yellow;
+
+        Vector3 pos = atkPosition.position;
+        pos.x += x;
+
+        Gizmos.DrawRay(pos, boxDirection * maxDistance);
+        Gizmos.DrawWireCube(pos + boxDirection * maxDistance, boxScale * 2);
+
     }
 }

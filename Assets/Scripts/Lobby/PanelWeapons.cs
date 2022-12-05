@@ -21,15 +21,24 @@ public class PanelWeapons : MonoBehaviour
     
     public GameObject orderByImg, orderByDescImg;
 
+    bool sequence;
+
     private void Start()
     {
-        OrganizingTheBtnSequence(true);
+        sequence = true;
+        OrganizingTheBtnSequence(sequence);
     }
 
+    public void BtnOrganizingWeaponWhenOpenPanel()
+    {
+        OrganizingTheBtnSequence(sequence);
+    }
 
     public void OrganizingTheBtnSequence(bool value)
     {
-        if(value)
+        sequence = value;
+
+        if(sequence)
         {
             orderByImg.SetActive(false);
             orderByDescImg.SetActive(true);

@@ -52,6 +52,7 @@ public class PanelPassives : MonoBehaviour
         }
         else
         {
+            txtSkillName.text = passive.SkillName;
             txtDescription.text = $"{skillLevel}<br>{description}";
             txtGoldCost.text = $"PRICE: {skillGoldCost}";
             imgWeapon.sprite = passive.ImgWeapon;

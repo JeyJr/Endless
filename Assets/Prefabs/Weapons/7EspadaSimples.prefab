@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAtk: 80
   weaponSpeedAtk: 5
-  weaponAtkRange: 5
+  weaponAtkRange: 1
   weaponDefense: 5
   weaponLife: 15
   weaponCritical: 5
