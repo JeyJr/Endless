@@ -17,15 +17,12 @@ public class SpawnTextDMG : MonoBehaviour
     {
         txtDmg.text = dmg.ToString("F0");
 
-        Vector3 pos = spawnPosition.position;
-        pos.z = -2;
-
         if (critical)
             txtDmg.color = Color.red;
         else
             txtDmg.color = Color.white;
 
-        Instantiate(txtDmg, pos, Quaternion.Euler(0, 0, 0));
+        Instantiate(txtDmg, spawnPosition.position, Quaternion.Euler(0, 0, 0));
         yield return null;
     }
 

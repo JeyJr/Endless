@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class EnemyStatus : MonoBehaviour
 {
-    [SerializeField] private float maxLife;
-    [SerializeField] private float life;
-    [SerializeField] private float defense;
+    [SerializeField] private float atk, def, vit, agi, cri;
+
+    
+    private float damage;
+    private float maxLife;
+    private float life;
+    private float defense;
+    private float atkSpeed;
+    private float critical;
+
 
     public SpawnTextDMG spawnTextDMG;
+
+    private void Awake()
+    {
+        damage = atk * 5;
+        maxLife = vit * 50;
+        life = maxLife;
+        defense = def / 2;
+        atkSpeed = 7 - (agi * 0.05f);
+        critical = cri; 
+    }
 
     public void LoseLife(float dmg, bool critical)
     {
@@ -17,4 +34,6 @@ public class EnemyStatus : MonoBehaviour
 
         spawnTextDMG.Spawn(realDMG, critical);
     }
+
+
 }

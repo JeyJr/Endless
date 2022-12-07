@@ -10,28 +10,16 @@ public class PlayerMeleeAtk : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
 
     [SerializeField] private Transform atkPosition;
-    [SerializeField] private Vector3 boxScale;
-    [SerializeField] private Vector3 boxDirection;
-    float maxDistance;
-    [SerializeField] private float x;
-    public bool PlayerMirrored { get; set; }
-
+    
 
     public void Atk()
     {
         GameData gameData = ManagerData.Load();
 
-        x = 0;
-        if (PlayerMirrored)
-            x = -gameData.RangeAtk;
-        else
-            x = +gameData.RangeAtk;
+        atkRange = gameData.RangeAtk;
 
-
-        Vector3 pos = atkPosition.position;
-        pos.x += x;
-
-        RaycastHit[] hit = Physics.BoxCastAll(pos, boxScale, boxDirection, atkPosition.rotation, maxDistance, enemyMask);
+        //RaycastHit[] hit = Physics.BoxCastAll(pos, boxScale, boxDirection, atkPosition.rotation, maxDistance, enemyMask);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(atkPosition.position, atkPosition.right, atkRange, enemyMask);
 
         if (hit != null)
         {
@@ -63,15 +51,15 @@ public class PlayerMeleeAtk : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Debug.DrawRay(atkPosition.position, atkPosition.right * atkRange, Color.red);
+        Debug.DrawRay(atkPosition.position, atkPosition.right * atkRange, Color.yellow);
 
-        Gizmos.color = Color.yellow;
+        //Gizmos.color = Color.yellow;
 
-        Vector3 pos = atkPosition.position;
-        pos.x += x;
+        //Vector3 pos = atkPosition.position;
+        //pos.x += x;
 
-        Gizmos.DrawRay(pos, boxDirection * maxDistance);
-        Gizmos.DrawWireCube(pos + boxDirection * maxDistance, boxScale * 2);
+        //Gizmos.DrawRay(pos, boxDirection * maxDistance);
+        //Gizmos.DrawWireCube(pos + boxDirection * maxDistance, boxScale * 2);
 
     }
 }
