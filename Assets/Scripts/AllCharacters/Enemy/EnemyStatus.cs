@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStatus : MonoBehaviour
 {
-    [SerializeField] private float atk, def, vit, agi, cri;
+    [SerializeField] private float atk, def, vit, agi, cri, goldDrop;
 
     
     private float damage;
@@ -18,9 +18,10 @@ public class EnemyStatus : MonoBehaviour
 
     public float Damage { get => damage; }
     public float AtkSpeed { get => atkSpeed;}
-    public bool Critical { get => Random.Range(0, 100) <= critical; }
-
     public float Life{ get => life; }
+    public bool Critical { get => Random.Range(0, 100) <= critical; }
+    public float GoldDrop { get => goldDrop;}
+
 
     private void Awake()
     {

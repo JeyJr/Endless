@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextSpawnedBehavior : MonoBehaviour
+public class TxtDmgMove : MonoBehaviour
 {
     float speed = 1f;
+
 
     void Update()
     {

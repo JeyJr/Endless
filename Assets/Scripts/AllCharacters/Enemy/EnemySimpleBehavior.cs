@@ -27,12 +27,15 @@ public class EnemySimpleBehavior : MonoBehaviour
     [Header("Boss")]
     [SerializeField] private bool enemyBoss;
 
+    [Header("Death")]
+    [SerializeField] private LevelController levelController;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         enemyStatus = GetComponent<EnemyStatus>();
         playerStatus = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
-        
+        levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
         Rotate(Random.Range(0, 10) > 5);
     }
 
@@ -157,6 +160,9 @@ public class EnemySimpleBehavior : MonoBehaviour
             if(enemyBoss)
                 hit.collider.GetComponentInParent<ZoneControl>().BossIsDead();
         }
+
+        levelController.EnemyDead(enemyStatus.GoldDrop, enemyBoss);
+
         Destroy(this.gameObject);
     }
 
