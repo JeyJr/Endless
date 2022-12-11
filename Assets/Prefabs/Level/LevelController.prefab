@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d885e45663d574594755e293a36919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldTotal: 0
   totalBossesKilled: 0
   totalEnemiesKilled: 0
+  zoneOneCompleted: 0
+  zoneTwoCompleted: 0
+  zoneThreeCompleted: 0
+  goldTotal: 0
+  spawnPosition: {fileID: 0}
+  txtGold: {fileID: 7674327104211106876, guid: 322d07c958e9c674a9f60ef0961d2749, type: 3}
+  skill: {fileID: 8085322380939201761, guid: 6733b8e4ab958914d9b2de9e69ffbc5a, type: 3}
+  spawnSkillPositionZ1: {fileID: 0}

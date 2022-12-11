@@ -7,10 +7,16 @@ using static UnityEditor.PlayerSettings;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("CamBehavior")]
+    public Transform camPos;
+    Vector3 currentVelocity;
+
+    [Header("PlayerMovement")]
     public PlayerMove playerInput;
     [SerializeField] private CharacterController controller;
     [SerializeField] private float playerSpeed = 2.0f;
     PlayerHand playerHand;
+    public Vector2 MoveInput{ get; set; }
 
 
     //Y Detect
@@ -18,8 +24,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform yPosition;
     [SerializeField] private float yTopRange, yTop;
 
+
+
     void Start()
     {
+        camPos = Camera.main.GetComponent<Transform>();
+
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerMove();
         playerInput.Enable();
@@ -29,24 +39,29 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 moveInput = playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 move = new Vector3(moveInput.x, 0f, 0f);
+        MoveInput = playerInput.Player.Move.ReadValue<Vector2>();
+        Vector3 move = new Vector3(MoveInput.x, 0f, 0f);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move.x < 0)
         {
             transform.localEulerAngles = new Vector3(0, 180, 0);
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
+
+            CamPosition(-3, 0, 10, 0.1f, 100);
             //PlayerAnimMove
         }
         else if (move.x > 0)
         {
             transform.localEulerAngles = new Vector3(0, 0, 0);
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
+
+            CamPosition(3, 0, 10, 0.1f, 100);
             //PlayerAnimMove
         }
         else
         {
+            CamPosition(0, 0, 10, 0.2f, 10);
             //Stop anim move
         }
     }
@@ -67,4 +82,14 @@ public class PlayerController : MonoBehaviour
             other.GetComponent<ZoneControl>().PlayerOutEnemyZone();
         }
     }
+
+
+    #region CamBehavior
+
+    void CamPosition(float x, float y, float z, float smoothT, float speed)
+    {
+        Vector3 target = new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z - z);
+        camPos.transform.position = Vector3.SmoothDamp(camPos.transform.position, target, ref currentVelocity, smoothT, speed);
+    }
+    #endregion
 }

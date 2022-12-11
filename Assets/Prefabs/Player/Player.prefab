@@ -388,10 +388,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7296361946382485542}
   - component: {fileID: 3409794327276869732}
+  - component: {fileID: 1425958174}
   - component: {fileID: 7296361946382485541}
   - component: {fileID: 7296361946382485540}
   - component: {fileID: 4722458689852628606}
-  - component: {fileID: 1425958174}
+  - component: {fileID: 3765249568848369289}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -438,6 +439,19 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1425958174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296361946382485543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7296361946382485541
 MonoBehaviour:
@@ -492,19 +506,24 @@ MonoBehaviour:
   yPosition: {fileID: 537489254522401704}
   yTopRange: 0.1
   yTop: -0.37
---- !u!65 &1425958174
-BoxCollider:
+--- !u!114 &3765249568848369289
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7296361946382485543}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5775ec5c658aa5c4fb7961aabb28b167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtSkills: {fileID: 7674327104211106876, guid: 6ffc6e79236cbe44d9d8d2aa96d840df, type: 3}
+  playerStatus: {fileID: 7296361946382485541}
+  spawnPosition: {fileID: 7296361947171758908}
+  lifeRecoveredTimesCounter: 10
+  lifeRecoveryValue: 5
+  delayTimeToRecovery: 3
 --- !u!1 &7296361946464595504
 GameObject:
   m_ObjectHideFlags: 0

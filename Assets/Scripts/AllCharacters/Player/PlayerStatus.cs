@@ -13,6 +13,15 @@ public class PlayerStatus : MonoBehaviour
 
     public SpawnTextDMG spawnTextDMG;
 
+    public float Life { get => life; set
+        {
+            if (life < maxLife)
+                life += value;
+            else
+                life = maxLife;
+        }
+    }
+
     private void Start()
     {
         GameData gameData = ManagerData.Load();
