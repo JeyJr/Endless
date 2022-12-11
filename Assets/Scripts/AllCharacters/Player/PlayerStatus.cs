@@ -27,9 +27,14 @@ public class PlayerStatus : MonoBehaviour
 
     public void LoseLife(float dmg, bool critical)
     {
-        float realDMG = dmg - ((dmg * defense) / 100);
-        life -= realDMG;
+        float realDMG;
 
+        if (critical)
+            realDMG = (dmg - ((dmg * defense) / 100)) * 2;
+        else
+            realDMG = dmg - ((dmg * defense) / 100);
+            
+        life -= realDMG;
         spawnTextDMG.Spawn(realDMG, critical);
     }
 }

@@ -14,7 +14,7 @@ public class EnemyStatus : MonoBehaviour
     private float atkSpeed;
     private float critical;
     public SpawnTextDMG spawnTextDMG;
-
+    
 
     public float Damage { get => damage; }
     public float AtkSpeed { get => atkSpeed;}

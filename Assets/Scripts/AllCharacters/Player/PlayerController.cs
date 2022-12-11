@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 moveInput = playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 move = new Vector3(moveInput.x, moveInput.y, 0f);
+        Vector3 move = new Vector3(moveInput.x, 0f, 0f);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move.x < 0)
@@ -49,28 +49,22 @@ public class PlayerController : MonoBehaviour
         {
             //Stop anim move
         }
-
-        RayCastSetPlayerZPosition();
     }
 
 
-    void RayCastSetPlayerZPosition()
+    private void OnTriggerEnter(Collider other)
     {
-        RaycastHit2D yTopHit = Physics2D.Raycast(yPosition.position + new Vector3(0, yTop, 0), yPosition.up, yTopRange, target);
-        RaycastHit2D yTopHit2 = Physics2D.Raycast(yPosition.position + new Vector3(-1f, yTop, 0), yPosition.up, yTopRange, target);
-        RaycastHit2D yTopHit3 = Physics2D.Raycast(yPosition.position + new Vector3(1f, yTop, 0), yPosition.up, yTopRange, target);
-
-        if (yTopHit || yTopHit2 || yTopHit3)
-            transform.position = new Vector3(transform.position.x, transform.position.y, 1);
-        else
-            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+        if (other.CompareTag("EnemyZone"))
+        {
+            other.GetComponent<ZoneControl>().StartSpawnEnemys();
+        }
     }
 
-    private void OnDrawGizmos()
+    private void OnTriggerExit(Collider other)
     {
-        Debug.DrawRay(yPosition.position + new Vector3(0,  yTop, 0), yPosition.up * yTopRange, Color.blue);
-        Debug.DrawRay(yPosition.position + new Vector3(-1f,  yTop, 0), yPosition.up * yTopRange, Color.blue);
-        Debug.DrawRay(yPosition.position + new Vector3(1f,  yTop, 0), yPosition.up * yTopRange, Color.blue);
-
+        if (other.CompareTag("EnemyZone"))
+        {
+            other.GetComponent<ZoneControl>().PlayerOutEnemyZone();
+        }
     }
 }

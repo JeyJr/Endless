@@ -33,13 +33,13 @@ public class PlayerHand : MonoBehaviour
     public void EquipWeapon()
     {
         GameData gameData = ManagerData.Load();
-        Debug.Log("Equipe weapon acionado!");
+        //Debug.Log("Equipe weapon acionado!");
         foreach (var weapon in weapons)
         {
             
             if (weapon.GetComponent<WeaponAttributes>().WeaponID == gameData.equipedWeaponId)
             {
-                Debug.Log("Encontrou a arma pelo ID e atribuiu os status");
+                //Debug.Log("Encontrou a arma pelo ID e atribuiu os status");
                 var w = weapon.GetComponent<WeaponAttributes>();
                 gameData.weaponDmg = w.WeaponAtk;
                 gameData.weaponSpeedAtk = w.WeaponSpeedAtk;

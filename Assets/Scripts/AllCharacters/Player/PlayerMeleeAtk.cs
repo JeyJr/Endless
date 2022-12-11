@@ -6,9 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMeleeAtk : MonoBehaviour
 {
-    [SerializeField] private float atkRange; //DELETAR
     [SerializeField] private LayerMask enemyMask;
-
     [SerializeField] private Transform atkPosition;
     
 
@@ -16,10 +14,7 @@ public class PlayerMeleeAtk : MonoBehaviour
     {
         GameData gameData = ManagerData.Load();
 
-        atkRange = gameData.RangeAtk;
-
-        //RaycastHit[] hit = Physics.BoxCastAll(pos, boxScale, boxDirection, atkPosition.rotation, maxDistance, enemyMask);
-        RaycastHit2D[] hit = Physics2D.RaycastAll(atkPosition.position, atkPosition.right, atkRange, enemyMask);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(atkPosition.position, atkPosition.right, gameData.RangeAtk, enemyMask);
 
         if (hit != null)
         {
@@ -51,7 +46,8 @@ public class PlayerMeleeAtk : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(atkPosition.position, atkPosition.right * atkRange, Color.yellow);
+        GameData gameData = ManagerData.Load();
+        Debug.DrawRay(atkPosition.position, atkPosition.right * gameData.RangeAtk, Color.yellow);
 
         //Gizmos.color = Color.yellow;
 
