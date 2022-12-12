@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 7659599974654552392}
   m_Layer: 7
   m_Name: BossModel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,8 +323,8 @@ MonoBehaviour:
   frontPosition: {fileID: 5437292644253682403}
   backPosition: {fileID: 5437292644473245818}
   atkPosition: {fileID: 5437292645038722906}
-  frontRange: 15
-  backRange: 10
+  frontRange: 10
+  backRange: 5
   atkRange: 5
   atkInDelayTime: 0
   isAtk: 0

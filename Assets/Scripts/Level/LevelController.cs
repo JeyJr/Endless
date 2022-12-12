@@ -23,7 +23,9 @@ public class LevelController : MonoBehaviour
 
     [Header("Skills")]
     [SerializeField] private GameObject skill;
-    [SerializeField] private Transform spawnSkillPositionZ1; 
+    [SerializeField] private Transform spawnSkillPositionZ1;
+    [SerializeField] private float delayToSpawnSkill;
+    bool skillSpawned;
 
 
     private void Start()
@@ -31,8 +33,12 @@ public class LevelController : MonoBehaviour
         goldTotal = 0;
         totalBossesKilled = 0;
         totalEnemiesKilled = 0;
+    }
 
-        SpawnSkill();
+    private void Update()
+    {
+        if (!skillSpawned)
+            StartCoroutine(SpawnSkill());
     }
 
     public void EnemyDead(float goldDroped, bool boss)
@@ -45,14 +51,14 @@ public class LevelController : MonoBehaviour
         txtGold.GetComponent<TextMeshPro>().text = $"Gold +{goldDroped}";
         Instantiate(txtGold, spawnPosition.position, Quaternion.Euler(0, 0, 0));
         goldTotal += goldDroped;
-
-        if (totalEnemiesKilled % 10 == 0)
-            SpawnSkill();
     }
 
-    private void SpawnSkill()
+    IEnumerator SpawnSkill()
     {
+        skillSpawned = true;
         Instantiate(skill, spawnSkillPositionZ1.position, Quaternion.Euler(0, 0, 0));
+        yield return new WaitForSeconds(delayToSpawnSkill);
+        skillSpawned = false;
     }
 
     #region LevelCompleted

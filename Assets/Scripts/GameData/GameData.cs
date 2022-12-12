@@ -18,7 +18,7 @@ public class GameData
     {
         get {
             float totalAtk = atk * 5;
-            return totalAtk + (totalAtk * bonusDmg / 100) + weaponDmg;
+            return totalAtk + (totalAtk * bonusDmg / 100) + weaponDmg + buffSkillDamage;
         } 
     }
     public float Defense
@@ -37,7 +37,11 @@ public class GameData
     }
     public float AtkSpeed
     {
-        get => (weaponSpeedAtk - agi * .03f) - (weaponSpeedAtk * bonusAtkSpeed / 100);
+        get {
+            float speed = (weaponSpeedAtk - agi * .03f) - (weaponSpeedAtk * bonusAtkSpeed / 100);
+            speed -= (speed * buffSkillAtkSpeed / 100);
+            return speed < 0.15f ? 0.15f : speed;
+        }
     }
     public float CriticalDMG
     {
@@ -48,7 +52,7 @@ public class GameData
     }
     public float RangeAtk
     {
-        get => weaponRangeAtk + bonusRangeAtk;
+        get => weaponRangeAtk + bonusRangeAtk + buffSkillRangeAtk;
     }
 
     //Weapons
@@ -82,4 +86,9 @@ public class GameData
 
     //Level
     public float levelUnlock;
+
+    //SkillEnabledInLevel
+    public float buffSkillDamage;
+    public float buffSkillAtkSpeed;
+    public float buffSkillRangeAtk;
 }

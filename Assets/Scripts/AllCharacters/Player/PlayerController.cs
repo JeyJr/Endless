@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     [Header("PlayerMovement")]
     public PlayerMove playerInput;
     [SerializeField] private CharacterController controller;
-    [SerializeField] private float playerSpeed = 2.0f;
+    [SerializeField] private float playerMoveSpeed = 4f;
+    public float PlayerMoveSpeed { get => playerMoveSpeed; set => playerMoveSpeed = value; }
+
     PlayerHand playerHand;
     public Vector2 MoveInput{ get; set; }
 
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         MoveInput = playerInput.Player.Move.ReadValue<Vector2>();
         Vector3 move = new Vector3(MoveInput.x, 0f, 0f);
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        controller.Move(move * Time.deltaTime * PlayerMoveSpeed);
 
         if (move.x < 0)
         {

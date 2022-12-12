@@ -22,6 +22,8 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    public float MaxLife { get => maxLife; }
+
     private void Start()
     {
         GameData gameData = ManagerData.Load();

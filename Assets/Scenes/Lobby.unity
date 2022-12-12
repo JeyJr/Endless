@@ -9128,7 +9128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &710467294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13813,7 +13813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &975588628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22475,9 +22475,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 200
-  life: 200
-  defense: 5
+  atk: 0
+  def: 0
+  vit: 0
+  agi: 0
+  cri: 0
+  goldDrop: 0
   spawnTextDMG: {fileID: 1582583804}
 --- !u!114 &1582583804
 MonoBehaviour:
@@ -29143,9 +29146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 200
-  life: 200
-  defense: 5
+  atk: 0
+  def: 0
+  vit: 0
+  agi: 0
+  cri: 0
+  goldDrop: 0
   spawnTextDMG: {fileID: 2050608579}
 --- !u!114 &2050608579
 MonoBehaviour:

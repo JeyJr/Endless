@@ -498,8 +498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25006a598c3e4cd4b8c597fe6900f11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camPos: {fileID: 0}
   controller: {fileID: 3409794327276869732}
-  playerSpeed: 10
+  playerMoveSpeed: 6
   target:
     serializedVersion: 2
     m_Bits: 128
@@ -518,12 +519,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775ec5c658aa5c4fb7961aabb28b167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtSkills: {fileID: 7674327104211106876, guid: 6ffc6e79236cbe44d9d8d2aa96d840df, type: 3}
+  txtSkill: {fileID: 7674327104211106876, guid: 6ffc6e79236cbe44d9d8d2aa96d840df, type: 3}
   playerStatus: {fileID: 7296361946382485541}
+  playerController: {fileID: 4722458689852628606}
   spawnPosition: {fileID: 7296361947171758908}
+  target:
+    serializedVersion: 2
+    m_Bits: 128
   lifeRecoveredTimesCounter: 10
-  lifeRecoveryValue: 5
-  delayTimeToRecovery: 3
+  lifeRecoveryValue: 3
+  delayTimeToRecovery: 2
+  moveSpeedBuffValue: 12
+  delayTimeToEndMoveSpeedBuff: 20
+  damageBuffValue: 25
+  delayTimeToEndDamageBuff: 20
+  atkSpeedBuffValue: 50
+  delayTimeToEndatkSpeedBuff: 20
+  playerHand: {fileID: 7296361946464595508}
+  rangeAtkBuffValue: 6
+  delayTimeToRangeAtkBuff: 20
+  ringOfFireTimesCounter: 0
+  ringOfFirePercentDmg: 0
+  delayTimeToRingOfFireBuff: 2
+  ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
+  windBladeTimesCounter: 5
+  windBladePercentDmg: 40
+  delayTimeToWindBladeBuff: 1
+  windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
 --- !u!1 &7296361946464595504
 GameObject:
   m_ObjectHideFlags: 0

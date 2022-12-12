@@ -56,6 +56,11 @@ public class PlayerHand : MonoBehaviour
         ManagerData.Save(gameData);
     }
 
+    public void StopDelay() {
+        StopCoroutine(StartDelay());
+        isAtk = false;
+    }
+
     #endregion
     #region ATK
     IEnumerator StartDelay()

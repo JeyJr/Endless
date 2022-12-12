@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 453081103114561588}
   m_Layer: 7
   m_Name: EnemyModel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,8 +318,8 @@ MonoBehaviour:
   frontPosition: {fileID: 679810590786514838}
   backPosition: {fileID: 679810590467241231}
   atkPosition: {fileID: 679810589900778031}
-  frontRange: 3
-  backRange: 3
+  frontRange: 15
+  backRange: 10
   atkRange: 1.3
   atkInDelayTime: 0
   isAtk: 0

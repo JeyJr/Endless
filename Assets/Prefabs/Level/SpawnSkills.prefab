@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8085322380939201762}
   - component: {fileID: 8085322380939201765}
   m_Layer: 0
-  m_Name: Skill
+  m_Name: SpawnSkills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8085322380939201761}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.6, y: 0.72, z: -0.0754199}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,12 +60,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcon:
-  - {fileID: 1258784134, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: -1460665293, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: 479233295, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: -332932992, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: 617101231, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: -766955499, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: -56263728, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: -913097987, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: -1331966857, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: 531065777, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: 1533987642, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: 1561638073, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
+  - {fileID: -1740491332, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   skillNum: 0
 --- !u!212 &8085322380939201765
 SpriteRenderer:
