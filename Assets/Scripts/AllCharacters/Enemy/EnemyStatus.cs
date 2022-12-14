@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStatus : MonoBehaviour
 {
-    [SerializeField] private float atk, def, vit, agi, cri, goldDrop;
+    [SerializeField] private float atk, def, vit, agi, cri, goldDrop, buffDrop;
 
     
     private float damage;
@@ -13,8 +13,10 @@ public class EnemyStatus : MonoBehaviour
     private float defense;
     private float atkSpeed;
     private float critical;
+
     public SpawnTextDMG spawnTextDMG;
-    
+    [SerializeField] private GameObject spawnSkill;
+    [SerializeField] private Transform spawnPosition;
 
     public float Damage { get => damage; }
     public float AtkSpeed { get => atkSpeed;}
@@ -25,8 +27,8 @@ public class EnemyStatus : MonoBehaviour
 
     private void Awake()
     {
-        damage = atk * 5;
-        maxLife = vit * 50;
+        damage = atk * 1;
+        maxLife = vit * 1;
         life = maxLife;
         defense = def / 2;
         atkSpeed = 7 - (agi * 0.05f);
@@ -39,6 +41,9 @@ public class EnemyStatus : MonoBehaviour
         life -= realDMG;
 
         spawnTextDMG.Spawn(realDMG, critical);
+
+        if(life<= 0 && Random.Range(0, 100) <= buffDrop)
+            Instantiate(spawnSkill, spawnPosition.position, Quaternion.Euler(0, 0, 0));
     }
 
     

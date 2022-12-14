@@ -18,7 +18,7 @@ public class GameData
     {
         get {
             float totalAtk = atk * 5;
-            return totalAtk + (totalAtk * bonusDmg / 100) + weaponDmg + buffSkillDamage;
+            return totalAtk + (totalAtk * bonusDmg / 100) + weaponDmg + buffSkillPowerUp;
         } 
     }
     public float Defense
@@ -88,7 +88,7 @@ public class GameData
     public float levelUnlock;
 
     //SkillEnabledInLevel
-    public float buffSkillDamage;
+    public float buffSkillPowerUp;
     public float buffSkillAtkSpeed;
     public float buffSkillRangeAtk;
 }

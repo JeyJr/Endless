@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class TxtDmgMove : MonoBehaviour
+public class TextSpawnedBehavior : MonoBehaviour
 {
-    float speed = 1f;
+    [SerializeField] private float mSpeed;
+    [SerializeField] private float delayToDestroy;
 
-
+    private void Awake()
+    {
+        Destroy(this.gameObject, delayToDestroy);
+    }
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * mSpeed * Time.deltaTime);
     }
-
-    public void DestruirObj() => Destroy(this.gameObject);
 }

@@ -301,7 +301,10 @@ MonoBehaviour:
   agi: 40
   cri: 2
   goldDrop: 100
+  buffDrop: 60
   spawnTextDMG: {fileID: 7659599974654552395}
+  spawnSkill: {fileID: 8085322380939201761, guid: 6733b8e4ab958914d9b2de9e69ffbc5a, type: 3}
+  spawnPosition: {fileID: 3012008632912989165}
 --- !u!114 &7659599974654552393
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class TeleportBehavior : MonoBehaviour
     [Header("Positions")]
     [SerializeField] private Transform newPosition;
     [SerializeField] private GameObject player;
+    [SerializeField] private bool teleportToLobby;
 
     private Animator anim;
     private void Awake()
@@ -17,7 +18,7 @@ public class TeleportBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !teleportToLobby)
         {
             StartCoroutine(TeleportPlayer());
         }
@@ -27,5 +28,12 @@ public class TeleportBehavior : MonoBehaviour
     {
         yield return null;
         player.GetComponent<Transform>().position = newPosition.position;
+    }
+
+
+    void TeleportToLobby()
+    {
+        //Abrir panel usuario confirmar volta para lobby
+        //Se sim, salvar gold 
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
@@ -19,13 +20,10 @@ public class LevelController : MonoBehaviour
     [SerializeField] private float goldTotal;
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private GameObject txtGold;
+    [SerializeField] private TextMeshProUGUI txtUIReceivedGold;
 
-
-    [Header("Skills")]
-    [SerializeField] private GameObject skill;
-    [SerializeField] private Transform spawnSkillPositionZ1;
-    [SerializeField] private float delayToSpawnSkill;
-    bool skillSpawned;
+    [Header("UI - SkillsIcon")]
+    public List<Image> uiSlotsIconSkills;
 
 
     private void Start()
@@ -33,14 +31,37 @@ public class LevelController : MonoBehaviour
         goldTotal = 0;
         totalBossesKilled = 0;
         totalEnemiesKilled = 0;
+        txtUIReceivedGold.text = goldTotal.ToString();
+
+        for (int i = 0; i < uiSlotsIconSkills.Count; i++)
+        {
+            uiSlotsIconSkills[i].enabled = false;
+        }
+           
     }
 
-    private void Update()
+    #region UI - SkillsIcon
+    public void EnableUISkillSlot(Sprite img, string name)
     {
-        if (!skillSpawned)
-            StartCoroutine(SpawnSkill());
+        foreach (var item in uiSlotsIconSkills)
+        {
+            if(item.enabled && item.sprite.name == name)
+            {
+                return;
+            }
+            else if(!item.enabled)
+            {
+                item.sprite = img;
+                item.sprite.name = name;
+                item.enabled = true;
+                break;
+            }
+        }
     }
 
+    #endregion
+
+    #region EnemyDead and GolTotalControl
     public void EnemyDead(float goldDroped, bool boss)
     {
         if (boss)
@@ -50,16 +71,20 @@ public class LevelController : MonoBehaviour
 
         txtGold.GetComponent<TextMeshPro>().text = $"Gold +{goldDroped}";
         Instantiate(txtGold, spawnPosition.position, Quaternion.Euler(0, 0, 0));
-        goldTotal += goldDroped;
+        StartCoroutine(AddGoldToGoldTotal(goldDroped));
     }
 
-    IEnumerator SpawnSkill()
+    IEnumerator AddGoldToGoldTotal(float value)
     {
-        skillSpawned = true;
-        Instantiate(skill, spawnSkillPositionZ1.position, Quaternion.Euler(0, 0, 0));
-        yield return new WaitForSeconds(delayToSpawnSkill);
-        skillSpawned = false;
+        for (int i = 0; i < value; i++)
+        {
+            goldTotal++;
+            txtUIReceivedGold.text = goldTotal.ToString();
+            yield return new WaitForSeconds(.2f);
+        }
     }
+
+    #endregion
 
     #region LevelCompleted
     public void LevelCompleted(int num)

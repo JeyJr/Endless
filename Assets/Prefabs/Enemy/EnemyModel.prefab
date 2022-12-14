@@ -296,7 +296,10 @@ MonoBehaviour:
   agi: 40
   cri: 2
   goldDrop: 5
+  buffDrop: 10
   spawnTextDMG: {fileID: 4268628609715692900}
+  spawnSkill: {fileID: 8085322380939201761, guid: 6733b8e4ab958914d9b2de9e69ffbc5a, type: 3}
+  spawnPosition: {fileID: 7770614947293523608}
 --- !u!114 &453081103114561588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7770614947293523609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.2, z: 0}
+  m_LocalPosition: {x: -0.03, y: 1.2, z: 2}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []

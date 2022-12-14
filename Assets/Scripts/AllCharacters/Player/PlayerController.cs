@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float PlayerMoveSpeed { get => playerMoveSpeed; set => playerMoveSpeed = value; }
 
     PlayerHand playerHand;
+    PlayerStatus playerStatus;
     public Vector2 MoveInput{ get; set; }
 
 
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Enable();
   
         playerHand = GetComponentInChildren<PlayerHand>();
+        playerStatus = GetComponent<PlayerStatus>();
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.localEulerAngles = new Vector3(0, 180, 0);
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
-
+            playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             CamPosition(-3, 0, 10, 0.1f, 100);
             //PlayerAnimMove
         }
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.localEulerAngles = new Vector3(0, 0, 0);
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
+            playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
 
             CamPosition(3, 0, 10, 0.1f, 100);
             //PlayerAnimMove

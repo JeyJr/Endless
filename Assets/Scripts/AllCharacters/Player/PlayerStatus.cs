@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private float range;
 
     public SpawnTextDMG spawnTextDMG;
+    public Slider lifeBar;
 
     public float Life { get => life; set
         {
@@ -34,6 +36,8 @@ public class PlayerStatus : MonoBehaviour
         dmg = gameData.Damage;
         cri = gameData.CriticalDMG;
         range = gameData.RangeAtk;
+
+        UpdateLifeBar();
     }
 
     public void LoseLife(float dmg, bool critical)
@@ -46,6 +50,13 @@ public class PlayerStatus : MonoBehaviour
             realDMG = dmg - ((dmg * defense) / 100);
             
         life -= realDMG;
+        UpdateLifeBar();
         spawnTextDMG.Spawn(realDMG, critical);
+    }
+
+    public void UpdateLifeBar()
+    {
+        lifeBar.maxValue = maxLife;
+        lifeBar.value = life;
     }
 }

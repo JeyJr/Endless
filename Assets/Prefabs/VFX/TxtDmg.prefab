@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7674327104211106878}
   - component: {fileID: 7674327104211106879}
   - component: {fileID: 7674327104211106867}
-  - component: {fileID: 7674327104211106866}
   m_Layer: 0
   m_Name: TxtDmg
   m_TagString: Untagged
@@ -183,26 +182,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7674327104211106876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c346d7843d47a2458b90abb3e500eed, type: 3}
+  m_Script: {fileID: 11500000, guid: 1225f32c1f049b24a84a4d4b1fc48379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &7674327104211106866
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674327104211106876}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 574bb1048cd1f1649993aedc94f56bfe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  mSpeed: 1.5
+  delayToDestroy: 2
