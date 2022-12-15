@@ -812,34 +812,41 @@ MonoBehaviour:
   lifeRecoveredTimesCounter: 5
   lifeRecoveryValue: 3
   delayTimeToRecovery: 2
+  lifeRecoveryIcon: {fileID: -56263728, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   skillNameMoveSpeed: MoveSpeed
   moveSpeedIsActive: 0
   moveSpeedBuffValue: 12
   delayTimeToEndMoveSpeedBuff: 10
+  moveSpeedIcon: {fileID: -913097987, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   skillNamePowerUp: PowerUp
   powerUpIsActive: 0
-  powerUpBuffValue: 0
-  delayTimeToEndPowerUpBuff: 0
+  powerUpBuffValue: 5
+  delayTimeToEndPowerUpBuff: 10
+  powerUpIcon: {fileID: -1331966857, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   skillNameAtkSpeed: AtkSpeed
   atkSpeedIsActive: 0
   atkSpeedBuffValue: 50
   delayTimeToEndatkSpeedBuff: 10
   playerHand: {fileID: 7296361946464595508}
+  atkSpeedIcon: {fileID: 531065777, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   skillNameRangeAtk: RangeAtk
   rangeAtkIsActive: 0
   rangeAtkBuffValue: 6
   delayTimeToRangeAtkBuff: 10
+  rangeAtkIcon: {fileID: 1533987642, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   skillNameRingOfFire: RingOfFire
   ringOfFireIsActive: 0
   ringOfFireTimesCounter: 5
   ringOfFirePercentDmg: 14
   delayTimeToRingOfFireBuff: 2
+  ringOfFireIcon: {fileID: 1561638073, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
   skillNameWindBlade: WindBlade
   windBladeIsActive: 0
   windBladeTimesCounter: 5
   windBladePercentDmg: 40
   delayTimeToWindBladeBuff: 1
+  windBladeIcon: {fileID: -1740491332, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
   windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
   skillIcon:
   - {fileID: -56263728, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}

@@ -25,8 +25,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtUIReceivedGold;
 
     [Header("UI - SkillsIcon")]
-    public List<Image> uiSlotsIconSkills;
-    public List<string> uiIconName;
+    public List<GameObject> uiSkillIcon;
+    public List<RectTransform> uiSkillIconPosition;
 
     private void Start()
     {
@@ -35,29 +35,20 @@ public class LevelController : MonoBehaviour
         totalEnemiesKilled = 0;
         txtUIReceivedGold.text = goldTotal.ToString();
 
-        for (int i = 0; i < uiSlotsIconSkills.Count; i++)
-        {
-            uiSlotsIconSkills[i].enabled = false;
-        }
 
-        for (int i = 0; i < 7; i++)
-        {
-            uiIconName.Add(" ");
-        }
+        uiSkillIcon = uiSkillIcon.OrderByDescending(icon => icon.gameObject.activeSelf).ToList();
     }
-
 
 
     #region UI - SkillsIcon
     public void EnableUISkillSlot(Sprite img)
     {
-        for (int i = 0; i < uiSlotsIconSkills.Count; i++)
+        for (int i = 0; i < uiSkillIcon.Count; i++)
         {
-            if (!uiSlotsIconSkills[i].enabled)
+            if (!uiSkillIcon[i].activeSelf)
             {
-                uiSlotsIconSkills[i].sprite = img;
-                uiSlotsIconSkills[i].enabled = true;
-                uiIconName[i] = img.name;
+                uiSkillIcon[i].GetComponent<Image>().sprite = img;
+                uiSkillIcon[i].SetActive(true);
                 break;
             }
         }
@@ -66,17 +57,26 @@ public class LevelController : MonoBehaviour
 
     public void DisableUISkillICon(string name)
     {
-        for (int i = 0; i < uiIconName.Count; i++)
+        for (int i = 0; i < uiSkillIcon.Count; i++)
         {
-            if (uiIconName[i] == name)
+            if (uiSkillIcon[i].GetComponent<Image>().sprite.name == name)
             {
-                uiSlotsIconSkills[i].enabled = false;
-                uiIconName[i] = " ";
+                uiSkillIcon[i].SetActive(false);
                 break;
             }
         }
+        OrganizerUiSkillIcon();
     }
 
+    public void OrganizerUiSkillIcon()
+    {
+        uiSkillIcon = uiSkillIcon.OrderByDescending(icon => icon.gameObject.activeSelf).ToList();
+
+        for (int i = 0; i < uiSkillIcon.Count; i++)
+        {
+            uiSkillIcon[i].GetComponent<RectTransform>().transform.position = uiSkillIconPosition[i].position;
+        }
+    }
     #endregion
 
     #region EnemyDead and GolTotalControl
@@ -101,6 +101,8 @@ public class LevelController : MonoBehaviour
             yield return new WaitForSeconds(.2f);
         }
     }
+
+
 
     #endregion
 

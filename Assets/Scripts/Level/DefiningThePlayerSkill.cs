@@ -15,6 +15,8 @@ public class DefiningThePlayerSkill : MonoBehaviour
         skillNum = Mathf.RoundToInt(Random.Range(0, skillIcon.Count));
         GetComponent<SpriteRenderer>().sprite = skillIcon[skillNum];
         Destroy(this.gameObject, 15);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, 4);
     }
 
 

@@ -6,22 +6,26 @@ using UnityEngine;
 
 public class ZoneControl : MonoBehaviour
 {
-
+    [Header("EnemysSpawnControl")]
     [SerializeField] private List<GameObject> enemys;
     [SerializeField] private int maxEnemyInZone;
     [SerializeField] private int enemysInstantiate = 0;
     [SerializeField] private float rangeToSpawn;
 
+    [Header("CheckEnemysInTheZone")]
     [SerializeField] private List<GameObject> enemysSpawned;
     [SerializeField] private LayerMask target;
     [SerializeField] private Transform rayStartPos;
     [SerializeField] private float rayCastRange;
 
-
+    [Header("Zone: Wall and TP")]
     [SerializeField] private WallBehavior wall;
-
-    //TPZone
     [SerializeField] private TeleportBehavior tpZone;
+
+    [Header("Zone: BOSS")]
+    [SerializeField] private bool bossSpawned;
+    [SerializeField] private GameObject boss;
+
 
     public int EnemysInstantiate{ get => enemysInstantiate; set => enemysInstantiate = value; }
 
@@ -29,6 +33,11 @@ public class ZoneControl : MonoBehaviour
     public void StartSpawnEnemys()
     {
         StartCoroutine(SpawnEnemys());
+        if (!bossSpawned)
+        {
+            Instantiate(boss, new Vector3(transform.position.x, 0, 2), Quaternion.identity);
+            bossSpawned = true;
+        }
     }
     IEnumerator SpawnEnemys()
     {

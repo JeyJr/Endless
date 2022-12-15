@@ -53,7 +53,7 @@ MonoBehaviour:
   spawnPosition: {fileID: 0}
   txtGold: {fileID: 7674327104211106876, guid: 322d07c958e9c674a9f60ef0961d2749, type: 3}
   txtUIReceivedGold: {fileID: 0}
-  uiSlotsIconSkills:
+  uiSkillIcon:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -61,5 +61,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  skillName: []
-  skillsActivated: 0
+  uiSkillIconPosition:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
