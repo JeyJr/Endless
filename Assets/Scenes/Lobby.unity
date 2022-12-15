@@ -9128,7 +9128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &710467294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13922,7 +13922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &983775408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22481,7 +22481,10 @@ MonoBehaviour:
   agi: 0
   cri: 0
   goldDrop: 0
+  buffDrop: 0
   spawnTextDMG: {fileID: 1582583804}
+  spawnSkill: {fileID: 0}
+  spawnPosition: {fileID: 0}
 --- !u!114 &1582583804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29152,7 +29155,10 @@ MonoBehaviour:
   agi: 0
   cri: 0
   goldDrop: 0
+  buffDrop: 0
   spawnTextDMG: {fileID: 2050608579}
+  spawnSkill: {fileID: 0}
+  spawnPosition: {fileID: 0}
 --- !u!114 &2050608579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30202,6 +30208,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7296361946484775057, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528060585369611489, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528060585369611489, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

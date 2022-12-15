@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,7 +26,7 @@ public class LevelController : MonoBehaviour
 
     [Header("UI - SkillsIcon")]
     public List<Image> uiSlotsIconSkills;
-
+    public List<string> uiIconName;
 
     private void Start()
     {
@@ -37,23 +39,39 @@ public class LevelController : MonoBehaviour
         {
             uiSlotsIconSkills[i].enabled = false;
         }
-           
+
+        for (int i = 0; i < 7; i++)
+        {
+            uiIconName.Add(" ");
+        }
     }
 
+
+
     #region UI - SkillsIcon
-    public void EnableUISkillSlot(Sprite img, string name)
+    public void EnableUISkillSlot(Sprite img)
     {
-        foreach (var item in uiSlotsIconSkills)
+        for (int i = 0; i < uiSlotsIconSkills.Count; i++)
         {
-            if(item.enabled && item.sprite.name == name)
+            if (!uiSlotsIconSkills[i].enabled)
             {
-                return;
+                uiSlotsIconSkills[i].sprite = img;
+                uiSlotsIconSkills[i].enabled = true;
+                uiIconName[i] = img.name;
+                break;
             }
-            else if(!item.enabled)
+        }
+
+    }
+
+    public void DisableUISkillICon(string name)
+    {
+        for (int i = 0; i < uiIconName.Count; i++)
+        {
+            if (uiIconName[i] == name)
             {
-                item.sprite = img;
-                item.sprite.name = name;
-                item.enabled = true;
+                uiSlotsIconSkills[i].enabled = false;
+                uiIconName[i] = " ";
                 break;
             }
         }

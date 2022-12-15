@@ -808,22 +808,35 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   skillNameLifeRecovery: LifeRecovery
+  lifeRecoveryIsActive: 0
   lifeRecoveredTimesCounter: 5
   lifeRecoveryValue: 3
   delayTimeToRecovery: 2
+  skillNameMoveSpeed: MoveSpeed
+  moveSpeedIsActive: 0
   moveSpeedBuffValue: 12
   delayTimeToEndMoveSpeedBuff: 10
-  damageBuffValue: 25
-  delayTimeToEndDamageBuff: 10
+  skillNamePowerUp: PowerUp
+  powerUpIsActive: 0
+  powerUpBuffValue: 0
+  delayTimeToEndPowerUpBuff: 0
+  skillNameAtkSpeed: AtkSpeed
+  atkSpeedIsActive: 0
   atkSpeedBuffValue: 50
   delayTimeToEndatkSpeedBuff: 10
   playerHand: {fileID: 7296361946464595508}
+  skillNameRangeAtk: RangeAtk
+  rangeAtkIsActive: 0
   rangeAtkBuffValue: 6
   delayTimeToRangeAtkBuff: 10
+  skillNameRingOfFire: RingOfFire
+  ringOfFireIsActive: 0
   ringOfFireTimesCounter: 5
   ringOfFirePercentDmg: 14
   delayTimeToRingOfFireBuff: 2
   ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
+  skillNameWindBlade: WindBlade
+  windBladeIsActive: 0
   windBladeTimesCounter: 5
   windBladePercentDmg: 40
   delayTimeToWindBladeBuff: 1

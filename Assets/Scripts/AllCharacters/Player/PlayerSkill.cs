@@ -19,18 +19,21 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField] private float lifeRecoveredTimesCounter;
     [SerializeField] private float lifeRecoveryValue;
     [SerializeField] private float delayTimeToRecovery;
+    [SerializeField] private Sprite lifeRecoveryIcon;
 
     [Header("Move Speed")]
     [SerializeField] private string skillNameMoveSpeed;
     [SerializeField] private bool moveSpeedIsActive;
     [SerializeField] private float moveSpeedBuffValue;
-    [SerializeField] private float delayTimeToEndMoveSpeedBuff; 
-    
+    [SerializeField] private float delayTimeToEndMoveSpeedBuff;
+    [SerializeField] private Sprite moveSpeedIcon;
+
     [Header("PowerUp")]
     [SerializeField] private string skillNamePowerUp;
     [SerializeField] private bool powerUpIsActive;
     [SerializeField] private float powerUpBuffValue;
     [SerializeField] private float delayTimeToEndPowerUpBuff;
+    [SerializeField] private Sprite powerUpIcon;
 
     [Header("Atk Speed")]
     [SerializeField] private string skillNameAtkSpeed;
@@ -38,12 +41,15 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField] private float atkSpeedBuffValue;
     [SerializeField] private float delayTimeToEndatkSpeedBuff;
     [SerializeField] private PlayerHand playerHand;
+    [SerializeField] private Sprite atkSpeedIcon;
+
 
     [Header("Range Atk")]
     [SerializeField] private string skillNameRangeAtk;
     [SerializeField] private bool rangeAtkIsActive;
     [SerializeField] private float rangeAtkBuffValue;
     [SerializeField] private float delayTimeToRangeAtkBuff;
+    [SerializeField] private Sprite rangeAtkIcon;
 
 
     [Header("Ring of Fire")]
@@ -52,6 +58,7 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField] private float ringOfFireTimesCounter;
     [SerializeField] private float ringOfFirePercentDmg;
     [SerializeField] private float delayTimeToRingOfFireBuff;
+    [SerializeField] private Sprite ringOfFireIcon;
     [SerializeField] private GameObject ringOfFire;
     
     [Header("WindBlade")]
@@ -60,7 +67,16 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField] private float windBladeTimesCounter;
     [SerializeField] private float windBladePercentDmg;
     [SerializeField] private float delayTimeToWindBladeBuff;
+    [SerializeField] private Sprite windBladeIcon;
     [SerializeField] private GameObject windBlade;
+
+    public bool LifeRecoveryIsActive { get => lifeRecoveryIsActive; private set => lifeRecoveryIsActive = value; }
+    public bool MoveSpeedIsActive { get => moveSpeedIsActive; private set => moveSpeedIsActive = value; }
+    public bool PowerUpIsActive { get => powerUpIsActive; private set => powerUpIsActive = value; }
+    public bool AtkSpeedIsActive { get => atkSpeedIsActive; private set=> atkSpeedIsActive = value; }
+    public bool RangeAtkIsActive { get => rangeAtkIsActive; private set => rangeAtkIsActive = value; }
+    public bool RingOfFireIsActive { get => ringOfFireIsActive; private set => ringOfFireIsActive = value; }
+    public bool WindBladeIsActive { get => windBladeIsActive; private set => windBladeIsActive = value; }
 
 
     [Header("UI ICON SKill")]
@@ -75,20 +91,20 @@ public class PlayerSkill : MonoBehaviour
         gameData.buffSkillRangeAtk = 0;
 
         ManagerData.Save(gameData);
-
         levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
     }
 
     #region LifeRecovery
-    public bool GetLifeRecoveryActive() => lifeRecoveryIsActive;
-    public void ActiveSkillLifeRecovery() => StartCoroutine(LifeRecovery());
+    public void ActiveSkillLifeRecovery() {
+        lifeRecoveryIsActive = true;
+        lifeRecoveryIcon.name = skillNameLifeRecovery;
+        levelController.EnableUISkillSlot(lifeRecoveryIcon);
+
+        StartCoroutine(LifeRecovery());
+    }
 
     IEnumerator LifeRecovery()
     {
-        lifeRecoveryIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[0], skillNameLifeRecovery);
-
-
         float bonusValue = playerStatus.MaxLife * lifeRecoveryValue / 100;
         for (int i = 0; i < lifeRecoveredTimesCounter; i++)
         {
@@ -99,69 +115,75 @@ public class PlayerSkill : MonoBehaviour
             playerStatus.UpdateLifeBar();
             yield return new WaitForSeconds(delayTimeToRecovery);
         }
-
-        SetUISkillIConValue(skillNameLifeRecovery);
-
+        levelController.DisableUISkillICon(skillNameLifeRecovery);
         lifeRecoveryIsActive = false;
     }
     #endregion
 
     #region MoveSpeed
     public bool GetMoveSpeedActive() => moveSpeedIsActive;
-    public void ActiveSkillMoveSpeed() => StartCoroutine(ActiveMoveSpeed());
+    public void ActiveSkillMoveSpeed() {
+        moveSpeedIsActive = true;
+        moveSpeedIcon.name = skillNameMoveSpeed;
+        levelController.EnableUISkillSlot(moveSpeedIcon);
+
+        StartCoroutine(ActiveMoveSpeed());
+    }
 
 
     IEnumerator ActiveMoveSpeed()
     {
-        moveSpeedIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[1], skillNameMoveSpeed);
-
         float actualSpeed = playerController.PlayerMoveSpeed;
         playerController.PlayerMoveSpeed = moveSpeedBuffValue;
         yield return new WaitForSeconds(delayTimeToEndMoveSpeedBuff);
         playerController.PlayerMoveSpeed = actualSpeed;
 
-        SetUISkillIConValue(skillNameMoveSpeed);
+        levelController.DisableUISkillICon(skillNameMoveSpeed);
         moveSpeedIsActive = false;
     }
     #endregion
 
     #region PowerUp
-    public bool GetPowerUpActive() => powerUpIsActive;
-    public void ActiveSkillPowerUp() => StartCoroutine(ActivePowerUp());
+    public void ActiveSkillPowerUp() {
+        powerUpIsActive = true;
+        powerUpIcon.name = skillNamePowerUp;
+        levelController.EnableUISkillSlot(powerUpIcon);
+
+        StartCoroutine(ActivePowerUp());
+    }
 
 
 
     IEnumerator ActivePowerUp()
     {
-        powerUpIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[2], skillNamePowerUp);
-
         GameData gameData = ManagerData.Load();
-        gameData.buffSkillPowerUp = powerUpBuffValue;
+        gameData.buffSkillPowerUp = gameData.weaponDmg * powerUpBuffValue /100;
         ManagerData.Save(gameData);
 
         yield return new WaitForSeconds(delayTimeToEndPowerUpBuff);
-        
+
         gameData.buffSkillPowerUp = 0;
         ManagerData.Save(gameData);
 
+        levelController.DisableUISkillICon(skillNamePowerUp);
         powerUpIsActive = false;
 
     }
     #endregion
 
     #region AtkSpeed
-    public bool GetAtkSpeedActive() => atkSpeedIsActive;
-    public void ActiveSkillAtkSpeed() => StartCoroutine(ActiveAtkSpeed());
+
+    public void ActiveSkillAtkSpeed() {
+        atkSpeedIsActive = true;
+        atkSpeedIcon.name = skillNameAtkSpeed;
+        levelController.EnableUISkillSlot(atkSpeedIcon);
+
+        StartCoroutine(ActiveAtkSpeed());
+    } 
 
 
     IEnumerator ActiveAtkSpeed()
     {
-        atkSpeedIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[3], skillNameAtkSpeed);
-
-
         GameData gameData = ManagerData.Load();
         gameData.buffSkillAtkSpeed = atkSpeedBuffValue;
         ManagerData.Save(gameData);
@@ -173,20 +195,23 @@ public class PlayerSkill : MonoBehaviour
         gameData.buffSkillAtkSpeed = 0;
         ManagerData.Save(gameData);
 
+        levelController.DisableUISkillICon(skillNameAtkSpeed);
         atkSpeedIsActive = false;
     }
     #endregion
 
     #region RangeAtk
-    public bool GetRangeAtkActive() => rangeAtkIsActive;
-    public void ActiveSkillRangeAtk() => StartCoroutine(ActiveRangeAtk());
+    public void ActiveSkillRangeAtk() {
+        rangeAtkIsActive = true;
+        rangeAtkIcon.name = skillNameRangeAtk;
+        levelController.EnableUISkillSlot(rangeAtkIcon);
+
+        StartCoroutine(ActiveRangeAtk());
+    }
 
 
     IEnumerator ActiveRangeAtk()
     {
-        rangeAtkIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[4], skillNameRangeAtk);
-
         GameData gameData = ManagerData.Load();
         gameData.buffSkillRangeAtk = rangeAtkBuffValue;
         ManagerData.Save(gameData);
@@ -196,19 +221,23 @@ public class PlayerSkill : MonoBehaviour
         gameData.buffSkillRangeAtk = 0;
         ManagerData.Save(gameData);
 
+        levelController.DisableUISkillICon(skillNameRangeAtk);
         rangeAtkIsActive = false;
     }
     #endregion
 
     #region Ring Of Fire
-    public bool GetRingOfFireActive() => ringOfFireIsActive;
-    public void ActiveSkillRingOfFire() => StartCoroutine(ActiveRingOfFire());
+    public void ActiveSkillRingOfFire() 
+    {
+        RingOfFireIsActive = true;
+        ringOfFireIcon.name = skillNameRingOfFire;
+        levelController.EnableUISkillSlot(ringOfFireIcon);
+
+        StartCoroutine(ActiveRingOfFire());
+    }
 
     IEnumerator ActiveRingOfFire()
     {
-        ringOfFireIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[5], skillNameRingOfFire);
-
         GameData gameData = ManagerData.Load();
 
         for (int i = 0; i < ringOfFireTimesCounter; i++)
@@ -216,23 +245,26 @@ public class PlayerSkill : MonoBehaviour
             Vector3 pos = new Vector3(transform.position.x, transform.position.y, 4);
             ringOfFire.GetComponent<RingOfFire>().target = target;
             ringOfFire.GetComponent<RingOfFire>().damage = gameData.weaponDmg * ringOfFirePercentDmg / 100;
-            Instantiate(ringOfFire, pos, Quaternion.Euler(0,0,0));
+            Instantiate(ringOfFire, pos, Quaternion.Euler(0, 0, 0));
             yield return new WaitForSeconds(delayTimeToRingOfFireBuff);
         }
-        ringOfFireIsActive = false;
+        levelController.DisableUISkillICon(skillNameRingOfFire);
+        RingOfFireIsActive = false;
     }
     #endregion
 
     #region Wind Blade
-    public bool GetWindBladeActive() => windBladeIsActive;
-    public void ActiveSkillWindBlade() => StartCoroutine(ActiveWindBlade());
+    public void ActiveSkillWindBlade() 
+    {
+        WindBladeIsActive = true;
+        windBladeIcon.name = skillNameWindBlade;
+        levelController.EnableUISkillSlot(windBladeIcon);
 
+        StartCoroutine(ActiveWindBlade());
+    }
 
     IEnumerator ActiveWindBlade()
     {
-        windBladeIsActive = true;
-        levelController.EnableUISkillSlot(skillIcon[6], skillNameWindBlade);
-
         GameData gameData = ManagerData.Load();
 
         for (int i = 0; i < windBladeTimesCounter; i++)
@@ -240,25 +272,14 @@ public class PlayerSkill : MonoBehaviour
             Vector3 pos = new Vector3(transform.position.x, transform.position.y, 4);
             windBlade.GetComponent<WindBlade>().target = target;
             windBlade.GetComponent<WindBlade>().damage = gameData.weaponDmg * windBladePercentDmg / 100;
-            windBlade.GetComponent<WindBlade>().mirrored = transform.rotation.y == 0 ? false : true; 
+            windBlade.GetComponent<WindBlade>().mirrored = transform.rotation.y == 0 ? false : true;
             Instantiate(windBlade, pos, Quaternion.identity);
             yield return new WaitForSeconds(delayTimeToWindBladeBuff);
         }
 
-        windBladeIsActive = false;
+        levelController.DisableUISkillICon(skillNameWindBlade);
+        WindBladeIsActive = false;
     }
     #endregion
 
-    void SetUISkillIConValue(string name)
-    {
-        for (int i = 0; i < levelController.uiSlotsIconSkills.Count; i++)
-        {
-            if (levelController.uiSlotsIconSkills[i].sprite.name == name)
-            {
-                levelController.uiSlotsIconSkills[i].sprite = null;
-                levelController.uiSlotsIconSkills[i].enabled = false;
-                break;
-            }
-        }
-    }
 }
