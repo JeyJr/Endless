@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyStatus : MonoBehaviour
 {
     [SerializeField] private float atk, def, vit, agi, cri, goldDrop, buffDrop;
-
     
     private float damage;
     private float maxLife;
@@ -17,6 +16,8 @@ public class EnemyStatus : MonoBehaviour
     public SpawnTextDMG spawnTextDMG;
     [SerializeField] private GameObject spawnSkill;
     [SerializeField] private Transform spawnPosition;
+
+    [SerializeField] private bool enemyInTestZone;
 
     public float Damage { get => damage; }
     public float AtkSpeed { get => atkSpeed;}
@@ -38,11 +39,12 @@ public class EnemyStatus : MonoBehaviour
     public void LoseLife(float dmg, bool critical)
     {
         float realDMG = dmg - ((dmg * defense) / 100);
-        life -= realDMG;
-
         spawnTextDMG.Spawn(realDMG, critical);
 
-        if(life<= 0 && Random.Range(0, 100) <= buffDrop)
+        if (!enemyInTestZone)
+            life -= realDMG;
+        
+        if (life <= 0 && Random.Range(0, 100) <= buffDrop)
             Instantiate(spawnSkill, spawnPosition.position, Quaternion.Euler(0, 0, 0));
     }
 

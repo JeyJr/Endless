@@ -13,7 +13,7 @@ public class TeleportBehavior : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //Player Animation teleport
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter(Collider other)

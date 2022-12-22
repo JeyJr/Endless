@@ -14,7 +14,7 @@ public class UIControl : MonoBehaviour
 
     [SerializeField] private bool deletar;
 
-    private void Start()
+    private void Awake()
     {
         if (deletar)
             ManagerData.DeleteData();
@@ -37,7 +37,9 @@ public class UIControl : MonoBehaviour
             d.purchasedWeaponsIds.Add(1000); //Pedaço de madeira
             d.equipedWeaponId = d.purchasedWeaponsIds[0];
 
-            
+            d.purchasedArmorIds = new List<int>();
+            d.purchasedArmorIds.Add(1000); //StandardSet
+            d.equipedArmorId = d.purchasedArmorIds[0];
 
             d.skillLevelBonusDmg = 0;
             d.skillLevelBonusDef = 0;
@@ -48,9 +50,10 @@ public class UIControl : MonoBehaviour
 
             d.levelUnlock = 0;
             ManagerData.Save(d);
-
-            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerHand>().EquipWeapon();
         }
+        PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
+        pSkin.EquipWeapon();
+        pSkin.EquipArmor();
 
         StartPanels();
         GoldAmount();

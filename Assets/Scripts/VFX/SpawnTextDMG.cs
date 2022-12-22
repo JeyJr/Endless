@@ -7,7 +7,7 @@ public class SpawnTextDMG : MonoBehaviour
 {
     public TextMeshPro txtDmg;
     public Transform spawnPosition;
-
+    [SerializeField] private float y;
     public void Spawn(float dmg, bool critical)
     {
         StartCoroutine(SpawnTextDamage(dmg, critical));
@@ -22,7 +22,10 @@ public class SpawnTextDMG : MonoBehaviour
         else
             txtDmg.color = Color.white;
 
-        Instantiate(txtDmg, spawnPosition.position, Quaternion.Euler(0, 0, 0));
+        Vector3 pos = spawnPosition.position;
+        pos.y += y;
+
+        Instantiate(txtDmg, pos, Quaternion.Euler(0, 0, 0));
         yield return null;
     }
 

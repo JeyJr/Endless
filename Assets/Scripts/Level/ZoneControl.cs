@@ -33,6 +33,7 @@ public class ZoneControl : MonoBehaviour
     public void StartSpawnEnemys()
     {
         StartCoroutine(SpawnEnemys());
+
         if (!bossSpawned)
         {
             Instantiate(boss, new Vector3(transform.position.x, 0, 2), Quaternion.identity);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSkill : MonoBehaviour
 {
@@ -91,7 +92,9 @@ public class PlayerSkill : MonoBehaviour
         gameData.buffSkillRangeAtk = 0;
 
         ManagerData.Save(gameData);
-        levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
+
+        if(GameObject.FindGameObjectWithTag("LevelController") != null)
+            levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
     }
 
     #region LifeRecovery

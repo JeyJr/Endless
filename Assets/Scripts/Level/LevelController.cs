@@ -28,15 +28,18 @@ public class LevelController : MonoBehaviour
     public List<GameObject> uiSkillIcon;
     public List<RectTransform> uiSkillIconPosition;
 
-    private void Start()
+    private void Awake()
     {
         goldTotal = 0;
         totalBossesKilled = 0;
         totalEnemiesKilled = 0;
         txtUIReceivedGold.text = goldTotal.ToString();
 
+        uiSkillIcon = uiSkillIcon.OrderBy(icon => icon.gameObject.activeSelf).ToList();
 
-        uiSkillIcon = uiSkillIcon.OrderByDescending(icon => icon.gameObject.activeSelf).ToList();
+        PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
+        pSkin.EquipWeapon();
+        pSkin.EquipArmor();
     }
 
 
@@ -70,7 +73,7 @@ public class LevelController : MonoBehaviour
 
     public void OrganizerUiSkillIcon()
     {
-        uiSkillIcon = uiSkillIcon.OrderByDescending(icon => icon.gameObject.activeSelf).ToList();
+        uiSkillIcon = uiSkillIcon.OrderBy(icon => icon.gameObject.activeSelf).ToList();
 
         for (int i = 0; i < uiSkillIcon.Count; i++)
         {
@@ -89,19 +92,10 @@ public class LevelController : MonoBehaviour
 
         txtGold.GetComponent<TextMeshPro>().text = $"Gold +{goldDroped}";
         Instantiate(txtGold, spawnPosition.position, Quaternion.Euler(0, 0, 0));
-        StartCoroutine(AddGoldToGoldTotal(goldDroped));
-    }
 
-    IEnumerator AddGoldToGoldTotal(float value)
-    {
-        for (int i = 0; i < value; i++)
-        {
-            goldTotal++;
-            txtUIReceivedGold.text = goldTotal.ToString();
-            yield return new WaitForSeconds(.2f);
-        }
+        goldTotal+= goldDroped;
+        txtUIReceivedGold.text = goldTotal.ToString();
     }
-
 
 
     #endregion
