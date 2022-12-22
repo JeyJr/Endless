@@ -40,6 +40,7 @@ public class LevelController : MonoBehaviour
         PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
         pSkin.EquipWeapon();
         pSkin.EquipArmor();
+        pSkin.EquipHelmet();
     }
 
 

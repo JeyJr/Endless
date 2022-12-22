@@ -10,6 +10,8 @@ public class Equips : MonoBehaviour
     public GameObject standardPlayerArmor;
     public List<GameObject> armor;
 
+    public List<GameObject> helmet;
+
     public SpriteRenderer GetWeaponToEquip()
     {
         GameData gameData = ManagerData.Load();
@@ -35,7 +37,6 @@ public class Equips : MonoBehaviour
 
         return null;
     }
-
     public Sprite[] GetArmorToEquip()
     {
         GameData gameData = ManagerData.Load();
@@ -69,5 +70,28 @@ public class Equips : MonoBehaviour
         standardSprites[2] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgArmorFoot;
 
         return standardSprites;
+    }
+    public Sprite GetHelmetToEquip()
+    {
+        GameData gameData = ManagerData.Load();
+
+        foreach (var helmet in helmet)
+        {
+            if (helmet.GetComponent<HelmetAttributes>().HelmetID == gameData.equipedHelmetId)
+            {
+                var h = helmet.GetComponent<HelmetAttributes>();
+                gameData.equipedHelmetId = h.HelmetID;
+                gameData.helmetDmg = h.HelmetAtk;
+                gameData.helmetLife = h.HelmetLife;
+                gameData.helmetDefense = h.HelmetDefense;
+                gameData.helmetCritical = h.HelmetCritical;
+
+                ManagerData.Save(gameData);
+
+                return h.ImgHelmet;
+            }
+        }
+
+        return helmet[0].GetComponent<HelmetAttributes>().ImgHelmet;
     }
 }

@@ -34,5 +34,6 @@ public class PlayerSkinManager : MonoBehaviour
 
     public void EquipHelmet()
     {
+        head.sprite = equips.GetHelmetToEquip();
     }
 }

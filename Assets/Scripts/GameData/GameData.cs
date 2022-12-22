@@ -79,6 +79,15 @@ public class GameData
     public float armorCritical;
     public float armorRangeAtk;
 
+    //Helmet
+    public List<int> purchasedHelmetIds;
+    public int equipedHelmetId;
+
+    public float helmetDmg;
+    public float helmetDefense;
+    public float helmetLife;
+    public float helmetCritical;
+
     //SkillsPassivas
     public float skillLevelBonusDmg;
     public float skillLevelBonusDef;

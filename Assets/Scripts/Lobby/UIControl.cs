@@ -25,7 +25,7 @@ public class UIControl : MonoBehaviour
 
             GameData d = new();
 
-            d.gold = 99999999999999;
+            d.gold = 500000;
             d.firstTime = false;
             d.atk = 1;
             d.def = 1;
@@ -41,6 +41,10 @@ public class UIControl : MonoBehaviour
             d.purchasedArmorIds.Add(1000); //StandardSet
             d.equipedArmorId = d.purchasedArmorIds[0];
 
+            d.purchasedHelmetIds = new List<int>();
+            d.purchasedHelmetIds.Add(1000); //StandardSet
+            d.equipedHelmetId = d.purchasedHelmetIds[0];
+
             d.skillLevelBonusDmg = 0;
             d.skillLevelBonusDef = 0;
             d.skillLevelBonusLife = 0;
@@ -54,6 +58,7 @@ public class UIControl : MonoBehaviour
         PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
         pSkin.EquipWeapon();
         pSkin.EquipArmor();
+        pSkin.EquipHelmet();
 
         StartPanels();
         GoldAmount();
