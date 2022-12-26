@@ -58,6 +58,16 @@ public class GameData
         get => weaponRangeAtk + bonusRangeAtk + buffSkillRangeAtk + armorRangeAtk;
     }
 
+    public float GoldBonus
+    {
+        get => bonusGold;
+    }
+
+    public float MoveSpeed
+    {
+        get => bonusMoveSpeed + 6;
+    }
+
     //Weapons
     public List<int> purchasedWeaponsIds;
     public int equipedWeaponId;
@@ -94,8 +104,9 @@ public class GameData
     public float skillLevelBonusLife;
     public float skillLevelBonusAtkSpeed;
     public float skillLevelBonusRange;
-    public float skillLevelCritical;
+    public float skillLevelBonusCritical;
     public float skillLevelBonusGold;
+    public float skillLevelBonusMoveSpeed;
 
     public float bonusDmg;
     public float bonusDefense;
@@ -104,6 +115,7 @@ public class GameData
     public float bonusAtkSpeed;
     public float bonusCritical;
     public float bonusGold;
+    public float bonusMoveSpeed;
 
     //Level
     public float levelUnlock;

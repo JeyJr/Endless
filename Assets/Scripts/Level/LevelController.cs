@@ -86,15 +86,18 @@ public class LevelController : MonoBehaviour
     #region EnemyDead and GolTotalControl
     public void EnemyDead(float goldDroped, bool boss)
     {
+        GameData gameData = ManagerData.Load();
+
         if (boss)
             totalBossesKilled++;
         else
             totalEnemiesKilled++;
 
-        txtGold.GetComponent<TextMeshPro>().text = $"Gold +{goldDroped}";
+        float gold = gameData.bonusGold + goldDroped;
+        txtGold.GetComponent<TextMeshPro>().text = $"Gold +{gold}";
         Instantiate(txtGold, spawnPosition.position, Quaternion.Euler(0, 0, 0));
 
-        goldTotal+= goldDroped;
+        goldTotal+= gold;
         txtUIReceivedGold.text = goldTotal.ToString();
     }
 

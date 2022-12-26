@@ -89,9 +89,11 @@ public class PanelPassives : MonoBehaviour
             case "range":
                 return gameData.skillLevelBonusRange;
             case "cri":
-                return gameData.skillLevelCritical;
+                return gameData.skillLevelBonusCritical;
             case "gold":
                 return gameData.skillLevelBonusGold;
+            case "move":
+                return gameData.skillLevelBonusMoveSpeed;
             default:
                 throw new ArgumentException("SkillShortName Invalido!", nameof(skillShortName));
         }
@@ -118,8 +120,8 @@ public class PanelPassives : MonoBehaviour
                 gameData.bonusAtkSpeed = gameData.skillLevelBonusAtkSpeed * p.SkillBonus;
                 break;
             case "cri":
-                gameData.skillLevelCritical++;
-                gameData.bonusCritical = gameData.skillLevelCritical * p.SkillBonus;
+                gameData.skillLevelBonusCritical++;
+                gameData.bonusCritical = gameData.skillLevelBonusCritical * p.SkillBonus;
                 break;
             case "range":
                 gameData.skillLevelBonusRange++;
@@ -128,6 +130,10 @@ public class PanelPassives : MonoBehaviour
             case "gold":
                 gameData.skillLevelBonusGold++;
                 gameData.bonusGold = gameData.skillLevelBonusGold * p.SkillBonus;
+                break;
+            case "move":
+                gameData.skillLevelBonusMoveSpeed++;
+                gameData.bonusMoveSpeed = gameData.skillLevelBonusMoveSpeed * p.SkillBonus;
                 break;
             default:
                 throw new ArgumentException("SkillShortName Invalido!", nameof(skillShortName));

@@ -136,10 +136,9 @@ public class PlayerSkill : MonoBehaviour
 
     IEnumerator ActiveMoveSpeed()
     {
-        float actualSpeed = playerController.PlayerMoveSpeed;
-        playerController.PlayerMoveSpeed = moveSpeedBuffValue;
+        playerController.PlayerMoveSpeed = ManagerData.Load().MoveSpeed + moveSpeedBuffValue;
         yield return new WaitForSeconds(delayTimeToEndMoveSpeedBuff);
-        playerController.PlayerMoveSpeed = actualSpeed;
+        playerController.PlayerMoveSpeed = ManagerData.Load().MoveSpeed;
 
         levelController.DisableUISkillICon(skillNameMoveSpeed);
         moveSpeedIsActive = false;

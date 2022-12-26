@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [Header("PlayerMovement")]
     public PlayerMove playerInput;
     [SerializeField] private CharacterController controller;
-    [SerializeField] private float playerMoveSpeed = 4f;
+    private float playerMoveSpeed;
     public float PlayerMoveSpeed { get => playerMoveSpeed; set => playerMoveSpeed = value; }
     PlayerHand playerHand;
     PlayerStatus playerStatus;
@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
 
         if (GameObject.FindGameObjectWithTag("LevelController") == null)
             lobby = true;
+
+        GameData gameData = ManagerData.Load();
+        playerMoveSpeed = gameData.MoveSpeed;
     }
 
     void Update()
@@ -66,7 +69,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-
             CamPosition(0, 0, 10, 0.2f, 10);
             FootAnims("Idle");
         }
