@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4515198924220734922}
   - component: {fileID: -9138315089494455816}
   m_Layer: 0
-  m_Name: 6TacoBeisebol
+  m_Name: 5BaseballBat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 07b8390a26f279a4e8bf6fc60337b15b, type: 3}
+  m_Sprite: {fileID: -1333796167, guid: e49bc10ce08b867468507539668a60b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,13 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 60
-  weaponSpeedAtk: 4.3
-  weaponAtkRange: 2.5
-  weaponDefense: 10
-  weaponLife: 20
-  weaponCritical: 30
-  imgWeapon: {fileID: 21300000, guid: a9e6327c95dc6414d977988b81dccc0a, type: 3}
-  weaponName: Taco Bolado
-  weaponID: 1005
-  goldCost: 15000
+  weaponDmg: 12
+  weaponDefense: 0
+  weaponLife: 0
+  weaponSpeedAtk: 3.5
+  weaponCritical: 8
+  weaponRangeAtk: 1.8
+  weaponMoveSpeed: 4
+  imgWeapon: {fileID: -420885312, guid: e49bc10ce08b867468507539668a60b6, type: 3}
+  weaponName: Baseball Bat
+  weaponID: 1004
+  goldCost: 200

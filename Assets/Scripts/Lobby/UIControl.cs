@@ -84,7 +84,7 @@ public class UIControl : MonoBehaviour
         }
 
         if (i == 3) 
-            GetComponent<PanelPlayerInfo>().PanelPlayerInfoIsActive();
+            GetComponent<PanelStatus>().PanelPlayerInfoIsActive();
 
         if (i == 4)
             GetComponent<PanelLevel>().EnableLevel();

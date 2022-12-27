@@ -7,7 +7,7 @@ using UnityEngine;
 public class PassivesAttributes : MonoBehaviour
 {
     [SerializeField] private string skillDecorativeName;
-    [SerializeField] private Sprite imgWeapon;
+    [SerializeField] private Sprite imgIcon;
 
     [SerializeField] private float skillBonus;
     [SerializeField] private string skillDesc;
@@ -15,7 +15,7 @@ public class PassivesAttributes : MonoBehaviour
 
     public TextMeshProUGUI txtLevel;
     public string SkillName{ get => skillDecorativeName; }
-    public Sprite ImgWeapon { get => imgWeapon; }
+    public Sprite ImgIcon { get => imgIcon; }
     public float SkillBonus { get => skillBonus; }
     public string SkillDesc { get => skillDesc; }
     public string SkillShortName { get => skillShortName; }

@@ -17,45 +17,51 @@ public class GameData
     public float Damage 
     {
         get {
-            float totalAtk = atk * 5;
-            return totalAtk + (totalAtk * bonusDmg / 100) + weaponDmg + buffSkillPowerUp + armorDmg;
+            float equips = weaponDmg + armorDmg + helmetDmg;
+            float totalAtk = atk * 5 + equips;
+            return totalAtk + (totalAtk * bonusDmg / 100) + buffSkillPowerUp;
         } 
     }
     public float Defense
     {
         get {
-            float totalDef = def / 2;
-            return totalDef + (totalDef * weaponDefense / 100) + (totalDef * bonusDefense / 100) + (totalDef * armorDefense / 100);
+            float equips = weaponDefense + armorDefense + helmetDefense;
+            float totalDef = def / 2 + equips;
+            return totalDef +(totalDef * bonusDefense / 100);
         }
     }
     public float MaxLife
     {
         get {
-            float totalLife = vit * 50;
-            return totalLife + (totalLife * weaponLife / 100) + (totalLife * bonusLife / 100) + (totalLife * armorLife / 100);
+            float equips = weaponLife + armorLife + helmetLife;
+            float totalLife = vit * 50 + equips;
+            return totalLife + (totalLife * bonusLife / 100);
         }
     }
     public float AtkSpeed
     {
         get {
-            float speed = (weaponSpeedAtk - agi * .02f) - (weaponSpeedAtk * bonusAtkSpeed / 100);
+            float equips = weaponSpeedAtk + armorSpeedAtk + helmetSpeedAtk;
+            float speed = (equips - agi * .02f) - (equips * bonusAtkSpeed / 100);
             speed -= (speed * buffSkillAtkSpeed / 100);
-            return speed < 0.15f ? 0.15f : speed;
+            return speed < 0.1f ? 0.1f : speed;
         }
-        // r = (weaponSpeedAtk - 2) - (weaponSpeedAtk * .25 ) 
-        // r -= r * 0.5 
-
     }
     public float CriticalDMG
     {
         get {
             float totalCritic = cri / 2;
-            return totalCritic + (totalCritic * weaponCritical / 100) + (totalCritic * bonusCritical / 100) + (totalCritic * armorCritical / 100);
+            float equips = weaponCritical + armorCritical + helmetCritical;
+            return totalCritic + equips + bonusCritical;
         }
     }
     public float RangeAtk
     {
-        get => weaponRangeAtk + bonusRangeAtk + buffSkillRangeAtk + armorRangeAtk;
+        get {
+            float strRangeBonus = atk / 40;
+            float equips = weaponRangeAtk + armorRangeAtk + helmetRangeAtk;
+            return equips + bonusRangeAtk + buffSkillRangeAtk + strRangeBonus;
+        }
     }
 
     public float GoldBonus
@@ -65,8 +71,12 @@ public class GameData
 
     public float MoveSpeed
     {
-        get => bonusMoveSpeed + 6;
+        get {
+            float equips = weaponMoveSpeed + armorMoveSpeed + helmetMoveSpeed;
+            return bonusMoveSpeed + equips + (agi / 20);
+        }
     }
+
 
     //Weapons
     public List<int> purchasedWeaponsIds;
@@ -78,6 +88,7 @@ public class GameData
     public float weaponSpeedAtk;
     public float weaponCritical;
     public float weaponRangeAtk;
+    public float weaponMoveSpeed;
 
     //Armor
     public List<int> purchasedArmorIds;
@@ -86,8 +97,10 @@ public class GameData
     public float armorDmg;
     public float armorDefense;
     public float armorLife;
+    public float armorSpeedAtk;
     public float armorCritical;
     public float armorRangeAtk;
+    public float armorMoveSpeed;
 
     //Helmet
     public List<int> purchasedHelmetIds;
@@ -96,7 +109,10 @@ public class GameData
     public float helmetDmg;
     public float helmetDefense;
     public float helmetLife;
+    public float helmetSpeedAtk;
     public float helmetCritical;
+    public float helmetRangeAtk;
+    public float helmetMoveSpeed;
 
     //SkillsPassivas
     public float skillLevelBonusDmg;

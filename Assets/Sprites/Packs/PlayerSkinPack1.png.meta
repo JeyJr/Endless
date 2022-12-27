@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,637 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlayerSkinPack1_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1167
+        width: 29
+        height: 97
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436896254c6149a419461b651755ced6
+      internalID: -1230491060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1135
+        width: 199
+        height: 191
+      alignment: 9
+      pivot: {x: 0.2513354, y: 0.12588836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8835639431d7cd34ebea7928bfe856da
+      internalID: -526750218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_2
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 1165
+        width: 87
+        height: 103
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7cd150741707344809e91978552cd3
+      internalID: 216069457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_3
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1137
+        width: 279
+        height: 248
+      alignment: 9
+      pivot: {x: 0.4222073, y: 0.18600021}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ed09bf065b4df479e6ee3722781523
+      internalID: -1361504728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_4
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1170
+        width: 35
+        height: 99
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873e2d09a00dd004a93e2c858a9fa037
+      internalID: 1815541016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_5
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1135
+        width: 208
+        height: 203
+      alignment: 9
+      pivot: {x: 0.31064957, y: 0.11541237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7924fc654133a0d47b3fbf5685929ec9
+      internalID: -1218563988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_6
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 1170
+        width: 45
+        height: 109
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df793a41b155104eb13b104bed41a44
+      internalID: 1097378844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_7
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 1143
+        width: 202
+        height: 201
+      alignment: 9
+      pivot: {x: 0.42254096, y: 0.074253365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d02636c05ce06949b3b23bbc7fceac3
+      internalID: 2006211457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_8
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 1107
+        width: 48
+        height: 103
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0af1a27296bb14d93222385542ff28
+      internalID: 1260334649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_9
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 1122
+        width: 252
+        height: 240
+      alignment: 9
+      pivot: {x: 0.452969, y: 0.12345988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a049aa134933d04418e9c261255eeda9
+      internalID: 1693108161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_11
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 884
+        width: 202
+        height: 244
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7a09e1c745aa74e9591e30c968bb76
+      internalID: -1135035636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_12
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 880
+        width: 220
+        height: 257
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9fef6d6aced484bafbcc47f2a4ffe2
+      internalID: 524924550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 910
+        width: 74
+        height: 203
+      alignment: 9
+      pivot: {x: 0.6653509, y: 0.92581433}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2604185173f09484fa4c4c402b574b52
+      internalID: -1626907588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_14
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 882
+        width: 192
+        height: 242
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f016452b8ed844f9dfe06ea9b1a04a
+      internalID: -2080161876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_15
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 912
+        width: 73
+        height: 204
+      alignment: 9
+      pivot: {x: 0.67263585, y: 0.9302153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eaaf2ede7100f645baad88cb4901182
+      internalID: 1269310534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_16
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 879
+        width: 192
+        height: 245
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e958d2042dffa754692f9c8c0d2d1142
+      internalID: 1355223290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_17
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 915
+        width: 84
+        height: 203
+      alignment: 9
+      pivot: {x: 0.71225995, y: 0.9250847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e474a7dcd422e4ab627fad977bda78
+      internalID: -850417364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_18
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 904
+        width: 100
+        height: 218
+      alignment: 9
+      pivot: {x: 0.6177344, y: 0.88728935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9deaa39e59befd4b91be6e106001b62
+      internalID: -2071475609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_19
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 875
+        width: 70
+        height: 197
+      alignment: 9
+      pivot: {x: 0.6608468, y: 0.90975845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e8be7df960e0040979cf494336728d
+      internalID: 559724869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_20
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 849
+        width: 194
+        height: 244
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd83ddbcd6ddd464398a0fe523772959
+      internalID: 1456939779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_21
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 297
+        width: 211
+        height: 471
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4439b27cd5e1fa428de55b1196a3d4d
+      internalID: -1224715892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_22
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 291
+        width: 214
+        height: 477
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3fb511b466ecc408ce1e55bab5792a
+      internalID: 29993914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_23
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 295
+        width: 235
+        height: 482
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed81885df52c87c49b265648cc7073bb
+      internalID: 1605455232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_24
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 284
+        width: 244
+        height: 500
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026fbfb6aa2076944aff1cedbe99cdf3
+      internalID: 1958325253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_25
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 291
+        width: 252
+        height: 533
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58237fcd4678f04cb2db51c076bbefc
+      internalID: 1027253741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_28
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 0
+        width: 213
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039f7f43efd3bc54bba0e57cd1fc6f05
+      internalID: 634763700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_31
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 0
+        width: 214
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcbc0736bf60cd40919589a3e1d15e1
+      internalID: 160343450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_43
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 1
+        width: 213
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a7b308241158b4c8c204e489060258
+      internalID: -1379280788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_46
+      rect:
+        serializedVersion: 2
+        x: 2210
+        y: 0
+        width: 215
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c9f4dc94882644ab713f18bf02506f
+      internalID: -2145784049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSkinPack1_61
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 212
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd97b01797c10a4db300a7589b77977
+      internalID: 2106674347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +768,72 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlayerSkinPack1_60: -1532911509
+      PlayerSkinPack1_62: -1477459944
+      PlayerSkinPack1_5: -1218563988
+      PlayerSkinPack1_9: 1693108161
+      PlayerSkinPack1_59: 493827094
+      PlayerSkinPack1_19: 559724869
+      PlayerSkinPack1_26: 1963137618
+      PlayerSkinPack1_17: -850417364
+      PlayerSkinPack1_47: -440637772
+      PlayerSkinPack1_18: -2071475609
+      PlayerSkinPack1_29: 945478396
+      PlayerSkinPack1_32: -749054634
+      PlayerSkinPack1_45: -787790778
+      PlayerSkinPack1_57: -1039187696
+      PlayerSkinPack1_15: 1269310534
+      PlayerSkinPack1_34: 1191135131
+      PlayerSkinPack1_20: 1456939779
+      PlayerSkinPack1_50: 1930775765
+      PlayerSkinPack1_52: 1009209245
+      PlayerSkinPack1_39: -158906985
+      PlayerSkinPack1_56: -371230612
+      PlayerSkinPack1_63: -1075007267
+      PlayerSkinPack1_55: -1531606927
+      PlayerSkinPack1_0: -1230491060
+      PlayerSkinPack1_16: 1355223290
+      PlayerSkinPack1_38: 520805034
+      PlayerSkinPack1_42: -459559388
+      PlayerSkinPack1_43: -1379280788
+      PlayerSkinPack1_58: -1153011679
+      PlayerSkinPack1_33: -1969283171
+      PlayerSkinPack1_28: 634763700
+      PlayerSkinPack1_12: 524924550
+      PlayerSkinPack1_44: 1538981266
+      PlayerSkinPack1_41: 1729606043
+      PlayerSkinPack1_64: -293077417
+      PlayerSkinPack1_46: -2145784049
+      PlayerSkinPack1_21: -1224715892
+      PlayerSkinPack1_3: -1361504728
+      PlayerSkinPack1_23: 1605455232
+      PlayerSkinPack1_11: -1135035636
+      PlayerSkinPack1_30: 143900588
+      PlayerSkinPack1_40: 840376871
+      PlayerSkinPack1_24: 1958325253
+      PlayerSkinPack1_37: -1634915159
+      PlayerSkinPack1_54: -619730963
+      PlayerSkinPack1_25: 1027253741
+      PlayerSkinPack1_27: 261139003
+      PlayerSkinPack1_36: -1803632000
+      PlayerSkinPack1_22: 29993914
+      PlayerSkinPack1_13: -1626907588
+      PlayerSkinPack1_2: 216069457
+      PlayerSkinPack1_8: 1260334649
+      PlayerSkinPack1_6: 1097378844
+      PlayerSkinPack1_61: 2106674347
+      PlayerSkinPack1_4: 1815541016
+      PlayerSkinPack1_1: -526750218
+      PlayerSkinPack1_49: -81800514
+      PlayerSkinPack1_53: -2066277417
+      PlayerSkinPack1_35: -1899250353
+      PlayerSkinPack1_14: -2080161876
+      PlayerSkinPack1_10: 421475932
+      PlayerSkinPack1_48: -862121418
+      PlayerSkinPack1_7: 2006211457
+      PlayerSkinPack1_51: -1019547593
+      PlayerSkinPack1_31: 160343450
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3978064508828235145}
   - component: {fileID: 3978064508828235144}
   m_Layer: 0
-  m_Name: 1PedacoDeMadeira
+  m_Name: 1OldWood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4c03bbccf79efde49b165bf0af290989, type: 3}
+  m_Sprite: {fileID: 2103478921, guid: e49bc10ce08b867468507539668a60b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,13 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAtk: 10
-  weaponSpeedAtk: 4.5
-  weaponAtkRange: 3.5
-  weaponDefense: 0
+  weaponDmg: 3
+  weaponDefense: 2
   weaponLife: 0
-  weaponCritical: 0
-  imgWeapon: {fileID: 21300000, guid: c6a1bbabaac38774fb3f91817ba379dc, type: 3}
-  weaponName: Madeira
+  weaponSpeedAtk: 4
+  weaponCritical: 3
+  weaponRangeAtk: 2.3
+  weaponMoveSpeed: 3
+  imgWeapon: {fileID: -998099395, guid: e49bc10ce08b867468507539668a60b6, type: 3}
+  weaponName: Old Wood
   weaponID: 1000
   goldCost: 0

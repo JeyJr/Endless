@@ -4,20 +4,23 @@ using UnityEngine.UI;
 public class WeaponAttributes : MonoBehaviour
 {
 
-    [SerializeField] private float weaponAtk;
-    [SerializeField] private float weaponSpeedAtk;
-    [SerializeField] private float weaponAtkRange;
+    [SerializeField] private float weaponDmg;
     [SerializeField] private float weaponDefense;
     [SerializeField] private float weaponLife;
+    [SerializeField] private float weaponSpeedAtk;
     [SerializeField] private float weaponCritical;
+    [SerializeField] private float weaponRangeAtk;
+    [SerializeField] private float weaponMoveSpeed;
 
 
-    public float WeaponAtk{ get => weaponAtk; }
+
+    public float WeaponDmg{ get => weaponDmg; }
     public float WeaponSpeedAtk { get => weaponSpeedAtk; }
-    public float WeaponAtkRange { get => weaponAtkRange; }
     public float WeaponDefense { get => weaponDefense; }
     public float WeaponLife { get => weaponLife; }
     public float WeaponCritical { get => weaponCritical; }
+    public float WeaponRangeAtk { get => weaponRangeAtk; }
+    public float WeaponMoveSpeed { get => weaponMoveSpeed; }
 
 
     //UI

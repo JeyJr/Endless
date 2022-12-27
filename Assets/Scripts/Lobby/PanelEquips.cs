@@ -35,6 +35,9 @@ public class PanelEquips : MonoBehaviour
     public GameObject btnsHelmetRootGroup;
     public List<GameObject> helmetBtns;
 
+    [Header("Format")]
+    [SerializeField] private string hexColor;
+
     private void OnEnable()
     {
         BtnSetEnablePanel(0);
@@ -101,15 +104,8 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(
-            w.WeaponAtk,
-            w.WeaponSpeedAtk,
-            w.WeaponAtkRange,
-            w.WeaponLife,
-            w.WeaponDefense,
-            w.WeaponCritical,
-            w.WeaponName,
-            w.ImgWeapon
-            );
+            w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponSpeedAtk, w.WeaponCritical,
+            w.WeaponRangeAtk,w.WeaponMoveSpeed, w.WeaponName, w.ImgWeapon);
 
         foreach (int id in gameData.purchasedWeaponsIds)
         {
@@ -135,15 +131,9 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(
-            a.ArmorAtk,
-            0,
-            a.ArmorAtkRange,
-            a.ArmorLife,
-            a.ArmorDefense,
-            a.ArmorCritical,
-            a.ArmorName,
-            a.ImgSetIcon
-            );
+            a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorSpeedAtk, a.ArmorCritical,
+            a.ArmorRangeAtk, a.ArmorMoveSpeed, a.ArmorName, a.ImgSetIcon);
+
 
         foreach (int id in gameData.purchasedArmorIds)
         {
@@ -169,15 +159,8 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(
-            h.HelmetAtk,
-            0,
-            0,
-            h.HelmetLife,
-            h.HelmetDefense,
-            h.HelmetCritical,
-            h.HelmetName,
-            h.ImgSetIcon
-            );
+            h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetSpeedAtk, h.HelmetCritical,
+            h.HelmetRangeAtk, h.HelmetMoveSpeed, h.HelmetName, h.ImgSetIcon);
 
         foreach (int id in gameData.purchasedHelmetIds)
         {
@@ -256,34 +239,39 @@ public class PanelEquips : MonoBehaviour
     }
     #endregion
 
-    void SetPanelInfoInformations(float atk, float speedAtk, float atkRange, float life, float defense, float critical, string name, Sprite icon)
+    void SetPanelInfoInformations(float atk, float defense, float life, float speedAtk, float critical, float atkRange, float moveSpeed, string name, Sprite icon)
     {
         string _atk = "";
-        string _speedAtk = "";
-        string _atkRange = "";
-        string _life = "";
         string _defense = "";
+        string _life = "";
+        string _speedAtk = "";
         string _critical = "";
+        string _atkRange = "";
+        string _moveSpeed = "";
 
         if (atk > 0)
-            _atk = "ATK: " + atk.ToString("F0") + "<br>";
-
-        if(speedAtk > 0)
-            _speedAtk = "SPEED ATK: " + speedAtk.ToString("F2") + "s" + "<br>";
-
-        if(atkRange > 0)
-            _atkRange = "RANGE:  " + atkRange.ToString("F2") + "m" + "<br>";
-
-        if (life > 0)
-            _life = "LIFE: " + life.ToString("F2") + "%" + "<br>";
+            _atk = $"<color=#{hexColor}> ATK: </color>" + atk.ToString("F0") + "<br>";
 
         if (defense>0)
-            _defense = "DEF: " + defense.ToString("F2") + "%" + "<br>";
+            _defense = $"<color=#{hexColor}> DEF: </color>" + defense.ToString("F2") + "%" + "<br>";
+
+        if (life > 0)
+            _life = $"<color=#{hexColor}> LIFE: </color>" + life.ToString("F2") + "%" + "<br>";
+
+        if(speedAtk > 0)
+            _speedAtk = $"<color=#{hexColor}> SPEED ATK: </color>" + speedAtk.ToString("F2") + "s" + "<br>";
 
         if (critical > 0)
-            _critical = "CRITICAL: " + critical.ToString("F2") + "%" + "<br>";
+            _critical = $"<color=#{hexColor}> CRITICAL: </color>" + critical.ToString("F2") + "%" + "<br>";
 
-        txtAttributes.text = $"{_atk}{_speedAtk}{_atkRange}{_life}{_defense}{_critical}";
+        if(atkRange > 0)
+            _atkRange = $"<color=#{hexColor}> RANGE:  </color>" + atkRange.ToString("F2") + "m" + "<br>";
+
+        if (moveSpeed > 0)
+            _moveSpeed = $"<color=#{hexColor}> MOVE: </color>" + moveSpeed.ToString("F2") + "<br>";
+
+
+        txtAttributes.text = $"{_atk}{_defense}{_life}{_speedAtk}{_critical}{_atkRange}{_moveSpeed}";
         txtName.text = name;
         imgIcon.sprite = icon;
     }
@@ -291,6 +279,6 @@ public class PanelEquips : MonoBehaviour
     public void BtnSetEnablePanel(int index)
     {
         for (int i = 0; i < panels.Count; i++)
-            panels[i].SetActive(i == index ? true : false);
+            panels[i].SetActive(i == index ? true : false);            
     }
 }

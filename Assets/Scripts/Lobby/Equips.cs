@@ -21,13 +21,14 @@ public class Equips : MonoBehaviour
             if (weapon.GetComponent<WeaponAttributes>().WeaponID == gameData.equipedWeaponId)
             {
                 var w = weapon.GetComponent<WeaponAttributes>();
-                gameData.weaponDmg = w.WeaponAtk;
-                gameData.weaponSpeedAtk = w.WeaponSpeedAtk;
-                gameData.weaponRangeAtk = w.WeaponAtkRange;
-                gameData.equipedWeaponId = w.WeaponID;
-                gameData.weaponLife = w.WeaponLife;
+                gameData.weaponDmg = w.WeaponDmg;
                 gameData.weaponDefense = w.WeaponDefense;
+                gameData.weaponLife = w.WeaponLife;
+                gameData.weaponSpeedAtk = w.WeaponSpeedAtk;
                 gameData.weaponCritical = w.WeaponCritical;
+                gameData.weaponRangeAtk = w.WeaponRangeAtk;
+                gameData.weaponMoveSpeed = w.WeaponMoveSpeed;
+                gameData.equipedWeaponId = w.WeaponID;
 
                 ManagerData.Save(gameData);
 
@@ -46,13 +47,15 @@ public class Equips : MonoBehaviour
             if (armor.GetComponent<ArmorAttributes>().ArmorID == gameData.equipedArmorId)
             {
                 var a = armor.GetComponent<ArmorAttributes>();
-                gameData.equipedArmorId = a.ArmorID;
 
-                gameData.armorDmg = a.ArmorAtk;
-                gameData.armorRangeAtk = a.ArmorAtkRange;
-                gameData.armorLife = a.ArmorLife;
+                gameData.armorDmg = a.ArmorDmg;
                 gameData.armorDefense = a.ArmorDefense;
+                gameData.armorLife = a.ArmorLife;
+                gameData.armorSpeedAtk = a.ArmorSpeedAtk;
                 gameData.armorCritical = a.ArmorCritical;
+                gameData.armorRangeAtk = a.ArmorRangeAtk;
+                gameData.armorMoveSpeed = a.ArmorMoveSpeed;
+                gameData.equipedArmorId = a.ArmorID;
 
                 ManagerData.Save(gameData);
 
@@ -80,18 +83,20 @@ public class Equips : MonoBehaviour
             if (helmet.GetComponent<HelmetAttributes>().HelmetID == gameData.equipedHelmetId)
             {
                 var h = helmet.GetComponent<HelmetAttributes>();
-                gameData.equipedHelmetId = h.HelmetID;
-                gameData.helmetDmg = h.HelmetAtk;
-                gameData.helmetLife = h.HelmetLife;
+                gameData.helmetDmg = h.HelmetDmg;
                 gameData.helmetDefense = h.HelmetDefense;
+                gameData.helmetLife = h.HelmetLife;
+                gameData.helmetSpeedAtk = h.HelmetSpeedAtk;
                 gameData.helmetCritical = h.HelmetCritical;
+                gameData.helmetRangeAtk = h.HelmetRangeAtk;
+                gameData.helmetMoveSpeed = h.HelmetMoveSpeed;
+                gameData.equipedHelmetId = h.HelmetID;
 
                 ManagerData.Save(gameData);
 
                 return h.ImgHelmet;
             }
         }
-
         return helmet[0].GetComponent<HelmetAttributes>().ImgHelmet;
     }
 }
