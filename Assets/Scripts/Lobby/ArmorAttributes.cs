@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArmorAttributes : MonoBehaviour
 {
-
+    [Header("ATTRIBUTES")]
     [SerializeField] private float armorDmg;
     [SerializeField] private float armorDefense;
     [SerializeField] private float armorLife;
@@ -22,30 +22,25 @@ public class ArmorAttributes : MonoBehaviour
     public float ArmorRangeAtk { get => armorRangeAtk; }
     public float ArmorMoveSpeed { get => armorMoveSpeed; }
 
-
-    //UI
-    [SerializeField] private Sprite imgSetIcon;
-
-    [SerializeField] private Sprite imgArmorBody;
-    [SerializeField] private Sprite imgArmorArm;
-    [SerializeField] private Sprite imgArmorFoot;
-
+    [Header("SET ARMOR DATA CONTROL")]
     [SerializeField] private string armorName;
-
-    //UI
-    public Sprite ImgSetIcon { get => imgSetIcon; }
-    public Sprite ImgArmorBody { get => imgArmorBody; }
-    public Sprite ImgArmorArm { get => imgArmorArm; }
-    public Sprite ImgArmorFoot { get => imgArmorFoot; }
-
-
-    public string ArmorName { get => armorName; }
-
-
-    //Buy
     [SerializeField] private int armorID;
     [SerializeField] private float goldCost;
-
+    public string ArmorName { get => armorName; }
     public int ArmorID { get => armorID; }
     public float GoldCost { get => goldCost; }
+
+    
+    [Header("SET EQUIPS IMG ")]
+    [SerializeField] private Sprite imgArmorIcon;
+    [SerializeField] private Sprite imgBody;
+    [SerializeField] private Sprite imgArm, imgHand;
+    [SerializeField] private Sprite imgLeg, imgCenter, imgFoot;
+    public Sprite ImgArmorIcon { get => imgArmorIcon; set => imgArmorIcon = value; }
+    public Sprite ImgBody { get => imgBody; set => imgBody = value; }
+    public Sprite ImgArm { get => imgArm; set => imgArm = value; }
+    public Sprite ImgHand { get => imgHand; set => imgHand = value; }
+    public Sprite ImgLeg { get => imgLeg; set => imgLeg = value; }
+    public Sprite ImgCenter { get => imgCenter; set => imgCenter = value; }
+    public Sprite ImgFoot { get => imgFoot; set => imgFoot = value; }
 }

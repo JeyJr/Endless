@@ -58,10 +58,10 @@ MonoBehaviour:
   armorCritical: 10
   armorRangeAtk: 0.5
   armorMoveSpeed: 3
-  imgSetIcon: {fileID: -2145784049, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: 1456939779, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: 559724869, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: 1260334649, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgSetIcon: {fileID: 8359653, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgArmorBody: {fileID: -23697032, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgArmorArm: {fileID: 1738170744, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgArmorFoot: {fileID: -2001987186, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   armorName: Medieval Bandit
   armorID: 1004
   goldCost: 200
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1027253741, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: 657035659, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -132,7 +132,7 @@ public class PanelEquips : MonoBehaviour
 
         SetPanelInfoInformations(
             a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorSpeedAtk, a.ArmorCritical,
-            a.ArmorRangeAtk, a.ArmorMoveSpeed, a.ArmorName, a.ImgSetIcon);
+            a.ArmorRangeAtk, a.ArmorMoveSpeed, a.ArmorName, a.ImgArmorIcon);
 
 
         foreach (int id in gameData.purchasedArmorIds)

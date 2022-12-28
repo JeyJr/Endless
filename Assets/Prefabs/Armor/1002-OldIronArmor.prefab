@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -323.6472, y: 657.28906}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 100, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937196250760657839
 MonoBehaviour:
@@ -58,13 +58,16 @@ MonoBehaviour:
   armorCritical: 0
   armorRangeAtk: 0
   armorMoveSpeed: 1
-  imgSetIcon: {fileID: 160343450, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: -1135035636, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: -850417364, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: 1815541016, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   armorName: Old Iron Armor
   armorID: 1002
   goldCost: 135
+  imgArmorIcon: {fileID: -655067917, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgBody: {fileID: 630975887, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgArm: {fileID: 917214317, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgHand: {fileID: 1743610021, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgLeg: {fileID: -1905428183, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgCenter: {fileID: 1481907972, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgFoot: {fileID: 2050680512, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
 --- !u!222 &1058280661379930346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1605455232, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: 630975887, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

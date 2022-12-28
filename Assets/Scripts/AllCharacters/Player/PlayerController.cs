@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
     [Header("SkinOrganization")]
     [SerializeField] private Transform skinHead;
 
-    [Header("FootAnimations")]
+    [Header("Animations")]
+    [SerializeField] private Animator rightLegAnim;
     [SerializeField] private Animator rightFootAnim;
+    [SerializeField] private Animator leftLegAnim;
     [SerializeField] private Animator leftFootAnim;
 
 
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             CamPosition(-3, 0, 10, 0.1f, 100);
-            FootAnims("Run");
+            Anims("Run");
         }
         else if (move.x > 0)
         {
@@ -65,12 +67,12 @@ public class PlayerController : MonoBehaviour
             playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
 
             CamPosition(3, 0, 10, 0.1f, 100);
-            FootAnims("Run");
+            Anims("Run");
         }
         else
         {
             CamPosition(0, 0, 10, 0.2f, 10);
-            FootAnims("Idle");
+            Anims("Idle");
         }
 
         SkinHeadZPosition();
@@ -81,11 +83,15 @@ public class PlayerController : MonoBehaviour
     {
         skinHead.position = new Vector3(skinHead.position.x, skinHead.position.y, -0.05f);
     }
-    void FootAnims(string animName)
+    void Anims(string animName)
     {
-        rightFootAnim.Play($"Base Layer.RightFoot_{animName}", 0);
-        leftFootAnim.Play($"Base Layer.LeftFoot_{animName}", 0);
+        leftLegAnim.Play($"Base Layer.LeftLeg_{animName}", 0);
+        rightLegAnim.Play($"Base Layer.RightLeg_{animName}", 0);
+
+        leftFootAnim.Play($"Base Layer.LFoot_{animName}", 0);
+        rightFootAnim.Play($"Base Layer.RFoot_{animName}", 0);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EnemyZone"))

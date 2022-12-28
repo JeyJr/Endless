@@ -58,10 +58,10 @@ MonoBehaviour:
   armorCritical: 5
   armorRangeAtk: 0.8
   armorMoveSpeed: 3
-  imgSetIcon: {fileID: -1379280788, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: 524924550, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: -2071475609, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: 1097378844, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgSetIcon: {fileID: 1546472591, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgArmorBody: {fileID: 1284936199, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgArmorArm: {fileID: -596583977, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  imgArmorFoot: {fileID: -2005467035, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   armorName: Rabbit Costume
   armorID: 1003
   goldCost: 200
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1958325253, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: -1663848532, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

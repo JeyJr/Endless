@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -323.7631, y: 657.33826}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 100, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3784423646984166490
 MonoBehaviour:
@@ -58,13 +58,16 @@ MonoBehaviour:
   armorCritical: 0
   armorRangeAtk: 0
   armorMoveSpeed: 1
-  imgSetIcon: {fileID: 2106674347, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: -2080161876, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: -1626907588, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: -1230491060, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   armorName: Standard
   armorID: 1000
   goldCost: 0
+  imgArmorIcon: {fileID: -221154806, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgBody: {fileID: 1039595054, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgArm: {fileID: 1815635599, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgHand: {fileID: -1466245845, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgLeg: {fileID: 1379580466, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgCenter: {fileID: -1101310352, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgFoot: {fileID: 1500034602, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
 --- !u!222 &4051896004129179083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1224715892, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: 1039595054, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

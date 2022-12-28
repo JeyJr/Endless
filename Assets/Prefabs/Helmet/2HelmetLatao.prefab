@@ -44,12 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3668d74fceed74cab3e1acd967cfba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helmetAtk: 0
+  helmetDmg: 0
   helmetDefense: 0
   helmetLife: 0
+  helmetSpeedAtk: 0
   helmetCritical: 0
-  imgSetIcon: {fileID: 21300000, guid: 07b8390a26f279a4e8bf6fc60337b15b, type: 3}
-  imgHelmet: {fileID: -1518151730, guid: eb22fa8c6d4aa614e82143c5c91aa030, type: 3}
-  helmetName: "Helmet Lat\xE3o"
+  helmetRangeAtk: 0
+  helmetMoveSpeed: 0
+  imgSetIcon: {fileID: 2053583875, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  imgHelmet: {fileID: 637774172, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
+  helmetName: Helmet Old Iron
   helmetID: 1002
   goldCost: 2500

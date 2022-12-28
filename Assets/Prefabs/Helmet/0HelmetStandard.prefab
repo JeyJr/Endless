@@ -8,8 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5574887046829473457}
+  - component: {fileID: 6052720352783537694}
   - component: {fileID: 1896049812648741684}
+  - component: {fileID: 4793754798062828820}
   m_Layer: 0
   m_Name: 0HelmetStandard
   m_TagString: Untagged
@@ -17,21 +18,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5574887046829473457
-Transform:
+--- !u!224 &6052720352783537694
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5574887046829473456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -323.7631, y: 657.33826, z: 0.0010396673}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0010396673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -323.7631, y: 657.33826}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896049812648741684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,12 +50,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3668d74fceed74cab3e1acd967cfba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helmetAtk: 0
+  helmetDmg: 0
   helmetDefense: 0
   helmetLife: 0
+  helmetSpeedAtk: 0
   helmetCritical: 0
-  imgSetIcon: {fileID: 21300000, guid: 07b8390a26f279a4e8bf6fc60337b15b, type: 3}
-  imgHelmet: {fileID: -1079924242, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  helmetName: "Cabe\xE7a"
+  helmetRangeAtk: 0
+  helmetMoveSpeed: 0
+  imgSetIcon: {fileID: 1430988548, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  imgHelmet: {fileID: -245815804, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  helmetName: Standard Helmet
   helmetID: 1000
   goldCost: 0
+--- !u!222 &4793754798062828820
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574887046829473456}
+  m_CullTransparentMesh: 1

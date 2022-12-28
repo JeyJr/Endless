@@ -7,15 +7,9 @@ using UnityEngine.XR;
 public class PlayerHand : MonoBehaviour
 {
     public Slider delayBar;
-    public Animator anim;
-    [SerializeField] private string[] animsName;
+    public Animator rightArmAnim, rightHandAnim;
     bool isAtk;
 
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
 
     private void Update()
     {
@@ -40,7 +34,8 @@ public class PlayerHand : MonoBehaviour
         delayBar.maxValue = atkSpeed;
         delayBar.value = 0;
 
-        anim.Play($"Base Layer.{animsName[0]}", 0); //Idle
+        rightArmAnim.Play($"Base Layer.RightArm_Idle", 0);
+        rightHandAnim.Play($"Base Layer.RHand_Idle", 0);
 
         while (delayBar.value < delayBar.maxValue)
         {
@@ -50,7 +45,8 @@ public class PlayerHand : MonoBehaviour
 
         float value = Random.Range(0, 3);
 
-        anim.Play($"Base Layer.{animsName[1]}", 0); //MeleeAtk
+        rightArmAnim.Play($"Base Layer.RightArm_Atk", 0);
+        rightHandAnim.Play($"Base Layer.RHand_Atk", 0);
     }
     public void SetIsAtk() => isAtk = !isAtk;
     #endregion

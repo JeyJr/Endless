@@ -9,8 +9,9 @@ public class PlayerSkinManager : MonoBehaviour
     public SpriteRenderer weapon;
     public SpriteRenderer head;
     public SpriteRenderer body;
-    public SpriteRenderer leftArm, rightArm;
-    public SpriteRenderer leftFoot, rightFoot;
+    public SpriteRenderer rightArm, rightHand, leftArm, leftHand;
+    public SpriteRenderer rightLeg, rightFoot, leftLeg, leftFoot;
+    public SpriteRenderer rightLegCenter, leftLegCenter;
 
     private void Awake()
     {
@@ -25,11 +26,24 @@ public class PlayerSkinManager : MonoBehaviour
     public void EquipArmor()
     {
         Sprite[] sprites = equips.GetArmorToEquip();
+        
         body.sprite = sprites[0];
-        leftArm.sprite = sprites[1];
+
         rightArm.sprite = sprites[1];
-        leftFoot.sprite = sprites[2];
-        rightFoot.sprite = sprites[2];
+        leftArm.sprite = sprites[1];
+
+        rightHand.sprite = sprites[2];
+        leftHand.sprite = sprites[2];
+
+        rightLegCenter.sprite = sprites[3];
+        leftLegCenter.sprite = sprites[3];
+        
+        rightLeg.sprite = sprites[4];
+        leftLeg.sprite = sprites[4];
+
+        leftFoot.sprite = sprites[5];
+        rightFoot.sprite = sprites[5];
+
     }
 
     public void EquipHelmet()

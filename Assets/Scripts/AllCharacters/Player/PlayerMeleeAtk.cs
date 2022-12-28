@@ -56,6 +56,5 @@ public class PlayerMeleeAtk : MonoBehaviour
 
         //Gizmos.DrawRay(pos, boxDirection * maxDistance);
         //Gizmos.DrawWireCube(pos + boxDirection * maxDistance, boxScale * 2);
-
     }
 }

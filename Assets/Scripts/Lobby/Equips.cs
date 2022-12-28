@@ -59,18 +59,24 @@ public class Equips : MonoBehaviour
 
                 ManagerData.Save(gameData);
 
-                Sprite[] sprites = new Sprite[3];
-                sprites[0] = a.ImgArmorBody;
-                sprites[1] = a.ImgArmorArm;
-                sprites[2] = a.ImgArmorFoot;
+                Sprite[] sprites = new Sprite[6];
+                sprites[0] = a.ImgBody;
+                sprites[1] = a.ImgArm;
+                sprites[2] = a.ImgHand;
+                sprites[3] = a.ImgCenter;
+                sprites[4] = a.ImgLeg;
+                sprites[5] = a.ImgFoot;
                 return sprites;
             }
         }
 
-        Sprite[] standardSprites = new Sprite[3];
-        standardSprites[0] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgArmorBody;
-        standardSprites[1] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgArmorArm;
-        standardSprites[2] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgArmorFoot;
+        Sprite[] standardSprites = new Sprite[6];
+        standardSprites[0] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgBody;
+        standardSprites[1] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgArm;
+        standardSprites[2] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgHand;
+        standardSprites[3] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgCenter;
+        standardSprites[4] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgLeg;
+        standardSprites[5] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgFoot;
 
         return standardSprites;
     }

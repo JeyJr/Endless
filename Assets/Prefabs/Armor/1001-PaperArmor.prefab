@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -323.6472, y: 657.28906}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 100, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937196250760657839
 MonoBehaviour:
@@ -58,13 +58,16 @@ MonoBehaviour:
   armorCritical: 0
   armorRangeAtk: 0
   armorMoveSpeed: 1
-  imgSetIcon: {fileID: 634763700, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: 1355223290, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: 1269310534, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: 216069457, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   armorName: Paper Armor
   armorID: 1001
   goldCost: 100
+  imgArmorIcon: {fileID: -762493301, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
+  imgBody: {fileID: -569932449, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
+  imgArm: {fileID: -76686486, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
+  imgHand: {fileID: 798212604, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
+  imgLeg: {fileID: -2056766029, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
+  imgCenter: {fileID: -2094111549, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
+  imgFoot: {fileID: 1464465467, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
 --- !u!222 &1058280661379930346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 29993914, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: -569932449, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
