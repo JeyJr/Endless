@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313cd76760711d47995b05157d9b4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDmg: 3
+  weaponDmg: 10
   weaponDefense: 2
   weaponLife: 0
-  weaponSpeedAtk: 0.1
+  weaponAtkSpeed: 25
   weaponCritical: 3
   weaponRangeAtk: 2.3
   weaponMoveSpeed: 3

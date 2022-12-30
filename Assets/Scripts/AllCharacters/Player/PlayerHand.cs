@@ -43,8 +43,6 @@ public class PlayerHand : MonoBehaviour
             delayBar.value += .01f;
         }
 
-        float value = Random.Range(0, 3);
-
         rightArmAnim.Play($"Base Layer.RightArm_Atk", 0);
         rightHandAnim.Play($"Base Layer.RHand_Atk", 0);
     }

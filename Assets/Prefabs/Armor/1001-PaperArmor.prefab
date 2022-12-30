@@ -54,7 +54,7 @@ MonoBehaviour:
   armorDmg: 2
   armorDefense: 2
   armorLife: 11
-  armorSpeedAtk: 1.2
+  armorAtkSpeed: 25
   armorCritical: 0
   armorRangeAtk: 0
   armorMoveSpeed: 1

@@ -29,8 +29,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        camPos = Camera.main.GetComponent<Transform>();
 
+        GameData gameData = ManagerData.Load();
+        
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerMove();
         playerInput.Enable();
@@ -41,8 +42,16 @@ public class PlayerController : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("LevelController") == null)
             lobby = true;
 
-        GameData gameData = ManagerData.Load();
-        playerMoveSpeed = gameData.MoveSpeed;
+        //Cam behavior
+        camPos = Camera.main.GetComponent<Transform>();
+
+        if (!lobby && gameData.RangeAtk > camPos.GetComponent<Camera>().orthographicSize)
+        {
+            camPos.GetComponent<Camera>().orthographicSize = gameData.RangeAtk;
+        }
+
+        UpdatePlayerMoveSpeed(gameData.buffSkillMoveSpeed);
+
     }
 
     void Update()
@@ -79,6 +88,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public void UpdatePlayerMoveSpeed(float buffValue)
+    {
+        GameData gameData = ManagerData.Load();
+        gameData.buffSkillMoveSpeed = buffValue;
+
+        ManagerData.Save(gameData);
+
+        playerMoveSpeed = gameData.MoveSpeed;
+    }
+
     void SkinHeadZPosition()
     {
         skinHead.position = new Vector3(skinHead.position.x, skinHead.position.y, -0.05f);
@@ -91,7 +110,6 @@ public class PlayerController : MonoBehaviour
         leftFootAnim.Play($"Base Layer.LFoot_{animName}", 0);
         rightFootAnim.Play($"Base Layer.RFoot_{animName}", 0);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EnemyZone"))
@@ -106,7 +124,8 @@ public class PlayerController : MonoBehaviour
             other.GetComponent<ZoneControl>().PlayerOutEnemyZone();
         }
     }
-
+   
+    
     #region CamBehavior
 
     void CamPosition(float x, float y, float z, float smoothT, float speed)

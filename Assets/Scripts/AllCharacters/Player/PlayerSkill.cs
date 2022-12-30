@@ -136,9 +136,11 @@ public class PlayerSkill : MonoBehaviour
 
     IEnumerator ActiveMoveSpeed()
     {
-        playerController.PlayerMoveSpeed = ManagerData.Load().MoveSpeed + moveSpeedBuffValue;
+        playerController.UpdatePlayerMoveSpeed(moveSpeedBuffValue);
+
         yield return new WaitForSeconds(delayTimeToEndMoveSpeedBuff);
-        playerController.PlayerMoveSpeed = ManagerData.Load().MoveSpeed;
+
+        playerController.UpdatePlayerMoveSpeed(moveSpeedBuffValue);
 
         levelController.DisableUISkillICon(skillNameMoveSpeed);
         moveSpeedIsActive = false;
@@ -159,7 +161,7 @@ public class PlayerSkill : MonoBehaviour
     IEnumerator ActivePowerUp()
     {
         GameData gameData = ManagerData.Load();
-        gameData.buffSkillPowerUp = gameData.weaponDmg * powerUpBuffValue /100;
+        gameData.buffSkillPowerUp = powerUpBuffValue;
         ManagerData.Save(gameData);
 
         yield return new WaitForSeconds(delayTimeToEndPowerUpBuff);

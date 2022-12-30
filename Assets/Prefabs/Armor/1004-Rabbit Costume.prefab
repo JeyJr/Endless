@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1058280661379930346}
   - component: {fileID: 8959372940831428921}
   m_Layer: 0
-  m_Name: 1003-Rabbit Costume
+  m_Name: 1004-Rabbit Costume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -323.6472, y: 657.28906}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 100, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937196250760657839
 MonoBehaviour:
@@ -51,20 +51,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3568f001dc7525a4aa1054e2db41a429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armorDmg: 6
+  armorDmg: 7
   armorDefense: 0
-  armorLife: 5
-  armorSpeedAtk: 0.8
-  armorCritical: 5
-  armorRangeAtk: 0.8
+  armorLife: 0
+  armorSpeedAtk: 0.9
+  armorCritical: 10
+  armorRangeAtk: 0.5
   armorMoveSpeed: 3
-  imgSetIcon: {fileID: 1546472591, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: 1284936199, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: -596583977, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: -2005467035, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
   armorName: Rabbit Costume
-  armorID: 1003
+  armorID: 1004
   goldCost: 200
+  imgArmorIcon: {fileID: -826207919, guid: 04971e6db09be7341af188e8d029da19, type: 3}
+  imgBody: {fileID: -2131149586, guid: 04971e6db09be7341af188e8d029da19, type: 3}
+  imgArm: {fileID: 16002555, guid: 04971e6db09be7341af188e8d029da19, type: 3}
+  imgHand: {fileID: 1797556298, guid: 04971e6db09be7341af188e8d029da19, type: 3}
+  imgLeg: {fileID: -806007807, guid: 04971e6db09be7341af188e8d029da19, type: 3}
+  imgCenter: {fileID: 725764727, guid: 04971e6db09be7341af188e8d029da19, type: 3}
+  imgFoot: {fileID: 1670955397, guid: 04971e6db09be7341af188e8d029da19, type: 3}
 --- !u!222 &1058280661379930346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1663848532, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: -2131149586, guid: 04971e6db09be7341af188e8d029da19, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

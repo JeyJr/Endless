@@ -8,74 +8,12 @@ public class GameData
 
     public float gold;
 
+    //Attributes
     public float atk;
     public float def;
     public float vit;
     public float agi;
     public float cri;
-
-    public float Damage 
-    {
-        get {
-            float equips = weaponDmg + armorDmg + helmetDmg;
-            float totalAtk = atk * 5 + equips;
-            return totalAtk + (totalAtk * bonusDmg / 100) + buffSkillPowerUp;
-        } 
-    }
-    public float Defense
-    {
-        get {
-            float equips = weaponDefense + armorDefense + helmetDefense;
-            float totalDef = def / 2 + equips;
-            return totalDef +(totalDef * bonusDefense / 100);
-        }
-    }
-    public float MaxLife
-    {
-        get {
-            float equips = weaponLife + armorLife + helmetLife;
-            float totalLife = vit * 50 + equips;
-            return totalLife + (totalLife * bonusLife / 100);
-        }
-    }
-    public float AtkSpeed
-    {
-        get {
-            float equips = weaponSpeedAtk + armorSpeedAtk + helmetSpeedAtk;
-            float speed = (equips - agi * .02f) - (equips * bonusAtkSpeed / 100);
-            speed -= (speed * buffSkillAtkSpeed / 100);
-            return speed < 0.1f ? 0.1f : speed;
-        }
-    }
-    public float CriticalDMG
-    {
-        get {
-            float totalCritic = cri / 2;
-            float equips = weaponCritical + armorCritical + helmetCritical;
-            return totalCritic + equips + bonusCritical;
-        }
-    }
-    public float RangeAtk
-    {
-        get {
-            float strRangeBonus = atk / 40;
-            float equips = weaponRangeAtk + armorRangeAtk + helmetRangeAtk;
-            return equips + bonusRangeAtk + buffSkillRangeAtk + strRangeBonus;
-        }
-    }
-
-    public float GoldBonus
-    {
-        get => bonusGold;
-    }
-
-    public float MoveSpeed
-    {
-        get {
-            float equips = weaponMoveSpeed + armorMoveSpeed + helmetMoveSpeed;
-            return bonusMoveSpeed + equips + (agi / 20);
-        }
-    }
 
 
     //Weapons
@@ -85,7 +23,7 @@ public class GameData
     public float weaponDmg;
     public float weaponDefense;
     public float weaponLife;
-    public float weaponSpeedAtk;
+    public float weaponAtkSpeed;
     public float weaponCritical;
     public float weaponRangeAtk;
     public float weaponMoveSpeed;
@@ -97,7 +35,7 @@ public class GameData
     public float armorDmg;
     public float armorDefense;
     public float armorLife;
-    public float armorSpeedAtk;
+    public float armorAtkSpeed;
     public float armorCritical;
     public float armorRangeAtk;
     public float armorMoveSpeed;
@@ -109,7 +47,7 @@ public class GameData
     public float helmetDmg;
     public float helmetDefense;
     public float helmetLife;
-    public float helmetSpeedAtk;
+    public float helmetAtkSpeed;
     public float helmetCritical;
     public float helmetRangeAtk;
     public float helmetMoveSpeed;
@@ -138,6 +76,122 @@ public class GameData
 
     //SkillEnabledInLevel
     public float buffSkillPowerUp;
+    public float buffSkillDefense;
+    public float buffSkillMaxLife;
     public float buffSkillAtkSpeed;
+    public float buffSkillCritical;
     public float buffSkillRangeAtk;
+    public float buffSkillMoveSpeed;
+    public float Damage 
+    {
+        get {
+            float dmgBaseCalc = atk + weaponDmg;
+            float bonusPercentage = 
+                bonusDmg + 
+                armorDmg + 
+                helmetDmg + 
+                buffSkillPowerUp;
+
+            return dmgBaseCalc + (dmgBaseCalc * bonusPercentage / 100);
+        } 
+    }
+    public float Defense
+    {
+        get {
+            float bonusPercentage = 
+                (def / 2) + // max 50
+                bonusDefense +  //max 10
+                weaponDefense + 
+                armorDefense + 
+                helmetDefense +
+                buffSkillDefense;
+
+            return bonusPercentage;
+        }
+    }
+    public float MaxLife
+    {
+        get
+        {
+            float lifeBaseCalc = 100;
+            float multiplier = 5;
+            float bonusPercentage =
+                vit +
+                bonusLife +
+                weaponLife + 
+                armorLife + 
+                helmetLife + 
+                buffSkillMaxLife;
+
+            return (lifeBaseCalc * bonusPercentage / 100) * multiplier;
+        }
+    }
+    public float AtkSpeed
+    {
+        get {
+
+            float baseCalc = 5;
+            float bonusPercentage = 
+                (agi / 2) +//max 50
+                bonusAtkSpeed +
+                weaponAtkSpeed + 
+                armorAtkSpeed + 
+                helmetAtkSpeed + 
+                buffSkillAtkSpeed;
+
+            float result = baseCalc - (baseCalc * bonusPercentage / 100);
+
+            return result > 0.1f ? result : 0.1f;
+        }
+    }
+    public float CriticalDMG
+    {
+        get {
+            float bonusPercentage =
+                (cri / 2) + //max 50
+                bonusCritical +
+                weaponCritical +
+                armorCritical +
+                helmetCritical +
+                buffSkillCritical;
+
+            return bonusPercentage;
+        }
+    }
+    public float RangeAtk
+    {
+        get {
+            float baseCalc = atk / 50 + weaponRangeAtk;
+            float bonusPercentage =
+                bonusRangeAtk +
+                armorRangeAtk +
+                helmetRangeAtk +
+                buffSkillRangeAtk; 
+
+            return baseCalc + (baseCalc * bonusPercentage / 100);
+        }
+    }
+
+    public float GoldBonus
+    {
+        get => bonusGold;
+    }
+
+    public float MoveSpeed
+    {
+        get {
+            float baseCalc = 5;
+            float bonusPercentage =
+                (agi / 2) + 
+                bonusMoveSpeed +
+                weaponMoveSpeed +
+                armorMoveSpeed +
+                helmetMoveSpeed +
+                buffSkillMoveSpeed;
+
+            return baseCalc + (baseCalc * bonusPercentage / 100);
+        }
+    }
+
+
 }

@@ -8,7 +8,6 @@ public class PlayerMeleeAtk : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private Transform atkPosition;
-    
 
     public void Atk()
     {
@@ -21,9 +20,15 @@ public class PlayerMeleeAtk : MonoBehaviour
             for (int i = 0; i < hit.Length; i++)
             {
                 if (Critical(gameData.CriticalDMG))
-                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(CriticalDMG(gameData.Damage), true);
+                {
+                    hit[i].collider.GetComponent<EnemyStatus>().
+                        LoseLife(CriticalDMG(gameData.Damage, gameData.CriticalDMG), true);
+                }
                 else
-                    hit[i].collider.GetComponent<EnemyStatus>().LoseLife(SimpleDMG(gameData.Damage), false);
+                {
+                    hit[i].collider.GetComponent<EnemyStatus>().
+                        LoseLife(SimpleDMG(gameData.Damage), false);
+                }
             }
         }
     }
@@ -35,9 +40,9 @@ public class PlayerMeleeAtk : MonoBehaviour
         float value = Random.Range(0, 100);
         return value <= cri;
     }
-    float CriticalDMG(float damage)
+    float CriticalDMG(float damage, float criticalDMG)
     {
-        return Random.Range(damage * 2, (damage * 2) * 1.2f);
+        return damage + (damage * criticalDMG / 100);
     }
     float SimpleDMG(float damage)
     {

@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorDmg: 0
   armorDefense: 0
-  armorLife: 10
+  armorLife: 0
   armorSpeedAtk: 1
   armorCritical: 0
   armorRangeAtk: 0

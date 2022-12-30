@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1058280661379930346}
   - component: {fileID: 8959372940831428921}
   m_Layer: 0
-  m_Name: 1004-MedievalBandit
+  m_Name: 1003-Rogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -323.6472, y: 657.28906}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 100, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937196250760657839
 MonoBehaviour:
@@ -51,20 +51,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3568f001dc7525a4aa1054e2db41a429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armorDmg: 7
+  armorDmg: 6
   armorDefense: 0
-  armorLife: 0
-  armorSpeedAtk: 0.9
-  armorCritical: 10
-  armorRangeAtk: 0.5
+  armorLife: 5
+  armorSpeedAtk: 0.8
+  armorCritical: 5
+  armorRangeAtk: 0.8
   armorMoveSpeed: 3
-  imgSetIcon: {fileID: 8359653, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorBody: {fileID: -23697032, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorArm: {fileID: 1738170744, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  imgArmorFoot: {fileID: -2001987186, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
-  armorName: Medieval Bandit
-  armorID: 1004
+  armorName: Rogue
+  armorID: 1003
   goldCost: 200
+  imgArmorIcon: {fileID: 805671994, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
+  imgBody: {fileID: 1193504014, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
+  imgArm: {fileID: 127663851, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
+  imgHand: {fileID: -437228950, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
+  imgLeg: {fileID: -476754395, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
+  imgCenter: {fileID: -128466886, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
+  imgFoot: {fileID: 2091895804, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
 --- !u!222 &1058280661379930346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 657035659, guid: 8df068131ed11cf4aa27527ddbd477c9, type: 3}
+  m_Sprite: {fileID: 1193504014, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

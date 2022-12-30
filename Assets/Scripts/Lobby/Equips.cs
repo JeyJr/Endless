@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class Equips : MonoBehaviour
 {
@@ -12,6 +15,15 @@ public class Equips : MonoBehaviour
 
     public List<GameObject> helmet;
 
+    [SerializeField] private bool lobby;
+
+    private void OnEnable()
+    {
+        CheckEquipID(ManagerData.Load());
+
+        if (!lobby)
+            Destroy(this.gameObject, 3f);
+    }
     public SpriteRenderer GetWeaponToEquip()
     {
         GameData gameData = ManagerData.Load();
@@ -24,7 +36,7 @@ public class Equips : MonoBehaviour
                 gameData.weaponDmg = w.WeaponDmg;
                 gameData.weaponDefense = w.WeaponDefense;
                 gameData.weaponLife = w.WeaponLife;
-                gameData.weaponSpeedAtk = w.WeaponSpeedAtk;
+                gameData.weaponAtkSpeed = w.WeaponAtkSpeed;
                 gameData.weaponCritical = w.WeaponCritical;
                 gameData.weaponRangeAtk = w.WeaponRangeAtk;
                 gameData.weaponMoveSpeed = w.WeaponMoveSpeed;
@@ -36,11 +48,14 @@ public class Equips : MonoBehaviour
             }
         }
 
-        return null;
+        throw new ArgumentException("Erro ID arma!");
     }
     public Sprite[] GetArmorToEquip()
     {
         GameData gameData = ManagerData.Load();
+
+
+            
 
         foreach (var armor in armor)
         {
@@ -51,7 +66,7 @@ public class Equips : MonoBehaviour
                 gameData.armorDmg = a.ArmorDmg;
                 gameData.armorDefense = a.ArmorDefense;
                 gameData.armorLife = a.ArmorLife;
-                gameData.armorSpeedAtk = a.ArmorSpeedAtk;
+                gameData.armorAtkSpeed = a.ArmorAtkSpeed;
                 gameData.armorCritical = a.ArmorCritical;
                 gameData.armorRangeAtk = a.ArmorRangeAtk;
                 gameData.armorMoveSpeed = a.ArmorMoveSpeed;
@@ -69,16 +84,7 @@ public class Equips : MonoBehaviour
                 return sprites;
             }
         }
-
-        Sprite[] standardSprites = new Sprite[6];
-        standardSprites[0] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgBody;
-        standardSprites[1] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgArm;
-        standardSprites[2] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgHand;
-        standardSprites[3] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgCenter;
-        standardSprites[4] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgLeg;
-        standardSprites[5] = standardPlayerArmor.GetComponent<ArmorAttributes>().ImgFoot;
-
-        return standardSprites;
+        throw new ArgumentException("Erro ID armadura!");
     }
     public Sprite GetHelmetToEquip()
     {
@@ -92,7 +98,7 @@ public class Equips : MonoBehaviour
                 gameData.helmetDmg = h.HelmetDmg;
                 gameData.helmetDefense = h.HelmetDefense;
                 gameData.helmetLife = h.HelmetLife;
-                gameData.helmetSpeedAtk = h.HelmetSpeedAtk;
+                gameData.helmetAtkSpeed = h.HelmetAtkSpeed;
                 gameData.helmetCritical = h.HelmetCritical;
                 gameData.helmetRangeAtk = h.HelmetRangeAtk;
                 gameData.helmetMoveSpeed = h.HelmetMoveSpeed;
@@ -103,6 +109,27 @@ public class Equips : MonoBehaviour
                 return h.ImgHelmet;
             }
         }
-        return helmet[0].GetComponent<HelmetAttributes>().ImgHelmet;
+
+        throw new ArgumentException("Erro ID elmo!");
+    }
+    void CheckEquipID(GameData gameData)
+    {
+        if(gameData.equipedWeaponId == 0)
+        {
+            gameData.equipedWeaponId = 1000;
+            ManagerData.Save(gameData);
+        }
+
+        if (gameData.equipedArmorId == 0)
+        {
+            gameData.equipedArmorId = 1000;
+            ManagerData.Save(gameData);
+        }
+
+        if(gameData.equipedHelmetId == 0)
+        {
+            gameData.equipedHelmetId = 1000;
+            ManagerData.Save(gameData);
+        }
     }
 }

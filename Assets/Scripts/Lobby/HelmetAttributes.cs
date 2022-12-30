@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class HelmetAttributes : MonoBehaviour
 {
-    [SerializeField] private float helmetDmg;
-    [SerializeField] private float helmetDefense;
-    [SerializeField] private float helmetLife;
-    [SerializeField] private float helmetSpeedAtk;
-    [SerializeField] private float helmetCritical;
+
+    [SerializeField] private float helmetDmg;       
+    [SerializeField] private float helmetDefense;   
+    [SerializeField] private float helmetLife;      
+    [SerializeField] private float helmetAtkSpeed;  
+    [SerializeField] private float helmetCritical; 
     [SerializeField] private float helmetRangeAtk;
     [SerializeField] private float helmetMoveSpeed;
 
@@ -14,7 +15,7 @@ public class HelmetAttributes : MonoBehaviour
     public float HelmetDmg { get => helmetDmg; }
     public float HelmetDefense { get => helmetDefense; }
     public float HelmetLife { get => helmetLife; }
-    public float HelmetSpeedAtk { get => helmetSpeedAtk; }
+    public float HelmetAtkSpeed { get => helmetAtkSpeed; }
     public float HelmetCritical { get => helmetCritical; }
     public float HelmetRangeAtk { get => helmetRangeAtk; }
     public float HelmetMoveSpeed { get => helmetMoveSpeed; }

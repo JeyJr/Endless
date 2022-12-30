@@ -14,7 +14,7 @@ public class PanelEquips : MonoBehaviour
     [Header("Panel Info")]
     public GameObject panelInfo;
     public TextMeshProUGUI txtName, txtAttributes, txtGoldCost;
-    public GameObject btnEquip, btnBuy; //Comprar?
+    public GameObject btnEquip, btnBuy;
     public Image imgIcon;
 
     [Header("Standard Attributes")]
@@ -40,12 +40,11 @@ public class PanelEquips : MonoBehaviour
 
     private void OnEnable()
     {
+        BtnsPositions();
         BtnSetEnablePanel(0);
 
         GetUIBtn();
         player = GameObject.FindGameObjectWithTag("Player");
-
-
     }
 
     #region Weapon
@@ -57,15 +56,6 @@ public class PanelEquips : MonoBehaviour
             for (int i = 0; i < btnsWeaponRootGroup.transform.childCount; i++)
             {
                 weaponBtns.Add(btnsWeaponRootGroup.transform.GetChild(i).gameObject);
-            }
-        }
-
-        if (btnPositionsRoot.transform.childCount > btnPosition.Count)
-        {
-            btnPosition.Clear();
-            for (int i = 0; i < btnPositionsRoot.transform.childCount; i++)
-            {
-                btnPosition.Add(btnPositionsRoot.transform.GetChild(i).gameObject.GetComponent<RectTransform>());
             }
         }
 
@@ -97,6 +87,20 @@ public class PanelEquips : MonoBehaviour
         for (int i = 0; i < helmetBtns.Count; i++)
             helmetBtns[i].GetComponent<RectTransform>().transform.position = btnPosition[i].transform.position;
     }
+
+    public void BtnsPositions()
+    {
+        if (btnPositionsRoot.transform.childCount > btnPosition.Count)
+        {
+            btnPosition.Clear();
+            for (int i = 0; i < btnPositionsRoot.transform.childCount; i++)
+            {
+                btnPosition.Add(btnPositionsRoot.transform.GetChild(i).gameObject.GetComponent<RectTransform>());
+            }
+        }
+    }
+
+
     public void SetWeaponAttributes(WeaponAttributes w)
     {
         GameData gameData = ManagerData.Load();
@@ -104,7 +108,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(
-            w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponSpeedAtk, w.WeaponCritical,
+            w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponAtkSpeed, w.WeaponCritical,
             w.WeaponRangeAtk,w.WeaponMoveSpeed, w.WeaponName, w.ImgWeapon);
 
         foreach (int id in gameData.purchasedWeaponsIds)
@@ -131,7 +135,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(
-            a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorSpeedAtk, a.ArmorCritical,
+            a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorAtkSpeed, a.ArmorCritical,
             a.ArmorRangeAtk, a.ArmorMoveSpeed, a.ArmorName, a.ImgArmorIcon);
 
 
@@ -159,7 +163,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(
-            h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetSpeedAtk, h.HelmetCritical,
+            h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetAtkSpeed, h.HelmetCritical,
             h.HelmetRangeAtk, h.HelmetMoveSpeed, h.HelmetName, h.ImgSetIcon);
 
         foreach (int id in gameData.purchasedHelmetIds)
