@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,47 +18,96 @@ public class LevelController : MonoBehaviour
     [SerializeField] private bool zoneTwoCompleted;
     [SerializeField] private bool zoneThreeCompleted;
 
+    public bool ZoneOneCompleted { get => zoneOneCompleted; set => zoneOneCompleted = value; }
+    public bool ZoneTwoCompleted { get=> zoneTwoCompleted; set => zoneTwoCompleted = value; }
+    public bool ZoneThreeCompleted { get=> zoneThreeCompleted; set => zoneThreeCompleted = value; }
+
 
     [Header("Gold")]
     [SerializeField] private float goldTotal;
-    [SerializeField] private Transform spawnPosition;
-    [SerializeField] private GameObject txtGold;
-    [SerializeField] private TextMeshProUGUI txtUIReceivedGold;
+    [SerializeField] private LevelCanvas levelCanvas;
+    public float GoldTotal { get => goldTotal;}
+
+
+    [Header("UI")]
+    GameObject canvas;
+    [SerializeField] private TextMeshProUGUI txtMsgAlert;
+    [SerializeField] private GameObject panelMoveToNextArea;
 
     [Header("UI - SkillsIcon")]
+    [SerializeField] private Sprite standarSprite;
     public List<GameObject> uiSkillIcon;
-    public List<RectTransform> uiSkillIconPosition;
+    public List<Vector3> uiIconPosition;
 
+ 
     private void Awake()
     {
         goldTotal = 0;
         totalBossesKilled = 0;
         totalEnemiesKilled = 0;
-        txtUIReceivedGold.text = goldTotal.ToString();
 
-        uiSkillIcon = uiSkillIcon.OrderBy(icon => icon.gameObject.activeSelf).ToList();
-
+        //SKIN and WEAPONS
         PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
         pSkin.EquipWeapon();
         pSkin.EquipArmor();
         pSkin.EquipHelmet();
+
+        //GOLD IN UI TEXT
+        levelCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvas>();
+        levelCanvas.UpdateTxtGold(goldTotal);
+
+        //UI ICONS 
+        UISkillIconInitialSetup();
     }
 
 
     #region UI - SkillsIcon
-    public void EnableUISkillSlot(Sprite img)
+    void UISkillIconInitialSetup()
+    {
+        uiIconPosition.Clear();
+        uiSkillIcon.Clear();
+
+        canvas = GameObject.FindGameObjectWithTag("MainUI");
+
+        for (int i = 0; i < canvas.transform.GetChild(0).transform.childCount; i++)
+            uiSkillIcon.Add(canvas.transform.GetChild(0).transform.GetChild(i).gameObject);
+
+
+        for (int i = 0; i < uiSkillIcon.Count; i++)
+        {
+            uiIconPosition.Add(uiSkillIcon[i].GetComponent<RectTransform>().position);
+            uiSkillIcon[i].SetActive(false);
+        }
+        standarSprite = uiSkillIcon[0].GetComponent<Image>().sprite;
+    }
+
+
+    public bool CheckSkillActivated(string name)
+    {
+        for (int i = 0; i < uiSkillIcon.Count; i++)
+        {
+            if (uiSkillIcon[i].GetComponent<Image>().sprite.name == name)
+                return true;
+        }
+
+        return false;
+    }
+
+    public void EnableUISkillSlot(Sprite sprite)
     {
         for (int i = 0; i < uiSkillIcon.Count; i++)
         {
             if (!uiSkillIcon[i].activeSelf)
             {
-                uiSkillIcon[i].GetComponent<Image>().sprite = img;
+                uiSkillIcon[i].GetComponent<Image>().sprite = sprite;
                 uiSkillIcon[i].SetActive(true);
                 break;
             }
         }
 
+        OrganizerUiSkillIcon();
     }
+
 
     public void DisableUISkillICon(string name)
     {
@@ -66,6 +116,7 @@ public class LevelController : MonoBehaviour
             if (uiSkillIcon[i].GetComponent<Image>().sprite.name == name)
             {
                 uiSkillIcon[i].SetActive(false);
+                uiSkillIcon[i].GetComponent<Image>().sprite = standarSprite;
                 break;
             }
         }
@@ -74,12 +125,11 @@ public class LevelController : MonoBehaviour
 
     public void OrganizerUiSkillIcon()
     {
-        uiSkillIcon = uiSkillIcon.OrderBy(icon => icon.gameObject.activeSelf).ToList();
+        uiSkillIcon = uiSkillIcon.OrderByDescending(icon => icon.gameObject.activeSelf).ToList();
 
         for (int i = 0; i < uiSkillIcon.Count; i++)
-        {
-            uiSkillIcon[i].GetComponent<RectTransform>().transform.position = uiSkillIconPosition[i].position;
-        }
+            uiSkillIcon[i].GetComponent<RectTransform>().transform.position = uiIconPosition[i];
+        
     }
     #endregion
 
@@ -94,11 +144,9 @@ public class LevelController : MonoBehaviour
             totalEnemiesKilled++;
 
         float gold = gameData.bonusGold + goldDroped;
-        txtGold.GetComponent<TextMeshPro>().text = $"Gold +{gold}";
-        Instantiate(txtGold, spawnPosition.position, Quaternion.Euler(0, 0, 0));
 
-        goldTotal+= gold;
-        txtUIReceivedGold.text = goldTotal.ToString();
+        goldTotal += gold;
+        levelCanvas.UpdateTxtGold(goldTotal);
     }
 
 
@@ -125,4 +173,7 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
     #endregion
+
+
+    
 }

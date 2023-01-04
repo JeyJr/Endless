@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.9170003}
+  m_AnchoredPosition: {x: 0, y: -2.783}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563734981861194923
@@ -128,7 +128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.08, y: 1.955}
+  m_AnchoredPosition: {x: 0.08, y: 1.07}
   m_SizeDelta: {x: 4, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &563734982072289136
@@ -511,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775931212028223812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0.69, z: -0.193}
+  m_LocalPosition: {x: 0.55, y: 0.3, z: -0.193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -765,7 +765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3.16}
+  m_AnchoredPosition: {x: 0, y: -2.54}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3789124116273848263
@@ -1514,7 +1514,6 @@ GameObject:
   - component: {fileID: 7103068808800043739}
   - component: {fileID: 7103068808800043732}
   - component: {fileID: 7103068808800043733}
-  - component: {fileID: 7103068808800043734}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1551,7 +1550,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.91
+  m_Height: 5
   m_Radius: 0.89
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1569,8 +1568,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7718201, y: 4.3134937, z: 1}
-  m_Center: {x: 0.053230286, y: 1.7498975, z: 0}
+  m_Size: {x: 1.7718201, y: 4.9718065, z: 1}
+  m_Center: {x: 0.053230286, y: 1.4207411, z: 0}
 --- !u!114 &7103068808800043739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1585,11 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLife: 0
   life: 0
-  defense: 0
-  dmg: 0
-  cri: 0
-  range: 0
-  spawnTextDMG: {fileID: 7103068808800043732}
+  spawnText: {fileID: 7103068808800043732}
   lifeBar: {fileID: 3789124116273848263}
 --- !u!114 &7103068808800043732
 MonoBehaviour:
@@ -1604,6 +1599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
+  txtSkill: {fileID: 7674327104211106879, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
   spawnPosition: {fileID: 7103068809688484035}
   y: 2
 --- !u!114 &7103068808800043733
@@ -1618,7 +1614,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25006a598c3e4cd4b8c597fe6900f11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camPos: {fileID: 0}
+  cam: {fileID: 0}
+  xCam: 3
+  yCam: 7
+  smooth: 0.1
+  speed: 100
   lobby: 0
   controller: {fileID: 7103068808800043737}
   skinHead: {fileID: 7103068809688484035}
@@ -1626,74 +1626,6 @@ MonoBehaviour:
   rightFootAnim: {fileID: 1375026838895209994}
   leftLegAnim: {fileID: 8932801903822228107}
   leftFootAnim: {fileID: 4315500175191409585}
---- !u!114 &7103068808800043734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103068808800043728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5775ec5c658aa5c4fb7961aabb28b167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txtSkill: {fileID: 7674327104211106876, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
-  playerStatus: {fileID: 7103068808800043739}
-  playerController: {fileID: 7103068808800043733}
-  spawnPosition: {fileID: 7103068809688484035}
-  target:
-    serializedVersion: 2
-    m_Bits: 128
-  skillNameLifeRecovery: LifeRecovery
-  lifeRecoveryIsActive: 0
-  lifeRecoveredTimesCounter: 5
-  lifeRecoveryValue: 3
-  delayTimeToRecovery: 2
-  lifeRecoveryIcon: {fileID: -56263728, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  skillNameMoveSpeed: MoveSpeed
-  moveSpeedIsActive: 0
-  moveSpeedBuffValue: 12
-  delayTimeToEndMoveSpeedBuff: 10
-  moveSpeedIcon: {fileID: -913097987, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  skillNamePowerUp: PowerUp
-  powerUpIsActive: 0
-  powerUpBuffValue: 25
-  delayTimeToEndPowerUpBuff: 10
-  powerUpIcon: {fileID: -1331966857, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  skillNameAtkSpeed: AtkSpeed
-  atkSpeedIsActive: 0
-  atkSpeedBuffValue: 50
-  delayTimeToEndatkSpeedBuff: 10
-  playerHand: {fileID: 0}
-  atkSpeedIcon: {fileID: 531065777, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  skillNameRangeAtk: RangeAtk
-  rangeAtkIsActive: 0
-  rangeAtkBuffValue: 6
-  delayTimeToRangeAtkBuff: 10
-  rangeAtkIcon: {fileID: 1533987642, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  skillNameRingOfFire: RingOfFire
-  ringOfFireIsActive: 0
-  ringOfFireTimesCounter: 5
-  ringOfFirePercentDmg: 14
-  delayTimeToRingOfFireBuff: 2
-  ringOfFireIcon: {fileID: 1561638073, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
-  skillNameWindBlade: WindBlade
-  windBladeIsActive: 0
-  windBladeTimesCounter: 5
-  windBladePercentDmg: 40
-  delayTimeToWindBladeBuff: 1
-  windBladeIcon: {fileID: -1740491332, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
-  skillIcon:
-  - {fileID: -56263728, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: -913097987, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: -1331966857, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: 531065777, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: 1533987642, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: 1561638073, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
-  - {fileID: -1740491332, guid: 0f573ee3c31c1264d82f7a3816991cf2, type: 3}
 --- !u!1 &7103068808888303645
 GameObject:
   m_ObjectHideFlags: 0

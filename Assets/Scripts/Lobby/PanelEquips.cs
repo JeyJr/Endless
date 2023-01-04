@@ -107,7 +107,7 @@ public class PanelEquips : MonoBehaviour
         this.weaponAttributes = w;
         panelInfo.SetActive(true); //Habilita o painel
 
-        SetPanelInfoInformations(
+        SetPanelInfoInformations(true,
             w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponAtkSpeed, w.WeaponCritical,
             w.WeaponRangeAtk,w.WeaponMoveSpeed, w.WeaponName, w.ImgWeapon);
 
@@ -134,7 +134,7 @@ public class PanelEquips : MonoBehaviour
         this.armorAttributes = a;
         panelInfo.SetActive(true); //Habilita o painel
 
-        SetPanelInfoInformations(
+        SetPanelInfoInformations(false,
             a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorAtkSpeed, a.ArmorCritical,
             a.ArmorRangeAtk, a.ArmorMoveSpeed, a.ArmorName, a.ImgArmorIcon);
 
@@ -162,7 +162,7 @@ public class PanelEquips : MonoBehaviour
         this.helmetAttributes = h;
         panelInfo.SetActive(true); //Habilita o painel
 
-        SetPanelInfoInformations(
+        SetPanelInfoInformations(false,
             h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetAtkSpeed, h.HelmetCritical,
             h.HelmetRangeAtk, h.HelmetMoveSpeed, h.HelmetName, h.ImgSetIcon);
 
@@ -243,7 +243,7 @@ public class PanelEquips : MonoBehaviour
     }
     #endregion
 
-    void SetPanelInfoInformations(float atk, float defense, float life, float speedAtk, float critical, float atkRange, float moveSpeed, string name, Sprite icon)
+    void SetPanelInfoInformations(bool weapon, float atk, float defense, float life, float speedAtk, float critical, float atkRange, float moveSpeed, string name, Sprite icon)
     {
         string _atk = "";
         string _defense = "";
@@ -254,7 +254,13 @@ public class PanelEquips : MonoBehaviour
         string _moveSpeed = "";
 
         if (atk > 0)
-            _atk = $"<color=#{hexColor}> ATK: </color>" + atk.ToString("F0") + "<br>";
+        {
+            if(weapon)
+                _atk = $"<color=#{hexColor}> ATK: </color>" + atk.ToString("F0") + "<br>";
+            else
+                _atk = $"<color=#{hexColor}> ATK: </color>" + atk.ToString("F2") + "% <br>";
+        }
+            
 
         if (defense>0)
             _defense = $"<color=#{hexColor}> DEF: </color>" + defense.ToString("F2") + "%" + "<br>";
@@ -263,16 +269,22 @@ public class PanelEquips : MonoBehaviour
             _life = $"<color=#{hexColor}> LIFE: </color>" + life.ToString("F2") + "%" + "<br>";
 
         if(speedAtk > 0)
-            _speedAtk = $"<color=#{hexColor}> SPEED ATK: </color>" + speedAtk.ToString("F2") + "s" + "<br>";
+            _speedAtk = $"<color=#{hexColor}> SPEED ATK: </color>" + speedAtk.ToString("F2") + "%" + "<br>";
 
         if (critical > 0)
             _critical = $"<color=#{hexColor}> CRITICAL: </color>" + critical.ToString("F2") + "%" + "<br>";
 
         if(atkRange > 0)
-            _atkRange = $"<color=#{hexColor}> RANGE:  </color>" + atkRange.ToString("F2") + "m" + "<br>";
+        {
+            if(weapon)
+                _atkRange = $"<color=#{hexColor}> RANGE:  </color>" + atkRange.ToString("F2") + "u" + "<br>";
+            else
+                _atkRange = $"<color=#{hexColor}> RANGE:  </color>" + atkRange.ToString("F2") + "%" + "<br>";
+        }
+            
 
         if (moveSpeed > 0)
-            _moveSpeed = $"<color=#{hexColor}> MOVE: </color>" + moveSpeed.ToString("F2") + "<br>";
+            _moveSpeed = $"<color=#{hexColor}> MOVE: </color>" + moveSpeed.ToString("F2") + "% <br>";
 
 
         txtAttributes.text = $"{_atk}{_defense}{_life}{_speedAtk}{_critical}{_atkRange}{_moveSpeed}";

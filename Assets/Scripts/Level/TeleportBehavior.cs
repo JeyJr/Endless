@@ -4,36 +4,27 @@ using UnityEngine;
 
 public class TeleportBehavior : MonoBehaviour
 {
-    [Header("Positions")]
-    [SerializeField] private Transform newPosition;
-    [SerializeField] private GameObject player;
-    [SerializeField] private bool teleportToLobby;
+    [SerializeField] private bool goToZone2, goToZone3, goToLobby;
 
-    private Animator anim;
-    private void Awake()
-    {
-        anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
+    #region TeleportControl
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !teleportToLobby)
+        if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(TeleportPlayer());
+            LevelCanvas canvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvas>();
+
+            canvas.OpenPanelMoveToNextArea();
+
+            if (goToZone2)
+                canvas.OpenMsgMoveToNextArea("MOVE TO ZONE 2?");
+            else if (goToZone3)
+                canvas.OpenMsgMoveToNextArea("MOVE TO ZONE 3?");
+            else if (goToLobby)
+                canvas.OpenMsgMoveToNextArea("MOVE TO LOBBY?");
         }
     }
-
-    IEnumerator TeleportPlayer()
-    {
-        yield return null;
-        player.GetComponent<Transform>().position = newPosition.position;
-    }
+    #endregion
 
 
-    void TeleportToLobby()
-    {
-        //Abrir panel usuario confirmar volta para lobby
-        //Se sim, salvar gold 
-    }
+
 }

@@ -13,9 +13,10 @@ public class EnemyStatus : MonoBehaviour
     private float atkSpeed;
     private float critical;
 
-    public SpawnTextDMG spawnTextDMG;
+    public SpawnText spawnTextDMG;
     [SerializeField] private GameObject spawnSkill;
     [SerializeField] private Transform spawnPosition;
+    [SerializeField] private float yDropSkill;
 
     [SerializeField] private bool enemyInTestZone;
 
@@ -39,13 +40,16 @@ public class EnemyStatus : MonoBehaviour
     public void LoseLife(float dmg, bool critical)
     {
         float realDMG = dmg - ((dmg * defense) / 100);
-        spawnTextDMG.Spawn(realDMG, critical);
+        spawnTextDMG.SpawnTextDamage(realDMG, critical);
 
         if (!enemyInTestZone)
             life -= realDMG;
         
         if (life <= 0 && Random.Range(0, 100) <= buffDrop)
-            Instantiate(spawnSkill, spawnPosition.position, Quaternion.Euler(0, 0, 0));
+        {
+            Vector3 pos = new(spawnPosition.position.x, yDropSkill, 6);
+            Instantiate(spawnSkill, pos, Quaternion.Euler(0, 0, 0));
+        }
     }
 
     

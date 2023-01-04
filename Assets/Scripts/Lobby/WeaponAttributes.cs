@@ -3,7 +3,22 @@ using UnityEngine.UI;
 
 public class WeaponAttributes : MonoBehaviour
 {
+    [Header("WEAPON UI ELEMENTS")]
+    [SerializeField] private Sprite imgWeapon;
+    [SerializeField] private string weaponName;
+    public Sprite ImgWeapon { get => imgWeapon; }
+    public string WeaponName { get => weaponName; }
 
+    [Space(5)]
+    [Header("WEAPON DATA CONTROL")]
+    [SerializeField] private int weaponID;
+    [SerializeField] private float goldCost;
+    public int WeaponID { get => weaponID; }
+    public float GoldCost { get => goldCost; }
+
+
+    [Space(5)]
+    [Header("WEAPON ATTRIBUTES")]
     [SerializeField] private float weaponDmg;
     [SerializeField] private float weaponDefense;
     [SerializeField] private float weaponLife;
@@ -11,8 +26,6 @@ public class WeaponAttributes : MonoBehaviour
     [SerializeField] private float weaponCritical;
     [SerializeField] private float weaponRangeAtk;
     [SerializeField] private float weaponMoveSpeed;
-
-
 
     public float WeaponDmg{ get => weaponDmg; }
     public float WeaponAtkSpeed { get => weaponAtkSpeed; }
@@ -23,20 +36,8 @@ public class WeaponAttributes : MonoBehaviour
     public float WeaponMoveSpeed { get => weaponMoveSpeed; }
 
 
-    //UI
-    [SerializeField] private Sprite imgWeapon;
-    [SerializeField] private string weaponName;
-
-    //UI
-    public Sprite ImgWeapon { get => imgWeapon;}
-    public string WeaponName { get => weaponName; }
 
 
-    //Buy
-    [SerializeField] private int weaponID;
-    [SerializeField] private float goldCost;
 
-    public int WeaponID { get => weaponID; }
-    public float GoldCost { get => goldCost; }
 
 }

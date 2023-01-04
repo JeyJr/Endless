@@ -77,7 +77,7 @@ public class GameData
     //SkillEnabledInLevel
     public float buffSkillPowerUp;
     public float buffSkillDefense;
-    public float buffSkillMaxLife;
+    public float buffSkillMaxLife; //não usado
     public float buffSkillAtkSpeed;
     public float buffSkillCritical;
     public float buffSkillRangeAtk;

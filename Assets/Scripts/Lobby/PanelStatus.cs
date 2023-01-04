@@ -108,7 +108,7 @@ public class PanelStatus : MonoBehaviour
 
     void TextRangeAtk(GameData gd)
     {
-        txtTotalRange.text = gd.RangeAtk.ToString("F2") + "unit";
+        txtTotalRange.text = gd.RangeAtk.ToString("F2") + " <i>unit</i>";
         txtAttributesRange.text = (gd.atk / 50).ToString("F2") + "u";
         txtPassiveRange.text = gd.bonusRangeAtk.ToString("F2") + "%";
         txtWeaponRange.text = gd.weaponRangeAtk.ToString("F2") + "u";

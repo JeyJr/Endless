@@ -1,12 +1,18 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("CamBehavior")]
-    public Transform camPos;
+    public Transform cam;
     Vector3 currentVelocity;
+
+    [SerializeField] private float xCam, yCam, smooth, speed;
     [SerializeField] private bool lobby;
+
+
 
     [Header("PlayerMovement")]
     public PlayerMove playerInput;
@@ -43,11 +49,12 @@ public class PlayerController : MonoBehaviour
             lobby = true;
 
         //Cam behavior
-        camPos = Camera.main.GetComponent<Transform>();
+        cam = Camera.main.GetComponent<Transform>();
+        //cam.transform.position = new(cam.position.x, 6, cam.position.z);
 
-        if (!lobby && gameData.RangeAtk > camPos.GetComponent<Camera>().orthographicSize)
+        if (!lobby && gameData.RangeAtk > cam.GetComponent<Camera>().orthographicSize)
         {
-            camPos.GetComponent<Camera>().orthographicSize = gameData.RangeAtk;
+            cam.GetComponent<Camera>().orthographicSize = gameData.RangeAtk;
         }
 
         UpdatePlayerMoveSpeed(gameData.buffSkillMoveSpeed);
@@ -66,7 +73,7 @@ public class PlayerController : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, 180, 0);
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
-            CamPosition(-3, 0, 10, 0.1f, 100);
+            CamPosition(-xCam);
             Anims("Run");
         }
         else if (move.x > 0)
@@ -75,12 +82,12 @@ public class PlayerController : MonoBehaviour
             playerHand.delayBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
             playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
 
-            CamPosition(3, 0, 10, 0.1f, 100);
+            CamPosition(xCam);
             Anims("Run");
         }
         else
         {
-            CamPosition(0, 0, 10, 0.2f, 10);
+            CamPosition(xCam - xCam);
             Anims("Idle");
         }
 
@@ -128,12 +135,12 @@ public class PlayerController : MonoBehaviour
     
     #region CamBehavior
 
-    void CamPosition(float x, float y, float z, float smoothT, float speed)
+    void CamPosition(float x)
     {
-        if (!lobby)
+        if (SceneManager.GetActiveScene().name != "Lobby")
         {
-            Vector3 target = new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z - z);
-            camPos.transform.position = Vector3.SmoothDamp(camPos.transform.position, target, ref currentVelocity, smoothT, speed);
+            Vector3 target = new(transform.position.x + x, transform.position.y + yCam, transform.position.z - 10);
+            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, target, ref currentVelocity, smooth, speed);
         }
     }
     #endregion

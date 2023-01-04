@@ -25,7 +25,7 @@ public class UIControl : MonoBehaviour
 
             GameData d = new();
 
-            d.gold = 500000;
+            d.gold = 100;
             d.firstTime = false;
             d.atk = 1;
             d.def = 1;

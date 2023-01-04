@@ -11,8 +11,9 @@ public class WindBlade : MonoBehaviour
     public Vector3 boxSize;
     Vector3 targetPos;
 
-    private void Awake()
+    private void OnEnable()
     {
+        damage = damage < 1 ? 1 : damage; 
         targetPos = new Vector3(transform.position.x * 20, transform.position.y, 2);
         StartCoroutine(FadeOut());
     }

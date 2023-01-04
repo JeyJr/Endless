@@ -277,7 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
+  txtSkill: {fileID: 7674327104211106879, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
   spawnPosition: {fileID: 7770614947293523608}
+  y: 0
 --- !u!114 &7626541399199896226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,8 +300,9 @@ MonoBehaviour:
   goldDrop: 5
   buffDrop: 10
   spawnTextDMG: {fileID: 4268628609715692900}
-  spawnSkill: {fileID: 8085322380939201761, guid: 6733b8e4ab958914d9b2de9e69ffbc5a, type: 3}
+  spawnSkill: {fileID: 3486169687931647297, guid: 7be0c52cf11d0954ca14596b8a11eb02, type: 3}
   spawnPosition: {fileID: 7770614947293523608}
+  enemyInTestZone: 0
 --- !u!114 &453081103114561588
 MonoBehaviour:
   m_ObjectHideFlags: 0

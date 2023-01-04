@@ -82,6 +82,8 @@ public class ZoneControl : MonoBehaviour
         }
         enemysSpawned.Clear();
         enemysInstantiate = 0;
+
+        bossSpawned = false;
     }
     public void EnemyInTheZoneDie(GameObject enemyDead)
     {

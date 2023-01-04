@@ -13,10 +13,15 @@ public class WallBehavior : MonoBehaviour
     public bool BossIsDead { get; set; }
     bool wallIsOpen = false;
 
+    [SerializeField] private bool wallZone1, wallZone2, wallZone3;
+    LevelController levelController;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         anim.Play("Base Layer.Wall_Idle");
+
+        levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
     }
 
     private void Update()
@@ -31,6 +36,15 @@ public class WallBehavior : MonoBehaviour
             {
                 wallIsOpen = true;
                 WallActiveHand();
+
+                if (wallZone1)
+                    levelController.ZoneOneCompleted = true;
+
+                if (wallZone2)
+                    levelController.ZoneTwoCompleted = true;
+
+                if (wallZone3)
+                    levelController.ZoneThreeCompleted = true;
             }
         }
     }

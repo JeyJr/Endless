@@ -19,6 +19,8 @@ public class RingOfFire : MonoBehaviour
 
     void RingOfFireDMG()
     {
+        damage = damage < 1 ? 1 : damage;
+
         StartCoroutine(HitTarget());
         StartCoroutine(FadeOut());
     }
