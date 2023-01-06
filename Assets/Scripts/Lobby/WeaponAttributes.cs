@@ -5,8 +5,11 @@ public class WeaponAttributes : MonoBehaviour
 {
     [Header("WEAPON UI ELEMENTS")]
     [SerializeField] private Sprite imgWeapon;
+    [SerializeField] private Sprite imgWeaponIcon;
+
     [SerializeField] private string weaponName;
     public Sprite ImgWeapon { get => imgWeapon; }
+    public Sprite ImgWeaponIcon { get => imgWeaponIcon; }
     public string WeaponName { get => weaponName; }
 
     [Space(5)]

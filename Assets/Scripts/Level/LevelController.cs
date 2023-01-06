@@ -13,28 +13,18 @@ public class LevelController : MonoBehaviour
     [SerializeField] private float totalBossesKilled;
     [SerializeField] private float totalEnemiesKilled;
 
-    [Header("Zone")]
-    [SerializeField] private bool zoneOneCompleted;
-    [SerializeField] private bool zoneTwoCompleted;
-    [SerializeField] private bool zoneThreeCompleted;
-
-    public bool ZoneOneCompleted { get => zoneOneCompleted; set => zoneOneCompleted = value; }
-    public bool ZoneTwoCompleted { get=> zoneTwoCompleted; set => zoneTwoCompleted = value; }
-    public bool ZoneThreeCompleted { get=> zoneThreeCompleted; set => zoneThreeCompleted = value; }
+    [Header("Boss Control")]
+    [SerializeField] private bool bossDead;
+    public bool BossDead { get => bossDead; set => bossDead = value; }
 
 
     [Header("Gold")]
-    [SerializeField] private float goldTotal;
+    [SerializeField] private float goldTotal, bonusGold;
     [SerializeField] private LevelCanvas levelCanvas;
     public float GoldTotal { get => goldTotal;}
 
-
-    [Header("UI")]
-    GameObject canvas;
-    [SerializeField] private TextMeshProUGUI txtMsgAlert;
-    [SerializeField] private GameObject panelMoveToNextArea;
-
     [Header("UI - SkillsIcon")]
+    GameObject canvas;
     [SerializeField] private Sprite standarSprite;
     public List<GameObject> uiSkillIcon;
     public List<Vector3> uiIconPosition;
@@ -58,8 +48,23 @@ public class LevelController : MonoBehaviour
 
         //UI ICONS 
         UISkillIconInitialSetup();
+
+        GameData gameData = ManagerData.Load();
+        bonusGold = gameData.bonusGold;
     }
 
+    public void EnemyDead(float goldDroped, bool boss)
+    {
+        if (boss)
+            totalBossesKilled++;
+        else
+            totalEnemiesKilled++;
+
+        float gold = bonusGold + goldDroped;
+
+        goldTotal += gold;
+        levelCanvas.UpdateTxtGold(goldTotal);
+    }
 
     #region UI - SkillsIcon
     void UISkillIconInitialSetup()
@@ -133,47 +138,4 @@ public class LevelController : MonoBehaviour
     }
     #endregion
 
-    #region EnemyDead and GolTotalControl
-    public void EnemyDead(float goldDroped, bool boss)
-    {
-        GameData gameData = ManagerData.Load();
-
-        if (boss)
-            totalBossesKilled++;
-        else
-            totalEnemiesKilled++;
-
-        float gold = gameData.bonusGold + goldDroped;
-
-        goldTotal += gold;
-        levelCanvas.UpdateTxtGold(goldTotal);
-    }
-
-
-    #endregion
-
-    #region LevelCompleted
-    public void LevelCompleted(int num)
-    {
-        GameData gameData = ManagerData.Load();
-
-        if (num > gameData.levelUnlock)
-            gameData.levelUnlock++;
-        else
-            Debug.Log("Fase ja foi concluida!");
-
-
-        ManagerData.Save(gameData);
-        StartCoroutine(BackLobby());
-    }
-
-    IEnumerator BackLobby()
-    {
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("Lobby");
-    }
-    #endregion
-
-
-    
 }

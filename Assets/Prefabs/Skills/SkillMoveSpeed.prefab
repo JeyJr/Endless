@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1006
-  delayTime: 5
-  buffValue: 100
+  delayTime: 100
+  buffValue: 200
   xTimes: 0
   SkillsBehavior: {fileID: 338592136048806135}
 --- !u!65 &338592136048806134

@@ -4,10 +4,10 @@ public class HelmetAttributes : MonoBehaviour
 {
 
     [Header("SET EQUIPS IMG ")]
-    [SerializeField] private Sprite imgSetIcon;
+    [SerializeField] private Sprite imgHelmetIcon;
     [SerializeField] private Sprite imgHelmet;
     [SerializeField] private string helmetName;
-    public Sprite ImgSetIcon { get => imgSetIcon; }
+    public Sprite ImgHelmetIcon { get => imgHelmetIcon; }
     public Sprite ImgHelmet { get => imgHelmet; }
     public string HelmetName { get => helmetName; }
 

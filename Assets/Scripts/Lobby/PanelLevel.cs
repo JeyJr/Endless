@@ -36,6 +36,12 @@ public class PanelLevel : MonoBehaviour
         {
             btnLevel[i].GetComponent<RectTransform>().transform.position = panelEquips.btnPosition[i].transform.position;
         }
+
+        GameData gameData = ManagerData.Load();
+        gameData.maxLevel = btnLevel.Count;
+
+        ManagerData.Save(gameData);
+        
     }
 
 
@@ -49,6 +55,11 @@ public class PanelLevel : MonoBehaviour
                 btnLevel[i].interactable = true;
             else
                 btnLevel[i].interactable = false;
+
+            //if (i < gameData.maxLevel)
+            //    btnLevel[i].interactable = true;
+            //else
+            //    btnLevel[i].interactable = false;
         }
     }
     public void BtnOpenPanelLevelStart(GameObject go)

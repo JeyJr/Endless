@@ -73,6 +73,7 @@ public class GameData
 
     //Level
     public float levelUnlock;
+    public float maxLevel;
 
     //SkillEnabledInLevel
     public float buffSkillPowerUp;

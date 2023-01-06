@@ -394,31 +394,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 945780387818428368}
         m_TargetAssemblyTypeName: LevelCanvas, Assembly-CSharp
-        m_MethodName: BtnToInvertActiveGameObj
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 7323936704435905948}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 945780387818428368}
-        m_TargetAssemblyTypeName: LevelCanvas, Assembly-CSharp
-        m_MethodName: MoveToNextArea
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 945780387818428368}
-        m_TargetAssemblyTypeName: LevelCanvas, Assembly-CSharp
-        m_MethodName: BtnGoToLobby
+        m_MethodName: BtnBackToLobbyLevelCompleted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2117,10 +2093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtGold: {fileID: 6522426106353514581}
-  panelMoveToNextArea: {fileID: 7323936704435905948}
-  txtAlert: {fileID: 5278739437904758914}
   levelController: {fileID: 0}
-  player: {fileID: 0}
+  panelMoveToLobby: {fileID: 7323936704435905948}
 --- !u!1 &6522426108290770910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,7 +2183,7 @@ GameObject:
   - component: {fileID: 2399825932929433928}
   - component: {fileID: 1988424269446436983}
   m_Layer: 5
-  m_Name: MoveToNextArea
+  m_Name: MoveToLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2341,7 +2315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: move to next area?
+  m_text: Back to Lobby?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e3afca74daf097e48b7b74cd943ac3d0, type: 2}
   m_sharedMaterial: {fileID: 402183771717494376, guid: e3afca74daf097e48b7b74cd943ac3d0, type: 2}

@@ -103,13 +103,14 @@ public class PanelEquips : MonoBehaviour
 
     public void SetWeaponAttributes(WeaponAttributes w)
     {
+
         GameData gameData = ManagerData.Load();
         this.weaponAttributes = w;
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(true,
             w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponAtkSpeed, w.WeaponCritical,
-            w.WeaponRangeAtk,w.WeaponMoveSpeed, w.WeaponName, w.ImgWeapon);
+            w.WeaponRangeAtk,w.WeaponMoveSpeed, w.WeaponName, w.ImgWeaponIcon);
 
         foreach (int id in gameData.purchasedWeaponsIds)
         {
@@ -164,7 +165,7 @@ public class PanelEquips : MonoBehaviour
 
         SetPanelInfoInformations(false,
             h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetAtkSpeed, h.HelmetCritical,
-            h.HelmetRangeAtk, h.HelmetMoveSpeed, h.HelmetName, h.ImgSetIcon);
+            h.HelmetRangeAtk, h.HelmetMoveSpeed, h.HelmetName, h.ImgHelmetIcon);
 
         foreach (int id in gameData.purchasedHelmetIds)
         {
