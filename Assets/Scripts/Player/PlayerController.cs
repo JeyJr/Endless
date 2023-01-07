@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Enable();
   
         playerMeleeAtk = GetComponentInChildren<PlayerMeleeAtk>();
-        playerStatus = GetComponent<PlayerStatus>();
+        playerStatus = GetComponentInChildren<PlayerStatus>();
 
         if (GameObject.FindGameObjectWithTag("LevelController") == null)
             lobby = true;

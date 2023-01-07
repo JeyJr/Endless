@@ -1420,6 +1420,8 @@ GameObject:
   - component: {fileID: 7103068808335364673}
   - component: {fileID: 7103068808335364672}
   - component: {fileID: 1464014698}
+  - component: {fileID: 4900840707611956407}
+  - component: {fileID: 307580394992962908}
   m_Layer: 6
   m_Name: Skins
   m_TagString: Untagged
@@ -1500,6 +1502,38 @@ MonoBehaviour:
   leftFoot: {fileID: 7838327584471353471}
   rightLegCenter: {fileID: 4302987805574070174}
   leftLegCenter: {fileID: 2812847359678962161}
+--- !u!114 &4900840707611956407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103068808335364674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e8ad90443dd0e4b86b649027f0c4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 0
+  life: 0
+  spawnText: {fileID: 307580394992962908}
+  lifeBar: {fileID: 3789124116273848263}
+--- !u!114 &307580394992962908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103068808335364674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c19c4fff70f834cbd77e10de4b13b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
+  txtSkill: {fileID: 7674327104211106879, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
+  spawnPosition: {fileID: 7103068809688484035}
+  y: 2
 --- !u!1 &7103068808800043728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,8 +1545,6 @@ GameObject:
   - component: {fileID: 7103068808800043735}
   - component: {fileID: 7103068808800043737}
   - component: {fileID: 7103068808800043738}
-  - component: {fileID: 7103068808800043739}
-  - component: {fileID: 7103068808800043732}
   - component: {fileID: 7103068808800043733}
   m_Layer: 6
   m_Name: Player
@@ -1570,38 +1602,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.0585423, y: 21.984743, z: 1}
   m_Center: {x: 0.18719006, y: -1.3924208, z: 0}
---- !u!114 &7103068808800043739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103068808800043728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e8ad90443dd0e4b86b649027f0c4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLife: 0
-  life: 0
-  spawnText: {fileID: 7103068808800043732}
-  lifeBar: {fileID: 3789124116273848263}
---- !u!114 &7103068808800043732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103068808800043728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c19c4fff70f834cbd77e10de4b13b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
-  txtSkill: {fileID: 7674327104211106879, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
-  spawnPosition: {fileID: 7103068809688484035}
-  y: 2
 --- !u!114 &7103068808800043733
 MonoBehaviour:
   m_ObjectHideFlags: 0

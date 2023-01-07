@@ -71,12 +71,12 @@ public class PlayerMeleeAtk : MonoBehaviour
             {
                 if (Critical(gameData.CriticalDMG))
                 {
-                    hit[i].collider.GetComponent<EnemyStatus>().
+                    hit[i].collider.GetComponentInChildren<EnemyStatus>().
                         LoseLife(CriticalDMG(gameData.Damage, gameData.CriticalDMG), true);
                 }
                 else
                 {
-                    hit[i].collider.GetComponent<EnemyStatus>().
+                    hit[i].collider.GetComponentInChildren<EnemyStatus>().
                         LoseLife(SimpleDMG(gameData.Damage), false);
                 }
             }

@@ -15,18 +15,17 @@ public class EnemyHorizontalMovement : MonoBehaviour
     bool changeDir;
 
     [Header("Animations")]
-    [SerializeField] private string enemyNameInAnimations;
     [SerializeField] private Animator anim;
-    [SerializeField] private EnemyMeleeAtk enemyMeleeAtk;
+    [SerializeField] private EnemyStatus enemyStatus;
 
     private void Start()
     {
-        enemyMeleeAtk = GetComponentInChildren<EnemyMeleeAtk>();
+        enemyStatus = GetComponentInChildren<EnemyStatus>();
     }
 
     private void Update()
     {
-        if (!enemyMeleeAtk.IsAttacking)
+        if (!enemyStatus.IsAttacking && enemyStatus.EnemyIsAlive)
         {
             DetectTargetOnTheFrontSide();
             DetectTargetOnTheBackSide();
@@ -46,11 +45,11 @@ public class EnemyHorizontalMovement : MonoBehaviour
         {
             Vector3 targetPos = new Vector3(h.collider.transform.position.x, transform.position.y, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-            anim.Play($"Base Layer.{enemyNameInAnimations}_Run");
+            anim.Play($"Base Layer.{enemyStatus.EnemyAnimName}_Run");
         }
         else
         {
-            anim.Play($"Base Layer.{enemyNameInAnimations}_Idle");
+            anim.Play($"Base Layer.{enemyStatus.EnemyAnimName}_Idle");
         }
     }
 

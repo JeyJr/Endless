@@ -35,18 +35,21 @@ public class PlayerStatus : MonoBehaviour
 
 
 
-    public void LoseLife(float dmg, bool critical)
+    public void LoseLife(float dmg, float critical)
     {
         float realDMG;
+        bool criticalDMG =  Random.Range(0, 100) <= critical;
+        realDMG = (dmg - ((dmg * ManagerData.Load().Defense) / 100));
+       
+        
+        Debug.Log("Critical dmg: " + criticalDMG);
 
-        if (critical)
-            realDMG = (dmg - ((dmg * ManagerData.Load().Defense) / 100)) * 2;
-        else
-            realDMG = dmg - ((dmg * ManagerData.Load().Defense) / 100);
-            
+        if (criticalDMG)
+            realDMG += realDMG * critical / 100; 
+
         life -= realDMG;
         UpdateLifeBar();
-        spawnText.SpawnTextDamage(realDMG, critical);
+        spawnText.SpawnTextDamage(realDMG, criticalDMG);
     }
 
     public void UpdateLifeBar()

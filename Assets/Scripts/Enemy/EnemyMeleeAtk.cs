@@ -10,16 +10,22 @@ public class EnemyMeleeAtk : MonoBehaviour
     [SerializeField] private LayerMask target;
 
     [Header("Animations")]
-    [SerializeField] private string enemyNameInAnimations;
     [SerializeField] private Animator anim;
 
     [Header("Atk Control")]
     bool isAttacking, waitingState;
+    [SerializeField] private float delayToAtkAgain;
     public bool IsAttacking { get => isAttacking;}
+    EnemyStatus enemyStatus;
+
+    private void Start()
+    {
+        enemyStatus = GetComponent<EnemyStatus>();
+    }
 
     private void Update()
     {
-        if (!isAttacking && !waitingState)
+        if (!IsAttacking && !waitingState && enemyStatus.EnemyIsAlive)
             DetectingTargetToAtk();
     }
 
@@ -32,27 +38,30 @@ public class EnemyMeleeAtk : MonoBehaviour
             atkRange,
             target );
 
-        if(h.collider != null && !isAttacking)
+        if(h.collider != null && !IsAttacking)
         {
             ChangeTheStateOfAtk();
             StartCoroutine(PlayAtkAnimation());
         }
-        else if(h.collider != null && isAttacking)
+        else if(h.collider != null && IsAttacking)
         {
-            h.collider.gameObject.GetComponent<PlayerStatus>().LoseLife(20, false);
+            h.collider.gameObject.GetComponent<PlayerStatus>().LoseLife(enemyStatus.Damage, enemyStatus.Critical);
         }
     }
 
     IEnumerator PlayAtkAnimation()
     {
-        anim.Play($"Base Layer.{enemyNameInAnimations}_Atk", 0);
+        anim.Play($"Base Layer.{enemyStatus.EnemyAnimName}_Atk", 0);
         waitingState = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(delayToAtkAgain);
         waitingState = false;
     }
 
     //Called on last framd anim Atk
-    public void ChangeTheStateOfAtk() => isAttacking = !isAttacking;
+    public void ChangeTheStateOfAtk() {
+        isAttacking = !isAttacking;
+        enemyStatus.IsAttacking = isAttacking;
+    }
 
     private void OnDrawGizmos()
     {

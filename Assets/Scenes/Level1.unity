@@ -519,8 +519,6 @@ GameObject:
   m_Component:
   - component: {fileID: 144950955}
   - component: {fileID: 144950958}
-  - component: {fileID: 144950957}
-  - component: {fileID: 144950956}
   - component: {fileID: 144950959}
   m_Layer: 7
   m_Name: SlimeBlue
@@ -546,52 +544,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &144950956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144950954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c19c4fff70f834cbd77e10de4b13b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
-  txtSkill: {fileID: 7674327104211106879, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
-  spawnPosition: {fileID: 144950955}
-  y: 10
---- !u!114 &144950957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144950954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atk: 0
-  def: 0
-  vit: 200000
-  agi: 0
-  cri: 0
-  goldDrop: 0
-  buffDrop: 0
-  damage: 0
-  maxLife: 0
-  life: 0
-  defense: 0
-  atkSpeed: 0
-  critical: 0
-  spawnTextDMG: {fileID: 144950956}
-  spawnSkill: {fileID: 3486169687931647297, guid: 7be0c52cf11d0954ca14596b8a11eb02, type: 3}
-  spawnPosition: {fileID: 144950955}
-  yDropSkill: 6
-  enemyInTestZone: 0
 --- !u!61 &144950958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -638,8 +590,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   moveSpeed: 2
-  enemyNameInAnimations: Slime
   anim: {fileID: 1064679111}
+  enemyStatus: {fileID: 0}
 --- !u!1 &151130675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,10 +1858,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9106708645521054795, guid: a3d256fb44ee2a94daed83c6312d04e2, type: 3}
-      propertyPath: orthographic size
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 9106708645521054797, guid: a3d256fb44ee2a94daed83c6312d04e2, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1927,7 +1875,9 @@ GameObject:
   - component: {fileID: 1064679113}
   - component: {fileID: 1064679112}
   - component: {fileID: 1064679111}
+  - component: {fileID: 1064679116}
   - component: {fileID: 1064679114}
+  - component: {fileID: 1064679115}
   m_Layer: 7
   m_Name: SkinSlimeBlue
   m_TagString: Untagged
@@ -2039,8 +1989,53 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 64
-  enemyNameInAnimations: Slime
   anim: {fileID: 1064679111}
+  delayToAtkAgain: 1
+--- !u!114 &1064679115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064679110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c19c4fff70f834cbd77e10de4b13b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtDmg: {fileID: 7674327104211106879, guid: 2187495dc9e6f094385372dd613a611b, type: 3}
+  txtSkill: {fileID: 7674327104211106879, guid: a5823864dfab9b44c979abb72541e3a5, type: 3}
+  spawnPosition: {fileID: 144950955}
+  y: 10
+--- !u!114 &1064679116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064679110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atk: 0
+  def: 0
+  vit: 1
+  agi: 0
+  cri: 0
+  goldDrop: 20
+  buffDrop: 20
+  maxLife: 0
+  life: 0
+  spawnTextDMG: {fileID: 1064679115}
+  spawnSkill: {fileID: 3486169687931647297, guid: 7be0c52cf11d0954ca14596b8a11eb02, type: 3}
+  spawnPosition: {fileID: 144950955}
+  yDropSkill: 6
+  boss: 0
+  enemyInTestZone: 0
+  enemyAnimName: Slime
+  thisEnemyFullObj: {fileID: 144950954}
 --- !u!1 &1089741860
 GameObject:
   m_ObjectHideFlags: 0
