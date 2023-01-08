@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.AdaptivePerformance.Provider.AdaptivePerformanceSubsystemDescriptor;
 
 public class PlayerMeleeAtk : MonoBehaviour
 {
@@ -11,49 +12,40 @@ public class PlayerMeleeAtk : MonoBehaviour
     [Header("Animations control")]
     public Slider delayBar;
     public Animator rightArmAnim, rightHandAnim;
-    bool isAtk;
+    
 
-
-    private void Update()
+    private void Start()
     {
-        if (!isAtk)
-        {
-            ChangeStateOfAtk();
-            StartCoroutine(StartDelay());
-        }
-    }
-
-    public void StopDelay()
-    {
-        StopCoroutine(StartDelay());
-        isAtk = false;
+        StartCoroutine(DelayToAtk());
     }
 
     #region ATK animations
-    IEnumerator StartDelay()
+    IEnumerator DelayToAtk()
     {
-        GameData gameData = ManagerData.Load();
-
-        float atkSpeed = gameData.AtkSpeed;
-        delayBar.maxValue = atkSpeed;
-        delayBar.value = 0;
-
-        rightArmAnim.Play($"Base Layer.RightArm_Idle", 0);
-        rightHandAnim.Play($"Base Layer.RHand_Idle", 0);
-
-        while (delayBar.value < delayBar.maxValue)
+        while (true)
         {
-            yield return new WaitForSeconds(.01f);
-            delayBar.value += .01f;
-        }
+            GameData gameData = ManagerData.Load();
+            float atkSpeed = gameData.AtkSpeed;
+            delayBar.maxValue = atkSpeed;
+            delayBar.value = 0;
 
-        rightArmAnim.Play($"Base Layer.RightArm_Atk", 0);
-        rightHandAnim.Play($"Base Layer.RHand_Atk", 0);
+            rightArmAnim.Play($"Base Layer.RightArm_Idle", 0);
+            rightHandAnim.Play($"Base Layer.RHand_Idle", 0);
+
+            while (delayBar.value < delayBar.maxValue)
+            {
+                yield return new WaitForSeconds(.01f);
+                delayBar.value += .01f;
+            }
+
+            rightArmAnim.Play($"Base Layer.RightArm_Atk", 0);
+            rightHandAnim.Play($"Base Layer.RHand_Atk", 0);
+
+            yield return new WaitForSeconds(rightArmAnim.speed / 2);
+        }
     }
 
 
-    //Called on last frame in anim Base Layer.RightArm_Atk
-    public void ChangeStateOfAtk() => isAtk = !isAtk;
     #endregion
 
     #region DetectingTargetsInAtk 

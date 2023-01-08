@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 338592136048806139}
   - component: {fileID: 338592136048806137}
   - component: {fileID: 338592136048806134}
-  - component: {fileID: 338592136048806135}
   - component: {fileID: 338592136048806132}
   m_Layer: 0
   m_Name: SkillMoveSpeed
@@ -101,10 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1006
-  delayTime: 100
+  delayTime: 20
   buffValue: 200
   xTimes: 0
-  SkillsBehavior: {fileID: 338592136048806135}
+  playerController: {fileID: 0}
+  playerStatus: {fileID: 0}
+  target:
+    serializedVersion: 2
+    m_Bits: 0
+  ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
+  windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
 --- !u!65 &338592136048806134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118,23 +123,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 5, z: 13}
   m_Center: {x: 0, y: 0.33, z: 0}
---- !u!114 &338592136048806135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338592136048806141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee05a8a08920884d9c1dce951bf2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target:
-    serializedVersion: 2
-    m_Bits: 128
-  ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
-  windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
 --- !u!95 &338592136048806132
 Animator:
   serializedVersion: 4

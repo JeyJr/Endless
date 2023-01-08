@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
     [SerializeField] private float maxLife;
     [SerializeField] private float life;
-
 
     public SpawnText spawnText;
     public Slider lifeBar;
@@ -20,6 +20,16 @@ public class PlayerStatus : MonoBehaviour
         life = maxLife;
 
         UpdateLifeBar();
+
+        gameData.buffSkillPowerUp = 0;
+        gameData.buffSkillDefense = 0;
+        gameData.buffSkillMaxLife = 0;
+        gameData.buffSkillAtkSpeed = 0;
+        gameData.buffSkillCritical = 0;
+        gameData.buffSkillRangeAtk = 0;
+        gameData.buffSkillMoveSpeed = 0;
+
+        ManagerData.Save(gameData);
     }
 
     public float Life { get => life; set
@@ -30,6 +40,7 @@ public class PlayerStatus : MonoBehaviour
                 life = maxLife;
 
             spawnText.SpawnTextSkill(value, "Life+ ");
+            UpdateLifeBar();
         }
     }
 

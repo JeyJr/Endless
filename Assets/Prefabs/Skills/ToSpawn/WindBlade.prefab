@@ -99,11 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44736660eb43c1448a7ee8864d24bb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.5
+  mirrored: 0
+  damage: 6
   target:
     serializedVersion: 2
     m_Bits: 128
-  mirrored: 0
+  mSpeed: 2
+  distance: 20
+  delayToDestroy: 3
   boxSize: {x: 2, y: 4, z: 2}
 --- !u!61 &5180954088038042883
 BoxCollider2D:

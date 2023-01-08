@@ -8,6 +8,7 @@ TagManager:
   - LevelController
   - Enemy
   - MainUI
+  - EnemyLimitZone
   layers:
   - Default
   - TransparentFX

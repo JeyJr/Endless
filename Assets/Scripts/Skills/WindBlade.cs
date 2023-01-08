@@ -1,44 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WindBlade : MonoBehaviour
 {
+
+    [Header("Initial valuese")]
+    public bool mirrored;
     public float damage;
     public LayerMask target;
-    public bool mirrored;
 
+    [Header("Move control")]
+    public float mSpeed;
+    public float distance;
+    public float delayToDestroy;
+
+    [Header("Collision")]
     public Vector3 boxSize;
-    Vector3 targetPos;
+
 
     private void OnEnable()
     {
         damage = damage < 1 ? 1 : damage; 
-        targetPos = new Vector3(transform.position.x * 20, transform.position.y, 2);
+        transform.localEulerAngles = new Vector3(0, mirrored ? 180 : 0, 0);
+
         StartCoroutine(FadeOut());
+        StartCoroutine(Move());
     }
 
-    private void Update()
+
+    IEnumerator Move()
     {
-        if (mirrored)
-            transform.localEulerAngles = new Vector3(0, 180, 0);
-        else
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-        
-        transform.localPosition += transform.right * 8 * Time.deltaTime;
+        float elapsedTime = 0;
+        Vector3 startingPos = transform.position;
+        Vector3 endPos = transform.position + transform.right * distance;
+
+        while (elapsedTime < delayToDestroy)
+        {
+            transform.position = Vector3.Lerp(startingPos, endPos, (elapsedTime / delayToDestroy));
+            elapsedTime += Time.deltaTime * mSpeed;
+            yield return new WaitForEndOfFrame();
+        }
+
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.GetComponent<EnemyStatus>().LoseLife(damage, false);
-        }
+        if (collision.gameObject.CompareTag("Enemy"))
+            StartCoroutine(Dmg(collision));
+    }
+
+    IEnumerator Dmg(Collider2D collider)
+    {
+        collider.gameObject.GetComponentInChildren<EnemyStatus>().LoseLife(damage, false);
+        yield return null;
     }
 
     IEnumerator FadeOut()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(delayToDestroy / 1.5f);
 
         for (float i = 1; i > -0.2f; i -= .1f)
         {

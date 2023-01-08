@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5164336492357806517}
   - component: {fileID: 5164336492357806514}
   - component: {fileID: 5164336492357806516}
-  - component: {fileID: 5164336492357806518}
   - component: {fileID: 5164336492357806519}
   m_Layer: 0
   m_Name: SkillPowerUp
@@ -114,25 +113,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1000
-  delayTime: 10
+  delayTime: 5
   buffValue: 100
   xTimes: 0
-  SkillsBehavior: {fileID: 5164336492357806518}
---- !u!114 &5164336492357806518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5164336492357806512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee05a8a08920884d9c1dce951bf2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  playerStatus: {fileID: 0}
   target:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
   windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
 --- !u!95 &5164336492357806519

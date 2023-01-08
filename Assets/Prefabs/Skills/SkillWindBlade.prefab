@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8679942901050457691}
   - component: {fileID: 8679942901050457692}
   - component: {fileID: 8679942901050457693}
-  - component: {fileID: 8679942901050457694}
   - component: {fileID: 8679942901050457695}
   m_Layer: 0
   m_Name: SkillWindBlade
@@ -117,22 +116,11 @@ MonoBehaviour:
   delayTime: 2
   buffValue: 50
   xTimes: 10
-  SkillsBehavior: {fileID: 8679942901050457694}
---- !u!114 &8679942901050457694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8679942901050457680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee05a8a08920884d9c1dce951bf2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  playerStatus: {fileID: 0}
   target:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
   windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
 --- !u!95 &8679942901050457695

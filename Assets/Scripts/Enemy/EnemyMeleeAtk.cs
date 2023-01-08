@@ -13,9 +13,7 @@ public class EnemyMeleeAtk : MonoBehaviour
     [SerializeField] private Animator anim;
 
     [Header("Atk Control")]
-    bool isAttacking, waitingState;
     [SerializeField] private float delayToAtkAgain;
-    public bool IsAttacking { get => isAttacking;}
     EnemyStatus enemyStatus;
 
     private void Start()
@@ -25,8 +23,8 @@ public class EnemyMeleeAtk : MonoBehaviour
 
     private void Update()
     {
-        if (!IsAttacking && !waitingState && enemyStatus.EnemyIsAlive)
-            DetectingTargetToAtk();
+        //if (!IsAttacking && !waitingState && enemyStatus.EnemyIsAlive)
+        //    DetectingTargetToAtk();
     }
 
     //Called in anim Atk
@@ -38,30 +36,32 @@ public class EnemyMeleeAtk : MonoBehaviour
             atkRange,
             target );
 
-        if(h.collider != null && !IsAttacking)
+        if(h.collider != null )
         {
-            ChangeTheStateOfAtk();
-            StartCoroutine(PlayAtkAnimation());
+            SetTrueToTheStateOfAtk();
+            anim.Play($"Base Layer.{enemyStatus.EnemyAnimName}_Atk", 0);
         }
-        else if(h.collider != null && IsAttacking)
-        {
+        else if(h.collider != null)
             h.collider.gameObject.GetComponent<PlayerStatus>().LoseLife(enemyStatus.Damage, enemyStatus.Critical);
-        }
+
     }
 
-    IEnumerator PlayAtkAnimation()
+    public void SetTrueToTheStateOfAtk() {
+        enemyStatus.IsAttacking = true;
+        StartCoroutine(StartTimerToAtkAgain());
+    }
+
+    //Called on anim Atk
+    public void SetFalseToTheStateOfAtk()
     {
-        anim.Play($"Base Layer.{enemyStatus.EnemyAnimName}_Atk", 0);
-        waitingState = true;
-        yield return new WaitForSeconds(delayToAtkAgain);
-        waitingState = false;
+        enemyStatus.IsAttacking = false;
     }
 
-    //Called on last framd anim Atk
-    public void ChangeTheStateOfAtk() {
-        isAttacking = !isAttacking;
-        enemyStatus.IsAttacking = isAttacking;
+    IEnumerator StartTimerToAtkAgain()
+    {
+        yield return new WaitForSeconds(delayToAtkAgain);
     }
+
 
     private void OnDrawGizmos()
     {

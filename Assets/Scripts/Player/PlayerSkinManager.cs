@@ -13,11 +13,6 @@ public class PlayerSkinManager : MonoBehaviour
     public SpriteRenderer rightLeg, rightFoot, leftLeg, leftFoot;
     public SpriteRenderer rightLegCenter, leftLegCenter;
 
-    private void Awake()
-    {
-        
-    }
-
     public void EquipWeapon()
     {
         weapon.sprite = equips.GetWeaponToEquip().sprite;

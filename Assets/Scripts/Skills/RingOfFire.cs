@@ -27,14 +27,6 @@ public class RingOfFire : MonoBehaviour
 
     IEnumerator HitTarget()
     {
-        //if (target == LayerMask.GetMask("Player"))
-        //{
-        //    RaycastHit2D hit = Physics2D.BoxCast(transform.position, boxSize, 0, Vector3.up, 1, target);
-        //    if (hit.collider != null)
-        //    {
-        //        hit.collider.GetComponentInParent<PlayerStatus>().LoseLife(damage, critical);
-        //    }
-        //}
         if (target == LayerMask.GetMask("Enemy"))
         {
             RaycastHit2D[] hit = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector3.up, 1, target);
@@ -43,7 +35,7 @@ public class RingOfFire : MonoBehaviour
             {
                 foreach (var item in hit)
                 {
-                    item.collider.GetComponent<EnemyStatus>().LoseLife(damage, false);
+                    item.collider.GetComponentInChildren<EnemyStatus>().LoseLife(damage, false);
                 }
             }
         }
