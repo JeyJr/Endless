@@ -8,7 +8,6 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] private float atk;
     [SerializeField] private float def;
     [SerializeField] private float vit;
-    [SerializeField] private float agi;
     [SerializeField] private float cri;
     [SerializeField] private float goldDrop;
     [SerializeField] private float buffDrop;
@@ -21,7 +20,6 @@ public class EnemyStatus : MonoBehaviour
     public float Damage { get => atk * 1; }
     public float Defense { get => def / 2; }
     public float Life { get => life; }
-    public float AtkSpeed { get => 7 - (agi * 0.05f); }
     public float Critical { get => cri; }
     public float GoldDrop { get => goldDrop; }
     public float BuffDrop { get => buffDrop; }
@@ -34,22 +32,30 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] private float yDropSkill;
 
     [Space(5)]
+    [Header("Anim Control")]
+    [SerializeField] private string enemyAnimName;
+    public bool IsAttacking { get; set; }
+    public string EnemyAnimName { get => enemyAnimName; }
+
+    [Space(5)]
     [Header("Others Control")]
     [SerializeField] private bool boss;
     [SerializeField] private bool enemyInTestZone;
-    [SerializeField] private string enemyAnimName;
     [SerializeField] private GameObject thisEnemyFullObj;
-    bool enemyIsAlive;
+    bool isAlive;
 
-    public bool IsAttacking { get; set;}
-    public bool EnemyIsAlive { get => enemyIsAlive; private set => enemyIsAlive = value; }
-    public string EnemyAnimName { get => enemyAnimName;}
+    public bool IsAlive { get => isAlive; private set => isAlive = value; }
 
     private void Awake()
     {
         maxLife = vit * 1;
         life = maxLife;
-        EnemyIsAlive = true;
+        IsAlive = true;
+
+        atk = Random.Range(atk, (atk + 1) * 2);
+        def = Random.Range(def, (def + 1) * 2);
+        vit = Random.Range(vit, (vit + 1) * 2);
+        cri = Random.Range(cri, (cri + 1) * 2);
     }
 
     public void LoseLife(float dmg, bool critical)
@@ -62,11 +68,10 @@ public class EnemyStatus : MonoBehaviour
 
         if (life <= 0)
         {
-            EnemyIsAlive = false;
+            IsAlive = false;
             GetComponent<Animator>().Play($"Base Layer.{enemyAnimName}_Dead", 0);
         }
     }
-
 
     //this method is called on the last frame: Anim Dead;
     public void EnemyDrops()
@@ -79,5 +84,13 @@ public class EnemyStatus : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().EnemyDead(GoldDrop, boss);
         Destroy(thisEnemyFullObj);
+    }
+
+
+    //Called on animations atk
+    public void TargetDmg() => GetComponentInParent<EnemyBehavior>().SetTargetDamage(Damage, Critical);
+    public void SetAwait(){
+        IsAttacking = !IsAttacking;
+        GetComponentInParent<EnemyBehavior>().SetAwait();
     }
 }

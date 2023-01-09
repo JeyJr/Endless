@@ -30,7 +30,6 @@ public class LevelCanvas : MonoBehaviour
         levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
         //UI ICONS 
 
-        Debug.Log(rootUIIconsPosition.transform.childCount);
         StartCoroutine(UpdateFPS());
         StartCoroutine(GetAllPositions());
     }

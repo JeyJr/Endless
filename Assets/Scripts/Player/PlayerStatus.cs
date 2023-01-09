@@ -51,9 +51,8 @@ public class PlayerStatus : MonoBehaviour
         float realDMG;
         bool criticalDMG =  Random.Range(0, 100) <= critical;
         realDMG = (dmg - ((dmg * ManagerData.Load().Defense) / 100));
-       
-        
-        Debug.Log("Critical dmg: " + criticalDMG);
+
+        realDMG = realDMG < 1 ? 1 : realDMG;
 
         if (criticalDMG)
             realDMG += realDMG * critical / 100; 

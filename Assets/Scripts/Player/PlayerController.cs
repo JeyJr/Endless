@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,7 +34,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator rightFootAnim;
     [SerializeField] private Animator leftLegAnim;
     [SerializeField] private Animator leftFootAnim;
-
 
     void Start()
     {
@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
         ZPosition();
     }
 
-
     public void UpdatePlayerMoveSpeed(float buffValue)
     {
         GameData gameData = ManagerData.Load();
@@ -122,8 +121,6 @@ public class PlayerController : MonoBehaviour
         leftFootAnim.Play($"Base Layer.LFoot_{animName}", 0);
         rightFootAnim.Play($"Base Layer.RFoot_{animName}", 0);
     }
-    
-   
     
     #region CamBehavior
 
