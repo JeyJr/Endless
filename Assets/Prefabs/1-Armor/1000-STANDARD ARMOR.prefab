@@ -107,8 +107,8 @@ MonoBehaviour:
   goldCost: 0
   armorDmg: 0
   armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 0
+  armorLife: 5
+  armorAtkSpeed: 25
   armorCritical: 0
   armorRangeAtk: 0
-  armorMoveSpeed: 0
+  armorMoveSpeed: 5

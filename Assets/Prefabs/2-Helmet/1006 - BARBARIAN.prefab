@@ -101,11 +101,11 @@ MonoBehaviour:
   imgHelmet: {fileID: 865460324, guid: 8e0ceb91233793e42a1caaabbe775045, type: 3}
   helmetName: BARBARIAN
   helmetID: 1006
-  goldCost: 20
-  helmetDmg: 5
-  helmetDefense: 0
-  helmetLife: 0
-  helmetAtkSpeed: 0
-  helmetCritical: 0
+  goldCost: 240
+  helmetDmg: 3
+  helmetDefense: 8
+  helmetLife: 10
+  helmetAtkSpeed: 6
+  helmetCritical: 10
   helmetRangeAtk: 0
-  helmetMoveSpeed: 0
+  helmetMoveSpeed: 7

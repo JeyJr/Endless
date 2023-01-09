@@ -104,8 +104,8 @@ MonoBehaviour:
   goldCost: 0
   helmetDmg: 0
   helmetDefense: 0
-  helmetLife: 0
+  helmetLife: 2
   helmetAtkSpeed: 0
   helmetCritical: 0
   helmetRangeAtk: 0
-  helmetMoveSpeed: 0
+  helmetMoveSpeed: 3

@@ -102,11 +102,11 @@ MonoBehaviour:
   imgLeftArm: {fileID: -749041589, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
   armName: PAPER ARM
   armID: 1001
-  goldCost: 25
-  armDmg: 5
-  armDefense: 10
-  armLife: 10
-  armAtkSpeed: 25
-  armCritical: 3
-  armRangeAtk: 5
+  goldCost: 40
+  armDmg: 4
+  armDefense: 2
+  armLife: 2
+  armAtkSpeed: 5.5
+  armCritical: 0
+  armRangeAtk: 3
   armMoveSpeed: 2

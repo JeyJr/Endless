@@ -104,11 +104,11 @@ MonoBehaviour:
   imgFoot: {fileID: 700642205, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
   armorName: PAPER BOX
   armorID: 1001
-  goldCost: 10
+  goldCost: 40
   armorDmg: 0
-  armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 50
+  armorDefense: 2
+  armorLife: 6
+  armorAtkSpeed: 2
   armorCritical: 0
   armorRangeAtk: 0
-  armorMoveSpeed: 0
+  armorMoveSpeed: 3

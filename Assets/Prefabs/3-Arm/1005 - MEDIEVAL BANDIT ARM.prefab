@@ -102,11 +102,11 @@ MonoBehaviour:
   imgLeftArm: {fileID: 1588288269, guid: bd15f617d194de14e86e0a39268439ee, type: 3}
   armName: MEDIEVAL BANDIT
   armID: 1005
-  goldCost: 25
-  armDmg: 5
-  armDefense: 10
-  armLife: 10
-  armAtkSpeed: 25
-  armCritical: 3
+  goldCost: 200
+  armDmg: 7
+  armDefense: 3
+  armLife: 2
+  armAtkSpeed: 10
+  armCritical: 6
   armRangeAtk: 5
   armMoveSpeed: 2

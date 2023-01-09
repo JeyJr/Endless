@@ -101,11 +101,11 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -444792963, guid: d5f415e8f34696b4b9e84d2ba03dc317, type: 3}
   weaponName: BASEBALL BAT
   weaponID: 1004
-  goldCost: 50
-  weaponDmg: 8
+  goldCost: 160
+  weaponDmg: 10
   weaponDefense: 0
   weaponLife: 10
-  weaponAtkSpeed: 2
-  weaponCritical: 10
-  weaponRangeAtk: 3.2
-  weaponMoveSpeed: 10
+  weaponAtkSpeed: 0
+  weaponCritical: 15
+  weaponRangeAtk: 7.2
+  weaponMoveSpeed: 15

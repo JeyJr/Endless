@@ -105,7 +105,7 @@ MonoBehaviour:
   weaponDmg: 1
   weaponDefense: 0
   weaponLife: 5
-  weaponAtkSpeed: 1
+  weaponAtkSpeed: 5
   weaponCritical: 0
-  weaponRangeAtk: 4
-  weaponMoveSpeed: 5
+  weaponRangeAtk: 8
+  weaponMoveSpeed: 15

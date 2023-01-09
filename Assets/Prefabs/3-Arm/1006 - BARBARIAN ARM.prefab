@@ -102,11 +102,11 @@ MonoBehaviour:
   imgLeftArm: {fileID: -327605491, guid: 8e0ceb91233793e42a1caaabbe775045, type: 3}
   armName: BARBARIAN ARM
   armID: 1006
-  goldCost: 25
-  armDmg: 5
+  goldCost: 240
+  armDmg: 10
   armDefense: 10
   armLife: 10
-  armAtkSpeed: 25
-  armCritical: 3
-  armRangeAtk: 5
-  armMoveSpeed: 2
+  armAtkSpeed: 0
+  armCritical: 0
+  armRangeAtk: 0
+  armMoveSpeed: 5

@@ -104,11 +104,11 @@ MonoBehaviour:
   imgFoot: {fileID: -358640609, guid: 04971e6db09be7341af188e8d029da19, type: 3}
   armorName: 'RABBIT COSTUME '
   armorID: 1004
-  goldCost: 10
-  armorDmg: 0
-  armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 50
-  armorCritical: 0
-  armorRangeAtk: 0
-  armorMoveSpeed: 0
+  goldCost: 160
+  armorDmg: 6
+  armorDefense: 5
+  armorLife: 10
+  armorAtkSpeed: 15
+  armorCritical: 5
+  armorRangeAtk: 5
+  armorMoveSpeed: 5

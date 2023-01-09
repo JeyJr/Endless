@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class PanelPassives : MonoBehaviour
 {
-    private float goldCost = 2000;
+    [SerializeField] private float goldCost = 100; //max 1k
     private float maxLevel = 11;
 
     public GameObject panelSkillInfo;
@@ -32,7 +32,7 @@ public class PanelPassives : MonoBehaviour
         bonus = level >= maxLevel ? 10 * passive.SkillBonus : level * passive.SkillBonus;
         skillGoldCost = level * this.goldCost;
 
-        string description = "Add " + bonus.ToString("F2") + " " + passive.SkillDesc;
+        string description = " +" + bonus.ToString("F2") + " " + passive.SkillDesc;
 
         passive.txtLevel.text = GetSkillLevel(passive.SkillShortName).ToString();
         txtSkillName.text = passive.SkillName;
@@ -61,7 +61,7 @@ public class PanelPassives : MonoBehaviour
 
     public void BtnBuy()
     {
-        if(gold >= GetSkillLevel(p.SkillShortName) * goldCost)
+        if (gold >= (GetSkillLevel(p.SkillShortName) + 1) * goldCost)
         {
             SetSkillLevel(p.SkillShortName);
             OpenPanelSkillInfo(p);

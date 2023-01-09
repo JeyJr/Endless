@@ -41,7 +41,13 @@ public class PanelEquips : MonoBehaviour
     public List<GameObject> armBtns;
 
     [Header("Format")]
-    [SerializeField] private string hexColor;
+    [SerializeField] private string hexAtkColor;
+    [SerializeField] private string hexDefColor;
+    [SerializeField] private string hexLifeColor;
+    [SerializeField] private string hexSpeedAtkColor;
+    [SerializeField] private string hexCriticalColor;
+    [SerializeField] private string hexRangeColor;
+    [SerializeField] private string hexMoveColor;
 
     private void OnEnable()
     {
@@ -312,35 +318,35 @@ public class PanelEquips : MonoBehaviour
         if (atk > 0)
         {
             if(weapon)
-                _atk = $"<color=#{hexColor}> ATK: </color>" + atk.ToString("F0") + "<br>";
+                _atk = $"<color=#{hexAtkColor}> ATK: </color>" + atk.ToString("F0") + "<br>";
             else
-                _atk = $"<color=#{hexColor}> ATK: </color>" + atk.ToString("F2") + "% <br>";
+                _atk = $"<color=#{hexAtkColor}> ATK: </color>" + atk.ToString("F2") + "% <br>";
         }
             
 
         if (defense>0)
-            _defense = $"<color=#{hexColor}> DEF: </color>" + defense.ToString("F2") + "%" + "<br>";
+            _defense = $"<color=#{hexDefColor}> DEF: </color>" + defense.ToString("F2") + "%" + "<br>";
 
         if (life > 0)
-            _life = $"<color=#{hexColor}> LIFE: </color>" + life.ToString("F2") + "%" + "<br>";
+            _life = $"<color=#{hexLifeColor}> LIFE: </color>" + life.ToString("F2") + "%" + "<br>";
 
         if(speedAtk > 0)
-            _speedAtk = $"<color=#{hexColor}> SPEED ATK: </color>" + speedAtk.ToString("F2") + "%" + "<br>";
+            _speedAtk = $"<color=#{hexSpeedAtkColor}> SPEED ATK: </color>" + speedAtk.ToString("F2") + "%" + "<br>";
 
         if (critical > 0)
-            _critical = $"<color=#{hexColor}> CRITICAL: </color>" + critical.ToString("F2") + "%" + "<br>";
+            _critical = $"<color=#{hexCriticalColor}> CRITICAL: </color>" + critical.ToString("F2") + "%" + "<br>";
 
         if(atkRange > 0)
         {
             if(weapon)
-                _atkRange = $"<color=#{hexColor}> RANGE:  </color>" + atkRange.ToString("F2") + "u" + "<br>";
+                _atkRange = $"<color=#{hexRangeColor}> RANGE:  </color>" + atkRange.ToString("F2") + "u" + "<br>";
             else
-                _atkRange = $"<color=#{hexColor}> RANGE:  </color>" + atkRange.ToString("F2") + "%" + "<br>";
+                _atkRange = $"<color=#{hexRangeColor}> RANGE:  </color>" + atkRange.ToString("F2") + "%" + "<br>";
         }
             
 
         if (moveSpeed > 0)
-            _moveSpeed = $"<color=#{hexColor}> MOVE: </color>" + moveSpeed.ToString("F2") + "% <br>";
+            _moveSpeed = $"<color=#{hexMoveColor}> MOVE: </color>" + moveSpeed.ToString("F2") + "% <br>";
 
 
         txtAttributes.text = $"{_atk}{_defense}{_life}{_speedAtk}{_critical}{_atkRange}{_moveSpeed}";

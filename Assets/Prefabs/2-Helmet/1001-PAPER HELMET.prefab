@@ -101,11 +101,11 @@ MonoBehaviour:
   imgHelmet: {fileID: 2041792677, guid: 9f2b0f371d76f074ca6b74db85c515dd, type: 3}
   helmetName: PAPER BOX HELMET
   helmetID: 1001
-  goldCost: 20
-  helmetDmg: 5
-  helmetDefense: 0
-  helmetLife: 0
+  goldCost: 40
+  helmetDmg: 0
+  helmetDefense: 10
+  helmetLife: 1
   helmetAtkSpeed: 0
   helmetCritical: 0
   helmetRangeAtk: 0
-  helmetMoveSpeed: 0
+  helmetMoveSpeed: 5

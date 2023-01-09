@@ -101,11 +101,11 @@ MonoBehaviour:
   imgHelmet: {fileID: -217612363, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
   helmetName: ROGUE HEAD
   helmetID: 1003
-  goldCost: 20
-  helmetDmg: 5
-  helmetDefense: 0
-  helmetLife: 0
-  helmetAtkSpeed: 0
-  helmetCritical: 0
+  goldCost: 120
+  helmetDmg: 0
+  helmetDefense: 2
+  helmetLife: 2
+  helmetAtkSpeed: 2
+  helmetCritical: 3
   helmetRangeAtk: 0
-  helmetMoveSpeed: 0
+  helmetMoveSpeed: 5

@@ -101,11 +101,11 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: 112346178, guid: fd180c4f3d7c07a42ab1466f005f5f8c, type: 3}
   weaponName: BARBARIAN AXE
   weaponID: 1007
-  goldCost: 65
-  weaponDmg: 12
-  weaponDefense: 5
-  weaponLife: 5
-  weaponAtkSpeed: 3
-  weaponCritical: 5
-  weaponRangeAtk: 3.6
-  weaponMoveSpeed: 15
+  goldCost: 280
+  weaponDmg: 15
+  weaponDefense: 4
+  weaponLife: 0
+  weaponAtkSpeed: 6
+  weaponCritical: 10
+  weaponRangeAtk: 6.8
+  weaponMoveSpeed: 12

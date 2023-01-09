@@ -101,11 +101,11 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: 824316913, guid: 18abbdffd68f54c43bdbe3ab059e82f7, type: 3}
   weaponName: ROGUE KNIFE
   weaponID: 1008
-  goldCost: 65
-  weaponDmg: 12
-  weaponDefense: 5
-  weaponLife: 5
-  weaponAtkSpeed: 3
-  weaponCritical: 5
-  weaponRangeAtk: 3.6
-  weaponMoveSpeed: 15
+  goldCost: 320
+  weaponDmg: 10
+  weaponDefense: 0
+  weaponLife: 0
+  weaponAtkSpeed: 25
+  weaponCritical: 50
+  weaponRangeAtk: 7
+  weaponMoveSpeed: 25

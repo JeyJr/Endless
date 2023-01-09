@@ -104,11 +104,11 @@ MonoBehaviour:
   imgFoot: {fileID: -1200160411, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
   armorName: ROGUE ARMOR
   armorID: 1003
-  goldCost: 10
-  armorDmg: 0
+  goldCost: 120
+  armorDmg: 3.5
   armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 50
-  armorCritical: 0
-  armorRangeAtk: 0
-  armorMoveSpeed: 0
+  armorLife: 6
+  armorAtkSpeed: 30
+  armorCritical: 10
+  armorRangeAtk: 5
+  armorMoveSpeed: 10

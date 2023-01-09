@@ -104,11 +104,11 @@ MonoBehaviour:
   imgFoot: {fileID: -1811059162, guid: 8e0ceb91233793e42a1caaabbe775045, type: 3}
   armorName: BARBARIAN ARMOR
   armorID: 1006
-  goldCost: 10
-  armorDmg: 0
+  goldCost: 240
+  armorDmg: 10
   armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 50
-  armorCritical: 0
-  armorRangeAtk: 0
-  armorMoveSpeed: 0
+  armorLife: 7
+  armorAtkSpeed: 13
+  armorCritical: 4
+  armorRangeAtk: 3
+  armorMoveSpeed: 15

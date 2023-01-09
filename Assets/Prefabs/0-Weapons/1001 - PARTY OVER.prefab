@@ -101,11 +101,11 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -1119944411, guid: 17219c2dc51f3f8489a5c3b365bfbd33, type: 3}
   weaponName: PARTY OVER
   weaponID: 1001
-  goldCost: 20
+  goldCost: 40
   weaponDmg: 2
   weaponDefense: 0
   weaponLife: 5
   weaponAtkSpeed: 3
   weaponCritical: 3
-  weaponRangeAtk: 2.4
+  weaponRangeAtk: 6.4
   weaponMoveSpeed: 15

@@ -101,11 +101,11 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -53827019, guid: 4ca3ef5984589bb4e8ce28155228683a, type: 3}
   weaponName: FLIP FLOPS
   weaponID: 1002
-  goldCost: 25
+  goldCost: 80
   weaponDmg: 5
   weaponDefense: 2
   weaponLife: 6.5
   weaponAtkSpeed: 1.5
   weaponCritical: 5
-  weaponRangeAtk: 2.8
-  weaponMoveSpeed: 10
+  weaponRangeAtk: 6.8
+  weaponMoveSpeed: 20

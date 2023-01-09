@@ -103,6 +103,7 @@ public class GameData
                 bonusDmg + 
                 armorDmg + 
                 helmetDmg + 
+                armDmg +
                 buffSkillPowerUp;
 
             return dmgBaseCalc + (dmgBaseCalc * bonusPercentage / 100);
@@ -117,6 +118,7 @@ public class GameData
                 weaponDefense + 
                 armorDefense + 
                 helmetDefense +
+                armDefense + 
                 buffSkillDefense;
 
             return bonusPercentage;
@@ -134,6 +136,7 @@ public class GameData
                 weaponLife + 
                 armorLife + 
                 helmetLife + 
+                armLife + 
                 buffSkillMaxLife;
 
             return (lifeBaseCalc * bonusPercentage / 100) * multiplier;
@@ -150,6 +153,7 @@ public class GameData
                 weaponAtkSpeed + 
                 armorAtkSpeed + 
                 helmetAtkSpeed + 
+                armAtkSpeed + 
                 buffSkillAtkSpeed;
 
             float result = baseCalc - (baseCalc * bonusPercentage / 100);
@@ -166,6 +170,7 @@ public class GameData
                 weaponCritical +
                 armorCritical +
                 helmetCritical +
+                armCritical + 
                 buffSkillCritical;
 
             return bonusPercentage;
@@ -179,6 +184,7 @@ public class GameData
                 bonusRangeAtk +
                 armorRangeAtk +
                 helmetRangeAtk +
+                armRangeAtk + 
                 buffSkillRangeAtk; 
 
             return baseCalc + (baseCalc * bonusPercentage / 100);
@@ -200,6 +206,7 @@ public class GameData
                 weaponMoveSpeed +
                 armorMoveSpeed +
                 helmetMoveSpeed +
+                armMoveSpeed + 
                 buffSkillMoveSpeed;
 
             return baseCalc + (baseCalc * bonusPercentage / 100);

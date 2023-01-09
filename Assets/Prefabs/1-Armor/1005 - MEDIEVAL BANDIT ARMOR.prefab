@@ -104,11 +104,11 @@ MonoBehaviour:
   imgFoot: {fileID: 1254783593, guid: bd15f617d194de14e86e0a39268439ee, type: 3}
   armorName: MEDIEVAL BANDIT ARMOR
   armorID: 1005
-  goldCost: 10
-  armorDmg: 0
+  goldCost: 200
+  armorDmg: 7
   armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 50
-  armorCritical: 0
+  armorLife: 5
+  armorAtkSpeed: 20
+  armorCritical: 15
   armorRangeAtk: 0
-  armorMoveSpeed: 0
+  armorMoveSpeed: 12

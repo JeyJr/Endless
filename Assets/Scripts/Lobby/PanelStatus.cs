@@ -10,44 +10,44 @@ public class PanelStatus : MonoBehaviour
     public TextMeshProUGUI txtTotalDmg;
     public TextMeshProUGUI txtAttributesDmg;
     public TextMeshProUGUI txtPassiveDmg;
-    public TextMeshProUGUI txtWeaponDmg, txtArmorDmg, txtHelmetDmg;
+    public TextMeshProUGUI txtWeaponDmg, txtArmorDmg, txtHelmetDmg, txtArmDmg;
 
     [Header("DEFENSE")]
     public TextMeshProUGUI txtTotalDef;
     public TextMeshProUGUI txtAttributesDef;
     public TextMeshProUGUI txtPassiveDef;
-    public TextMeshProUGUI txtWeaponDef, txtArmorDef, txtHelmetDef;
+    public TextMeshProUGUI txtWeaponDef, txtArmorDef, txtHelmetDef, txtArmDef;
 
     [Header("LIFE")]
     public TextMeshProUGUI txtTotalLife;
     public TextMeshProUGUI txtAttributesLife;
     public TextMeshProUGUI txtPassiveLife;
-    public TextMeshProUGUI txtWeaponLife, txtArmorLife, txtHelmetLife;
+    public TextMeshProUGUI txtWeaponLife, txtArmorLife, txtHelmetLife, txtArmLife;
 
     [Header("ATK SPEED")]
     public TextMeshProUGUI txtTotalAtkSpeed;
     public TextMeshProUGUI txtAttributesAgi;
     public TextMeshProUGUI txtPassiveAtkSpeed;
-    public TextMeshProUGUI txtWeaponAtkSpeed, txtArmorAtkSpeed, txtHelmetAtkSpeed;
+    public TextMeshProUGUI txtWeaponAtkSpeed, txtArmorAtkSpeed, txtHelmetAtkSpeed, txtArmAtkSpeed;
     
     [Header("CRITICAL")]
     public TextMeshProUGUI txtTotalCritical;
     public TextMeshProUGUI txtAttributesCri;
     public TextMeshProUGUI txtPassiveCritical;
-    public TextMeshProUGUI txtWeaponCritical, txtArmorCritical, txtHelmetCritical;
+    public TextMeshProUGUI txtWeaponCritical, txtArmorCritical, txtHelmetCritical, txtArmCritical;
 
     [Header("RANGE ATK")]
     public TextMeshProUGUI txtTotalRange;
     public TextMeshProUGUI txtAttributesRange;
     public TextMeshProUGUI txtPassiveRange;
-    public TextMeshProUGUI txtWeaponRange, txtArmorRange, txtHelmetRange;
+    public TextMeshProUGUI txtWeaponRange, txtArmorRange, txtHelmetRange, txtArmRange;
 
 
     [Header("MOVE")]
     public TextMeshProUGUI txtTotalMove;
     public TextMeshProUGUI txtAttributesMove;
     public TextMeshProUGUI txtPassiveMove;
-    public TextMeshProUGUI txtWeaponMove, txtArmorMove, txtHelmetMove;
+    public TextMeshProUGUI txtWeaponMove, txtArmorMove, txtHelmetMove, txtArmMove;
     public void PanelPlayerInfoIsActive()
     {
         GameData gd = ManagerData.Load();
@@ -68,6 +68,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponDmg.text = gd.weaponDmg.ToString("F0");
         txtArmorDmg.text = gd.armorDmg.ToString("F2") + "%";
         txtHelmetDmg.text = gd.helmetDmg.ToString("F2") + "%";
+        txtArmDmg.text = gd.armDmg.ToString("F2") + "%";
     }
     void TextDefense(GameData gd)
     {
@@ -77,6 +78,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponDef.text = gd.weaponDefense.ToString("F2") + "%";
         txtArmorDef.text = gd.armorDefense.ToString("F2") + "%";
         txtHelmetDef.text = gd.helmetDefense.ToString("F2") + "%";
+        txtArmDef.text = gd.armDefense.ToString("F2") + "%";
     }
     void TextLife(GameData gd)
     {
@@ -86,6 +88,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponLife.text = gd.weaponLife.ToString("F2") + "%";
         txtArmorLife.text = gd.armorLife.ToString("F2") + "%";
         txtHelmetLife.text = gd.helmetLife.ToString("F2") + "%";
+        txtArmLife.text = gd.armLife.ToString("F2") + "%";
     }
     void TextAgi(GameData gd)
     {
@@ -95,6 +98,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponAtkSpeed.text = gd.weaponAtkSpeed.ToString("F2") + "%";
         txtArmorAtkSpeed.text = gd.armorAtkSpeed.ToString("F2") + "%";
         txtHelmetAtkSpeed.text = gd.helmetAtkSpeed.ToString("F2") + "%";
+        txtArmAtkSpeed.text = gd.armAtkSpeed.ToString("F2") + "%";
     }
     void TextCri(GameData gd)
     {
@@ -104,6 +108,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponCritical.text = gd.weaponCritical.ToString("F2") + "%";
         txtArmorCritical.text = gd.armorCritical.ToString("F2") + "%";
         txtHelmetCritical.text = gd.helmetCritical.ToString("F2") + "%";
+        txtArmCritical.text = gd.armCritical.ToString("F2") + "%";
     }
 
     void TextRangeAtk(GameData gd)
@@ -114,6 +119,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponRange.text = gd.weaponRangeAtk.ToString("F2") + "u";
         txtArmorRange.text = gd.armorRangeAtk.ToString("F2") + "%";
         txtHelmetRange.text = gd.helmetRangeAtk.ToString("F2") + "%";
+        txtArmRange.text = gd.armRangeAtk.ToString("F2") + "%";
     }
 
     void TextMoveSpeed(GameData gd)
@@ -124,6 +130,7 @@ public class PanelStatus : MonoBehaviour
         txtWeaponMove.text = gd.weaponMoveSpeed.ToString("F2") + "%";
         txtArmorMove.text = gd.armorMoveSpeed.ToString("F2") + "%";
         txtHelmetMove.text = gd.helmetMoveSpeed.ToString("F2") + "%";
+        txtArmMove.text = gd.armMoveSpeed.ToString("F2") + "%";
     }
 
 }

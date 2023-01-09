@@ -103,10 +103,10 @@ MonoBehaviour:
   armName: STANDARD ARM
   armID: 1000
   goldCost: 0
-  armDmg: 5
-  armDefense: 10
-  armLife: 10
-  armAtkSpeed: 25
+  armDmg: 2
+  armDefense: 0
+  armLife: 0
+  armAtkSpeed: 5
   armCritical: 3
-  armRangeAtk: 5
-  armMoveSpeed: 2
+  armRangeAtk: 1
+  armMoveSpeed: 0

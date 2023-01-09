@@ -104,11 +104,11 @@ MonoBehaviour:
   imgFoot: {fileID: -1638394650, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
   armorName: OLD IRON ARMOR
   armorID: 1002
-  goldCost: 10
-  armorDmg: 0
-  armorDefense: 0
-  armorLife: 0
-  armorAtkSpeed: 50
-  armorCritical: 0
-  armorRangeAtk: 0
-  armorMoveSpeed: 0
+  goldCost: 80
+  armorDmg: 4
+  armorDefense: 4
+  armorLife: 7.5
+  armorAtkSpeed: 5
+  armorCritical: 3
+  armorRangeAtk: 3
+  armorMoveSpeed: 5

@@ -101,11 +101,11 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -549643413, guid: 991186c592e66784791ec56b37d3f2e0, type: 3}
   weaponName: KITCHEN KNIFE
   weaponID: 1005
-  goldCost: 55
-  weaponDmg: 10
+  goldCost: 200
+  weaponDmg: 8
   weaponDefense: 0
   weaponLife: 0
-  weaponAtkSpeed: 5
-  weaponCritical: 10
-  weaponRangeAtk: 2.4
-  weaponMoveSpeed: 15
+  weaponAtkSpeed: 15
+  weaponCritical: 25
+  weaponRangeAtk: 6.4
+  weaponMoveSpeed: 25
