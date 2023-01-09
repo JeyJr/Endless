@@ -29,6 +29,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform rightLeg;
     [SerializeField] private Transform canvas;
 
+    [SerializeField] private Transform rightArm, leftArm;
+    [SerializeField] private Transform rightPosArm, leftPosArm;
+
+
+
+
     [Header("Animations")]
     [SerializeField] private Animator rightLegAnim;
     [SerializeField] private Animator rightFootAnim;
@@ -37,7 +43,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
         GameData gameData = ManagerData.Load();
         
         controller = GetComponent<CharacterController>();
@@ -60,7 +65,6 @@ public class PlayerController : MonoBehaviour
         }
 
         UpdatePlayerMoveSpeed(gameData.buffSkillMoveSpeed);
-
     }
 
     void Update()
@@ -77,6 +81,10 @@ public class PlayerController : MonoBehaviour
             playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             CamPosition(-xCam);
             Anims("Run");
+
+            rightArm.position = new Vector3(leftPosArm.position.x, rightArm.position.y, rightArm.position.z);
+            leftArm.position = new Vector3(rightPosArm.position.x, leftArm.position.y, leftArm.position.z);
+            
         }
         else if (move.x > 0)
         {
@@ -86,6 +94,9 @@ public class PlayerController : MonoBehaviour
 
             CamPosition(xCam);
             Anims("Run");
+
+            rightArm.position = new Vector3(rightPosArm.position.x, rightArm.position.y, rightArm.position.z);
+            leftArm.position = new Vector3(leftPosArm.position.x, leftArm.position.y, leftArm.position.z);
         }
         else
         {
@@ -112,7 +123,10 @@ public class PlayerController : MonoBehaviour
         leftLeg.position = new Vector3(leftLeg.position.x, leftLeg.position.y, 0.02f);
         rightLeg.position = new Vector3(rightLeg.position.x, rightLeg.position.y, 0.02f);
         canvas.position = new Vector3(canvas.position.x, canvas.position.y, -5.5f);
+
     }
+
+
     void Anims(string animName)
     {
         leftLegAnim.Play($"Base Layer.LeftLeg_{animName}", 0);

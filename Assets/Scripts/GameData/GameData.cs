@@ -52,6 +52,18 @@ public class GameData
     public float helmetRangeAtk;
     public float helmetMoveSpeed;
 
+    //Armor
+    public List<int> purchasedArmIds;
+    public int equipedArmId;
+
+    public float armDmg;
+    public float armDefense;
+    public float armLife;
+    public float armAtkSpeed;
+    public float armCritical;
+    public float armRangeAtk;
+    public float armMoveSpeed;
+
     //SkillsPassivas
     public float skillLevelBonusDmg;
     public float skillLevelBonusDef;

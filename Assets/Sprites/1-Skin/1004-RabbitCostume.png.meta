@@ -105,12 +105,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -132,19 +132,19 @@ TextureImporter:
       name: 1004-RabbitCostume_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 480
-        width: 278
-        height: 581
+        x: 379
+        y: 380
+        width: 729
+        height: 980
       alignment: 9
-      pivot: {x: 0.4235461, y: 0.8637866}
+      pivot: {x: 0.27368048, y: 0.2694846}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33544958f1b05194499b8474f2b4b79b
-      internalID: -1609188381
+      spriteID: ab00216dd36a176439911773696adace
+      internalID: 874058566
       vertices: []
       indices: 
       edges: []
@@ -153,19 +153,19 @@ TextureImporter:
       name: 1004-RabbitCostume_1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 255
-        height: 469
-      alignment: 9
-      pivot: {x: 0.5694569, y: 0.9682844}
+        x: 1417
+        y: 266
+        width: 846
+        height: 1053
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b6859d6915ed7d47a082741c33f8144
-      internalID: 534910931
+      spriteID: 7f92c0e0ca8433649a5d9a38f698db55
+      internalID: -1293502651
       vertices: []
       indices: 
       edges: []
@@ -174,19 +174,19 @@ TextureImporter:
       name: 1004-RabbitCostume_2
       rect:
         serializedVersion: 2
-        x: 577
-        y: 742
-        width: 204
-        height: 393
-      alignment: 9
-      pivot: {x: 0.50578815, y: 0.9506805}
+        x: 2585
+        y: 1055
+        width: 200
+        height: 401
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c45900e8b73f82341b785624c5fc5506
-      internalID: -420275810
+      spriteID: be02cde41a6ee1f47bff18872babdbbf
+      internalID: 1661783039
       vertices: []
       indices: 
       edges: []
@@ -195,10 +195,10 @@ TextureImporter:
       name: 1004-RabbitCostume_3
       rect:
         serializedVersion: 2
-        x: 604
-        y: 573
-        width: 172
-        height: 169
+        x: 2612
+        y: 765
+        width: 162
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84745c3ebf150794ea5261f15440e7a0
-      internalID: 795417728
+      spriteID: 79455230ad053f94b928e4256ff18b21
+      internalID: 806297624
       vertices: []
       indices: 
       edges: []
@@ -216,19 +216,19 @@ TextureImporter:
       name: 1004-RabbitCostume_4
       rect:
         serializedVersion: 2
-        x: 587
-        y: 223
-        width: 190
-        height: 337
+        x: 2598
+        y: 238
+        width: 186
+        height: 345
       alignment: 9
-      pivot: {x: 0.52474076, y: 0.9556604}
+      pivot: {x: 0.49166378, y: 0.9360394}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 971abdee23c27c541b237016282e4882
-      internalID: 1903659088
+      spriteID: b3b8f33bf3773614b9c7d79c087e5b88
+      internalID: -358640609
       vertices: []
       indices: 
       edges: []
@@ -237,19 +237,19 @@ TextureImporter:
       name: 1004-RabbitCostume_5
       rect:
         serializedVersion: 2
-        x: 1166
-        y: 159
-        width: 726
-        height: 976
+        x: 3217
+        y: 355
+        width: 328
+        height: 969
       alignment: 9
-      pivot: {x: 0.25941756, y: 0.18043256}
+      pivot: {x: 0.49242195, y: 0.8898394}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 048b7452ab434f44e83fc632adbd480c
-      internalID: -1031744042
+      spriteID: df214cc738a951443b97113606315dd4
+      internalID: 677614541
       vertices: []
       indices: 
       edges: []
@@ -258,19 +258,19 @@ TextureImporter:
       name: 1004-RabbitCostume_6
       rect:
         serializedVersion: 2
-        x: 2295
-        y: 36
-        width: 851
-        height: 1081
+        x: 3833
+        y: 358
+        width: 313
+        height: 966
       alignment: 9
-      pivot: {x: 0.4804527, y: 0.95394933}
+      pivot: {x: 0.4920588, y: 0.8781866}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b4f554de1b14734db3ceca876ac0f5f
-      internalID: 864903792
+      spriteID: 71f67a73b23302d4985843b84561b791
+      internalID: -1660026463
       vertices: []
       indices: 
       edges: []
@@ -279,9 +279,9 @@ TextureImporter:
       name: 1004-RabbitCostume_7
       rect:
         serializedVersion: 2
-        x: 3648
-        y: 70
-        width: 948
+        x: 4603
+        y: 295
+        width: 950
         height: 950
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02390dece769b8408b919a4bc0812f2
-      internalID: -627313887
+      spriteID: 2ea74d16464fec84cba1bcaaf0828b59
+      internalID: 934083069
       vertices: []
       indices: 
       edges: []
@@ -300,9 +300,30 @@ TextureImporter:
       name: 1004-RabbitCostume_8
       rect:
         serializedVersion: 2
-        x: 4746
-        y: 80
-        width: 950
+        x: 5693
+        y: 307
+        width: 947
+        height: 949
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5754e92d361904f958b853ac6a11a9
+      internalID: 417999107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1004-RabbitCostume_9
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 303
+        width: 954
         height: 953
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -311,8 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06a8da0f792d2cd499514d28dde96a89
-      internalID: 1489313335
+      spriteID: bff30740ef244ab4c8c3b2185e266c73
+      internalID: -602408280
       vertices: []
       indices: 
       edges: []
@@ -328,15 +349,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1004-RabbitCostume_2: -420275810
-      1004-RabbitCostume_3: 795417728
-      1004-RabbitCostume_5: -1031744042
-      1004-RabbitCostume_6: 864903792
-      1004-RabbitCostume_0: -1609188381
-      1004-RabbitCostume_1: 534910931
-      1004-RabbitCostume_8: 1489313335
-      1004-RabbitCostume_4: 1903659088
-      1004-RabbitCostume_7: -627313887
+      1004-RabbitCostume_2: 1661783039
+      1004-RabbitCostume_3: 806297624
+      1004-RabbitCostume_5: 677614541
+      1004-RabbitCostume_6: -1660026463
+      1004-RabbitCostume_0: 874058566
+      1004-RabbitCostume_1: -1293502651
+      1004-RabbitCostume_8: 417999107
+      1004-RabbitCostume_4: -358640609
+      1004-RabbitCostume_9: -602408280
+      1004-RabbitCostume_7: 934083069
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -35,6 +35,11 @@ public class PanelEquips : MonoBehaviour
     public GameObject btnsHelmetRootGroup;
     public List<GameObject> helmetBtns;
 
+    [Header("Arms")]
+    public ArmAttributes armAttributes;
+    public GameObject btnsArmRootGroup;
+    public List<GameObject> armBtns;
+
     [Header("Format")]
     [SerializeField] private string hexColor;
 
@@ -77,6 +82,14 @@ public class PanelEquips : MonoBehaviour
             }
         }
 
+        if (btnsArmRootGroup.transform.childCount > armBtns.Count)
+        {
+            armBtns.Clear();
+            for (int i = 0; i < btnsArmRootGroup.transform.childCount; i++)
+            {
+                armBtns.Add(btnsArmRootGroup.transform.GetChild(i).gameObject);
+            }
+        }
 
         for (int i = 0; i < weaponBtns.Count; i++)
             weaponBtns[i].GetComponent<RectTransform>().transform.position = btnPosition[i].transform.position;
@@ -86,6 +99,9 @@ public class PanelEquips : MonoBehaviour
 
         for (int i = 0; i < helmetBtns.Count; i++)
             helmetBtns[i].GetComponent<RectTransform>().transform.position = btnPosition[i].transform.position;
+
+        for (int i = 0; i < armBtns.Count; i++)
+            armBtns[i].GetComponent<RectTransform>().transform.position = btnPosition[i].transform.position;
     }
 
     public void BtnsPositions()
@@ -160,7 +176,7 @@ public class PanelEquips : MonoBehaviour
     public void SetHelmetAttributes(HelmetAttributes h)
     {
         GameData gameData = ManagerData.Load();
-        this.helmetAttributes = h;
+        helmetAttributes = h;
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(false,
@@ -184,6 +200,32 @@ public class PanelEquips : MonoBehaviour
         }
     }
 
+    public void SetArmAttributes(ArmAttributes a)
+    {
+        GameData gameData = ManagerData.Load();
+        armAttributes = a;
+        panelInfo.SetActive(true); //Habilita o painel
+
+        SetPanelInfoInformations(false,
+            a.ArmDmg, a.ArmDefense, a.ArmLife, a.ArmAtkSpeed, a.ArmCritical,
+            a.ArmRangeAtk, a.ArmMoveSpeed, a.ArmName, a.ImgArmIcon);
+
+        foreach (int id in gameData.purchasedArmIds)
+        {
+            if (id == a.ArmID)
+            {
+                btnBuy.SetActive(false);
+                btnEquip.SetActive(true);
+                break;
+            }
+            else
+            {
+                btnBuy.SetActive(true);
+                btnEquip.SetActive(false);
+                txtGoldCost.text = $"<b>PRICE: </b>{a.GoldCost}";
+            }
+        }
+    }
 
     public void SetPurchase()
     {
@@ -209,6 +251,14 @@ public class PanelEquips : MonoBehaviour
         {
             gameData.gold -= helmetAttributes.GoldCost;
             gameData.purchasedHelmetIds.Add(helmetAttributes.HelmetID);
+
+            btnBuy.SetActive(false);
+            btnEquip.SetActive(true);
+        }
+        else if (panels[3].activeSelf && gameData.gold >= armAttributes.GoldCost)
+        {
+            gameData.gold -= armAttributes.GoldCost;
+            gameData.purchasedArmIds.Add(armAttributes.ArmID);
 
             btnBuy.SetActive(false);
             btnEquip.SetActive(true);
@@ -239,8 +289,13 @@ public class PanelEquips : MonoBehaviour
             ManagerData.Save(gameData);
             player.GetComponentInChildren<PlayerSkinManager>().EquipHelmet();
         }
+        else if (panels[3].activeSelf)
+        {
+            gameData.equipedArmId = armAttributes.ArmID;
+            ManagerData.Save(gameData);
+            player.GetComponentInChildren<PlayerSkinManager>().EquipArms();
+        }
 
-        
     }
     #endregion
 

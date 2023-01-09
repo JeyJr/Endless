@@ -11,7 +11,7 @@ public class PlayerMeleeAtk : MonoBehaviour
 
     [Header("Animations control")]
     public Slider delayBar;
-    public Animator rightArmAnim, rightHandAnim;
+    public Animator rightArmAnim;
     
 
     private void Start()
@@ -30,7 +30,6 @@ public class PlayerMeleeAtk : MonoBehaviour
             delayBar.value = 0;
 
             rightArmAnim.Play($"Base Layer.RightArm_Idle", 0);
-            rightHandAnim.Play($"Base Layer.RHand_Idle", 0);
 
             while (delayBar.value < delayBar.maxValue)
             {
@@ -39,7 +38,6 @@ public class PlayerMeleeAtk : MonoBehaviour
             }
 
             rightArmAnim.Play($"Base Layer.RightArm_Atk", 0);
-            rightHandAnim.Play($"Base Layer.RHand_Atk", 0);
 
             yield return new WaitForSeconds(rightArmAnim.speed / 2);
         }

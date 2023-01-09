@@ -7,12 +7,9 @@ public class ArmorAttributes : MonoBehaviour
     [Header("SET EQUIPS IMG ")]
     [SerializeField] private Sprite imgArmorIcon;
     [SerializeField] private Sprite imgBody;
-    [SerializeField] private Sprite imgArm, imgHand;
     [SerializeField] private Sprite imgLeg, imgCenter, imgFoot;
     public Sprite ImgArmorIcon { get => imgArmorIcon; set => imgArmorIcon = value; }
     public Sprite ImgBody { get => imgBody; set => imgBody = value; }
-    public Sprite ImgArm { get => imgArm; set => imgArm = value; }
-    public Sprite ImgHand { get => imgHand; set => imgHand = value; }
     public Sprite ImgLeg { get => imgLeg; set => imgLeg = value; }
     public Sprite ImgCenter { get => imgCenter; set => imgCenter = value; }
     public Sprite ImgFoot { get => imgFoot; set => imgFoot = value; }

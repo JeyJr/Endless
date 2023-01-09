@@ -45,6 +45,10 @@ public class UIControl : MonoBehaviour
             d.purchasedHelmetIds.Add(1000); //StandardSet
             d.equipedHelmetId = d.purchasedHelmetIds[0];
 
+            d.purchasedArmIds = new List<int>();
+            d.purchasedArmIds.Add(1000); //StandardSet
+            d.equipedArmId = d.purchasedArmIds[0];
+
             d.skillLevelBonusDmg = 0;
             d.skillLevelBonusDef = 0;
             d.skillLevelBonusLife = 0;
@@ -59,6 +63,7 @@ public class UIControl : MonoBehaviour
         pSkin.EquipWeapon();
         pSkin.EquipArmor();
         pSkin.EquipHelmet();
+        pSkin.EquipArms();
 
         StartPanels();
         GoldAmount();

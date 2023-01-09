@@ -6,12 +6,27 @@ public class PlayerSkinManager : MonoBehaviour
 {
     public Equips equips;
 
+    [Header("Main")]
     public SpriteRenderer weapon;
     public SpriteRenderer head;
     public SpriteRenderer body;
-    public SpriteRenderer rightArm, rightHand, leftArm, leftHand;
-    public SpriteRenderer rightLeg, rightFoot, leftLeg, leftFoot;
-    public SpriteRenderer rightLegCenter, leftLegCenter;
+
+    [Header("Arms")]
+    public SpriteRenderer rightArm;
+    public SpriteRenderer leftArm;
+
+    [Header("Legs")]
+    public SpriteRenderer rightLeg;
+    public SpriteRenderer leftLeg;
+
+    [Header("Center")]
+    public SpriteRenderer rightLegCenter;
+    public SpriteRenderer leftLegCenter;
+
+    [Header("Foot")]
+    public SpriteRenderer rightFoot;
+    public SpriteRenderer leftFoot;
+
 
     public void EquipWeapon()
     {
@@ -20,29 +35,29 @@ public class PlayerSkinManager : MonoBehaviour
 
     public void EquipArmor()
     {
-        Sprite[] sprites = equips.GetArmorToEquip();
+        Sprite[] armor = equips.GetArmorToEquip();
         
-        body.sprite = sprites[0];
+        body.sprite = armor[0];
 
-        rightArm.sprite = sprites[1];
-        leftArm.sprite = sprites[1];
-
-        rightHand.sprite = sprites[2];
-        leftHand.sprite = sprites[2];
-
-        rightLegCenter.sprite = sprites[3];
-        leftLegCenter.sprite = sprites[3];
+        rightLegCenter.sprite = armor[1];
+        leftLegCenter.sprite = armor[1];
         
-        rightLeg.sprite = sprites[4];
-        leftLeg.sprite = sprites[4];
+        rightLeg.sprite = armor[2];
+        leftLeg.sprite = armor[2];
 
-        leftFoot.sprite = sprites[5];
-        rightFoot.sprite = sprites[5];
-
+        leftFoot.sprite = armor[3];
+        rightFoot.sprite = armor[3];
     }
 
     public void EquipHelmet()
     {
         head.sprite = equips.GetHelmetToEquip();
+    }
+
+    public void EquipArms()
+    {
+        Sprite[] arms = equips.GetArmsToEquip();
+        rightArm.sprite = arms[0];
+        leftArm.sprite = arms[1];
     }
 }

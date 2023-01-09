@@ -10,10 +10,11 @@ public class Equips : MonoBehaviour
 {
     public List<GameObject> weapons;
 
-    public GameObject standardPlayerArmor;
     public List<GameObject> armor;
 
     public List<GameObject> helmet;
+
+    public List<GameObject> arms;
 
     [SerializeField] private bool lobby;
 
@@ -54,9 +55,6 @@ public class Equips : MonoBehaviour
     {
         GameData gameData = ManagerData.Load();
 
-
-            
-
         foreach (var armor in armor)
         {
             if (armor.GetComponent<ArmorAttributes>().ArmorID == gameData.equipedArmorId)
@@ -74,13 +72,11 @@ public class Equips : MonoBehaviour
 
                 ManagerData.Save(gameData);
 
-                Sprite[] sprites = new Sprite[6];
+                Sprite[] sprites = new Sprite[4];
                 sprites[0] = a.ImgBody;
-                sprites[1] = a.ImgArm;
-                sprites[2] = a.ImgHand;
-                sprites[3] = a.ImgCenter;
-                sprites[4] = a.ImgLeg;
-                sprites[5] = a.ImgFoot;
+                sprites[1] = a.ImgCenter;
+                sprites[2] = a.ImgLeg;
+                sprites[3] = a.ImgFoot;
                 return sprites;
             }
         }
@@ -112,6 +108,37 @@ public class Equips : MonoBehaviour
 
         throw new ArgumentException("Erro ID elmo!");
     }
+
+    public Sprite[] GetArmsToEquip()
+    {
+        GameData gameData = ManagerData.Load();
+
+        foreach (var arm in arms)
+        {
+            if (arm.GetComponent<ArmAttributes>().ArmID == gameData.equipedArmId)
+            {
+                var a = arm.GetComponent<ArmAttributes>();
+
+                gameData.armDmg = a.ArmDmg;
+                gameData.armDefense = a.ArmDefense;
+                gameData.armLife = a.ArmLife;
+                gameData.armAtkSpeed = a.ArmAtkSpeed;
+                gameData.armCritical = a.ArmCritical;
+                gameData.armRangeAtk = a.ArmRangeAtk;
+                gameData.armMoveSpeed = a.ArmMoveSpeed;
+                gameData.equipedArmId = a.ArmID;
+
+                ManagerData.Save(gameData);
+
+                Sprite[] sprites = new Sprite[2];
+                sprites[0] = a.ImgRightArm;
+                sprites[1] = a.ImgLeftArm;
+                return sprites;
+            }
+        }
+        throw new ArgumentException("Erro ID braço!");
+    }
+
     void CheckEquipID(GameData gameData)
     {
         if(gameData.equipedWeaponId == 0)
@@ -129,6 +156,12 @@ public class Equips : MonoBehaviour
         if(gameData.equipedHelmetId == 0)
         {
             gameData.equipedHelmetId = 1000;
+            ManagerData.Save(gameData);
+        }
+
+        if (gameData.equipedArmId == 0)
+        {
+            gameData.equipedArmId = 1000;
             ManagerData.Save(gameData);
         }
     }

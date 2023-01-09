@@ -105,12 +105,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -132,19 +132,19 @@ TextureImporter:
       name: 1006-Barbarian_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 529
-        width: 274
-        height: 515
+        x: 359
+        y: 401
+        width: 781
+        height: 798
       alignment: 9
-      pivot: {x: 0.373775, y: 0.9054273}
+      pivot: {x: 0.20529397, y: 0.20706567}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abcec8ab88909db45a7ce44e7b7a2169
-      internalID: 1014234396
+      spriteID: 904375247f2790f4ba8a536e91c03468
+      internalID: 865460324
       vertices: []
       indices: 
       edges: []
@@ -153,19 +153,19 @@ TextureImporter:
       name: 1006-Barbarian_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 238
-        height: 493
-      alignment: 9
-      pivot: {x: 0.5053826, y: 0.90533143}
+        x: 1434
+        y: 246
+        width: 805
+        height: 1041
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80b9479945d72364191ba6cf60eb5f7f
-      internalID: -413561985
+      spriteID: 9a6a3b074826e05468785dc0293a0f4b
+      internalID: 1367642509
       vertices: []
       indices: 
       edges: []
@@ -174,10 +174,10 @@ TextureImporter:
       name: 1006-Barbarian_2
       rect:
         serializedVersion: 2
-        x: 588
-        y: 734
-        width: 138
-        height: 325
+        x: 2617
+        y: 1103
+        width: 142
+        height: 329
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e41df71b29471c346af55f5519e0297b
-      internalID: 1077309851
+      spriteID: 7aae7a0f783c0e74f85f298b7ebbc573
+      internalID: -1227284608
       vertices: []
       indices: 
       edges: []
@@ -195,10 +195,10 @@ TextureImporter:
       name: 1006-Barbarian_3
       rect:
         serializedVersion: 2
-        x: 595
-        y: 575
-        width: 114
-        height: 124
+        x: 2626
+        y: 784
+        width: 122
+        height: 129
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f68bd70fba4204982e85c8b47004ab
-      internalID: -351559373
+      spriteID: d2b56e33e601ed14da8744809ff062c4
+      internalID: 167019687
       vertices: []
       indices: 
       edges: []
@@ -216,19 +216,19 @@ TextureImporter:
       name: 1006-Barbarian_4
       rect:
         serializedVersion: 2
-        x: 554
-        y: 235
-        width: 196
-        height: 319
-      alignment: 9
-      pivot: {x: 0.5196066, y: 0.9778469}
+        x: 2595
+        y: 243
+        width: 190
+        height: 321
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68851dd45ee1fc42bcd53281a9c184b
-      internalID: 1681625800
+      spriteID: 2d27a24b5b7cbad43af5d72e6d5824a2
+      internalID: -1811059162
       vertices: []
       indices: 
       edges: []
@@ -237,19 +237,19 @@ TextureImporter:
       name: 1006-Barbarian_5
       rect:
         serializedVersion: 2
-        x: 1109
-        y: 187
-        width: 791
-        height: 808
+        x: 3254
+        y: 352
+        width: 291
+        height: 935
       alignment: 9
-      pivot: {x: 0.20156695, y: 0.21038641}
+      pivot: {x: 0.3953392, y: 0.91531074}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ae6642badebdea4fb4b556a999d9cdf
-      internalID: -604078315
+      spriteID: f59574cb9d91ea84ebbd22454434a8a8
+      internalID: 1975695560
       vertices: []
       indices: 
       edges: []
@@ -258,19 +258,19 @@ TextureImporter:
       name: 1006-Barbarian_6
       rect:
         serializedVersion: 2
-        x: 2294
-        y: 35
-        width: 802
-        height: 1038
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 3846
+        y: 354
+        width: 299
+        height: 931
+      alignment: 9
+      pivot: {x: 0.4497417, y: 0.9150506}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 580c8cee4fa833c4596523126b056b56
-      internalID: -486483614
+      spriteID: 661596c302e04d841bf096bb6dc1c171
+      internalID: -327605491
       vertices: []
       indices: 
       edges: []
@@ -279,10 +279,10 @@ TextureImporter:
       name: 1006-Barbarian_7
       rect:
         serializedVersion: 2
-        x: 3619
-        y: 82
-        width: 947
-        height: 950
+        x: 4598
+        y: 293
+        width: 956
+        height: 952
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cebf6961e66d0fb4bb6526545d550b5d
-      internalID: 427281352
+      spriteID: f419a7f965f76f84ba525b46afcb824c
+      internalID: -484199864
       vertices: []
       indices: 
       edges: []
@@ -300,10 +300,10 @@ TextureImporter:
       name: 1006-Barbarian_8
       rect:
         serializedVersion: 2
-        x: 4720
-        y: 93
-        width: 949
-        height: 946
+        x: 5689
+        y: 308
+        width: 950
+        height: 948
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,8 +311,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a070a3ec7a6bc864495e2f64cb8d242c
-      internalID: 522167117
+      spriteID: ce38ead65b5832245ba1e773a60bfef3
+      internalID: 1587624682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1006-Barbarian_9
+      rect:
+        serializedVersion: 2
+        x: 6774
+        y: 304
+        width: 955
+        height: 954
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fca0772a9c50d4d8bbe4928409f689
+      internalID: -619109156
       vertices: []
       indices: 
       edges: []
@@ -328,15 +349,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1006-Barbarian_4: 1681625800
-      1006-Barbarian_2: 1077309851
-      1006-Barbarian_3: -351559373
-      1006-Barbarian_0: 1014234396
-      1006-Barbarian_5: -604078315
-      1006-Barbarian_6: -486483614
-      1006-Barbarian_8: 522167117
-      1006-Barbarian_1: -413561985
-      1006-Barbarian_7: 427281352
+      1006-Barbarian_4: -1811059162
+      1006-Barbarian_2: -1227284608
+      1006-Barbarian_9: -619109156
+      1006-Barbarian_3: 167019687
+      1006-Barbarian_0: 865460324
+      1006-Barbarian_5: 1975695560
+      1006-Barbarian_6: -327605491
+      1006-Barbarian_8: 1587624682
+      1006-Barbarian_1: 1367642509
+      1006-Barbarian_7: -484199864
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
