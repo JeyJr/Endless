@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -12,12 +13,19 @@ public class PlayerStatus : MonoBehaviour
     public SpawnText spawnText;
     public Slider lifeBar;
     public float MaxLife { get => maxLife; }
-    
-    private void Awake()
+
+    bool lobby;
+
+    private void Start()
     {
         GameData gameData = ManagerData.Load();
         maxLife = gameData.MaxLife;
         life = maxLife;
+
+        lifeBar = GameObject.FindGameObjectWithTag("MainUI").
+            transform.Find("panelLifeBar").
+            transform.Find("sliderLifeBar").
+            GetComponent<Slider>();
 
         UpdateLifeBar();
 
@@ -30,6 +38,8 @@ public class PlayerStatus : MonoBehaviour
         gameData.buffSkillMoveSpeed = 0;
 
         ManagerData.Save(gameData);
+
+
     }
 
     public float Life { get => life; set

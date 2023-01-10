@@ -33,6 +33,7 @@ public class EnemyBehavior : MonoBehaviour
         enemyStatus = GetComponentInChildren<EnemyStatus>();
         anim = GetComponentInChildren<Animator>();
 
+
         delayToWait = Random.Range(delayToWait, delayToWait * 2);
         mSpeed = Random.Range(mSpeed, mSpeed * 2);
     }
@@ -53,6 +54,7 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             PlayAnim("Dead");
+            StopCoroutine(DetectPlayerRangeToAtk());
         }
     }
 
@@ -86,8 +88,7 @@ public class EnemyBehavior : MonoBehaviour
         if (!detectPlayerInRangeToAtk)
         {
             detectPlayerInRangeToAtk = true;
-            taskAtkPlayer = TaskDetectPlayerRangeToAtk();
-            await taskAtkPlayer;
+            StartCoroutine(DetectPlayerRangeToAtk());            
         }
     }
     async Task TaskFindPlayerPosition()
@@ -112,17 +113,20 @@ public class EnemyBehavior : MonoBehaviour
     {
         PlayAnim("Atk");
     }
-    async Task TaskDetectPlayerRangeToAtk()
+    IEnumerator DetectPlayerRangeToAtk()
     {
-        RaycastHit2D hit = Physics2D.Raycast(atkPos.position, atkPos.right, atkRange, target);
-
-        if(hit.collider != null)
+        if (enemyStatus.IsAlive)
         {
-            enemyStatus.IsAttacking = true;
-        }
+            RaycastHit2D hit = Physics2D.Raycast(atkPos.position, atkPos.right, atkRange, target);
 
-        await Task.Delay(1000);
-        detectPlayerInRangeToAtk = false;
+            if (hit.collider != null)
+            {
+                enemyStatus.IsAttacking = true;
+            }
+
+            yield return new WaitForSeconds(1);
+            detectPlayerInRangeToAtk = false;
+        }
     }
     public void SetTargetDamage(float dmg, float critical)
     {

@@ -10,32 +10,33 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] private float vit;
     [SerializeField] private float cri;
     [SerializeField] private float goldDrop;
-    [SerializeField] private float buffDrop;
+    [SerializeField] private float skillDrop;
+    public float Damage { get => atk * 1; }
+    public float Defense { get => def / 2; }
+    public float Life { get => life; }
+    public float Critical { get => cri; }
+    public float GoldDrop { get => goldDrop; }
+    public float SkillDrop { get => skillDrop; }
+
 
     [Space(5)]
     [Header("Status")]
     [SerializeField] private float maxLife;
     [SerializeField] private float life;
 
-    public float Damage { get => atk * 1; }
-    public float Defense { get => def / 2; }
-    public float Life { get => life; }
-    public float Critical { get => cri; }
-    public float GoldDrop { get => goldDrop; }
-    public float BuffDrop { get => buffDrop; }
-
     [Space(5)]
     [Header("Txt To Spawn")]
     public SpawnText spawnTextDMG;
-    [SerializeField] private GameObject spawnSkill;
     [SerializeField] private Transform spawnPosition;
-    [SerializeField] private float yDropSkill;
 
     [Space(5)]
     [Header("Anim Control")]
     [SerializeField] private string enemyAnimName;
     public bool IsAttacking { get; set; }
     public string EnemyAnimName { get => enemyAnimName; }
+
+    [Header("SpawnSkills")]
+    [SerializeField] private List<GameObject> skillsToSpawn;
 
     [Space(5)]
     [Header("Others Control")]
@@ -48,14 +49,15 @@ public class EnemyStatus : MonoBehaviour
 
     private void Awake()
     {
-        maxLife = vit * 1;
-        life = maxLife;
-        IsAlive = true;
 
         atk = Random.Range(atk, (atk + 1) * 2);
         def = Random.Range(def, (def + 1) * 2);
         vit = Random.Range(vit, (vit + 1) * 2);
         cri = Random.Range(cri, (cri + 1) * 2);
+
+        maxLife = vit * 15;
+        life = maxLife;
+        IsAlive = true;
     }
 
     public void LoseLife(float dmg, bool critical)
@@ -66,7 +68,7 @@ public class EnemyStatus : MonoBehaviour
         if (!enemyInTestZone)
             life -= realDMG;
 
-        if (life <= 0)
+        if (life <= 0 && !enemyInTestZone)
         {
             IsAlive = false;
             GetComponent<Animator>().Play($"Base Layer.{enemyAnimName}_Dead", 0);
@@ -76,10 +78,15 @@ public class EnemyStatus : MonoBehaviour
     //this method is called on the last frame: Anim Dead;
     public void EnemyDrops()
     {
-        if (Random.Range(0, 100) <= buffDrop)
+        if(Random.Range(0, 100) <= SkillDrop)
         {
-            Vector3 pos = new(spawnPosition.position.x, yDropSkill, 6);
-            Instantiate(spawnSkill, pos, Quaternion.Euler(0, 0, 0));
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
+            Instantiate
+            (
+                skillsToSpawn[Mathf.RoundToInt(Random.Range(0, skillsToSpawn.Count))], 
+                pos, 
+                Quaternion.identity
+            );
         }
 
         GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().EnemyDead(GoldDrop, boss);

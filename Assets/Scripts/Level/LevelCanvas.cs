@@ -24,6 +24,9 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtFPS;
     private float fps, ms;
 
+    [Header("TxtInformation")]
+    [SerializeField] private GameObject panelInfo;
+    [SerializeField] private TextMeshProUGUI txtInfo;
 
     private void Awake()
     {
@@ -144,4 +147,17 @@ public class LevelCanvas : MonoBehaviour
 
     #endregion
 
+    public void TextLevelInfo(string text)
+    {
+        panelInfo.SetActive(true);
+        txtInfo.text = text;
+        StartCoroutine(TxtLevelInfoHidden());
+    }
+
+    IEnumerator TxtLevelInfoHidden()
+    {
+        yield return new WaitForSeconds(4);
+        panelInfo.SetActive(false);
+        txtInfo.text = " ";
+    }
 }

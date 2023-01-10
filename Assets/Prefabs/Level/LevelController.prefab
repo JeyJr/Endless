@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6379193836747831888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33.23818, y: 3.1370528, z: -0.08589779}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,12 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalBossesKilled: 0
   totalEnemiesKilled: 0
-  zoneOneCompleted: 0
-  zoneTwoCompleted: 0
-  zoneThreeCompleted: 0
+  spawnCentralPoint: {fileID: 6379193836747831919}
+  boss: {fileID: 7014019564180955531, guid: a8fc831f7a1594442ad9820d6ea2706c, type: 3}
+  bossDead: 0
+  enemiesSpawned: 0
+  maxEnemiesToSpawn: 10
+  enemiesToSpawn:
+  - {fileID: 8999531475709711606, guid: 3edae17dd511ba54698c1af3af7edec8, type: 3}
   goldTotal: 0
-  spawnPosition: {fileID: 0}
-  txtGold: {fileID: 7674327104211106876, guid: 322d07c958e9c674a9f60ef0961d2749, type: 3}
-  standarSprite: {fileID: 0}
-  uiSkillIcon: []
-  uiIconPosition: []
+  bonusGold: 0
+  levelCanvas: {fileID: 0}
+  enemiesKilledToSpawnBoss: 30

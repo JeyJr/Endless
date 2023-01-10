@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04971e6db09be7341af188e8d029da19
+guid: cb838f2e809d00d408d48c1af6d5a868
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,211 +129,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1004-RabbitCostume_0
+      name: CircleSliders_0
       rect:
         serializedVersion: 2
-        x: 379
-        y: 381
-        width: 729
-        height: 980
-      alignment: 9
-      pivot: {x: 0.14988858, y: 0.26948467}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab00216dd36a176439911773696adace
-      internalID: 874058566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1004-RabbitCostume_1
-      rect:
-        serializedVersion: 2
-        x: 1417
-        y: 266
-        width: 846
-        height: 1053
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f92c0e0ca8433649a5d9a38f698db55
-      internalID: -1293502651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1004-RabbitCostume_2
-      rect:
-        serializedVersion: 2
-        x: 2585
-        y: 1055
-        width: 200
-        height: 401
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be02cde41a6ee1f47bff18872babdbbf
-      internalID: 1661783039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1004-RabbitCostume_3
-      rect:
-        serializedVersion: 2
-        x: 2612
-        y: 765
-        width: 162
-        height: 167
+        x: 9
+        y: 402
+        width: 369
+        height: 368
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79455230ad053f94b928e4256ff18b21
-      internalID: 806297624
+      spriteID: 8ac70b908d8681b4a8139e5dbcc2635a
+      internalID: -437738727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1004-RabbitCostume_4
+      name: CircleSliders_1
       rect:
         serializedVersion: 2
-        x: 2598
-        y: 238
-        width: 186
-        height: 345
-      alignment: 9
-      pivot: {x: 0.49166378, y: 0.9360394}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3b8f33bf3773614b9c7d79c087e5b88
-      internalID: -358640609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1004-RabbitCostume_5
-      rect:
-        serializedVersion: 2
-        x: 3217
-        y: 355
-        width: 328
-        height: 969
-      alignment: 9
-      pivot: {x: 0.49242195, y: 0.8898394}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df214cc738a951443b97113606315dd4
-      internalID: 677614541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1004-RabbitCostume_6
-      rect:
-        serializedVersion: 2
-        x: 3833
-        y: 358
-        width: 313
-        height: 966
-      alignment: 9
-      pivot: {x: 0.4920588, y: 0.8781866}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71f67a73b23302d4985843b84561b791
-      internalID: -1660026463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1004-RabbitCostume_7
-      rect:
-        serializedVersion: 2
-        x: 4603
-        y: 295
-        width: 950
-        height: 950
+        x: 417
+        y: 402
+        width: 368
+        height: 368
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea74d16464fec84cba1bcaaf0828b59
-      internalID: 934083069
+      spriteID: 13a6a4e57d85adf48b20532fe56f8daf
+      internalID: -2126731124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1004-RabbitCostume_8
+      name: CircleSliders_2
       rect:
         serializedVersion: 2
-        x: 5693
-        y: 307
-        width: 947
-        height: 949
+        x: 0
+        y: 0
+        width: 368
+        height: 368
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c5754e92d361904f958b853ac6a11a9
-      internalID: 417999107
+      spriteID: 08ecb7c39348dff49b911dd1a04a6991
+      internalID: 1385633190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1004-RabbitCostume_9
+      name: CircleSliders_3
       rect:
         serializedVersion: 2
-        x: 6776
-        y: 303
-        width: 954
-        height: 953
+        x: 404
+        y: 0
+        width: 368
+        height: 368
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff30740ef244ab4c8c3b2185e266c73
-      internalID: -602408280
+      spriteID: 3b3519d855c65bb408e59725f07064e2
+      internalID: -868257123
       vertices: []
       indices: 
       edges: []
@@ -349,16 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1004-RabbitCostume_2: 1661783039
-      1004-RabbitCostume_3: 806297624
-      1004-RabbitCostume_5: 677614541
-      1004-RabbitCostume_6: -1660026463
-      1004-RabbitCostume_0: 874058566
-      1004-RabbitCostume_1: -1293502651
-      1004-RabbitCostume_8: 417999107
-      1004-RabbitCostume_4: -358640609
-      1004-RabbitCostume_9: -602408280
-      1004-RabbitCostume_7: 934083069
+      CircleSliders_0: -437738727
+      CircleSliders_3: -868257123
+      CircleSliders_1: -2126731124
+      CircleSliders_2: 1385633190
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

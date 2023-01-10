@@ -89,8 +89,14 @@ public class ActivatingSkills : MonoBehaviour
         gameData.buffSkillPowerUp = buffValue;
         ManagerData.Save(gameData);
 
+        levelCanvas.TextLevelInfo($"Buff Power\n" + "<color=#ff9f63> +" + buffValue.ToString("F2") + "%</color>");
         await Task.Delay(delayTimeInt);
-
+        //def 
+        //lif 
+        //sped 
+        //cri 
+        //rang 
+        //mvoe 
         gameData.buffSkillPowerUp = 0;
         ManagerData.Save(gameData);
 
@@ -102,6 +108,7 @@ public class ActivatingSkills : MonoBehaviour
         gameData.buffSkillDefense = buffValue;
         ManagerData.Save(gameData);
 
+        levelCanvas.TextLevelInfo($"Buff Defense\n" + "<color=#63efff> +" + buffValue.ToString("F2") + "%</color>");
         await Task.Delay(delayTimeInt);
 
         gameData.buffSkillDefense = 0;
@@ -111,13 +118,12 @@ public class ActivatingSkills : MonoBehaviour
     }
     async Task TaskLifeRecovery()
     {
+        levelCanvas.TextLevelInfo($"Skill:\n" + "<color=#92ff63> Life Recovery </color>");
         for (int i = 0; i < xTimes; i++)
         {
-            Debug.Log("Life Recovery : " + buffValue);
             playerStatus.Life = buffValue;
             await Task.Delay(delayTimeInt);
         }
-
         DisableUIIcon();
     }
     async Task TaskAtkSpeed()
@@ -125,6 +131,7 @@ public class ActivatingSkills : MonoBehaviour
         GameData gameData = ManagerData.Load();
         gameData.buffSkillAtkSpeed = buffValue;
         ManagerData.Save(gameData);
+        levelCanvas.TextLevelInfo($"Buff AtkSpeed\n" + "<color=#ff6363> +" + buffValue.ToString("F2") + "%</color>");
 
         await Task.Delay(delayTimeInt);
 
@@ -139,6 +146,8 @@ public class ActivatingSkills : MonoBehaviour
         gameData.buffSkillCritical = buffValue;
         ManagerData.Save(gameData);
 
+        levelCanvas.TextLevelInfo($"Buff Critical\n" + "<color=#ff6363> +" + buffValue.ToString("F2") + "%</color>");
+
         await Task.Delay(delayTimeInt);
 
         gameData.buffSkillCritical = 0;
@@ -152,6 +161,8 @@ public class ActivatingSkills : MonoBehaviour
         gameData.buffSkillRangeAtk = buffValue;
         ManagerData.Save(gameData);
 
+        levelCanvas.TextLevelInfo($"Buff attack Range\n" + "<color=#f263ff> +" + buffValue.ToString("F2") + "%</color>");
+
         await Task.Delay(delayTimeInt);
 
         gameData.buffSkillRangeAtk = 0;
@@ -162,6 +173,8 @@ public class ActivatingSkills : MonoBehaviour
     async Task TaskMoveSpeed()
     {
         playerController.UpdatePlayerMoveSpeed(buffValue);
+        levelCanvas.TextLevelInfo($"Buff movement speed\n" + "<color=#b463ff> +" + buffValue.ToString("F2") + "%</color>");
+
         await Task.Delay(delayTimeInt);
         playerController.UpdatePlayerMoveSpeed(0);
 
@@ -170,6 +183,9 @@ public class ActivatingSkills : MonoBehaviour
     async Task TaskActiveRingOfFire()
     {
         GameData gameData = ManagerData.Load();
+
+        levelCanvas.TextLevelInfo($"Skill:\nFire Ring");
+
 
         for (int i = 0; i < xTimes; i++)
         {
@@ -186,6 +202,7 @@ public class ActivatingSkills : MonoBehaviour
     {
         GameData gameData = ManagerData.Load();
 
+        levelCanvas.TextLevelInfo($"Skill: \nBlades Of Wind");
         for (int i = 0; i < xTimes; i++)
         {
             Vector3 pos = new(playerController.GetComponent<Transform>().position.x, playerController.GetComponent<Transform>().position.y + 1.5f, 4);
@@ -202,6 +219,7 @@ public class ActivatingSkills : MonoBehaviour
     void DisableUIIcon()
     {
         levelCanvas.DisableUISkillICon(id.ToString());
+
         try
         {
             Destroy(this.gameObject);
@@ -210,7 +228,5 @@ public class ActivatingSkills : MonoBehaviour
         {
             Debug.Log("Objeto ja foi destruido!");
         }
-
     }
-
 }

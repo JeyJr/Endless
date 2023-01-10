@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyZone
+  - LifeBar
   - LevelController
   - Enemy
   - MainUI
-  - EnemyLimitZone
   layers:
   - Default
   - TransparentFX
@@ -18,7 +17,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - EnemyZone
+  - 
   - LevelController
   - 
   - 

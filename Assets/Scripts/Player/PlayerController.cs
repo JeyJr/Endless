@@ -13,27 +13,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool lobby;
 
 
-
     [Header("PlayerMovement")]
     public PlayerMove playerInput;
     [SerializeField] private CharacterController controller;
     private float playerMoveSpeed;
     public float PlayerMoveSpeed { get => playerMoveSpeed; set => playerMoveSpeed = value; }
-    PlayerMeleeAtk playerMeleeAtk;
-    PlayerStatus playerStatus;
     public Vector2 MoveInput{ get; set; }
 
     [Header("Skin Hierarchy Organization")]
+    [SerializeField] private Transform canvas;
     [SerializeField] private Transform head;
     [SerializeField] private Transform leftLeg;
     [SerializeField] private Transform rightLeg;
-    [SerializeField] private Transform canvas;
 
     [SerializeField] private Transform rightArm, leftArm;
     [SerializeField] private Transform rightPosArm, leftPosArm;
-
-
-
 
     [Header("Animations")]
     [SerializeField] private Animator rightLegAnim;
@@ -48,9 +42,6 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerMove();
         playerInput.Enable();
-  
-        playerMeleeAtk = GetComponentInChildren<PlayerMeleeAtk>();
-        playerStatus = GetComponentInChildren<PlayerStatus>();
 
         if (GameObject.FindGameObjectWithTag("LevelController") == null)
             lobby = true;
@@ -77,26 +68,20 @@ public class PlayerController : MonoBehaviour
         if (move.x < 0)
         {
             transform.localEulerAngles = new Vector3(0, 180, 0);
-            playerMeleeAtk.delayBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
-            playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.RightToLeft;
             CamPosition(-xCam);
             Anims("Run");
-
-            rightArm.position = new Vector3(leftPosArm.position.x, rightArm.position.y, rightArm.position.z);
-            leftArm.position = new Vector3(rightPosArm.position.x, leftArm.position.y, leftArm.position.z);
-            
+            XPosition(true);
+            //SlidersDirection(true);
         }
         else if (move.x > 0)
         {
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            playerMeleeAtk.delayBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
-            playerStatus.lifeBar.GetComponent<Slider>().direction = Slider.Direction.LeftToRight;
+
 
             CamPosition(xCam);
             Anims("Run");
-
-            rightArm.position = new Vector3(rightPosArm.position.x, rightArm.position.y, rightArm.position.z);
-            leftArm.position = new Vector3(leftPosArm.position.x, leftArm.position.y, leftArm.position.z);
+            XPosition(false);
+            //SlidersDirection(true);
         }
         else
         {
@@ -124,6 +109,19 @@ public class PlayerController : MonoBehaviour
         rightLeg.position = new Vector3(rightLeg.position.x, rightLeg.position.y, 0.02f);
         canvas.position = new Vector3(canvas.position.x, canvas.position.y, -5.5f);
 
+    }
+    void XPosition(bool right)
+    {
+        if (right)
+        {
+            rightArm.position = new Vector3(leftPosArm.position.x, rightArm.position.y, rightArm.position.z);
+            leftArm.position = new Vector3(rightPosArm.position.x, leftArm.position.y, leftArm.position.z);
+        }
+        else
+        {
+            rightArm.position = new Vector3(rightPosArm.position.x, rightArm.position.y, rightArm.position.z);
+            leftArm.position = new Vector3(leftPosArm.position.x, leftArm.position.y, leftArm.position.z);
+        }
     }
 
 

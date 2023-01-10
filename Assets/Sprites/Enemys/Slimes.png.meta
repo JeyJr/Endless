@@ -275,6 +275,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Slimes_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 563
+        height: 682
+      alignment: 9
+      pivot: {x: 0.4523876, y: 0.0075340886}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b0034ab15077c4faf7adc0a9efda83
+      internalID: 196556025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slimes_8
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 32
+        width: 559
+        height: 687
+      alignment: 9
+      pivot: {x: 0.46038055, y: 0.0023301304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcee654ecfe516408dbf720e3e0fc77
+      internalID: 1762280720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slimes_9
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 37
+        width: 1033
+        height: 787
+      alignment: 9
+      pivot: {x: 0.6903685, y: -0.0004845635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8757b57b784810a4d93c91b4cfa1ae9b
+      internalID: -281150134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slimes_10
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 30
+        width: 1115
+        height: 864
+      alignment: 9
+      pivot: {x: 0.7144658, y: 0.004908032}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42808aaa96e5cf14ea2136cbfd128ebe
+      internalID: 2057886228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slimes_11
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 35
+        width: 1080
+        height: 791
+      alignment: 9
+      pivot: {x: 0.71057945, y: 0.0009368144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0238288987ca1cd48b60ed32e4a77d31
+      internalID: 1537473806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slimes_12
+      rect:
+        serializedVersion: 2
+        x: 4738
+        y: 34
+        width: 824
+        height: 806
+      alignment: 9
+      pivot: {x: 0.43959534, y: 0.00014723501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd72a3ff22ee1954caee4aef336a2613
+      internalID: -1932056210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slimes_13
+      rect:
+        serializedVersion: 2
+        x: 5745
+        y: 35
+        width: 750
+        height: 701
+      alignment: 9
+      pivot: {x: 0.6333789, y: 0.002471113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda8e8e3db45d7049aa1a7367c1ab396
+      internalID: 773397936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -288,10 +435,17 @@ TextureImporter:
     nameFileIdTable:
       Slimes_4: -1467697778
       Slimes_6: 1722302749
+      Slimes_7: 196556025
+      Slimes_10: 2057886228
+      Slimes_8: 1762280720
+      Slimes_9: -281150134
+      Slimes_13: 773397936
       Slimes_3: -1033294885
+      Slimes_11: 1537473806
       Slimes_1: 1571704847
       Slimes_5: 1866354968
       Slimes_0: -495792870
+      Slimes_12: -1932056210
       Slimes_2: 431071223
   spritePackingTag: 
   pSDRemoveMatte: 0
