@@ -212,7 +212,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563734982072289148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.5}
+  m_LocalPosition: {x: 0, y: 0, z: -1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -742,7 +742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6721206908942636558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.71, y: -5.91, z: 0.2}
+  m_LocalPosition: {x: -1.82, y: -5.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -792,7 +792,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1356060020, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  m_Sprite: {fileID: -1227284608, guid: 8e0ceb91233793e42a1caaabbe775045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1002,7 +1002,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1763151461, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  m_Sprite: {fileID: 1367642509, guid: 8e0ceb91233793e42a1caaabbe775045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1113,6 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equips: {fileID: 671508261694264605, guid: 8c642186f0d167245a20ea22b8cc71d7, type: 3}
+  mainPos: {fileID: 7103068808800043735}
   weapon: {fileID: 3373691535499354151}
   head: {fileID: 7103068809688484034}
   body: {fileID: 7103068808106681586}
@@ -1140,6 +1141,7 @@ MonoBehaviour:
   life: 0
   spawnText: {fileID: 307580394992962908}
   lifeBar: {fileID: 0}
+  ripStone: {fileID: 2430776546012733624, guid: bbf72c55471ca6f42837223c61757893, type: 3}
 --- !u!114 &307580394992962908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,6 +1170,7 @@ GameObject:
   - component: {fileID: 7103068808800043737}
   - component: {fileID: 7103068808800043738}
   - component: {fileID: 7103068808800043733}
+  - component: {fileID: 1367762317}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1237,25 +1240,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25006a598c3e4cd4b8c597fe6900f11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  xCam: 3
-  yCam: 7
-  smooth: 0.1
-  speed: 100
-  lobby: 0
   controller: {fileID: 7103068808800043737}
-  canvas: {fileID: 563734982072289149}
-  head: {fileID: 7103068809688484035}
-  leftLeg: {fileID: 7693243595659613760}
-  rightLeg: {fileID: 7103068808888303644}
-  rightArm: {fileID: 7103068809222220902}
-  leftArm: {fileID: 4689222896486147111}
-  rightPosArm: {fileID: 455635048}
-  leftPosArm: {fileID: 1408030418}
-  rightLegAnim: {fileID: 5374728275933701167}
-  rightFootAnim: {fileID: 1375026838895209994}
-  leftLegAnim: {fileID: 8932801903822228107}
-  leftFootAnim: {fileID: 4315500175191409585}
+  playerMoveSpeed: 0
+  isMirrored: 0
+  isMoving: 0
+--- !u!114 &1367762317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103068808800043728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b62af59ea352247b2ae1a53be8169c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 7103068808800043733}
+  head: {fileID: 7103068809688484092}
+  rightArm: {fileID: 7103068809222220903}
+  leftArm: {fileID: 3772310653616376360}
+  rightLeg: {fileID: 7103068808888303645}
+  rightFoot: {fileID: 6881325817537503114}
+  leftLeg: {fileID: 6721206908942636558}
+  leftFoot: {fileID: 2497249957025926610}
+  xRightArm: -1.8
+  zRightArm: 0.5
+  xLeftArm: 1.8
+  zLeftArm: -0.5
+  zHead: -0.4
 --- !u!1 &7103068808888303645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7103068808888303645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.87, y: -5.91, z: 0.2}
+  m_LocalPosition: {x: 1.87, y: -5.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1332,7 +1345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1356060020, guid: a41ee7ea31ec46f438f22068eee7a085, type: 3}
+  m_Sprite: {fileID: -1227284608, guid: 8e0ceb91233793e42a1caaabbe775045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1467,7 +1480,7 @@ MonoBehaviour:
     m_Bits: 128
   atkPosition: {fileID: 1775931212028223813}
   delayBar: {fileID: 563734981861194923}
-  rightArmAnim: {fileID: 6879608110958284445}
+  pAnim: {fileID: 1367762317}
 --- !u!95 &6879608110958284445
 Animator:
   serializedVersion: 4
@@ -1498,7 +1511,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7103068809688484035}
   - component: {fileID: 7103068809688484034}
-  - component: {fileID: 6940330203939586393}
   m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
@@ -1514,7 +1526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7103068809688484092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.71, y: 3.15, z: -0.059}
+  m_LocalPosition: {x: -1.71, y: 3.15, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1573,26 +1585,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6940330203939586393
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103068809688484092}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c7db47170b7ab694689d78a2b96b7e9d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7122098981158697029
 GameObject:
   m_ObjectHideFlags: 0

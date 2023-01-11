@@ -59,12 +59,6 @@ public class UIControl : MonoBehaviour
             d.levelUnlock = 0;
             ManagerData.Save(d);
         }
-        PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
-        pSkin.EquipWeapon();
-        pSkin.EquipArmor();
-        pSkin.EquipHelmet();
-        pSkin.EquipArms();
-
         StartPanels();
         GoldAmount();
     }

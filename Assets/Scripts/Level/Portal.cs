@@ -9,7 +9,7 @@ public class Portal : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             LevelCanvas canvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvas>();
-            canvas.PanelMoveToLobby();
+            canvas.OpenPanelMoveToLobby();
         }
     }
 }

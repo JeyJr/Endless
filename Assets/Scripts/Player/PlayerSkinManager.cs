@@ -4,35 +4,36 @@ using UnityEngine;
 
 public class PlayerSkinManager : MonoBehaviour
 {
-    public Equips equips;
+    [SerializeField] private Equips equips;
+    [SerializeField] private Transform mainPos;
+
 
     [Header("Main")]
-    public SpriteRenderer weapon;
-    public SpriteRenderer head;
-    public SpriteRenderer body;
+    [SerializeField] private SpriteRenderer weapon;
+    [SerializeField] private SpriteRenderer head;
+    [SerializeField] private SpriteRenderer body;
 
     [Header("Arms")]
-    public SpriteRenderer rightArm;
-    public SpriteRenderer leftArm;
+    [SerializeField] private SpriteRenderer rightArm;
+    [SerializeField] private SpriteRenderer leftArm;
 
     [Header("Legs")]
-    public SpriteRenderer rightLeg;
-    public SpriteRenderer leftLeg;
+    [SerializeField] private SpriteRenderer rightLeg;
+    [SerializeField] private SpriteRenderer leftLeg;
 
     [Header("Center")]
-    public SpriteRenderer rightLegCenter;
-    public SpriteRenderer leftLegCenter;
+    [SerializeField] private SpriteRenderer rightLegCenter;
+    [SerializeField] private SpriteRenderer leftLegCenter;
 
     [Header("Foot")]
-    public SpriteRenderer rightFoot;
-    public SpriteRenderer leftFoot;
+    [SerializeField] private SpriteRenderer rightFoot;
+    [SerializeField] private SpriteRenderer leftFoot;
 
-
+    #region Equip
     public void EquipWeapon()
     {
         weapon.sprite = equips.GetWeaponToEquip().sprite;
     }
-
     public void EquipArmor()
     {
         Sprite[] armor = equips.GetArmorToEquip();
@@ -48,16 +49,15 @@ public class PlayerSkinManager : MonoBehaviour
         leftFoot.sprite = armor[3];
         rightFoot.sprite = armor[3];
     }
-
     public void EquipHelmet()
     {
         head.sprite = equips.GetHelmetToEquip();
     }
-
     public void EquipArms()
     {
         Sprite[] arms = equips.GetArmsToEquip();
         rightArm.sprite = arms[0];
         leftArm.sprite = arms[1];
     }
+    #endregion
 }

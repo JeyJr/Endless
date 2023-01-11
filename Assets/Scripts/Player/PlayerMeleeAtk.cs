@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.AdaptivePerformance.Provider.AdaptivePerformanceSubsystemDescriptor;
 
 public class PlayerMeleeAtk : MonoBehaviour
 {
@@ -10,68 +9,84 @@ public class PlayerMeleeAtk : MonoBehaviour
     [SerializeField] private Transform atkPosition;
 
     [Header("Animations control")]
-    public Slider delayBar;
-    public Animator rightArmAnim;
-    
+    [SerializeField] private Slider delayBar;
+    [SerializeField] private PlayerAnimationsAndPositions pAnim;
+    bool readyToAtk;
 
     private void Start()
     {
+        readyToAtk = true;
         StartCoroutine(DelayToAtk());
     }
 
     #region ATK animations
     IEnumerator DelayToAtk()
     {
+        yield return new WaitForSeconds(1);
         while (true)
         {
-            GameData gameData = ManagerData.Load();
-            float atkSpeed = gameData.AtkSpeed;
-            delayBar.maxValue = atkSpeed;
-            delayBar.value = 0;
-
-            rightArmAnim.Play($"Base Layer.RightArm_Idle", 0);
-
-            while (delayBar.value < delayBar.maxValue)
+            if (readyToAtk)
             {
-                yield return new WaitForSeconds(.01f);
-                delayBar.value += .01f;
+                readyToAtk = false;
+
+                GameData gameData = ManagerData.Load();
+                float atkSpeed = gameData.AtkSpeed;
+                delayBar.maxValue = atkSpeed;
+                delayBar.value = 0;
+
+                while (delayBar.value < delayBar.maxValue)
+                {
+                    yield return new WaitForSeconds(.01f);
+                    delayBar.value += .01f;
+                }
+                pAnim.IsAttacking = true;
+                pAnim.PlayAnimAtk();
             }
-
-            rightArmAnim.Play($"Base Layer.RightArm_Atk", 0);
-
-            yield return new WaitForSeconds(rightArmAnim.speed / 2);
+            yield return new WaitForEndOfFrame();
         }
     }
+    #endregion
 
+
+    #region Called in animAtk
+    //Called in animation Base Layer.RightArm_Atk
+    public void DetectingTargetsInAtk()
+    {
+        if (GetComponentInParent<PlayerStatus>().ImAlive)
+        {
+            GameData gameData = ManagerData.Load();
+
+            RaycastHit2D[] hit = Physics2D.RaycastAll(atkPosition.position, atkPosition.right, gameData.RangeAtk, target);
+
+            if (hit != null)
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (Critical(gameData.CriticalDMG))
+                    {
+                        hit[i].collider.GetComponentInChildren<EnemyStatus>().
+                            LoseLife(CriticalDMG(gameData.Damage, gameData.CriticalDMG), true);
+                    }
+                    else
+                    {
+                        hit[i].collider.GetComponentInChildren<EnemyStatus>().
+                            LoseLife(SimpleDMG(gameData.Damage), false);
+                    }
+                }
+            }
+        }
+    }
+    
+    public void EndAtk()
+    {
+        pAnim.IsAttacking = false;
+        readyToAtk = true;
+    }
 
     #endregion
 
-    #region DetectingTargetsInAtk 
 
-    //Called in animation Base Layer.RightArm_Atk
-    public void DetectingTargetsInAtk()
-    {        
-        GameData gameData = ManagerData.Load();
-
-        RaycastHit2D[] hit = Physics2D.RaycastAll(atkPosition.position, atkPosition.right, gameData.RangeAtk, target);
-
-        if (hit != null)
-        {
-            for (int i = 0; i < hit.Length; i++)
-            {
-                if (Critical(gameData.CriticalDMG))
-                {
-                    hit[i].collider.GetComponentInChildren<EnemyStatus>().
-                        LoseLife(CriticalDMG(gameData.Damage, gameData.CriticalDMG), true);
-                }
-                else
-                {
-                    hit[i].collider.GetComponentInChildren<EnemyStatus>().
-                        LoseLife(SimpleDMG(gameData.Damage), false);
-                }
-            }
-        }
-    }
+    #region DMG Value
     bool Critical(float cri)
     {
         float value = Random.Range(0, 100);

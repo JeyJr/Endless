@@ -10,7 +10,6 @@ public class LevelCanvas : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI txtGold;
     [SerializeField] private LevelController levelController;
-    [SerializeField] private GameObject panelMoveToLobby;
 
     [Header("UI - SkillsIcon")]
     [SerializeField] private GameObject rootUIIconsPosition;
@@ -28,6 +27,12 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private GameObject panelInfo;
     [SerializeField] private TextMeshProUGUI txtInfo;
 
+    [Header("Level Completed")]
+    [SerializeField] private GameObject panelMoveToLobby;
+    [SerializeField] private GameObject panelYesOrNo, panelEndLevel;
+    [SerializeField] private TextMeshProUGUI txtTitlePanelEndLevel,txtTotalEnemiesKilled, txtTotalGoldReceived;
+    public bool PlayerIsDead { get; set; }
+
     private void Awake()
     {
         levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
@@ -37,12 +42,60 @@ public class LevelCanvas : MonoBehaviour
         StartCoroutine(GetAllPositions());
     }
 
+    public void BtnToInvertActiveGameObj(GameObject gameObject) { 
+            gameObject.SetActive(!gameObject.activeSelf);
+    }
     public void UpdateTxtGold(float value) => txtGold.text = value.ToString();
-    public void BtnToInvertActiveGameObj(GameObject gameObject) => gameObject.SetActive(!gameObject.activeSelf);
-    public void PanelMoveToLobby() => BtnToInvertActiveGameObj(panelMoveToLobby);
+
+    #region GAME OVER
+
+    public void OpenPanelGameOver()
+    {
+        panelMoveToLobby.SetActive(true);
+        panelYesOrNo.SetActive(false);
+        panelEndLevel.SetActive(true);
+        OpenPanelEndLevel();
+
+        txtTitlePanelEndLevel.text = "YOU DIED!";
+    }
+
+    #endregion
+
+    #region PANEL END LEVEL (WIN)
+    public void OpenPanelMoveToLobby() => BtnToInvertActiveGameObj(panelMoveToLobby);
+    public void OpenPanelEndLevel() {
+        panelEndLevel.SetActive(true);
+        StartCoroutine(LevelEnemiesInformations());
+        StartCoroutine(LevelGoldInformations());
+        txtTitlePanelEndLevel.text = "LEVEL COMPLETED!";
+    }
+    IEnumerator LevelEnemiesInformations()
+    {
+        yield return new WaitForSeconds(1);
+        txtTotalEnemiesKilled.text = "0";
+        txtTotalGoldReceived.text = "0";
+        int enemiesTotal = 0;
+        for (int i = 0; i < levelController.TotalEnemiesKilled; i++)
+        {
+            enemiesTotal++;
+            txtTotalEnemiesKilled.text = enemiesTotal.ToString("F0");
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+    IEnumerator LevelGoldInformations()
+    {
+        yield return new WaitForSeconds(1);
+        txtTotalGoldReceived.text = "0";
+        int goldTotal = 0;
+        for (int i = 0; i < levelController.GoldTotal; i++)
+        {
+            goldTotal++;
+            txtTotalGoldReceived.text = goldTotal.ToString("F0");
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
     public void BtnBackToLobbyLevelCompleted()
     {
-
         int levelNum = SceneManager.GetActiveScene().name.IndexOf("l") + 1;
         levelNum = int.Parse(SceneManager.GetActiveScene().name[levelNum..]);
 
@@ -59,6 +112,8 @@ public class LevelCanvas : MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
 
+    #endregion
+
     #region FPS - MS
     private IEnumerator UpdateFPS()
     {
@@ -71,8 +126,6 @@ public class LevelCanvas : MonoBehaviour
         }
     }
     #endregion
-
-
 
     #region UI - SkillsIcon
     IEnumerator GetAllPositions()
@@ -153,7 +206,6 @@ public class LevelCanvas : MonoBehaviour
         txtInfo.text = text;
         StartCoroutine(TxtLevelInfoHidden());
     }
-
     IEnumerator TxtLevelInfoHidden()
     {
         yield return new WaitForSeconds(4);

@@ -5,91 +5,36 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("CamBehavior")]
-    public Transform cam;
-    Vector3 currentVelocity;
-
-    [SerializeField] private float xCam, yCam, smooth, speed;
-    [SerializeField] private bool lobby;
-
-
     [Header("PlayerMovement")]
-    public PlayerMove playerInput;
     [SerializeField] private CharacterController controller;
-    private float playerMoveSpeed;
+    [SerializeField] private PlayerMove playerInput;
+    [SerializeField] private float playerMoveSpeed;
+    [SerializeField] private bool isMirrored, isMoving;
+
+    Vector2 MoveInput{ get; set; }
     public float PlayerMoveSpeed { get => playerMoveSpeed; set => playerMoveSpeed = value; }
-    public Vector2 MoveInput{ get; set; }
-
-    [Header("Skin Hierarchy Organization")]
-    [SerializeField] private Transform canvas;
-    [SerializeField] private Transform head;
-    [SerializeField] private Transform leftLeg;
-    [SerializeField] private Transform rightLeg;
-
-    [SerializeField] private Transform rightArm, leftArm;
-    [SerializeField] private Transform rightPosArm, leftPosArm;
-
-    [Header("Animations")]
-    [SerializeField] private Animator rightLegAnim;
-    [SerializeField] private Animator rightFootAnim;
-    [SerializeField] private Animator leftLegAnim;
-    [SerializeField] private Animator leftFootAnim;
+    public bool IsMirrored { get => isMirrored; private set => isMirrored = value; }
+    public bool IsMoving { get => isMoving; private set => isMoving = value; }
 
     void Start()
     {
-        GameData gameData = ManagerData.Load();
-        
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerMove();
         playerInput.Enable();
-
-        if (GameObject.FindGameObjectWithTag("LevelController") == null)
-            lobby = true;
-
-        //Cam behavior
-        cam = Camera.main.GetComponent<Transform>();
-        //cam.transform.position = new(cam.position.x, 6, cam.position.z);
-
-        if (!lobby && gameData.RangeAtk > cam.GetComponent<Camera>().orthographicSize)
-        {
-            cam.GetComponent<Camera>().orthographicSize = gameData.RangeAtk;
-        }
-
-        UpdatePlayerMoveSpeed(gameData.buffSkillMoveSpeed);
+        UpdatePlayerMoveSpeed(ManagerData.Load().buffSkillMoveSpeed);
     }
-
     void Update()
     {
         MoveInput = playerInput.Player.Move.ReadValue<Vector2>();
         Vector3 move = new Vector3(MoveInput.x, 0f, 0f);
         controller.Move(move * Time.deltaTime * PlayerMoveSpeed);
         
-
         if (move.x < 0)
-        {
-            transform.localEulerAngles = new Vector3(0, 180, 0);
-            CamPosition(-xCam);
-            Anims("Run");
-            XPosition(true);
-            //SlidersDirection(true);
-        }
+            SetIsMovingAndMirrored(true, true, 180);
         else if (move.x > 0)
-        {
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-
-
-            CamPosition(xCam);
-            Anims("Run");
-            XPosition(false);
-            //SlidersDirection(true);
-        }
+            SetIsMovingAndMirrored(true, false, 0);
         else
-        {
-            CamPosition(xCam - xCam);
-            Anims("Idle");
-        }
-
-        ZPosition();
+            SetIsMoving(false);
     }
 
     public void UpdatePlayerMoveSpeed(float buffValue)
@@ -101,48 +46,14 @@ public class PlayerController : MonoBehaviour
 
         playerMoveSpeed = gameData.MoveSpeed;
     }
-
-    void ZPosition()
+    void SetIsMovingAndMirrored(bool _isMoving, bool _isMorrored, float y)
     {
-        head.position = new Vector3(head.position.x, head.position.y, -0.05f);
-        leftLeg.position = new Vector3(leftLeg.position.x, leftLeg.position.y, 0.02f);
-        rightLeg.position = new Vector3(rightLeg.position.x, rightLeg.position.y, 0.02f);
-        canvas.position = new Vector3(canvas.position.x, canvas.position.y, -5.5f);
-
+        IsMoving = _isMoving;
+        IsMirrored = _isMorrored;
+        transform.localEulerAngles = new Vector3(0, y, 0);
     }
-    void XPosition(bool right)
+    void SetIsMoving(bool isMoving)
     {
-        if (right)
-        {
-            rightArm.position = new Vector3(leftPosArm.position.x, rightArm.position.y, rightArm.position.z);
-            leftArm.position = new Vector3(rightPosArm.position.x, leftArm.position.y, leftArm.position.z);
-        }
-        else
-        {
-            rightArm.position = new Vector3(rightPosArm.position.x, rightArm.position.y, rightArm.position.z);
-            leftArm.position = new Vector3(leftPosArm.position.x, leftArm.position.y, leftArm.position.z);
-        }
+        IsMoving = isMoving;
     }
-
-
-    void Anims(string animName)
-    {
-        leftLegAnim.Play($"Base Layer.LeftLeg_{animName}", 0);
-        rightLegAnim.Play($"Base Layer.RightLeg_{animName}", 0);
-
-        leftFootAnim.Play($"Base Layer.LFoot_{animName}", 0);
-        rightFootAnim.Play($"Base Layer.RFoot_{animName}", 0);
-    }
-    
-    #region CamBehavior
-
-    void CamPosition(float x)
-    {
-        if (SceneManager.GetActiveScene().name != "Lobby")
-        {
-            Vector3 target = new(transform.position.x + x, transform.position.y + yCam, transform.position.z - 10);
-            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, target, ref currentVelocity, smooth, speed);
-        }
-    }
-    #endregion
 }

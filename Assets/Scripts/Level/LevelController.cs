@@ -8,6 +8,8 @@ public class LevelController : MonoBehaviour
 {
     [SerializeField] private float totalBossesKilled;
     [SerializeField] private float totalEnemiesKilled;
+    public float TotalEnemiesKilled { get => totalEnemiesKilled;}
+
 
     [Header("SpawnControl")]
     [SerializeField] private Transform spawnCentralPoint;
@@ -39,12 +41,6 @@ public class LevelController : MonoBehaviour
         goldTotal = 0;
         totalBossesKilled = 0;
         totalEnemiesKilled = 0;
-
-        //SKIN and WEAPONS
-        PlayerSkinManager pSkin = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerSkinManager>();
-        pSkin.EquipWeapon();
-        pSkin.EquipArmor();
-        pSkin.EquipHelmet();
 
         //GOLD IN UI TEXT
         levelCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvas>();

@@ -12,15 +12,19 @@ public class PlayerStatus : MonoBehaviour
 
     public SpawnText spawnText;
     public Slider lifeBar;
-    public float MaxLife { get => maxLife; }
 
-    bool lobby;
+    [Header("RIP")]
+    [SerializeField] private GameObject ripStone;
+    public bool ImAlive { get; set; }
+
+
 
     private void Start()
     {
         GameData gameData = ManagerData.Load();
         maxLife = gameData.MaxLife;
         life = maxLife;
+        ImAlive = true;
 
         lifeBar = GameObject.FindGameObjectWithTag("MainUI").
             transform.Find("panelLifeBar").
@@ -38,8 +42,6 @@ public class PlayerStatus : MonoBehaviour
         gameData.buffSkillMoveSpeed = 0;
 
         ManagerData.Save(gameData);
-
-
     }
 
     public float Life { get => life; set
@@ -49,27 +51,41 @@ public class PlayerStatus : MonoBehaviour
             else
                 life = maxLife;
 
-            spawnText.SpawnTextSkill(value, "Life+ ");
+            spawnText.SpawnTextSkill(value, "+ ");
             UpdateLifeBar();
         }
     }
 
-
-
     public void LoseLife(float dmg, float critical)
     {
         float realDMG;
-        bool criticalDMG =  Random.Range(0, 100) <= critical;
+        bool criticalDMG = Random.Range(0, 100) <= critical;
         realDMG = (dmg - ((dmg * ManagerData.Load().Defense) / 100));
-
         realDMG = realDMG < 1 ? 1 : realDMG;
 
-        if (criticalDMG)
-            realDMG += realDMG * critical / 100; 
 
-        life -= realDMG;
-        UpdateLifeBar();
-        spawnText.SpawnTextDamage(realDMG, criticalDMG);
+        if (life <= 0 && ImAlive)
+        {
+            ImAlive = false;
+            StartCoroutine(GameOver());
+        }
+        else
+        {
+            if (criticalDMG)
+                realDMG += realDMG * critical / 100;
+
+            life -= realDMG;
+            UpdateLifeBar();
+            spawnText.SpawnTextDamage(realDMG, criticalDMG);
+        }
+    }
+
+    IEnumerator GameOver()
+    {
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + 100, -2);
+        Instantiate(ripStone, pos, Quaternion.Euler(0, 0, 0));
+        yield return new WaitForSeconds(3);
+        GameObject.FindWithTag("MainUI").GetComponent<LevelCanvas>().OpenPanelGameOver();
     }
 
     public void UpdateLifeBar()
@@ -77,4 +93,6 @@ public class PlayerStatus : MonoBehaviour
         lifeBar.maxValue = maxLife;
         lifeBar.value = life;
     }
+
+
 }
