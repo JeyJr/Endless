@@ -108,9 +108,15 @@ public class EnemyBehavior : MonoBehaviour
             );
 
         if (transform.position.x > targetToMove.x)
+        {
             transform.localEulerAngles = new Vector3(0, 180, 0);
+            GetComponentInChildren<EnemyLifeBar>().SetLiferBarBehavior(true);
+        }
         else
+        {
             transform.localEulerAngles = new Vector3(0, 0, 0);
+            GetComponentInChildren<EnemyLifeBar>().SetLiferBarBehavior(false);
+        }
 
         await Task.Delay(1000);
         findPlayerPosition = false;

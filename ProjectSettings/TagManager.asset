@@ -8,6 +8,7 @@ TagManager:
   - LevelController
   - Enemy
   - MainUI
+  - UIControl
   layers:
   - Default
   - TransparentFX

@@ -4,8 +4,6 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public bool firstTime = true;
-
     public float gold;
 
     //Attributes

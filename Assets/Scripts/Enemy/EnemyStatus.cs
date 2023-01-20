@@ -52,6 +52,8 @@ public class EnemyStatus : MonoBehaviour
         maxLife = vit * 10;
         life = maxLife;
         IsAlive = true;
+
+        GetComponent<EnemyLifeBar>().SetSliderInitialValues(maxLife, life);
     }
 
     public void LoseLife(float dmg, bool critical)
@@ -67,6 +69,8 @@ public class EnemyStatus : MonoBehaviour
             IsAlive = false;
             GetComponent<Animator>().Play($"Base Layer.{enemyAnimName}_Dead", 0);
         }
+
+        GetComponent<EnemyLifeBar>().SetLifeBarValues(life);
     }
 
     //this method is called on the last frame: Anim Dead;

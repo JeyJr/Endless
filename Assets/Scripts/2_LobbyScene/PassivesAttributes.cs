@@ -20,4 +20,11 @@ public class PassivesAttributes : MonoBehaviour
     public string SkillDesc { get => skillDesc; }
     public string SkillShortName { get => skillShortName; }
 
+
+    private void Start()
+    {
+        var panelPassives = GameObject.FindWithTag("UIControl").GetComponent<PanelPassives>();
+        txtLevel.text = panelPassives.GetSkillLevel(skillShortName).ToString();
+    }
+
 }

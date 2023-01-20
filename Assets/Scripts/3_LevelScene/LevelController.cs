@@ -142,6 +142,7 @@ public class LevelController : MonoBehaviour
         bossSpawned = true;
         yield return new WaitForSeconds(5);
         StartCoroutine(InitialInstructions("Defeat the stage <color=#F15826>boss</color>!"));
-        Instantiate(boss, spawnCentralPoint.position, Quaternion.identity);
+        Vector3 pos = new Vector3(spawnCentralPoint.position.x, spawnCentralPoint.position.y, 15);
+        Instantiate(boss, pos, Quaternion.identity);
     }
 }

@@ -41,4 +41,14 @@ public class ManagerData
     {
         return Application.persistentDataPath + "/game.data";
     }
+
+    public static bool CheckIfSavedFileExists()
+    {
+        return File.Exists(GetPath());
+    }
+
+    public static void CaminhoDoArquivo()
+    {
+        Debug.Log(Application.persistentDataPath + "/game.data");
+    }
 }
