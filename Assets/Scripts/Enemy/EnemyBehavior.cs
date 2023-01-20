@@ -88,7 +88,15 @@ public class EnemyBehavior : MonoBehaviour
         if (!detectPlayerInRangeToAtk)
         {
             detectPlayerInRangeToAtk = true;
-            StartCoroutine(DetectPlayerRangeToAtk());            
+
+            try
+            {
+                StartCoroutine(DetectPlayerRangeToAtk());            
+            }
+            catch (System.Exception)
+            {
+                throw new System.Exception("Coroutine não iniciada!");
+            }
         }
     }
     async Task TaskFindPlayerPosition()

@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atk: 1
-  def: 10
-  vit: 35
-  cri: 15
-  goldDrop: 50
+  atk: 3
+  def: 20
+  vit: 30
+  cri: 10
+  goldDrop: 25
   skillDrop: 0
   maxLife: 0
   life: 0

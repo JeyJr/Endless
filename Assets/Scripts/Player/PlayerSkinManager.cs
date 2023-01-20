@@ -58,6 +58,8 @@ public class PlayerSkinManager : MonoBehaviour
         Sprite[] arms = equips.GetArmsToEquip();
         rightArm.sprite = arms[0];
         leftArm.sprite = arms[1];
+
+        GetComponentInParent<PlayerAnimationsAndPositions>().SetArmSprites(leftArm.sprite, rightArm.sprite);
     }
     #endregion
 }

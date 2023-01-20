@@ -7,6 +7,7 @@ public class PlayerAnimationsAndPositions : MonoBehaviour
 {
     [Header("Player Refs")]
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerStatus playerStatus;
 
     [Header("OBJ HEAD")]
     [SerializeField] private GameObject head;
@@ -35,6 +36,11 @@ public class PlayerAnimationsAndPositions : MonoBehaviour
 
     [SerializeField] private float zHead;
 
+
+    //Arms
+    Sprite left, right;
+
+
     private void Start()
     {
         //SKIN and WEAPONS
@@ -51,6 +57,7 @@ public class PlayerAnimationsAndPositions : MonoBehaviour
             AnimationsToMove();
 
         MembersPosition();
+        ChangeArmsSprites();
     }
 
     void MembersPosition()
@@ -69,6 +76,25 @@ public class PlayerAnimationsAndPositions : MonoBehaviour
             transform.position.x,
             head.GetComponent<Transform>().position.y,
             zHead);
+    }
+    void ChangeArmsSprites()
+    {
+        if (playerController.IsMirrored)
+        {
+            leftArm.GetComponent<SpriteRenderer>().sprite = right;
+            rightArm.GetComponent<SpriteRenderer>().sprite = left;
+        }
+        else
+        {
+            leftArm.GetComponent<SpriteRenderer>().sprite = left;
+            rightArm.GetComponent<SpriteRenderer>().sprite = right;
+        }
+    }
+
+    public void SetArmSprites(Sprite left, Sprite right)
+    {
+        this.left = left;
+        this.right = right;
     }
 
     void AnimationsToMove()
@@ -92,7 +118,8 @@ public class PlayerAnimationsAndPositions : MonoBehaviour
     }
     public void PlayAnimAtk()
     {
-        StartCoroutine(AnimationToAttack());
+        if(playerStatus.ImAlive)
+            StartCoroutine(AnimationToAttack());
     }
     IEnumerator AnimationToAttack()
     {

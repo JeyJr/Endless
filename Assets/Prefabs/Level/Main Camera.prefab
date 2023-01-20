@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 9106708645521054794}
   xCam: 5
-  yCam: 5
+  yCam: 3
   smooth: 0.1
   speed: 100
   lobby: 0

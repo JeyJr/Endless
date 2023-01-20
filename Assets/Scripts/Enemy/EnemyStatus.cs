@@ -11,7 +11,7 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] private float cri;
     [SerializeField] private float goldDrop;
     [SerializeField] private float skillDrop;
-    public float Damage { get => atk * 1; }
+    public float Damage { get => atk * 2; }
     public float Defense { get => def / 2; }
     public float Life { get => life; }
     public float Critical { get => cri; }
@@ -49,13 +49,7 @@ public class EnemyStatus : MonoBehaviour
 
     private void Awake()
     {
-
-        atk = Random.Range(atk, (atk + 1) * 2);
-        def = Random.Range(def, (def + 1) * 2);
-        vit = Random.Range(vit, (vit + 1) * 2);
-        cri = Random.Range(cri, (cri + 1) * 2);
-
-        maxLife = vit * 15;
+        maxLife = vit * 10;
         life = maxLife;
         IsAlive = true;
     }
@@ -80,7 +74,7 @@ public class EnemyStatus : MonoBehaviour
     {
         if(Random.Range(0, 100) <= SkillDrop)
         {
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z);
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 4, -5);
             Instantiate
             (
                 skillsToSpawn[Mathf.RoundToInt(Random.Range(0, skillsToSpawn.Count))], 

@@ -8,8 +8,6 @@ public class PortalDoor : MonoBehaviour
     [SerializeField] private LevelController levelController;
     Animator anim;
 
-    public bool openDoor;
-
     private void Start()
     {
         anim = GetComponent<Animator>();

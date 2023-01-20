@@ -14,6 +14,7 @@ public class ActivatingSkills : MonoBehaviour
     [SerializeField] private float buffValue;
     [SerializeField] private float xTimes;
     LevelCanvas levelCanvas;
+    LevelCanvasUISkillICon uiSkillIcon;
 
     [Header("Skills Behavior")]
     [SerializeField] private PlayerController playerController;
@@ -27,17 +28,19 @@ public class ActivatingSkills : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             levelCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvas>();
+            uiSkillIcon = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvasUISkillICon>();
+
             playerController = other.GetComponent<PlayerController>();
             playerStatus = other.GetComponentInChildren<PlayerStatus>();
 
-            gameObject.GetComponent<SpriteRenderer>().sprite.name = id.ToString();
-            if (!levelCanvas.CheckSkillActivated(id.ToString()))
+            Sprite sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+
+            if (!uiSkillIcon.CheckIcon(sprite))
             {
+                uiSkillIcon.AddIcon(sprite);
                 gameObject.GetComponent<Transform>().position = new Vector3(-100, -100, -100);
-                levelCanvas.EnableUISkillSlot(gameObject.GetComponent<SpriteRenderer>().sprite);
                 StartSkill(delayTime, buffValue, xTimes, id);
             }
-
         }
     }
 
@@ -218,15 +221,7 @@ public class ActivatingSkills : MonoBehaviour
     }
     void DisableUIIcon()
     {
-        levelCanvas.DisableUISkillICon(id.ToString());
-
-        try
-        {
-            Destroy(this.gameObject);
-        }
-        catch (Exception)
-        {
-            Debug.Log("Objeto ja foi destruido!");
-        }
+        uiSkillIcon.RemoveIcon(gameObject.GetComponent<SpriteRenderer>().sprite);
+        Destroy(this.gameObject);
     }
 }

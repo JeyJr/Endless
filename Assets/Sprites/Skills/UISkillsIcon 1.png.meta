@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a41ee7ea31ec46f438f22068eee7a085
+guid: 3462249e13407eb43a2a512ce4adb341
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,211 +129,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1000-StandardSkin_0
+      name: UISkillsIcon 1_0
       rect:
         serializedVersion: 2
-        x: 275
-        y: 408
-        width: 850
-        height: 845
-      alignment: 9
-      pivot: {x: 0.42518705, y: 0.19511603}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 246d9e50fb0208540aee738dba33a2be
-      internalID: 217988774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1000-StandardSkin_1
-      rect:
-        serializedVersion: 2
-        x: 1436
-        y: 299
-        width: 801
-        height: 990
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd677356eb83511468f7f0596aaf08a4
-      internalID: 1763151461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1000-StandardSkin_2
-      rect:
-        serializedVersion: 2
-        x: 2618
-        y: 1098
-        width: 142
-        height: 336
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9eccfe72a42493345a3a1df8a47f9423
-      internalID: 1356060020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1000-StandardSkin_3
-      rect:
-        serializedVersion: 2
-        x: 2626
-        y: 785
-        width: 123
-        height: 127
+        x: 1
+        y: 497
+        width: 211
+        height: 213
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28e9f65ac0512514fbb0b97ca784fcb3
-      internalID: -185092009
+      spriteID: 0b66d7cccdc9ce340b468b1daec9b156
+      internalID: -807421962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1000-StandardSkin_4
+      name: UISkillsIcon 1_1
       rect:
         serializedVersion: 2
-        x: 2613
-        y: 246
-        width: 158
-        height: 318
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c01ded983132e674a86f291385252b1b
-      internalID: 1069377133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1000-StandardSkin_5
-      rect:
-        serializedVersion: 2
-        x: 3270
-        y: 357
-        width: 273
-        height: 932
-      alignment: 9
-      pivot: {x: 0.3181215, y: 0.90336496}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f215264fc415654ba05ab9943f112b4
-      internalID: 1010872298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1000-StandardSkin_6
-      rect:
-        serializedVersion: 2
-        x: 3870
-        y: 356
-        width: 272
-        height: 933
-      alignment: 9
-      pivot: {x: 0.3587099, y: 0.900021}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4f069a9b8a53b945b4fa6ef096acb68
-      internalID: -354399447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1000-StandardSkin_7
-      rect:
-        serializedVersion: 2
-        x: 4601
-        y: 297
-        width: 951
-        height: 950
+        x: 247
+        y: 497
+        width: 210
+        height: 213
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cca0132a85dfcf34e8692f4d2a499438
-      internalID: 282348496
+      spriteID: e7f10d905328d4c458d1ee5e06afa7c8
+      internalID: -1448400662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1000-StandardSkin_8
+      name: UISkillsIcon 1_2
       rect:
         serializedVersion: 2
-        x: 5688
-        y: 306
-        width: 953
-        height: 951
+        x: 520
+        y: 497
+        width: 212
+        height: 213
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a4085dde43d26d40b7d212fb1b99ff1
-      internalID: -1822225219
+      spriteID: f80662998b2a4b74ea439b2cd7f70db4
+      internalID: -202554336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1000-StandardSkin_9
+      name: UISkillsIcon 1_3
       rect:
         serializedVersion: 2
-        x: 6774
-        y: 306
-        width: 955
-        height: 951
+        x: 0
+        y: 245
+        width: 210
+        height: 213
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9a3714e04c74684b8c41b34dd86d857
-      internalID: -1978131818
+      spriteID: af7db95e530933942954991571992f2e
+      internalID: 1620809890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISkillsIcon 1_4
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 245
+        width: 210
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427371320320c044489b4a74736d1e67
+      internalID: -993900825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISkillsIcon 1_5
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 257
+        width: 211
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e9b13d69891074d815d8675011115f
+      internalID: 1372763190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISkillsIcon 1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 210
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdb2ddba96a55d4c96d9b6d348970b9
+      internalID: 1141172146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISkillsIcon 1_7
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 211
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feaa6594ee44501499f0509daf1851aa
+      internalID: 4120010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISkillsIcon 1_8
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 0
+        width: 213
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472525565b86dbc4696505cf32eeda15
+      internalID: 160352044
       vertices: []
       indices: 
       edges: []
@@ -349,16 +328,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1000-StandardSkin_4: -185092009
-      1000-StandardSkin_7: -354399447
-      1000-StandardSkin_8: 282348496
-      1000-StandardSkin_6: 1010872298
-      1000-StandardSkin_9: -1822225219
-      1000-StandardSkin_0: 217988774
-      1000-StandardSkin_2: 1763151461
-      1000-StandardSkin_5: 1069377133
-      1000-StandardSkin_3: 1356060020
-      1000-StandardSkin_1: -405519970
+      UISkillsIcon 1_7: 4120010
+      UISkillsIcon 1_1: -1448400662
+      UISkillsIcon 1_6: 1141172146
+      UISkillsIcon 1_8: 160352044
+      UISkillsIcon 1_3: 1620809890
+      UISkillsIcon 1_0: -807421962
+      UISkillsIcon 1_2: -202554336
+      UISkillsIcon 1_4: -993900825
+      UISkillsIcon 1_5: 1372763190
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

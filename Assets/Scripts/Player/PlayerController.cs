@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    PlayerStatus playerStatus;
+
     [Header("PlayerMovement")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private PlayerMove playerInput;
@@ -16,8 +18,12 @@ public class PlayerController : MonoBehaviour
     public bool IsMirrored { get => isMirrored; private set => isMirrored = value; }
     public bool IsMoving { get => isMoving; private set => isMoving = value; }
 
+
+
     void Start()
     {
+        playerStatus = GetComponentInChildren<PlayerStatus>();
+
         controller = GetComponent<CharacterController>();
         playerInput = new PlayerMove();
         playerInput.Enable();
@@ -25,16 +31,19 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        MoveInput = playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 move = new Vector3(MoveInput.x, 0f, 0f);
-        controller.Move(move * Time.deltaTime * PlayerMoveSpeed);
+        if (playerStatus.ImAlive)
+        {
+            MoveInput = playerInput.Player.Move.ReadValue<Vector2>();
+            Vector3 move = new Vector3(MoveInput.x, 0f, 0f);
+            controller.Move(move * Time.deltaTime * PlayerMoveSpeed);
         
-        if (move.x < 0)
-            SetIsMovingAndMirrored(true, true, 180);
-        else if (move.x > 0)
-            SetIsMovingAndMirrored(true, false, 0);
-        else
-            SetIsMoving(false);
+            if (move.x < 0)
+                SetIsMovingAndMirrored(true, true, 180);
+            else if (move.x > 0)
+                SetIsMovingAndMirrored(true, false, 0);
+            else
+                SetIsMoving(false);
+        }
     }
 
     public void UpdatePlayerMoveSpeed(float buffValue)

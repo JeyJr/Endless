@@ -33,7 +33,9 @@ public class LevelController : MonoBehaviour
 
     [Header("Mission")]
     [SerializeField]  private int enemiesKilledToSpawnBoss;
+    [SerializeField]  private LevelQuest levelQuest;
     bool bossSpawned;
+    
     public float GoldTotal { get => goldTotal;}
 
     private void Start()
@@ -44,28 +46,34 @@ public class LevelController : MonoBehaviour
 
         //GOLD IN UI TEXT
         levelCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelCanvas>();
+        levelQuest = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelQuest>();
         levelCanvas.UpdateTxtGold(goldTotal);
-
 
         GameData gameData = ManagerData.Load();
         bonusGold = gameData.bonusGold;
 
+        CheckQuestOneCompleted();
+        CheckQuestTwoCompleted();
+
         StartCoroutine(SpawnSimpleEnemies());
         StartCoroutine(InitialInstructions($"Defeat <color=#F15826>{enemiesKilledToSpawnBoss}</color> enemies\n to spawn boss!"));
+
     }
     public async void EnemyDead(float goldDroped, bool boss)
     {
-        if (boss)
+
+        if (!boss)
+            totalEnemiesKilled++;
+        else
         {
+            bossDead = true;
             totalBossesKilled++;
             StartCoroutine(InitialInstructions("Boss defeated! \nAdvance to the portal"));
-            BossDead = true;
         }
-        else
-            totalEnemiesKilled++;
+            
 
-        if (totalEnemiesKilled >= enemiesKilledToSpawnBoss && !bossSpawned)
-            StartCoroutine(SpawnBoss());
+        CheckQuestOneCompleted();
+        CheckQuestTwoCompleted();
 
         int gold = Mathf.RoundToInt(bonusGold + goldDroped);
         Task task = goldUp(gold);
@@ -76,6 +84,27 @@ public class LevelController : MonoBehaviour
         if(!bossDead)
             StartCoroutine(SpawnSimpleEnemies());
     }
+
+
+    void CheckQuestOneCompleted()
+    {
+        if (totalEnemiesKilled >= enemiesKilledToSpawnBoss && !bossSpawned)
+            StartCoroutine(SpawnBoss());
+
+        if (totalEnemiesKilled >= enemiesKilledToSpawnBoss)
+            levelQuest.SetQuestOne(true, $"Dead enemies {enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
+        else
+            levelQuest.SetQuestOne(false, $"Dead enemies {enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
+    }
+
+    void CheckQuestTwoCompleted()
+    {
+        if (bossDead)
+            levelQuest.SetQuestTwo(true, $"Boss defeated!");
+        else
+            levelQuest.SetQuestTwo(false, $"Defeat the boss");
+    }
+
 
     IEnumerator SpawnSimpleEnemies()
     {

@@ -11,14 +11,6 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtGold;
     [SerializeField] private LevelController levelController;
 
-    [Header("UI - SkillsIcon")]
-    [SerializeField] private GameObject rootUIIconsPosition;
-    [SerializeField] private Sprite standarSprite;
-
-    [Space(5)]
-    public List<GameObject> uiSkillIcon;
-    public List<Vector3> uiIconPosition;
-
     [Header("FPS")]
     [SerializeField] private TextMeshProUGUI txtFPS;
     private float fps, ms;
@@ -31,6 +23,8 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private GameObject panelMoveToLobby;
     [SerializeField] private GameObject panelYesOrNo, panelEndLevel;
     [SerializeField] private TextMeshProUGUI txtTitlePanelEndLevel,txtTotalEnemiesKilled, txtTotalGoldReceived;
+    [SerializeField] private Image iconEnemiesCompleted, iconGoldCompleted;
+    [SerializeField] private Sprite imgUnchecked, imgChecked;
     public bool PlayerIsDead { get; set; }
 
     private void Awake()
@@ -39,7 +33,6 @@ public class LevelCanvas : MonoBehaviour
         //UI ICONS 
 
         StartCoroutine(UpdateFPS());
-        StartCoroutine(GetAllPositions());
     }
 
     public void BtnToInvertActiveGameObj(GameObject gameObject) { 
@@ -66,8 +59,10 @@ public class LevelCanvas : MonoBehaviour
     public void OpenPanelEndLevel() {
         panelEndLevel.SetActive(true);
         StartCoroutine(LevelEnemiesInformations());
-        StartCoroutine(LevelGoldInformations());
         txtTitlePanelEndLevel.text = "LEVEL COMPLETED!";
+
+        iconEnemiesCompleted.sprite = imgUnchecked;
+        iconGoldCompleted.sprite = imgUnchecked;
     }
     IEnumerator LevelEnemiesInformations()
     {
@@ -79,20 +74,36 @@ public class LevelCanvas : MonoBehaviour
         {
             enemiesTotal++;
             txtTotalEnemiesKilled.text = enemiesTotal.ToString("F0");
-            yield return new WaitForSeconds(0.02f);
+
+            txtTotalGoldReceived.text = 
+                "0" + 
+                "<color=#FF750B>+ " + enemiesTotal.ToString("F0")+ "</color> <color=#ffffff>" + 
+                " (" + 
+                enemiesTotal.ToString("F0") + ")</color>";
+
+            yield return new WaitForSeconds(0.01f);
         }
+        iconEnemiesCompleted.sprite = imgChecked;
+        StartCoroutine(LevelGoldInformations());
     }
     IEnumerator LevelGoldInformations()
     {
-        yield return new WaitForSeconds(1);
-        txtTotalGoldReceived.text = "0";
         int goldTotal = 0;
+
         for (int i = 0; i < levelController.GoldTotal; i++)
         {
             goldTotal++;
-            txtTotalGoldReceived.text = goldTotal.ToString("F0");
+
+            txtTotalGoldReceived.text =
+                goldTotal.ToString("F0") +
+                " <color=#FF750B>+ " + levelController.TotalEnemiesKilled + "</color> <color=#ffffff>" +
+                "(" +
+                (goldTotal + levelController.TotalEnemiesKilled).ToString("F0") + ")</color>";
+
             yield return new WaitForSeconds(0.01f);
         }
+
+        iconGoldCompleted.sprite = imgChecked;
     }
     public void BtnBackToLobbyLevelCompleted()
     {
@@ -101,7 +112,7 @@ public class LevelCanvas : MonoBehaviour
 
 
         GameData gameData = ManagerData.Load();
-        gameData.gold += levelController.GoldTotal;
+        gameData.gold += levelController.GoldTotal + levelController.TotalEnemiesKilled;
 
         if (levelNum > gameData.levelUnlock && levelNum < gameData.maxLevel)
             gameData.levelUnlock++;
@@ -125,79 +136,6 @@ public class LevelCanvas : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-    #endregion
-
-    #region UI - SkillsIcon
-    IEnumerator GetAllPositions()
-    {
-        uiIconPosition.Clear();
-        uiSkillIcon.Clear();
-
-        for(int i = 0; i < rootUIIconsPosition.transform.childCount; i++)
-        {
-            uiSkillIcon.Add(rootUIIconsPosition.transform.GetChild(i).gameObject);
-            uiIconPosition.Add(rootUIIconsPosition.transform.GetChild(i).transform.position);
-        }
-
-        uiIconPosition.Sort((a, b) => a.x.CompareTo(b.x));
-
-
-        standarSprite = uiSkillIcon[0].GetComponent<Image>().sprite;
-
-        StartCoroutine(OrganizingAllPositions());
-        yield return null;
-    }
-    IEnumerator OrganizingAllPositions()
-    {
-        for (int i = 0; i < uiIconPosition.Count; i++)
-        {
-            uiSkillIcon[i].transform.position = uiIconPosition[i];
-        }
-        yield return null;
-    }
-
-   
-    //habilitar e desabilitar sprite 
-    public bool CheckSkillActivated(string name)
-    {
-        for (int i = 0; i < uiSkillIcon.Count; i++)
-        {
-            if (uiSkillIcon[i].GetComponent<Image>().sprite.name == name)
-                return true;
-        }
-
-        return false;
-    }
-    public void EnableUISkillSlot(Sprite sprite) => StartCoroutine(EnableUISkill(sprite));
-    public void DisableUISkillICon(string name)=>StartCoroutine(DisablebleUISkill(name));
-    IEnumerator EnableUISkill(Sprite sprite)
-    {
-        for (int i = 0; i < uiSkillIcon.Count; i++)
-        {
-            if (!uiSkillIcon[i].activeSelf)
-            {
-                uiSkillIcon[i].GetComponent<Image>().sprite = sprite;
-                uiSkillIcon[i].SetActive(true);
-                break;
-            }
-        }
-        yield return null;
-    }
-    IEnumerator DisablebleUISkill(string name)
-    {
-        for (int i = 0; i < uiSkillIcon.Count; i++)
-        {
-            if (uiSkillIcon[i].GetComponent<Image>().sprite.name == name)
-            {
-                uiSkillIcon[i].SetActive(false);
-                uiSkillIcon[i].GetComponent<Image>().sprite = standarSprite;
-
-                break;
-            }
-        }
-        yield return null;
-    }
-
     #endregion
 
     public void TextLevelInfo(string text)
