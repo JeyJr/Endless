@@ -19,7 +19,7 @@ public class StartScene : MonoBehaviour
     {
         GameData d = new();
 
-        d.gold = 5500;
+        d.gold = 999999999;
         d.atk = 1;
         d.def = 1;
         d.vit = 1;
@@ -72,5 +72,10 @@ public class StartScene : MonoBehaviour
     {
         ManagerData.DeleteData();
         btnContinue.interactable = ManagerData.CheckIfSavedFileExists();
+    }
+
+    public void BtnInvertActive(GameObject gameObject)
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 }

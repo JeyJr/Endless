@@ -6,11 +6,17 @@ using UnityEngine;
 public class UIControl : MonoBehaviour
 {
     [Header("Panels")]
-    public GameObject[] panels;
+    [SerializeField] private GameObject[] panels;
+
 
     //Gold----------------------------
     [Header("Top Bar")]
-    public TextMeshProUGUI textTotalGold;
+    [SerializeField] private TextMeshProUGUI textTotalGold;
+
+    //BGBtns
+    [Header("BTNs")]
+    [SerializeField] private GameObject bgBtnSelected;
+
 
     private void Awake()
     {
@@ -21,27 +27,42 @@ public class UIControl : MonoBehaviour
     #region PanelsControl
     public void StartPanels()
     {
+        DisableAllPanels("");
+    }
+
+    void DisableAllPanels(string panelName)
+    {
         for (int i = 0; i < panels.Length; i++)
         {
-            panels[i].SetActive(false);
+            if(panels[i].name != panelName)
+            {
+                panels[i].SetActive(false);
+                bgBtnSelected.SetActive(false);
+            }
         }
     }
 
-    public void AtivarDesativarPanels(int i)
+    public void SetPanelActive(GameObject panel)
     {
-        for (int j = 0; j < panels.Length; j++)
-        {
-            if (j == i) 
-                panels[i].SetActive(!panels[i].activeSelf);
-            else 
-                panels[j].SetActive(false);
-        }
+        DisableAllPanels(panel.name);
 
-        if (i == 3) 
+        panel.SetActive(!panel.activeSelf);
+        bgBtnSelected.SetActive(panel.activeSelf);
+
+        if (panel.name == "PanelStatus") 
             GetComponent<PanelStatus>().PanelPlayerInfoIsActive();
 
-        if (i == 4)
+        if (panel.name == "PanelLevel")
             GetComponent<PanelLevel>().EnableLevel();
+    }
+
+    public void SetBGBtnSelected(Transform transform)
+    {
+        bgBtnSelected.GetComponent<Transform>().position = new Vector3(
+            transform.position.x,
+            bgBtnSelected.GetComponent<Transform>().position.y,
+            bgBtnSelected.GetComponent<Transform>().position.z
+            );
     }
     #endregion
 

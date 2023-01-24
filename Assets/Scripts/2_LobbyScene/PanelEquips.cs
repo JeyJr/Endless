@@ -49,6 +49,10 @@ public class PanelEquips : MonoBehaviour
     [SerializeField] private string hexRangeColor;
     [SerializeField] private string hexMoveColor;
 
+    [Header("Sprites BTN selected")]
+    [SerializeField] private List<Button> btnChangeEquips;
+    [SerializeField] private Sprite btnSpriteUnselected, btnSpriteSelected;
+
     private void OnEnable()
     {
         BtnsPositions();
@@ -58,7 +62,7 @@ public class PanelEquips : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    #region Weapon
+    #region equips
     void GetUIBtn()
     {
         if (btnsWeaponRootGroup.transform.childCount > weaponBtns.Count)
@@ -358,5 +362,19 @@ public class PanelEquips : MonoBehaviour
     {
         for (int i = 0; i < panels.Count; i++)
             panels[i].SetActive(i == index ? true : false);            
+    }
+
+    //Set sprite bg color
+    public void BtnSetSpriteUnselected()
+    {
+        for (int i = 0; i < btnChangeEquips.Count; i++)
+        {
+            btnChangeEquips[i].GetComponent<Image>().sprite = btnSpriteUnselected;
+        }
+    }
+
+    public void BtnSetSpriteSelected(GameObject img)
+    {
+        img.GetComponent<Image>().sprite = btnSpriteSelected;
     }
 }

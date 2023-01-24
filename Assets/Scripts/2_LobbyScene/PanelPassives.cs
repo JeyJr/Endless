@@ -39,7 +39,7 @@ public class PanelPassives : MonoBehaviour
 
         if (level >= maxLevel)
         {
-            txtNextLevel.text = $"";
+            txtNextLevel.text = $"Level max";
             txtDescription.text = description;
 
             txtGoldCost.text = "LEVEL MAX";
