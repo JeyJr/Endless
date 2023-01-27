@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ public class LevelCanvas : MonoBehaviour
     [Header("TxtInformation")]
     [SerializeField] private GameObject panelInfo;
     [SerializeField] private TextMeshProUGUI txtInfo;
+    [SerializeField] private List<string> txtToPrint;
+    bool printIsActivated;
 
     [Header("Level Completed")]
     [SerializeField] private GameObject panelMoveToLobby;
@@ -27,16 +30,21 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private Sprite imgUnchecked, imgChecked;
     public bool PlayerIsDead { get; set; }
 
+
+    SFXControl sfxControl;
+
     private void Awake()
     {
-        levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-        //UI ICONS 
+        levelController = GameObject.FindWithTag("LevelController").GetComponent<LevelController>();
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
+        
 
         StartCoroutine(UpdateFPS());
     }
 
-    public void BtnToInvertActiveGameObj(GameObject gameObject) { 
-            gameObject.SetActive(!gameObject.activeSelf);
+    public void BtnToInvertActiveGameObj(GameObject gameObject) {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+        gameObject.SetActive(!gameObject.activeSelf);
     }
     public void UpdateTxtGold(float value) => txtGold.text = value.ToString();
 
@@ -44,6 +52,7 @@ public class LevelCanvas : MonoBehaviour
 
     public void OpenPanelGameOver()
     {
+        sfxControl.PlayClip(SFXClip.panels);
         panelMoveToLobby.SetActive(true);
         panelYesOrNo.SetActive(false);
         panelEndLevel.SetActive(true);
@@ -63,6 +72,8 @@ public class LevelCanvas : MonoBehaviour
 
         iconEnemiesCompleted.sprite = imgUnchecked;
         iconGoldCompleted.sprite = imgUnchecked;
+
+        sfxControl.PlayClip(SFXClip.victory);
     }
     IEnumerator LevelEnemiesInformations()
     {
@@ -72,6 +83,8 @@ public class LevelCanvas : MonoBehaviour
         int enemiesTotal = 0;
         for (int i = 0; i < levelController.TotalEnemiesKilled; i++)
         {
+            
+
             enemiesTotal++;
             txtTotalEnemiesKilled.text = enemiesTotal.ToString("F0");
 
@@ -93,6 +106,7 @@ public class LevelCanvas : MonoBehaviour
         for (int i = 0; i < levelController.GoldTotal; i++)
         {
             goldTotal++;
+            sfxControl.PlayClip(SFXClip.coin);
 
             txtTotalGoldReceived.text =
                 goldTotal.ToString("F0") +
@@ -109,7 +123,7 @@ public class LevelCanvas : MonoBehaviour
     {
         int levelNum = SceneManager.GetActiveScene().name.IndexOf("l") + 1;
         levelNum = int.Parse(SceneManager.GetActiveScene().name[levelNum..]);
-
+        sfxControl.PlayClip(SFXClip.victory);
 
         GameData gameData = ManagerData.Load();
         gameData.gold += levelController.GoldTotal + levelController.TotalEnemiesKilled;
@@ -120,7 +134,8 @@ public class LevelCanvas : MonoBehaviour
             Debug.Log("Fase ja foi concluida!");
 
         ManagerData.Save(gameData);
-        SceneManager.LoadScene("Lobby");
+        PlayerPrefs.SetString("Scene", "Lobby");
+        SceneManager.LoadScene("Loading");
     }
 
     #endregion
@@ -140,14 +155,33 @@ public class LevelCanvas : MonoBehaviour
 
     public void TextLevelInfo(string text)
     {
-        panelInfo.SetActive(true);
-        txtInfo.text = text;
-        StartCoroutine(TxtLevelInfoHidden());
+        txtToPrint.Add(text);
+        
+        if(!printIsActivated)
+            StartCoroutine(TxtLevelInfoHidden());
     }
     IEnumerator TxtLevelInfoHidden()
     {
-        yield return new WaitForSeconds(4);
-        panelInfo.SetActive(false);
-        txtInfo.text = " ";
+        printIsActivated = true;
+
+        while (txtToPrint.Count > 0)
+        {
+            panelInfo.SetActive(true);
+            txtInfo.text = txtToPrint.First();
+            yield return new WaitForSeconds(2.5f);
+            panelInfo.SetActive(false);
+            txtToPrint.RemoveAt(0);
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        printIsActivated = false;
     }
+
+    public void BackToLobby()
+    {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+        PlayerPrefs.SetString("Scene", "Lobby");
+        SceneManager.LoadScene("Loading");
+    }
+
 }

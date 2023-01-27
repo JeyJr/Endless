@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 3
   def: 20
-  vit: 30
+  vit: 5
   cri: 10
   goldDrop: 25
   skillDrop: 0
@@ -544,7 +544,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9075ebd2334861643802e0021b119601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStatus: {fileID: 7014019563399062874}
   liferBar: {fileID: 89681021794212644}
 --- !u!1 &7014019564180955531
 GameObject:

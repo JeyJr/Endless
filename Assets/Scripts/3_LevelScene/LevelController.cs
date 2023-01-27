@@ -16,16 +16,11 @@ public class LevelController : MonoBehaviour
     float rangeToSpawn = 55;
 
     [Header("Boss Control")]
-    [SerializeField] private GameObject boss;
     [SerializeField] private bool bossDead;
     public bool BossDead { get => bossDead; set => bossDead = value; }
 
     [Header("EnemysToSpawn")]
     [SerializeField] private int enemiesSpawned;
-    [SerializeField] private int maxEnemiesToSpawn;
-    [SerializeField] private List<GameObject> enemiesToSpawn;
-
-
 
     [Header("Gold")]
     [SerializeField] private float goldTotal, bonusGold;
@@ -35,7 +30,12 @@ public class LevelController : MonoBehaviour
     [SerializeField]  private int enemiesKilledToSpawnBoss;
     [SerializeField]  private LevelQuest levelQuest;
     bool bossSpawned;
-    
+
+    [Header("EnemysCollection")]
+    EnemysCollection enemysCollection;
+
+    SFXControl sfxControl;
+
     public float GoldTotal { get => goldTotal;}
 
     private void Start()
@@ -49,15 +49,23 @@ public class LevelController : MonoBehaviour
         levelQuest = GameObject.FindGameObjectWithTag("MainUI").GetComponent<LevelQuest>();
         levelCanvas.UpdateTxtGold(goldTotal);
 
+        enemysCollection = GameObject.FindGameObjectWithTag("EnemysCollection").GetComponent<EnemysCollection>();
+
         GameData gameData = ManagerData.Load();
         bonusGold = gameData.bonusGold;
 
         CheckQuestOneCompleted();
         CheckQuestTwoCompleted();
 
-        StartCoroutine(SpawnSimpleEnemies());
-        StartCoroutine(InitialInstructions($"Defeat <color=#F15826>{enemiesKilledToSpawnBoss}</color> enemies\n to spawn boss!"));
+        StartCoroutine(Instructions($"Defeat <color=#F15826>{enemiesKilledToSpawnBoss}</color> enemies\n to spawn boss!"));
 
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
+
+    }
+
+    public void StartSpawnEnemies()
+    {
+        StartCoroutine(SpawnSimpleEnemies());
     }
     public async void EnemyDead(float goldDroped, bool boss)
     {
@@ -68,7 +76,7 @@ public class LevelController : MonoBehaviour
         {
             bossDead = true;
             totalBossesKilled++;
-            StartCoroutine(InitialInstructions("Boss defeated! \nAdvance to the portal"));
+            StartCoroutine(Instructions("Boss defeated! \nAdvance to the portal"));
         }
             
 
@@ -109,22 +117,24 @@ public class LevelController : MonoBehaviour
     IEnumerator SpawnSimpleEnemies()
     {
         yield return new WaitForSeconds(2);
-        while(enemiesSpawned < maxEnemiesToSpawn)
+        while(enemiesSpawned < enemysCollection.maxEnemiesToSpawn)
         {
-            int index = Mathf.RoundToInt(Random.Range(0, enemiesToSpawn.Count));
+            int index = Mathf.RoundToInt(Random.Range(0, enemysCollection.enemiesToSpawn.Count));
 
             Vector3 pos = new Vector3(
                 Random.Range(spawnCentralPoint.position.x - rangeToSpawn, spawnCentralPoint.position.x + rangeToSpawn),
                 spawnCentralPoint.position.y,
                 spawnCentralPoint.position.z);
 
-            Instantiate(enemiesToSpawn[index], pos, Quaternion.identity);
+            Instantiate(enemysCollection.enemiesToSpawn[index], pos, Quaternion.identity);
             enemiesSpawned++;
             yield return new WaitForEndOfFrame();
         }
     }
     async Task goldUp(int value)
     {
+        sfxControl.PlayClip(SFXClip.coin);
+
         for (int i = 0; i < value; i++)
         {
             goldTotal++;
@@ -132,7 +142,7 @@ public class LevelController : MonoBehaviour
             await Task.Delay(100);
         }
     }
-    IEnumerator InitialInstructions(string msg)
+    IEnumerator Instructions(string msg)
     {
         yield return new WaitForSeconds(3);
         levelCanvas.TextLevelInfo(msg);
@@ -141,8 +151,9 @@ public class LevelController : MonoBehaviour
     {
         bossSpawned = true;
         yield return new WaitForSeconds(5);
-        StartCoroutine(InitialInstructions("Defeat the stage <color=#F15826>boss</color>!"));
+        StartCoroutine(Instructions("Defeat the stage <color=#F15826>boss</color>!"));
         Vector3 pos = new Vector3(spawnCentralPoint.position.x, spawnCentralPoint.position.y, 15);
-        Instantiate(boss, pos, Quaternion.identity);
+        Instantiate(enemysCollection.boss, pos, Quaternion.identity);
+        sfxControl.PlayClip(SFXClip.bossSpawned);
     }
 }

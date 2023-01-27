@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+//Obj player RightHand
 
 public class PlayerMeleeAtk : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class PlayerMeleeAtk : MonoBehaviour
     [SerializeField] private PlayerAnimationsAndPositions pAnim;
     bool readyToAtk;
 
+    SFXControl sfxControl;
+
     private void Start()
     {
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
         readyToAtk = true;
         StartCoroutine(DelayToAtk());
     }
@@ -76,7 +80,10 @@ public class PlayerMeleeAtk : MonoBehaviour
             }
         }
     }
-    
+    public void SFX()
+    {
+        sfxControl.PlayClip(SFXClip.meleeAtk);
+    }
     public void EndAtk()
     {
         pAnim.IsAttacking = false;

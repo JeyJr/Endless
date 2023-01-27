@@ -17,8 +17,16 @@ public class PanelPassives : MonoBehaviour
     PassivesAttributes p;
     float level, bonus, skillGoldCost, gold;
 
+    SFXControl sfxControl;
+
+    private void Start()
+    {
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
+    }
+
     public void OpenPanelSkillInfo(PassivesAttributes passive)
     {
+        sfxControl.PlayClip(SFXClip.panels);
 
         btnBuy.gameObject.SetActive(true);
         btnEquip.gameObject.SetActive(false);
@@ -63,6 +71,8 @@ public class PanelPassives : MonoBehaviour
         {
             SetSkillLevel(p.SkillShortName);
             OpenPanelSkillInfo(p);
+
+            sfxControl.PlayClip(SFXClip.btnValidation);
         }
     }
     public float GetSkillLevel(string skillShortName)
@@ -135,5 +145,4 @@ public class PanelPassives : MonoBehaviour
         GetComponent<UIControl>().GoldAmount(gameData.gold.ToString());
         ManagerData.Save(gameData);
     }
-
 }

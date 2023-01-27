@@ -24,7 +24,7 @@ public class WindBlade : MonoBehaviour
     {
         damage = damage < 1 ? 1 : damage; 
         transform.localEulerAngles = new Vector3(0, mirrored ? 180 : 0, 0);
-
+        GameObject.FindWithTag("SFX").GetComponent<SFXControl>().PlayClip(SFXClip.windBlade);
         StartCoroutine(FadeOut());
         StartCoroutine(Move());
     }

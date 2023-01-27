@@ -47,15 +47,11 @@ MonoBehaviour:
   totalBossesKilled: 0
   totalEnemiesKilled: 0
   spawnCentralPoint: {fileID: 6379193836747831919}
-  boss: {fileID: 7014019564180955531, guid: a8fc831f7a1594442ad9820d6ea2706c, type: 3}
   bossDead: 0
   enemiesSpawned: 0
-  maxEnemiesToSpawn: 10
-  enemiesToSpawn:
-  - {fileID: 2865581964661811905, guid: 9768af8a679b45b4ab6b82248225a192, type: 3}
-  - {fileID: 1002792069051369849, guid: 6e7ffee4b43e75b4b842d28a20072bba, type: 3}
-  - {fileID: 8999531475709711606, guid: 3edae17dd511ba54698c1af3af7edec8, type: 3}
+  maxEnemiesToSpawn: 15
   goldTotal: 0
   bonusGold: 0
   levelCanvas: {fileID: 0}
   enemiesKilledToSpawnBoss: 30
+  levelQuest: {fileID: 0}

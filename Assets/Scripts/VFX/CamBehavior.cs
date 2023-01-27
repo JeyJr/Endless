@@ -34,7 +34,7 @@ public class CamBehavior : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "Lobby")
         {
-            Vector3 target = new(playerPos.position.x + x, playerPos.position.y + yCam, playerPos.position.z - 10);
+            Vector3 target = new(playerPos.position.x + x, playerPos.position.y + yCam, playerPos.position.z - 50);
             transform.position = Vector3.SmoothDamp(transform.position, target, ref currentVelocity, smooth, speed);
         }
     }

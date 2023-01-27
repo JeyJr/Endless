@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIControl : MonoBehaviour
 {
@@ -17,9 +18,13 @@ public class UIControl : MonoBehaviour
     [Header("BTNs")]
     [SerializeField] private GameObject bgBtnSelected;
 
+    //SFX
+    SFXControl sfxControl;
 
     private void Awake()
     {
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
+
         StartPanels();
         GoldAmount();
     }
@@ -44,6 +49,8 @@ public class UIControl : MonoBehaviour
 
     public void SetPanelActive(GameObject panel)
     {
+        sfxControl.PlayClip(SFXClip.panels);
+
         DisableAllPanels(panel.name);
 
         panel.SetActive(!panel.activeSelf);
@@ -76,5 +83,16 @@ public class UIControl : MonoBehaviour
         textTotalGold.text = text;
     }
 
-    public void BtnClose(GameObject obj) => obj.SetActive(!obj.activeSelf);
+    public void BtnClose(GameObject obj) {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+        obj.SetActive(!obj.activeSelf);
+    }
+
+    public void BackToStartScene()
+    {
+        sfxControl.PlayClip(SFXClip.btnValidation);
+
+        PlayerPrefs.SetString("Scene", "Start");
+        SceneManager.LoadScene("Loading");
+    }
 }

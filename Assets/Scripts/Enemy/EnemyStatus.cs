@@ -47,6 +47,8 @@ public class EnemyStatus : MonoBehaviour
 
     public bool IsAlive { get => isAlive; private set => isAlive = value; }
 
+    SFXControl sfxControl;
+
     private void Awake()
     {
         maxLife = vit * 10;
@@ -54,6 +56,7 @@ public class EnemyStatus : MonoBehaviour
         IsAlive = true;
 
         GetComponent<EnemyLifeBar>().SetSliderInitialValues(maxLife, life);
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
     }
 
     public void LoseLife(float dmg, bool critical)
@@ -70,6 +73,7 @@ public class EnemyStatus : MonoBehaviour
             GetComponent<Animator>().Play($"Base Layer.{enemyAnimName}_Dead", 0);
         }
 
+        sfxControl.PlayClip(SFXClip.hitTarget);
         GetComponent<EnemyLifeBar>().SetLifeBarValues(life);
     }
 

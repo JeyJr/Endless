@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - MainUI
   - UIControl
+  - EnemysCollection
+  - SFX
+  - Music
   layers:
   - Default
   - TransparentFX

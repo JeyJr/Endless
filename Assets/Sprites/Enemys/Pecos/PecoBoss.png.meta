@@ -1,0 +1,521 @@
+fileFormatVersion: 2
+guid: 3be4cb28e7efa0f49806d48d821fabfa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PecoBoss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1448
+        width: 412
+        height: 492
+      alignment: 9
+      pivot: {x: 0.50099456, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ff7b6726c57f648bf57ca33903d47e
+      internalID: 1644611865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_1
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 1446
+        width: 395
+        height: 497
+      alignment: 9
+      pivot: {x: 0.48651603, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e355ba112a7e8a0419c2c7dc5dfeb317
+      internalID: 981526708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1446
+        width: 399
+        height: 495
+      alignment: 9
+      pivot: {x: 0.47740933, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ac4b6b95133c745b96289856fd9148
+      internalID: -222942959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_3
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1436
+        width: 425
+        height: 510
+      alignment: 9
+      pivot: {x: 0.5192805, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbc9346dad9b1348afed92dd8022798
+      internalID: 1779188963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_4
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1446
+        width: 395
+        height: 500
+      alignment: 9
+      pivot: {x: 0.47821772, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f8b14bb73eff84594584ba59971ab1
+      internalID: -1622620540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_5
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 1446
+        width: 399
+        height: 500
+      alignment: 9
+      pivot: {x: 0.4763826, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c149f52e7a5de1b4e9a8f703a6a9aac2
+      internalID: -935939593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_6
+      rect:
+        serializedVersion: 2
+        x: 2769
+        y: 1434
+        width: 424
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5193257, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be34ac4b80c09074f804fc03d058d255
+      internalID: -2013012055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 722
+        width: 414
+        height: 494
+      alignment: 9
+      pivot: {x: 0.50654644, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba26dcdd5e1901146be50ce780b67097
+      internalID: 1446361196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_8
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 720
+        width: 395
+        height: 542
+      alignment: 9
+      pivot: {x: 0.45997486, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf608c4712cce948ad8032c1a361f82
+      internalID: -1937600703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_9
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 706
+        width: 367
+        height: 537
+      alignment: 9
+      pivot: {x: 0.46307522, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031fbe38cb8ef364881f3d9b26ce4f07
+      internalID: -1991085402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_10
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 709
+        width: 411
+        height: 462
+      alignment: 9
+      pivot: {x: 0.56814164, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a919a326d685e541a55073e3f7a1898
+      internalID: 1878477196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_11
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 720
+        width: 399
+        height: 457
+      alignment: 9
+      pivot: {x: 0.64830685, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591b6c542ab41d344aa96caf10cc79f1
+      internalID: 257721622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_12
+      rect:
+        serializedVersion: 2
+        x: 2191
+        y: 721
+        width: 412
+        height: 455
+      alignment: 9
+      pivot: {x: 0.6600733, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2f199020e4bc944849494f3d82617e
+      internalID: -1482114681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_13
+      rect:
+        serializedVersion: 2
+        x: 2651
+        y: 720
+        width: 413
+        height: 452
+      alignment: 9
+      pivot: {x: 0.6585921, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be9ce3f08bf85c40a1c5d3fb2dbfa52
+      internalID: 1257979471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_14
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 12
+        width: 413
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2acf59ba135c645bf945f9f669aa71
+      internalID: -71440751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_15
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 14
+        width: 418
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afddf4becca8404dab9f89743dc3fa3
+      internalID: 699209601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PecoBoss_16
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 0
+        width: 399
+        height: 377
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e226ee3b6a00c4a9e36b54cfeeaae6
+      internalID: -609888514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PecoBoss_11: 257721622
+      PecoBoss_16: -609888514
+      PecoBoss_7: 1446361196
+      PecoBoss_4: -1622620540
+      PecoBoss_8: -1937600703
+      PecoBoss_6: -2013012055
+      PecoBoss_10: 1878477196
+      PecoBoss_15: 699209601
+      PecoBoss_1: 981526708
+      PecoBoss_9: -1991085402
+      PecoBoss_5: -935939593
+      PecoBoss_12: -1482114681
+      PecoBoss_2: -222942959
+      PecoBoss_14: -71440751
+      PecoBoss_13: 1257979471
+      PecoBoss_0: 1644611865
+      PecoBoss_3: 1779188963
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

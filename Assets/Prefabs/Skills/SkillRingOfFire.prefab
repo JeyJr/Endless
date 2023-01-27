@@ -120,7 +120,7 @@ MonoBehaviour:
   playerStatus: {fileID: 0}
   target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
   windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
 --- !u!95 &4589909176471736272

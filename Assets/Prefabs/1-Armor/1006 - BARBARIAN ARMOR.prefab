@@ -111,4 +111,4 @@ MonoBehaviour:
   armorAtkSpeed: 13
   armorCritical: 4
   armorRangeAtk: 3
-  armorMoveSpeed: 45
+  armorMoveSpeed: 40

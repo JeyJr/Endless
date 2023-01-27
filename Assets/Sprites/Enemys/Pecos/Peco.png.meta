@@ -1,0 +1,521 @@
+fileFormatVersion: 2
+guid: 605c65326702be2478636ccc8312a526
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Peco_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1448
+        width: 412
+        height: 494
+      alignment: 9
+      pivot: {x: 0.5012226, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2da51b314502e4ba76c702fc0a05f9
+      internalID: 267995311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1447
+        width: 397
+        height: 499
+      alignment: 9
+      pivot: {x: 0.4898508, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f250ed27af93e4c8f07ccd478ebefd
+      internalID: -858018149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1444
+        width: 399
+        height: 502
+      alignment: 9
+      pivot: {x: 0.4772787, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e3f5c78e929a94481c3fce2e438a63
+      internalID: -1237153984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_3
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1437
+        width: 423
+        height: 509
+      alignment: 9
+      pivot: {x: 0.5226231, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94cd33475dc8284d91508a667d17e86
+      internalID: -640239993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_4
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 1445
+        width: 397
+        height: 501
+      alignment: 9
+      pivot: {x: 0.47716424, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747dce4f74059e74a8a36105e1f6d475
+      internalID: -887951120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_5
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 1444
+        width: 400
+        height: 502
+      alignment: 9
+      pivot: {x: 0.48111266, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab41191d6e83b14a9fc111d1203ed20
+      internalID: -553475113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_6
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 1433
+        width: 425
+        height: 513
+      alignment: 9
+      pivot: {x: 0.5225172, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9f4d19677c12841847b2a364066a00
+      internalID: 789730572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 722
+        width: 413
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5084954, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d113911668937458a86c97fd2e0c34
+      internalID: -324995340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_8
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 722
+        width: 394
+        height: 523
+      alignment: 9
+      pivot: {x: 0.46183583, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788518b0a358211448b45df85bf3e419
+      internalID: 1607430624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_9
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 708
+        width: 371
+        height: 536
+      alignment: 9
+      pivot: {x: 0.46352303, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d11cfa086cf0b040975096eb2bcecc8
+      internalID: -1762101481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_10
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 709
+        width: 414
+        height: 462
+      alignment: 9
+      pivot: {x: 0.56295586, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc77d5ec6387f844487f247f11a79943
+      internalID: -1604841540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_11
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 721
+        width: 399
+        height: 456
+      alignment: 9
+      pivot: {x: 0.6469757, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c220ecdcf681a5e49ad7fb9fc608fadd
+      internalID: 1466828266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_12
+      rect:
+        serializedVersion: 2
+        x: 2191
+        y: 721
+        width: 412
+        height: 456
+      alignment: 9
+      pivot: {x: 0.6593699, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3addc7e3a4c72dc47afc1eb3cf3cbfcd
+      internalID: -1524853174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_13
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 721
+        width: 414
+        height: 452
+      alignment: 9
+      pivot: {x: 0.65860057, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7384e270d66da5f458317ca17dead663
+      internalID: 134478136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_14
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 13
+        width: 413
+        height: 501
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae53d7e86dd3c874cb2491e9c3404981
+      internalID: 2060121348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_15
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 17
+        width: 418
+        height: 424
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa994485b3d1e6c4296ca430a1656cce
+      internalID: -1138917384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peco_16
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 0
+        width: 396
+        height: 377
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51eef052ffb63dc469b000e211888e78
+      internalID: 1868447761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Peco_3: -640239993
+      Peco_16: 1868447761
+      Peco_9: -1762101481
+      Peco_2: -1237153984
+      Peco_5: -553475113
+      Peco_12: -1524853174
+      Peco_10: -1604841540
+      Peco_13: 134478136
+      Peco_6: 789730572
+      Peco_11: 1466828266
+      Peco_7: -324995340
+      Peco_14: 2060121348
+      Peco_0: 267995311
+      Peco_15: -1138917384
+      Peco_1: -858018149
+      Peco_4: -887951120
+      Peco_8: 1607430624
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

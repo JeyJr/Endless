@@ -23,6 +23,15 @@ public class ActivatingSkills : MonoBehaviour
     [SerializeField] private LayerMask target;
     [SerializeField] private GameObject ringOfFire, windBlade;
 
+
+    SFXControl sfxControl;
+
+
+    private void OnEnable()
+    {
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -46,6 +55,8 @@ public class ActivatingSkills : MonoBehaviour
 
     public async void StartSkill(float delayTime, float buffValue, float xTimes, int id)
     {
+        sfxControl.PlayClip(SFXClip.getSkill);
+
         this.delayTime = delayTime;
         this.buffValue = buffValue;
         this.xTimes = xTimes;
@@ -192,7 +203,7 @@ public class ActivatingSkills : MonoBehaviour
 
         for (int i = 0; i < xTimes; i++)
         {
-            Vector3 pos = new(playerController.GetComponent<Transform>().position.x, playerController.GetComponent<Transform>().position.y + 1.5f, 4);
+            Vector3 pos = new(playerController.GetComponent<Transform>().position.x, playerController.GetComponent<Transform>().position.y + 1.5f, -11);
             ringOfFire.GetComponent<RingOfFire>().target = target;
             ringOfFire.GetComponent<RingOfFire>().damage = gameData.weaponDmg * buffValue / 100;
             Instantiate(ringOfFire, pos, Quaternion.Euler(0, 0, 0));
@@ -208,7 +219,7 @@ public class ActivatingSkills : MonoBehaviour
         levelCanvas.TextLevelInfo($"Skill: \nBlades Of Wind");
         for (int i = 0; i < xTimes; i++)
         {
-            Vector3 pos = new(playerController.GetComponent<Transform>().position.x, playerController.GetComponent<Transform>().position.y + 1.5f, 4);
+            Vector3 pos = new(playerController.GetComponent<Transform>().position.x, playerController.GetComponent<Transform>().position.y + 1.5f, -11);
 
             windBlade.GetComponent<WindBlade>().target = target;
             windBlade.GetComponent<WindBlade>().damage = gameData.weaponDmg * buffValue / 100;

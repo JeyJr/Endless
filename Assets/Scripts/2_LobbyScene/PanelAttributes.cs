@@ -16,6 +16,7 @@ public class PanelAttributes : MonoBehaviour
     UIControl uiControl;
     [SerializeField] private float goldCost = 200;
 
+    SFXControl sfxControl;
 
     private void Start()
     {
@@ -25,10 +26,14 @@ public class PanelAttributes : MonoBehaviour
         SliderControl(data);
         TextAttributeAmount(data);
         TextGold(data);
+
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
     }
 
     public void BtnAdd(string attributeName)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+
         GameData data = ManagerData.Load();
         attributeName = attributeName.Trim().ToLower();
 
@@ -73,6 +78,8 @@ public class PanelAttributes : MonoBehaviour
 
     public void BtnSub(string attributeName)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+
         GameData data = ManagerData.Load();
         attributeName = attributeName.Trim().ToLower();
 

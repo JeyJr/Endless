@@ -13,9 +13,15 @@ public class PanelLevel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtTitle;
 
     string levelName;
-
-
     PanelEquips panelEquips;
+
+    SFXControl sfxControl;
+
+    private void Start()
+    {
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
+    }
+
     private void OnEnable()
     {
         if (btnLevelsRoot.transform.childCount > btnLevel.Count)
@@ -64,6 +70,8 @@ public class PanelLevel : MonoBehaviour
     }
     public void BtnOpenPanelLevelStart(GameObject go)
     {
+        sfxControl.PlayClip(SFXClip.panels);
+
         int num = go.name.IndexOf("l");
         levelName = $"Level{go.name.Substring(num + 1)}";
         txtTitle.text = levelName;
@@ -72,6 +80,10 @@ public class PanelLevel : MonoBehaviour
 
     public void BtnLoadLevel()
     {
-        SceneManager.LoadScene(levelName);
+        sfxControl.PlayClip(SFXClip.btnValidation);
+
+        PlayerPrefs.SetString("Scene", levelName);
+        SceneManager.LoadScene("Loading");
+        //SceneManager.LoadScene(levelName);
     }
 }

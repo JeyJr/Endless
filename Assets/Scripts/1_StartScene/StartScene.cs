@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class StartScene : MonoBehaviour
 {
     [SerializeField] private Button btnContinue;
+    SFXControl sfxControl;
 
     private void Start()
     {
         Debug.Log("FirstTime check: " + ManagerData.CheckIfSavedFileExists());
         ManagerData.CaminhoDoArquivo();
         btnContinue.interactable = ManagerData.CheckIfSavedFileExists();
+
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
     }
 
     void FirstTime()
@@ -57,25 +60,29 @@ public class StartScene : MonoBehaviour
 
     public void BtnNewGame()
     {
+        sfxControl.PlayClip(SFXClip.btnValidation);
         BtnDeleteSave();
         FirstTime();
-        //Animação de transição
         SceneManager.LoadScene("Lobby");
     }
 
     public void BtnContinue()
     {
-        SceneManager.LoadScene("Lobby");
+        sfxControl.PlayClip(SFXClip.btnValidation);
+        PlayerPrefs.SetString("Scene", "Lobby");
+        SceneManager.LoadScene("Loading");
     }
 
     public void BtnDeleteSave()
     {
+        sfxControl.PlayClip(SFXClip.btnValidation);
         ManagerData.DeleteData();
         btnContinue.interactable = ManagerData.CheckIfSavedFileExists();
     }
 
     public void BtnInvertActive(GameObject gameObject)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
         gameObject.SetActive(!gameObject.activeSelf);
     }
 }

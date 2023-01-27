@@ -53,13 +53,16 @@ public class PanelEquips : MonoBehaviour
     [SerializeField] private List<Button> btnChangeEquips;
     [SerializeField] private Sprite btnSpriteUnselected, btnSpriteSelected;
 
+    SFXControl sfxControl;
     private void OnEnable()
     {
         BtnsPositions();
         BtnSetEnablePanel(0);
 
         GetUIBtn();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindWithTag("Player");
+
+        sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
     }
 
     #region equips
@@ -113,7 +116,6 @@ public class PanelEquips : MonoBehaviour
         for (int i = 0; i < armBtns.Count; i++)
             armBtns[i].GetComponent<RectTransform>().transform.position = btnPosition[i].transform.position;
     }
-
     public void BtnsPositions()
     {
         if (btnPositionsRoot.transform.childCount > btnPosition.Count)
@@ -129,6 +131,7 @@ public class PanelEquips : MonoBehaviour
 
     public void SetWeaponAttributes(WeaponAttributes w)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
 
         GameData gameData = ManagerData.Load();
         this.weaponAttributes = w;
@@ -157,6 +160,8 @@ public class PanelEquips : MonoBehaviour
 
     public void SetArmorAttributes(ArmorAttributes a)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+
         GameData gameData = ManagerData.Load();
         this.armorAttributes = a;
         panelInfo.SetActive(true); //Habilita o painel
@@ -185,6 +190,8 @@ public class PanelEquips : MonoBehaviour
 
     public void SetHelmetAttributes(HelmetAttributes h)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+
         GameData gameData = ManagerData.Load();
         helmetAttributes = h;
         panelInfo.SetActive(true); //Habilita o painel
@@ -212,6 +219,8 @@ public class PanelEquips : MonoBehaviour
 
     public void SetArmAttributes(ArmAttributes a)
     {
+        sfxControl.PlayClip(SFXClip.btnStandarClick);
+
         GameData gameData = ManagerData.Load();
         armAttributes = a;
         panelInfo.SetActive(true); //Habilita o painel
@@ -276,6 +285,8 @@ public class PanelEquips : MonoBehaviour
 
         GetComponent<UIControl>().GoldAmount(gameData.gold.ToString());
         ManagerData.Save(gameData);
+
+        sfxControl.PlayClip(SFXClip.btnValidation);
     }
     public void SetEquip()
     {
@@ -306,6 +317,8 @@ public class PanelEquips : MonoBehaviour
             player.GetComponentInChildren<PlayerSkinManager>().EquipArms();
         }
 
+        if (sfxControl != null)
+            sfxControl.PlayClip(SFXClip.btnValidation);
     }
     #endregion
 
@@ -360,6 +373,9 @@ public class PanelEquips : MonoBehaviour
     //Switch panels weapon, armor and helmet
     public void BtnSetEnablePanel(int index)
     {
+        if(sfxControl != null)
+            sfxControl.PlayClip(SFXClip.panels);
+
         for (int i = 0; i < panels.Count; i++)
             panels[i].SetActive(i == index ? true : false);            
     }

@@ -104,7 +104,7 @@ public class EnemyBehavior : MonoBehaviour
         targetToMove = new Vector3(
             GameObject.FindWithTag("Player").GetComponent<Transform>().position.x,
             transform.position.y,
-            transform.position.z
+            8
             );
 
         if (transform.position.x > targetToMove.x)
