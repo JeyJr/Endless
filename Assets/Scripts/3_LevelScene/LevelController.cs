@@ -27,7 +27,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] private LevelCanvas levelCanvas;
 
     [Header("Mission")]
-    [SerializeField]  private int enemiesKilledToSpawnBoss;
     [SerializeField]  private LevelQuest levelQuest;
     bool bossSpawned;
 
@@ -57,7 +56,7 @@ public class LevelController : MonoBehaviour
         CheckQuestOneCompleted();
         CheckQuestTwoCompleted();
 
-        StartCoroutine(Instructions($"Defeat <color=#F15826>{enemiesKilledToSpawnBoss}</color> enemies\n to spawn boss!"));
+        StartCoroutine(Instructions($"Defeat <color=#F15826>{enemysCollection.enemiesKilledToSpawnBoss}</color> enemies\n to spawn boss!"));
 
         sfxControl = GameObject.FindWithTag("SFX").GetComponent<SFXControl>();
 
@@ -96,13 +95,13 @@ public class LevelController : MonoBehaviour
 
     void CheckQuestOneCompleted()
     {
-        if (totalEnemiesKilled >= enemiesKilledToSpawnBoss && !bossSpawned)
+        if (totalEnemiesKilled >= enemysCollection.enemiesKilledToSpawnBoss && !bossSpawned)
             StartCoroutine(SpawnBoss());
 
-        if (totalEnemiesKilled >= enemiesKilledToSpawnBoss)
-            levelQuest.SetQuestOne(true, $"Dead enemies {enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
+        if (totalEnemiesKilled >= enemysCollection.enemiesKilledToSpawnBoss)
+            levelQuest.SetQuestOne(true, $"Dead enemies {enemysCollection.enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
         else
-            levelQuest.SetQuestOne(false, $"Dead enemies {enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
+            levelQuest.SetQuestOne(false, $"Dead enemies {enemysCollection.enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
     }
 
     void CheckQuestTwoCompleted()

@@ -105,12 +105,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -133,18 +133,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 477
-        width: 974
-        height: 178
+        y: 259
+        width: 1980
+        height: 385
       alignment: 9
-      pivot: {x: 0.13732775, y: 0.41681698}
+      pivot: {x: 0.20622568, y: 0.42227206}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29629101a7df98a4cb9a42ed149d9b59
-      internalID: -1714448835
+      spriteID: 3d50996de5c57374a9791fc26bf6adff
+      internalID: 1331157045
       vertices: []
       indices: 
       edges: []
@@ -153,19 +153,19 @@ TextureImporter:
       name: 1008-RogueKnife_1
       rect:
         serializedVersion: 2
-        x: 1617
+        x: 2244
         y: 0
-        width: 953
+        width: 961
         height: 950
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fd42f15aac57424fbe9cc760c124889
-      internalID: 824316913
+      spriteID: a8ae757e65dd02c4caa0c46d5b237b77
+      internalID: 2115817085
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1008-RogueKnife_0: -1714448835
-      1008-RogueKnife_1: 824316913
+      1008-RogueKnife_0: 1331157045
+      1008-RogueKnife_1: 2115817085
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

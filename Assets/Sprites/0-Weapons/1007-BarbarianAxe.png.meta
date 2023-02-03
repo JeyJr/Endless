@@ -105,12 +105,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -133,18 +133,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 253
-        width: 877
-        height: 355
+        y: 0
+        width: 2092
+        height: 819
       alignment: 9
-      pivot: {x: 0.21846786, y: 0.82694626}
+      pivot: {x: 0.21455885, y: 0.8357752}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 607aff636375cfe49b6945e5e28ba235
-      internalID: -1040675709
+      spriteID: 4490a6e8867299a4984c8d1b5aef9c1a
+      internalID: -461268604
       vertices: []
       indices: 
       edges: []
@@ -153,10 +153,10 @@ TextureImporter:
       name: 1007-BarbarianAxe_1
       rect:
         serializedVersion: 2
-        x: 1613
-        y: 0
-        width: 951
-        height: 950
+        x: 2390
+        y: 23
+        width: 976
+        height: 953
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1bf4768f8333da4a818d06a1baa780c
-      internalID: 112346178
+      spriteID: 763472c0fd76ac64b95bb5363c5fc030
+      internalID: 1685619456
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1007-BarbarianAxe_0: -1040675709
-      1007-BarbarianAxe_1: 112346178
+      1007-BarbarianAxe_0: -461268604
+      1007-BarbarianAxe_1: 1685619456
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

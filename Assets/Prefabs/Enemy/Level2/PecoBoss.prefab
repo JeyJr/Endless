@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atk: 2
-  def: 0
-  vit: 15
-  cri: 25
-  goldDrop: 25
   skillDrop: 0
+  goldDrop: 50
+  atk: 8
+  def: 15
+  vit: 20
+  cri: 15
   maxLife: 0
   life: 0
   spawnTextDMG: {fileID: 824393004115226962}

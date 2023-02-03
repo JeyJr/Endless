@@ -80,7 +80,7 @@ public class Equips : MonoBehaviour
                 return sprites;
             }
         }
-        throw new ArgumentException("Erro ID armadura!");
+        throw new ArgumentException("Erro ID armadura! Armadura não encontrada no prefab EQUIPs");
     }
     public Sprite GetHelmetToEquip()
     {

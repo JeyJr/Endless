@@ -7,4 +7,6 @@ public class EnemysCollection : MonoBehaviour
     public GameObject boss;
     public List<GameObject> enemiesToSpawn;
     public int maxEnemiesToSpawn;
+
+    public int enemiesKilledToSpawnBoss;
 }

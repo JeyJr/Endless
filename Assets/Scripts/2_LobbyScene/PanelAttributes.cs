@@ -14,9 +14,11 @@ public class PanelAttributes : MonoBehaviour
     public TextMeshProUGUI[] textGoldAmount;
 
     UIControl uiControl;
-    [SerializeField] private float goldCost = 200;
 
     SFXControl sfxControl;
+
+    private float goldCost = 10;
+    private float maxAttribute = 250;
 
     private void Start()
     {
@@ -37,35 +39,35 @@ public class PanelAttributes : MonoBehaviour
         GameData data = ManagerData.Load();
         attributeName = attributeName.Trim().ToLower();
 
-        if (attributeName == "atk" && data.gold >= data.atk * goldCost && data.atk < 100)
+        if (attributeName == "atk" && data.gold >= data.atk * goldCost && data.atk < maxAttribute)
         {
             data.gold -= data.atk * goldCost;
             data.atk++;
             Infos(0, data.atk);
         }
 
-        if (attributeName == "def" && data.gold >= data.def * goldCost && data.def < 100)
+        if (attributeName == "def" && data.gold >= data.def * goldCost && data.def < maxAttribute)
         {
             data.gold -= data.def * goldCost;
             data.def++;
             Infos(1, data.def);
         }
 
-        if (attributeName == "vit" && data.gold >= data.vit * goldCost && data.vit < 100)
+        if (attributeName == "vit" && data.gold >= data.vit * goldCost && data.vit < maxAttribute)
         {
             data.gold -= data.vit * goldCost;
             data.vit++;
             Infos(2, data.vit);
         }
 
-        if (attributeName == "agi" && data.gold >= data.agi * goldCost && data.agi < 100)
+        if (attributeName == "agi" && data.gold >= data.agi * goldCost && data.agi < maxAttribute)
         {
             data.gold -= data.agi * goldCost;
             data.agi++;
             Infos(3, data.agi);
         }
 
-        if (attributeName == "cri" && data.gold >= data.cri * goldCost && data.cri < 100)
+        if (attributeName == "cri" && data.gold >= data.cri * goldCost && data.cri < maxAttribute)
         {
             data.gold -= data.cri * goldCost;
             data.cri++;
@@ -132,7 +134,7 @@ public class PanelAttributes : MonoBehaviour
     {
         for (int i = 0; i < sliders.Length; i++)
         {
-            sliders[i].maxValue = 100;
+            sliders[i].maxValue = maxAttribute;
         }
 
         sliders[0].value = data.atk;

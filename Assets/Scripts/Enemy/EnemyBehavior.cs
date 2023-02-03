@@ -15,7 +15,7 @@ public class EnemyBehavior : MonoBehaviour
 
     [Header("MoveControl")]
     Task taskFindPlayer;
-    public float mSpeed;
+    private float mSpeed;
     Vector3 targetToMove;
 
     [Header("AtkControl")]
@@ -35,7 +35,7 @@ public class EnemyBehavior : MonoBehaviour
 
 
         delayToWait = Random.Range(delayToWait, delayToWait * 2);
-        mSpeed = Random.Range(mSpeed, mSpeed * 2);
+        mSpeed = Random.Range(1f, 5);
     }
 
     private void Update()
@@ -75,8 +75,9 @@ public class EnemyBehavior : MonoBehaviour
     //MOVE
     async void MoveControl()
     {
-        PlayAnim("Run");
         transform.position = Vector3.MoveTowards(transform.position, targetToMove, mSpeed * Time.deltaTime);
+        
+        PlayAnim("Run");
 
         if (!findPlayerPosition)
         {
@@ -85,7 +86,7 @@ public class EnemyBehavior : MonoBehaviour
             await taskFindPlayer;
         }
 
-        if (!detectPlayerInRangeToAtk)
+        if (!detectPlayerInRangeToAtk && enemyStatus.Life > 0)
         {
             detectPlayerInRangeToAtk = true;
 

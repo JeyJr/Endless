@@ -5,18 +5,19 @@ using UnityEngine;
 public class EnemyStatus : MonoBehaviour
 {
     [Header("Attributes")]
+    [SerializeField] private float skillDrop;
+    [SerializeField] private float goldDrop;
+
     [SerializeField] private float atk;
     [SerializeField] private float def;
     [SerializeField] private float vit;
     [SerializeField] private float cri;
-    [SerializeField] private float goldDrop;
-    [SerializeField] private float skillDrop;
+    public float GoldDrop { get => goldDrop; }
+    public float SkillDrop { get => skillDrop; }
     public float Damage { get => atk * 2; }
     public float Defense { get => def / 2; }
     public float Life { get => life; }
     public float Critical { get => cri; }
-    public float GoldDrop { get => goldDrop; }
-    public float SkillDrop { get => skillDrop; }
 
 
     [Space(5)]

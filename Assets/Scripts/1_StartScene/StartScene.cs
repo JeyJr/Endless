@@ -22,7 +22,7 @@ public class StartScene : MonoBehaviour
     {
         GameData d = new();
 
-        d.gold = 999999999;
+        d.gold = 100;
         d.atk = 1;
         d.def = 1;
         d.vit = 1;
@@ -53,6 +53,7 @@ public class StartScene : MonoBehaviour
         d.skillLevelBonusGold = 0;
 
         d.levelUnlock = 0;
+        d.maxLevel = 12;
 
         ManagerData.Save(d);
     }

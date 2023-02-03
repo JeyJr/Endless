@@ -1,0 +1,829 @@
+fileFormatVersion: 2
+guid: e7dae0e0046ff9b4b815584c04d4a574
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigFoot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1449
+        width: 194
+        height: 343
+      alignment: 9
+      pivot: {x: 0.46602568, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05029f4aeb3cb474cbf4c0b4f97f6c82
+      internalID: -1131089667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_1
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1445
+        width: 251
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5758594, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3cb13d86b9a5c4895f600df50c8f44
+      internalID: 1539731797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_2
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1446
+        width: 284
+        height: 330
+      alignment: 9
+      pivot: {x: 0.6340895, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1ee841a8462224f9f6f59b879c122c
+      internalID: 950355838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_3
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1447
+        width: 243
+        height: 367
+      alignment: 9
+      pivot: {x: 0.5602746, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6d442e216e3ba4192980d5047ddd54
+      internalID: 344578532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_4
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1446
+        width: 193
+        height: 393
+      alignment: 9
+      pivot: {x: 0.4354944, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4e5297ccdb5e04199010dcbe6674f0
+      internalID: 1814927295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_5
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1447
+        width: 351
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5834572, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabc948ffad50244491d74835bd6753d
+      internalID: 395906375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_6
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1447
+        width: 281
+        height: 311
+      alignment: 9
+      pivot: {x: 0.57297283, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6040e85dd6d4d434f8b5cdcb1da93c50
+      internalID: 2082985465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 999
+        width: 182
+        height: 327
+      alignment: 9
+      pivot: {x: 0.49606025, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9948e96aec2f846bc115d4e1f20e7c
+      internalID: -1242793340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 996
+        width: 195
+        height: 331
+      alignment: 9
+      pivot: {x: 0.52206266, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062470b7cf7b0e447906c6de0997205c
+      internalID: -2086736721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_9
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 990
+        width: 216
+        height: 335
+      alignment: 9
+      pivot: {x: 0.5265571, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43540fe181dbcc24f94ceabd60b3ed1e
+      internalID: 459900785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_10
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 980
+        width: 189
+        height: 345
+      alignment: 9
+      pivot: {x: 0.49620646, y: -0.0029627704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d55579015df0640bb4625f5c797619
+      internalID: 78336881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_11
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 981
+        width: 222
+        height: 346
+      alignment: 9
+      pivot: {x: 0.47093132, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9af5ea3ccf7b93428f69a8a0d63b520
+      internalID: -297871088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_12
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 985
+        width: 233
+        height: 339
+      alignment: 9
+      pivot: {x: 0.40152383, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f53e1d4eb12cc4fa615c723f8ece4c
+      internalID: -668598345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_13
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 1008
+        width: 204
+        height: 330
+      alignment: 9
+      pivot: {x: 0.47188133, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea9b754defa2904ca284cdb23850f6b
+      internalID: -1429825194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_14
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1011
+        width: 219
+        height: 299
+      alignment: 9
+      pivot: {x: 0.5098236, y: 0.07434123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374c97d4ea5843d44832dd9d6229c138
+      internalID: 1284262283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_15
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 1012
+        width: 208
+        height: 246
+      alignment: 9
+      pivot: {x: 0.4827658, y: 0.08161343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f772b3e1154f22a4daa593c44338edbf
+      internalID: 1948694815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 492
+        width: 191
+        height: 331
+      alignment: 9
+      pivot: {x: 0.47406033, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480907daa5734814bb7f95061cacedc0
+      internalID: -1200243320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_17
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 491
+        width: 243
+        height: 334
+      alignment: 9
+      pivot: {x: 0.5801659, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6e1ee4ab913464398cf6669b1f5068
+      internalID: 1372576853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_18
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 491
+        width: 282
+        height: 331
+      alignment: 9
+      pivot: {x: 0.63355315, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a279a41e405c44b9e59d57d9869443
+      internalID: 1674192811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_19
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 493
+        width: 243
+        height: 360
+      alignment: 9
+      pivot: {x: 0.5748213, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ca67038958aae40a69bd484ff7465d
+      internalID: -1363152702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_20
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 493
+        width: 186
+        height: 393
+      alignment: 9
+      pivot: {x: 0.43716004, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfab70b94909524380c1c098d94916e
+      internalID: 2037444290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_21
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 491
+        width: 354
+        height: 353
+      alignment: 9
+      pivot: {x: 0.589881, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d46549a24f6dc44b38891c28c70923
+      internalID: 1235269951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_22
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 493
+        width: 278
+        height: 322
+      alignment: 9
+      pivot: {x: 0.56773716, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55eb2958f0940954d810256b3d589d50
+      internalID: 827267612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 183
+        height: 330
+      alignment: 9
+      pivot: {x: 0.49129844, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59770482de87c514691887c7d5080d08
+      internalID: -1895333681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 44
+        width: 200
+        height: 327
+      alignment: 9
+      pivot: {x: 0.5212314, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7cc95d44da6b743b538cebc655fece
+      internalID: 1230262543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_25
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 35
+        width: 216
+        height: 335
+      alignment: 9
+      pivot: {x: 0.52457345, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c5d3f90f58d104683f07171739439a
+      internalID: 1824998829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_26
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 27
+        width: 185
+        height: 343
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9460ede98414a484cb2f998c4719cdaa
+      internalID: 1139997909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_27
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 27
+        width: 222
+        height: 343
+      alignment: 9
+      pivot: {x: 0.46413606, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fcc930d6ca590a43a1ca56c8178069e
+      internalID: -139057735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_28
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 32
+        width: 233
+        height: 339
+      alignment: 9
+      pivot: {x: 0.39293125, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11abbd5bc02f5345991f442cc8abe5a
+      internalID: -537378560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_30
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 54
+        width: 219
+        height: 303
+      alignment: 9
+      pivot: {x: 0.52616316, y: 0.076414704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908da1bf13e661e4691cdeb4b880bd75
+      internalID: -1825152399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigFoot_29
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 63
+        width: 216
+        height: 249
+      alignment: 9
+      pivot: {x: 0.53448486, y: 0.053585835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79582a0d5c61de49ae919f69f8c1499
+      internalID: -1056863493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BigFoot_21: 1235269951
+      BigFoot_29: -1056863493
+      BigFoot_30: -1825152399
+      BigFoot_27: -139057735
+      BigFoot_10: 78336881
+      BigFoot_17: 1372576853
+      BigFoot_1: 1539731797
+      BigFoot_4: 1814927295
+      BigFoot_12: -668598345
+      BigFoot_18: 1674192811
+      BigFoot_15: 1948694815
+      BigFoot_28: -537378560
+      BigFoot_2: 950355838
+      BigFoot_3: 344578532
+      BigFoot_14: 1284262283
+      BigFoot_6: 2082985465
+      BigFoot_22: 827267612
+      BigFoot_26: 1139997909
+      BigFoot_7: -1242793340
+      BigFoot_16: -1200243320
+      BigFoot_9: 459900785
+      BigFoot_8: -2086736721
+      BigFoot_0: -1131089667
+      BigFoot_19: -1363152702
+      BigFoot_5: 395906375
+      BigFoot_13: -1429825194
+      BigFoot_25: 1824998829
+      BigFoot_23: -1895333681
+      BigFoot_24: 1230262543
+      BigFoot_11: -297871088
+      BigFoot_20: 2037444290
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

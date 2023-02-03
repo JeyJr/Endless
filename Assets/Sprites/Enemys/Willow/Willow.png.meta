@@ -1,0 +1,609 @@
+fileFormatVersion: 2
+guid: f16f827e9b13582479c158c6479710a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Willow_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 2701
+        width: 355
+        height: 412
+      alignment: 9
+      pivot: {x: 0.51078594, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f902d4a475331d348903c772675fb820
+      internalID: -1058098678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_1
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 2700
+        width: 372
+        height: 413
+      alignment: 9
+      pivot: {x: 0.5308792, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910612256d899814e84babfc7785c17b
+      internalID: 1473115474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_2
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 2703
+        width: 362
+        height: 410
+      alignment: 9
+      pivot: {x: 0.5132217, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267257164fab68b4ab7bef4c4e35eb96
+      internalID: 1848993656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_3
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 2702
+        width: 401
+        height: 411
+      alignment: 9
+      pivot: {x: 0.5358074, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6553b3d17dc80524c9f8aaa7d860dab7
+      internalID: 1375115480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_4
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 2697
+        width: 350
+        height: 416
+      alignment: 9
+      pivot: {x: 0.51093996, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0187cf6c46601614882e87bed75a5cb7
+      internalID: -1213927231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2192
+        width: 402
+        height: 414
+      alignment: 9
+      pivot: {x: 0.5113973, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc77df7e20bd4544b34abb1916785f2
+      internalID: -1866704503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_6
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 2182
+        width: 351
+        height: 421
+      alignment: 9
+      pivot: {x: 0.5043511, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2982b965b8ff43468440c3c28a0f5c7
+      internalID: 1852052111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1602
+        width: 346
+        height: 412
+      alignment: 9
+      pivot: {x: 0.50205785, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32505727fa12e84d88ae76aba1b6a1c
+      internalID: -735378316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_8
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 1600
+        width: 376
+        height: 415
+      alignment: 9
+      pivot: {x: 0.5397688, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae4f28289995bb4c8e799ab3bdde049
+      internalID: -1588091222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_9
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1602
+        width: 346
+        height: 417
+      alignment: 9
+      pivot: {x: 0.50205755, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4521c29779864714ba80ab676fa77b73
+      internalID: -1016122854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_10
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1600
+        width: 402
+        height: 412
+      alignment: 9
+      pivot: {x: 0.5341256, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19cb80bfcc92ad47bb2deca3540954f
+      internalID: -3085146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_11
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 1598
+        width: 350
+        height: 416
+      alignment: 9
+      pivot: {x: 0.51306504, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2a5af8a4c8bbb499526aff794cf0f3
+      internalID: -630132879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1093
+        width: 402
+        height: 414
+      alignment: 9
+      pivot: {x: 0.5067378, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05c0d9fb61a3754596cdd8b94707ccc
+      internalID: -1573716145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_13
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1085
+        width: 346
+        height: 414
+      alignment: 9
+      pivot: {x: 0.50521886, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa61fdcd81436994bb05ea0ee5d97a08
+      internalID: -725639701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_14
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 536
+        width: 349
+        height: 415
+      alignment: 9
+      pivot: {x: 0.50870967, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ccd64b45c94404d85030ed6c40bb1a
+      internalID: 1313064586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_15
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 535
+        width: 372
+        height: 417
+      alignment: 9
+      pivot: {x: 0.5347275, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4540043faed9a3469b35f2439d78a61
+      internalID: 735610861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_16
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 534
+        width: 347
+        height: 418
+      alignment: 9
+      pivot: {x: 0.49780995, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c275d4f147d643744b872b4edeaf09df
+      internalID: 1011503745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_17
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 536
+        width: 400
+        height: 413
+      alignment: 9
+      pivot: {x: 0.528497, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7672a51685e27459ce8b58d0b0e63d
+      internalID: 535818424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_18
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 530
+        width: 352
+        height: 422
+      alignment: 9
+      pivot: {x: 0.5151121, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601e5997a89aada42ba0cb93b1b92398
+      internalID: 535351189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 27
+        width: 404
+        height: 417
+      alignment: 9
+      pivot: {x: 0.50480914, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3427a96576c51644ca6cdaa9be0b42d4
+      internalID: 526420439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Willow_20
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 18
+        width: 351
+        height: 421
+      alignment: 9
+      pivot: {x: 0.5110705, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc5dc49820a5df4fa8d3ff0bc759003
+      internalID: -791199454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Willow_2: 1848993656
+      Willow_9: -1016122854
+      Willow_20: -791199454
+      Willow_11: -630132879
+      Willow_8: -1588091222
+      Willow_1: 1473115474
+      Willow_18: 535351189
+      Willow_0: -1058098678
+      Willow_12: -1573716145
+      Willow_13: -725639701
+      Willow_16: 1011503745
+      Willow_15: 735610861
+      Willow_6: 1852052111
+      Willow_14: 1313064586
+      Willow_17: 535818424
+      Willow_19: 526420439
+      Willow_5: -1866704503
+      Willow_3: 1375115480
+      Willow_4: -1213927231
+      Willow_10: -3085146
+      Willow_7: -735378316
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

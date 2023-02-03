@@ -12,7 +12,7 @@ public class RingOfFire : MonoBehaviour
 
     private void Awake()
     {
-        boxSize = new Vector3(25f, 25f, 30);
+        boxSize = new Vector3(35f, 35f, 30);
         GameObject.FindWithTag("SFX").GetComponent<SFXControl>().PlayClip(SFXClip.ringOfFire);
         Invoke("RingOfFireDMG", .3f);
     }

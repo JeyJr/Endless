@@ -57,7 +57,7 @@ public class PanelLevel : MonoBehaviour
 
         for (int i = 0; i < btnLevel.Count; i++)
         {
-            if (i <= gameData.levelUnlock)
+            if (i <= gameData.levelUnlock && i < gameData.maxLevel)
                 btnLevel[i].interactable = true;
             else
                 btnLevel[i].interactable = false;
