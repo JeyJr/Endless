@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: 346129412, guid: 6e76bb5ceba97f84e8c6a5eb419de507, type: 3}
   helmetName: DEFENDER HEAD
   helmetID: 1009
-  goldCost: 700
+  goldCost: 8000
   helmetDmg: 15
   helmetDefense: 10
   helmetLife: 40

@@ -102,7 +102,7 @@ MonoBehaviour:
   imgLeftArm: {fileID: 1189742541, guid: 6c91791e1338bcb4ab705ef7ed69da1d, type: 3}
   armName: CHAMPION ARM
   armID: 1010
-  goldCost: 1500
+  goldCost: 10000
   armDmg: 120
   armDefense: 0
   armLife: 30

@@ -8,7 +8,7 @@ public class LevelStartSpawn : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameObject.FindWithTag("LevelController").GetComponent<LevelController>().StartSpawnEnemies();
+            GameObject.FindWithTag("LevelController").GetComponent<LevelController>().startSpawn = true;
             Destroy(this.gameObject);
         }
     }

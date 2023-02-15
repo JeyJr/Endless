@@ -13,6 +13,7 @@ public class LevelController : MonoBehaviour
 
     [Header("SpawnControl")]
     [SerializeField] private Transform spawnCentralPoint;
+    public bool startSpawn;
     float rangeToSpawn = 55;
 
     [Header("Boss Control")]
@@ -62,10 +63,6 @@ public class LevelController : MonoBehaviour
 
     }
 
-    public void StartSpawnEnemies()
-    {
-        StartCoroutine(SpawnSimpleEnemies());
-    }
     public async void EnemyDead(float goldDroped, bool boss)
     {
 
@@ -78,59 +75,69 @@ public class LevelController : MonoBehaviour
             StartCoroutine(Instructions("Boss defeated! \nAdvance to the portal"));
         }
             
-
         CheckQuestOneCompleted();
         CheckQuestTwoCompleted();
 
         int gold = Mathf.RoundToInt(bonusGold + goldDroped);
-        Task task = goldUp(gold);
+        Task task = GoldUp(gold);
         await task;
 
         enemiesSpawned--;
 
-        if(!bossDead)
-            StartCoroutine(SpawnSimpleEnemies());
+
     }
 
+    private void Update()
+    {
+        if(enemiesSpawned < enemysCollection.maxEnemiesToSpawn && startSpawn)
+        {
+            SpawnSimpleEnemies();
+        }
+
+        if(totalEnemiesKilled >= enemysCollection.enemiesKilledToSpawnBoss && !bossSpawned)
+        {
+            bossSpawned = true;
+
+            Vector3 pos = new Vector3(spawnCentralPoint.position.x, spawnCentralPoint.position.y, 15);
+            Instantiate(enemysCollection.boss, pos, Quaternion.identity);
+            sfxControl.PlayClip(SFXClip.bossSpawned);
+
+            StartCoroutine(Instructions("Defeat the stage <color=#F15826>boss</color>!"));
+        }
+    }
 
     void CheckQuestOneCompleted()
     {
-        if (totalEnemiesKilled >= enemysCollection.enemiesKilledToSpawnBoss && !bossSpawned)
-            StartCoroutine(SpawnBoss());
-
         if (totalEnemiesKilled >= enemysCollection.enemiesKilledToSpawnBoss)
             levelQuest.SetQuestOne(true, $"Dead enemies {enemysCollection.enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
         else
             levelQuest.SetQuestOne(false, $"Dead enemies {enemysCollection.enemiesKilledToSpawnBoss} / {totalEnemiesKilled}");
     }
-
     void CheckQuestTwoCompleted()
     {
         if (bossDead)
-            levelQuest.SetQuestTwo(true, $"Boss defeated!");
-        else
-            levelQuest.SetQuestTwo(false, $"Defeat the boss");
-    }
-
-
-    IEnumerator SpawnSimpleEnemies()
-    {
-        yield return new WaitForSeconds(2);
-        while(enemiesSpawned < enemysCollection.maxEnemiesToSpawn)
         {
-            int index = Mathf.RoundToInt(Random.Range(0, enemysCollection.enemiesToSpawn.Count));
-
-            Vector3 pos = new Vector3(
-                Random.Range(spawnCentralPoint.position.x - rangeToSpawn, spawnCentralPoint.position.x + rangeToSpawn),
-                spawnCentralPoint.position.y,
-                spawnCentralPoint.position.z);
-
-            Instantiate(enemysCollection.enemiesToSpawn[index], pos, Quaternion.identity);
-            enemiesSpawned++;
-            yield return new WaitForEndOfFrame();
+            levelQuest.SetQuestTwo(true, $"Boss defeated!");
+            startSpawn = false;
+        }
+        else
+        {
+            levelQuest.SetQuestTwo(false, $"Defeat the boss");
         }
     }
-    async Task goldUp(int value)
+    void SpawnSimpleEnemies()
+    {
+        int index = Mathf.RoundToInt(Random.Range(0, enemysCollection.enemiesToSpawn.Count));
+
+        Vector3 pos = new Vector3(
+            Random.Range(spawnCentralPoint.position.x - rangeToSpawn, spawnCentralPoint.position.x + rangeToSpawn),
+            spawnCentralPoint.position.y,
+            spawnCentralPoint.position.z);
+
+        Instantiate(enemysCollection.enemiesToSpawn[index], pos, Quaternion.identity);
+        enemiesSpawned++;
+    }
+    private async Task GoldUp(int value)
     {
         sfxControl.PlayClip(SFXClip.coin);
 
@@ -145,14 +152,5 @@ public class LevelController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         levelCanvas.TextLevelInfo(msg);
-    }
-    IEnumerator SpawnBoss()
-    {
-        bossSpawned = true;
-        yield return new WaitForSeconds(5);
-        StartCoroutine(Instructions("Defeat the stage <color=#F15826>boss</color>!"));
-        Vector3 pos = new Vector3(spawnCentralPoint.position.x, spawnCentralPoint.position.y, 15);
-        Instantiate(enemysCollection.boss, pos, Quaternion.identity);
-        sfxControl.PlayClip(SFXClip.bossSpawned);
     }
 }

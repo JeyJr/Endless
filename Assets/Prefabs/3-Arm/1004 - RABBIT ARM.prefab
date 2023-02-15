@@ -102,7 +102,7 @@ MonoBehaviour:
   imgLeftArm: {fileID: -1660026463, guid: 04971e6db09be7341af188e8d029da19, type: 3}
   armName: RABBIT ARM
   armID: 1004
-  goldCost: 160
+  goldCost: 2000
   armDmg: 5
   armDefense: 10
   armLife: 8

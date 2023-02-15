@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: 874058566, guid: 04971e6db09be7341af188e8d029da19, type: 3}
   helmetName: RABBIT HEAD
   helmetID: 1004
-  goldCost: 160
+  goldCost: 2000
   helmetDmg: 3
   helmetDefense: 12
   helmetLife: 7

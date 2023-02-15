@@ -28,8 +28,8 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtTitlePanelEndLevel,txtTotalEnemiesKilled, txtTotalGoldReceived;
     [SerializeField] private Image iconEnemiesCompleted, iconGoldCompleted;
     [SerializeField] private Sprite imgUnchecked, imgChecked;
-    public bool PlayerIsDead { get; set; }
-
+    
+    private bool playerIsDead;
 
     SFXControl sfxControl;
 
@@ -52,6 +52,8 @@ public class LevelCanvas : MonoBehaviour
 
     public void OpenPanelGameOver()
     {
+        playerIsDead = true;
+
         sfxControl.PlayClip(SFXClip.panels);
         panelMoveToLobby.SetActive(true);
         panelYesOrNo.SetActive(false);
@@ -128,7 +130,7 @@ public class LevelCanvas : MonoBehaviour
         GameData gameData = ManagerData.Load();
         gameData.gold += levelController.GoldTotal + levelController.TotalEnemiesKilled;
 
-        if (levelNum > gameData.levelUnlock && levelNum < gameData.maxLevel)
+        if (levelNum > gameData.levelUnlock && levelNum < gameData.maxLevel && !playerIsDead)
             gameData.levelUnlock++;
         else
             Debug.Log("Fase ja foi concluida!");

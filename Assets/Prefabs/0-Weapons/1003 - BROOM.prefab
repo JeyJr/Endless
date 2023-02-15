@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -487397947, guid: e842274d974db3048b1b45e855b2c54f, type: 3}
   weaponName: BROOM
   weaponID: 1003
-  goldCost: 120
-  weaponDmg: 6
+  goldCost: 1000
+  weaponDmg: 25
   weaponDefense: 2
   weaponLife: 7
   weaponAtkSpeed: 2

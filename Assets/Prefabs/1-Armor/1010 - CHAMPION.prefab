@@ -104,7 +104,7 @@ MonoBehaviour:
   imgFoot: {fileID: -1521432057, guid: 6c91791e1338bcb4ab705ef7ed69da1d, type: 3}
   armorName: CHAMPION
   armorID: 1010
-  goldCost: 1000
+  goldCost: 10000
   armorDmg: 80
   armorDefense: 55
   armorLife: 65

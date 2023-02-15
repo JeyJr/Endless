@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: -736714464, guid: bd15f617d194de14e86e0a39268439ee, type: 3}
   helmetName: MEDIEVAL BANDIT HEAD
   helmetID: 1005
-  goldCost: 200
+  goldCost: 3500
   helmetDmg: 5
   helmetDefense: 5
   helmetLife: 5

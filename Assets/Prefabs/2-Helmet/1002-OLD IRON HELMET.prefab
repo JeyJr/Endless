@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: -1721476902, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
   helmetName: OLD IRON HELMET
   helmetID: 1002
-  goldCost: 80
+  goldCost: 600
   helmetDmg: 2
   helmetDefense: 12
   helmetLife: 5

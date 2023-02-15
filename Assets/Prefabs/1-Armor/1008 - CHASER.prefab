@@ -104,7 +104,7 @@ MonoBehaviour:
   imgFoot: {fileID: 1753885761, guid: da76ecdc67c5a464fb541321f3a5417c, type: 3}
   armorName: CHASER
   armorID: 1008
-  goldCost: 550
+  goldCost: 6000
   armorDmg: 35
   armorDefense: 25
   armorLife: 45

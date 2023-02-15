@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -1629287809, guid: e6a990fdec3423e43bb0e1c5ba6215fc, type: 3}
   weaponName: SON OF THUNDER
   weaponID: 1013
-  goldCost: 5000
-  weaponDmg: 150
+  goldCost: 20000
+  weaponDmg: 200
   weaponDefense: 40
   weaponLife: 35
   weaponAtkSpeed: 100

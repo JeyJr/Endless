@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: -856653804, guid: 8cec1d48afb182a49adde7ed2d0a7da1, type: 3}
   helmetName: VULCAN
   helmetID: 1011
-  goldCost: 5000
+  goldCost: 20000
   helmetDmg: 60
   helmetDefense: 10
   helmetLife: 100

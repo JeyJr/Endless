@@ -104,7 +104,7 @@ MonoBehaviour:
   imgFoot: {fileID: 1587988119, guid: 8cec1d48afb182a49adde7ed2d0a7da1, type: 3}
   armorName: VULCAN
   armorID: 1011
-  goldCost: 5000
+  goldCost: 20000
   armorDmg: 100
   armorDefense: 60
   armorLife: 100

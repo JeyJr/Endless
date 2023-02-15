@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: 1631633261, guid: 17c14dd13a3db6f479245efef743b157, type: 3}
   helmetName: FIGHTER HEAD
   helmetID: 1007
-  goldCost: 400
+  goldCost: 5000
   helmetDmg: 5
   helmetDefense: 10
   helmetLife: 20

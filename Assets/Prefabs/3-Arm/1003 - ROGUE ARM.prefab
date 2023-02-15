@@ -102,7 +102,7 @@ MonoBehaviour:
   imgLeftArm: {fileID: 444533740, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
   armName: ROGUE ARM
   armID: 1003
-  goldCost: 120
+  goldCost: 1200
   armDmg: 2
   armDefense: 0
   armLife: 5

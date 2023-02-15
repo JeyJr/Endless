@@ -102,7 +102,7 @@ MonoBehaviour:
   imgLeftArm: {fileID: 724419681, guid: 8cec1d48afb182a49adde7ed2d0a7da1, type: 3}
   armName: VULCAN ARM
   armID: 1011
-  goldCost: 5000
+  goldCost: 20000
   armDmg: 200
   armDefense: 0
   armLife: 35

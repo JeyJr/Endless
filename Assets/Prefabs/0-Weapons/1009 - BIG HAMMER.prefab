@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: 1626142862, guid: 1a0e2761d30ba8947974d34782e72e64, type: 3}
   weaponName: BIG HAMMER
   weaponID: 1009
-  goldCost: 500
-  weaponDmg: 20
+  goldCost: 5000
+  weaponDmg: 60
   weaponDefense: 20
   weaponLife: 15
   weaponAtkSpeed: 30

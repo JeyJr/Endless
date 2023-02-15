@@ -104,7 +104,7 @@ MonoBehaviour:
   imgFoot: {fileID: 1167772745, guid: 17c14dd13a3db6f479245efef743b157, type: 3}
   armorName: FIGHTER ARMOR
   armorID: 1007
-  goldCost: 500
+  goldCost: 5000
   armorDmg: 30
   armorDefense: 20
   armorLife: 40

@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: -217612363, guid: 590dcfc0aa6d96147857f2b192284c51, type: 3}
   helmetName: ROGUE HEAD
   helmetID: 1003
-  goldCost: 120
+  goldCost: 1200
   helmetDmg: 0
   helmetDefense: 2
   helmetLife: 2

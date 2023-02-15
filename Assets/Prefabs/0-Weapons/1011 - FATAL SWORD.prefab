@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: 105484135, guid: f54dceeb03f205e4c91b3c5f31dfeda0, type: 3}
   weaponName: FATAL SWORD
   weaponID: 1011
-  goldCost: 700
-  weaponDmg: 40
+  goldCost: 10000
+  weaponDmg: 100
   weaponDefense: 30
   weaponLife: 20
   weaponAtkSpeed: 45

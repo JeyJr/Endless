@@ -22,7 +22,7 @@ public class StartScene : MonoBehaviour
     {
         GameData d = new();
 
-        d.gold = 100;
+        d.gold = 2000;
         d.atk = 1;
         d.def = 1;
         d.vit = 1;

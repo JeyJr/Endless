@@ -102,7 +102,7 @@ MonoBehaviour:
   imgLeftArm: {fileID: 1635475703, guid: da76ecdc67c5a464fb541321f3a5417c, type: 3}
   armName: CHASER ARM
   armID: 1008
-  goldCost: 800
+  goldCost: 6000
   armDmg: 50
   armDefense: 0
   armLife: 20

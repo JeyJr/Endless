@@ -102,7 +102,7 @@ MonoBehaviour:
   imgLeftArm: {fileID: 1456674113, guid: 5b1e853e1a9995b4f8b9a0812e8d0a10, type: 3}
   armName: OLD IRON ARM
   armID: 1002
-  goldCost: 80
+  goldCost: 600
   armDmg: 5
   armDefense: 5
   armLife: 10

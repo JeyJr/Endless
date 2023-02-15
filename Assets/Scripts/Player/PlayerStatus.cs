@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -63,20 +65,20 @@ public class PlayerStatus : MonoBehaviour
         realDMG = (dmg - ((dmg * ManagerData.Load().Defense) / 100));
         realDMG = realDMG < 1 ? 1 : realDMG;
 
+        if (criticalDMG)
+            realDMG += realDMG * critical / 100;
 
+        life -= realDMG;
+        UpdateLifeBar();
+        spawnText.SpawnTextDamage(realDMG, criticalDMG);
+    }
+
+    private void Update()
+    {
         if (life <= 0 && ImAlive)
         {
             ImAlive = false;
             StartCoroutine(GameOver());
-        }
-        else
-        {
-            if (criticalDMG)
-                realDMG += realDMG * critical / 100;
-
-            life -= realDMG;
-            UpdateLifeBar();
-            spawnText.SpawnTextDamage(realDMG, criticalDMG);
         }
     }
 

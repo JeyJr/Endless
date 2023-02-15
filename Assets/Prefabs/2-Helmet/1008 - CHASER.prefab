@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: -629857925, guid: da76ecdc67c5a464fb541321f3a5417c, type: 3}
   helmetName: CHASER HEAD
   helmetID: 1008
-  goldCost: 600
+  goldCost: 6000
   helmetDmg: 10
   helmetDefense: 10
   helmetLife: 30

@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -487193138, guid: f11bc761a91710b4680b723627d78523, type: 3}
   weaponName: MACE
   weaponID: 1010
-  goldCost: 550
-  weaponDmg: 25
+  goldCost: 6000
+  weaponDmg: 70
   weaponDefense: 10
   weaponLife: 10
   weaponAtkSpeed: 35

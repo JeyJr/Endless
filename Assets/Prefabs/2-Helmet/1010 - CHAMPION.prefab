@@ -101,7 +101,7 @@ MonoBehaviour:
   imgHelmet: {fileID: 197798473, guid: 6c91791e1338bcb4ab705ef7ed69da1d, type: 3}
   helmetName: CHAMPION HEAD
   helmetID: 1010
-  goldCost: 1000
+  goldCost: 10000
   helmetDmg: 40
   helmetDefense: 10
   helmetLife: 60

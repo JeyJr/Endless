@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: -1538133516, guid: 23df6d929fbe3a44a9ac631a9aaef135, type: 3}
   weaponName: OLD SWORD
   weaponID: 1006
-  goldCost: 240
-  weaponDmg: 13
+  goldCost: 2500
+  weaponDmg: 40
   weaponDefense: 2
   weaponLife: 5
   weaponAtkSpeed: 3

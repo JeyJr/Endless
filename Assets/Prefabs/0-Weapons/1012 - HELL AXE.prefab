@@ -101,8 +101,8 @@ MonoBehaviour:
   imgWeaponIcon: {fileID: 96584244, guid: e009f6be33f6abd4c842b4cfad871bda, type: 3}
   weaponName: HELL AXE
   weaponID: 1012
-  goldCost: 1000
-  weaponDmg: 75
+  goldCost: 15000
+  weaponDmg: 150
   weaponDefense: 15
   weaponLife: 15
   weaponAtkSpeed: 65
