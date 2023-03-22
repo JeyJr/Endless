@@ -38,16 +38,23 @@ public class LevelCanvasUISkillICon : MonoBehaviour
 
     public void RemoveIcon(Sprite sprite)
     {
-        if (spriteIcons.Contains(sprite))
+        try
         {
-            spriteIcons.Remove(sprite);
-        }
+            if (spriteIcons.Contains(sprite))
+            {
+                spriteIcons.Remove(sprite);
+            }
 
-        Organize();
+            Organize();
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
     }
 
-    public void Organize
-        ()
+    public void Organize()
     {
         for (int i = 0; i < iconPosition.Length; i++)
         {

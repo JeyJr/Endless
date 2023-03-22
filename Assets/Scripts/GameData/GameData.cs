@@ -140,25 +140,27 @@ public class GameData
             return (lifeBaseCalc * bonusPercentage / 100) * multiplier;
         }
     }
-    public float AtkSpeed
-    {
-        get {
+    //public float AtkSpeed
+    //{
+    //    get {
 
-            float baseCalc = 5;
-            float bonusPercentage = 
-                (agi / 2) +//max 50
-                bonusAtkSpeed +
-                weaponAtkSpeed + 
-                armorAtkSpeed + 
-                helmetAtkSpeed + 
-                armAtkSpeed + 
-                buffSkillAtkSpeed;
+    //        float baseCalc = 1;
+    //        float bonusPercentage = 
+    //            (agi / 2) +//max 50
+    //            bonusAtkSpeed +
+    //            weaponAtkSpeed + 
+    //            armorAtkSpeed + 
+    //            helmetAtkSpeed + 
+    //            armAtkSpeed + 
+    //            buffSkillAtkSpeed;
 
-            float result = baseCalc - (baseCalc * bonusPercentage / 100);
+    //        float result = baseCalc - (baseCalc * bonusPercentage / 100);
 
-            return result > 0.1f ? result : 0.1f;
-        }
-    }
+    //        return result > 0.1f ? result : 0.1f;
+    //    }
+    //}
+    public float AtkSpeed => 0.1f;
+
     public float CriticalDMG
     {
         get {

@@ -19,10 +19,13 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private GameObject ripStone;
     public bool ImAlive { get; set; }
 
-
+    private bool inGame;
+    public bool InGame => inGame;
 
     private void Start()
     {
+        inGame = true;
+
         GameData gameData = ManagerData.Load();
         maxLife = gameData.MaxLife;
         life = maxLife;

@@ -37,7 +37,6 @@ public class Equips : MonoBehaviour
                 gameData.weaponDmg = w.WeaponDmg;
                 gameData.weaponDefense = w.WeaponDefense;
                 gameData.weaponLife = w.WeaponLife;
-                gameData.weaponAtkSpeed = w.WeaponAtkSpeed;
                 gameData.weaponCritical = w.WeaponCritical;
                 gameData.weaponRangeAtk = w.WeaponRangeAtk;
                 gameData.weaponMoveSpeed = w.WeaponMoveSpeed;
@@ -64,7 +63,6 @@ public class Equips : MonoBehaviour
                 gameData.armorDmg = a.ArmorDmg;
                 gameData.armorDefense = a.ArmorDefense;
                 gameData.armorLife = a.ArmorLife;
-                gameData.armorAtkSpeed = a.ArmorAtkSpeed;
                 gameData.armorCritical = a.ArmorCritical;
                 gameData.armorRangeAtk = a.ArmorRangeAtk;
                 gameData.armorMoveSpeed = a.ArmorMoveSpeed;
@@ -94,7 +92,6 @@ public class Equips : MonoBehaviour
                 gameData.helmetDmg = h.HelmetDmg;
                 gameData.helmetDefense = h.HelmetDefense;
                 gameData.helmetLife = h.HelmetLife;
-                gameData.helmetAtkSpeed = h.HelmetAtkSpeed;
                 gameData.helmetCritical = h.HelmetCritical;
                 gameData.helmetRangeAtk = h.HelmetRangeAtk;
                 gameData.helmetMoveSpeed = h.HelmetMoveSpeed;
@@ -122,7 +119,6 @@ public class Equips : MonoBehaviour
                 gameData.armDmg = a.ArmDmg;
                 gameData.armDefense = a.ArmDefense;
                 gameData.armLife = a.ArmLife;
-                gameData.armAtkSpeed = a.ArmAtkSpeed;
                 gameData.armCritical = a.ArmCritical;
                 gameData.armRangeAtk = a.ArmRangeAtk;
                 gameData.armMoveSpeed = a.ArmMoveSpeed;

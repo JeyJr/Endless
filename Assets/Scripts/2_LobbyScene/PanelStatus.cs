@@ -24,11 +24,11 @@ public class PanelStatus : MonoBehaviour
     public TextMeshProUGUI txtPassiveLife;
     public TextMeshProUGUI txtWeaponLife, txtArmorLife, txtHelmetLife, txtArmLife;
 
-    [Header("ATK SPEED")]
-    public TextMeshProUGUI txtTotalAtkSpeed;
-    public TextMeshProUGUI txtAttributesAgi;
-    public TextMeshProUGUI txtPassiveAtkSpeed;
-    public TextMeshProUGUI txtWeaponAtkSpeed, txtArmorAtkSpeed, txtHelmetAtkSpeed, txtArmAtkSpeed;
+    //[Header("ATK SPEED")]
+    //public TextMeshProUGUI txtTotalAtkSpeed;
+    //public TextMeshProUGUI txtAttributesAgi;
+    //public TextMeshProUGUI txtPassiveAtkSpeed;
+    //public TextMeshProUGUI txtWeaponAtkSpeed, txtArmorAtkSpeed, txtHelmetAtkSpeed, txtArmAtkSpeed;
     
     [Header("CRITICAL")]
     public TextMeshProUGUI txtTotalCritical;
@@ -54,7 +54,7 @@ public class PanelStatus : MonoBehaviour
         TextDamage(gd);
         TextDefense(gd);
         TextLife(gd);
-        TextAgi(gd);
+        //TextAgi(gd);
         TextCri(gd);
         TextRangeAtk(gd);
         TextMoveSpeed(gd);
@@ -90,16 +90,16 @@ public class PanelStatus : MonoBehaviour
         txtHelmetLife.text = gd.helmetLife.ToString("F2") + "%";
         txtArmLife.text = gd.armLife.ToString("F2") + "%";
     }
-    void TextAgi(GameData gd)
-    {
-        txtTotalAtkSpeed.text = gd.AtkSpeed.ToString("F2") + " sec";
-        txtAttributesAgi.text = (gd.agi / 2).ToString("F2") + "%";
-        txtPassiveAtkSpeed.text = gd.bonusAtkSpeed.ToString("F2") + "%";
-        txtWeaponAtkSpeed.text = gd.weaponAtkSpeed.ToString("F2") + "%";
-        txtArmorAtkSpeed.text = gd.armorAtkSpeed.ToString("F2") + "%";
-        txtHelmetAtkSpeed.text = gd.helmetAtkSpeed.ToString("F2") + "%";
-        txtArmAtkSpeed.text = gd.armAtkSpeed.ToString("F2") + "%";
-    }
+    //void TextAgi(GameData gd)
+    //{
+    //    txtTotalAtkSpeed.text = gd.AtkSpeed.ToString("F2") + " sec";
+    //    txtAttributesAgi.text = (gd.agi / 2).ToString("F2") + "%";
+    //    txtPassiveAtkSpeed.text = gd.bonusAtkSpeed.ToString("F2") + "%";
+    //    txtWeaponAtkSpeed.text = gd.weaponAtkSpeed.ToString("F2") + "%";
+    //    txtArmorAtkSpeed.text = gd.armorAtkSpeed.ToString("F2") + "%";
+    //    txtHelmetAtkSpeed.text = gd.helmetAtkSpeed.ToString("F2") + "%";
+    //    txtArmAtkSpeed.text = gd.armAtkSpeed.ToString("F2") + "%";
+    //}
     void TextCri(GameData gd)
     {
         txtTotalCritical.text = gd.CriticalDMG.ToString("F2") + "%";

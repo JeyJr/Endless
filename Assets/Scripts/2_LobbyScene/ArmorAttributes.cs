@@ -27,7 +27,6 @@ public class ArmorAttributes : MonoBehaviour
     [SerializeField] private float armorDmg;
     [SerializeField] private float armorDefense;
     [SerializeField] private float armorLife;
-    [SerializeField] private float armorAtkSpeed;
     [SerializeField] private float armorCritical;
     [SerializeField] private float armorRangeAtk;
     [SerializeField] private float armorMoveSpeed;
@@ -36,7 +35,6 @@ public class ArmorAttributes : MonoBehaviour
     public float ArmorDmg { get => armorDmg; }
     public float ArmorDefense { get => armorDefense; }
     public float ArmorLife { get => armorLife; }
-    public float ArmorAtkSpeed { get => armorAtkSpeed; }
     public float ArmorCritical { get => armorCritical; }
     public float ArmorRangeAtk { get => armorRangeAtk; }
     public float ArmorMoveSpeed { get => armorMoveSpeed; }

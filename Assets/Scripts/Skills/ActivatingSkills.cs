@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActivatingSkills : MonoBehaviour
@@ -19,10 +18,8 @@ public class ActivatingSkills : MonoBehaviour
     [Header("Skills Behavior")]
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerStatus playerStatus;
-    Task task;
     [SerializeField] private LayerMask target;
     [SerializeField] private GameObject ringOfFire, windBlade;
-
 
     SFXControl sfxControl;
 
@@ -53,7 +50,7 @@ public class ActivatingSkills : MonoBehaviour
         }
     }
 
-    public async void StartSkill(float delayTime, float buffValue, float xTimes, int id)
+    public void StartSkill(float delayTime, float buffValue, float xTimes, int id)
     {
         sfxControl.PlayClip(SFXClip.getSkill);
 
@@ -67,94 +64,112 @@ public class ActivatingSkills : MonoBehaviour
         switch (id)
         {
             case 1000:
-                task = TaskPowerUp();
+                StartCoroutine(TaskPowerUp());
                 break;
             case 1001:
-                task = TaskDefense();
+                StartCoroutine(TaskDefense());
                 break;
             case 1002:
-                task = TaskLifeRecovery();
+                StartCoroutine(TaskLifeRecovery());
                 break;
             case 1003:
-                task = TaskAtkSpeed();
+                StartCoroutine(TaskAtkSpeed());
                 break;
             case 1004:
-                task = TaskCritical();
+                StartCoroutine(TaskCritical());
                 break;
             case 1005:
-                task = TaskRangeAtk();
+                StartCoroutine(TaskRangeAtk());
                 break;
             case 1006:
-                task = TaskMoveSpeed();
+                StartCoroutine(TaskMoveSpeed());
                 break;
             case 1007:
-                task = TaskActiveRingOfFire();
+                StartCoroutine(TaskActiveRingOfFire());
                 break;
             case 1008:
-                task = TaskActiveWindBlade();
+                StartCoroutine(TaskActiveWindBlade());
                 break;
         }
-        await task;
     }
 
-    async Task TaskPowerUp()
+    IEnumerator TaskPowerUp()
     {
         GameData gameData = ManagerData.Load();
         gameData.buffSkillPowerUp = buffValue;
         ManagerData.Save(gameData);
 
         levelCanvas.TextLevelInfo($"Buff Power\n" + "<color=#ff9f63> +" + buffValue.ToString("F2") + "%</color>");
-        await Task.Delay(delayTimeInt);
-        //def 
-        //lif 
-        //sped 
-        //cri 
-        //rang 
-        //mvoe 
+
+        yield return new WaitForSeconds(delayTimeInt);
+
         gameData.buffSkillPowerUp = 0;
         ManagerData.Save(gameData);
 
         DisableUIIcon();
     }
-    async Task TaskDefense()
+    IEnumerator TaskDefense()
     {
         GameData gameData = ManagerData.Load();
         gameData.buffSkillDefense = buffValue;
         ManagerData.Save(gameData);
 
         levelCanvas.TextLevelInfo($"Buff Defense\n" + "<color=#63efff> +" + buffValue.ToString("F2") + "%</color>");
-        await Task.Delay(delayTimeInt);
+        yield return new WaitForSeconds(delayTimeInt);
 
         gameData.buffSkillDefense = 0;
         ManagerData.Save(gameData);
 
-        DisableUIIcon();
+        try
+        {
+            DisableUIIcon();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
-    async Task TaskLifeRecovery()
+
+    IEnumerator TaskLifeRecovery()
     {
         levelCanvas.TextLevelInfo($"Skill:\n" + "<color=#92ff63> Life Recovery </color>");
         for (int i = 0; i < xTimes; i++)
         {
             playerStatus.Life = buffValue;
-            await Task.Delay(delayTimeInt);
+            yield return new WaitForSeconds(delayTimeInt);
         }
-        DisableUIIcon();
+
+        try
+        {
+            DisableUIIcon();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
-    async Task TaskAtkSpeed()
+    IEnumerator TaskAtkSpeed()
     {
         GameData gameData = ManagerData.Load();
         gameData.buffSkillAtkSpeed = buffValue;
         ManagerData.Save(gameData);
         levelCanvas.TextLevelInfo($"Buff AtkSpeed\n" + "<color=#ff6363> +" + buffValue.ToString("F2") + "%</color>");
 
-        await Task.Delay(delayTimeInt);
+        yield return new WaitForSeconds(delayTimeInt);
 
         gameData.buffSkillAtkSpeed = 0;
         ManagerData.Save(gameData);
 
-        DisableUIIcon();
+        try
+        {
+            DisableUIIcon();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
-    async Task TaskCritical()
+    IEnumerator TaskCritical()
     {
         GameData gameData = ManagerData.Load();
         gameData.buffSkillCritical = buffValue;
@@ -162,14 +177,21 @@ public class ActivatingSkills : MonoBehaviour
 
         levelCanvas.TextLevelInfo($"Buff Critical\n" + "<color=#ff6363> +" + buffValue.ToString("F2") + "%</color>");
 
-        await Task.Delay(delayTimeInt);
+        yield return new WaitForSeconds(delayTimeInt);
 
         gameData.buffSkillCritical = 0;
         ManagerData.Save(gameData);
 
-        DisableUIIcon();
+        try
+        {
+            DisableUIIcon();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
-    async Task TaskRangeAtk()
+    IEnumerator TaskRangeAtk()
     {
         GameData gameData = ManagerData.Load();
         gameData.buffSkillRangeAtk = buffValue;
@@ -177,29 +199,35 @@ public class ActivatingSkills : MonoBehaviour
 
         levelCanvas.TextLevelInfo($"Buff attack Range\n" + "<color=#f263ff> +" + buffValue.ToString("F2") + "%</color>");
 
-        await Task.Delay(delayTimeInt);
+        yield return new WaitForSeconds(delayTimeInt);
 
         gameData.buffSkillRangeAtk = 0;
         ManagerData.Save(gameData);
 
-        DisableUIIcon();
+        try
+        {
+            DisableUIIcon();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
-    async Task TaskMoveSpeed()
+    IEnumerator TaskMoveSpeed()
     {
         playerController.UpdatePlayerMoveSpeed(buffValue);
         levelCanvas.TextLevelInfo($"Buff movement speed\n" + "<color=#b463ff> +" + buffValue.ToString("F2") + "%</color>");
 
-        await Task.Delay(delayTimeInt);
+        yield return new WaitForSeconds(delayTimeInt);
         playerController.UpdatePlayerMoveSpeed(0);
 
         DisableUIIcon();
     }
-    async Task TaskActiveRingOfFire()
+    IEnumerator TaskActiveRingOfFire()
     {
         GameData gameData = ManagerData.Load();
 
         levelCanvas.TextLevelInfo($"Skill:\nFire Ring");
-
 
         for (int i = 0; i < xTimes; i++)
         {
@@ -207,12 +235,13 @@ public class ActivatingSkills : MonoBehaviour
             ringOfFire.GetComponent<RingOfFire>().target = target;
             ringOfFire.GetComponent<RingOfFire>().damage = gameData.weaponDmg * buffValue / 100;
             Instantiate(ringOfFire, pos, Quaternion.Euler(0, 0, 0));
-            await Task.Delay(delayTimeInt);
+            yield return new WaitForSeconds(delayTimeInt);
         }
 
         DisableUIIcon();
     }
-    async Task TaskActiveWindBlade()
+
+    IEnumerator TaskActiveWindBlade()
     {
         GameData gameData = ManagerData.Load();
 
@@ -225,7 +254,8 @@ public class ActivatingSkills : MonoBehaviour
             windBlade.GetComponent<WindBlade>().damage = gameData.weaponDmg * buffValue / 100;
             windBlade.GetComponent<WindBlade>().mirrored = playerController.GetComponent<Transform>().rotation.y == 0 ? false : true;
             Instantiate(windBlade, pos, Quaternion.identity);
-            await Task.Delay(delayTimeInt);
+            yield return new WaitForSeconds(delayTimeInt);
+
         }
 
         DisableUIIcon();

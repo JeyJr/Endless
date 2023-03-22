@@ -138,7 +138,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(true,
-            w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponAtkSpeed, w.WeaponCritical,
+            w.WeaponDmg, w.WeaponDefense, w.WeaponLife, w.WeaponCritical,
             w.WeaponRangeAtk,w.WeaponMoveSpeed, w.WeaponName, w.ImgWeaponIcon);
 
         foreach (int id in gameData.purchasedWeaponsIds)
@@ -167,7 +167,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(false,
-            a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorAtkSpeed, a.ArmorCritical,
+            a.ArmorDmg, a.ArmorDefense, a.ArmorLife, a.ArmorCritical,
             a.ArmorRangeAtk, a.ArmorMoveSpeed, a.ArmorName, a.ImgArmorIcon);
 
 
@@ -197,7 +197,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(false,
-            h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetAtkSpeed, h.HelmetCritical,
+            h.HelmetDmg, h.HelmetDefense, h.HelmetLife, h.HelmetCritical,
             h.HelmetRangeAtk, h.HelmetMoveSpeed, h.HelmetName, h.ImgHelmetIcon);
 
         foreach (int id in gameData.purchasedHelmetIds)
@@ -226,7 +226,7 @@ public class PanelEquips : MonoBehaviour
         panelInfo.SetActive(true); //Habilita o painel
 
         SetPanelInfoInformations(false,
-            a.ArmDmg, a.ArmDefense, a.ArmLife, a.ArmAtkSpeed, a.ArmCritical,
+            a.ArmDmg, a.ArmDefense, a.ArmLife, a.ArmCritical,
             a.ArmRangeAtk, a.ArmMoveSpeed, a.ArmName, a.ImgArmIcon);
 
         foreach (int id in gameData.purchasedArmIds)
@@ -322,12 +322,11 @@ public class PanelEquips : MonoBehaviour
     }
     #endregion
 
-    void SetPanelInfoInformations(bool weapon, float atk, float defense, float life, float speedAtk, float critical, float atkRange, float moveSpeed, string name, Sprite icon)
+    void SetPanelInfoInformations(bool weapon, float atk, float defense, float life, float critical, float atkRange, float moveSpeed, string name, Sprite icon)
     {
         string _atk = "";
         string _defense = "";
         string _life = "";
-        string _speedAtk = "";
         string _critical = "";
         string _atkRange = "";
         string _moveSpeed = "";
@@ -347,9 +346,6 @@ public class PanelEquips : MonoBehaviour
         if (life > 0)
             _life = $"<color=#{hexLifeColor}> LIFE: </color>" + life.ToString("F2") + "%" + "<br>";
 
-        if(speedAtk > 0)
-            _speedAtk = $"<color=#{hexSpeedAtkColor}> SPEED ATK: </color>" + speedAtk.ToString("F2") + "%" + "<br>";
-
         if (critical > 0)
             _critical = $"<color=#{hexCriticalColor}> CRITICAL: </color>" + critical.ToString("F2") + "%" + "<br>";
 
@@ -366,7 +362,7 @@ public class PanelEquips : MonoBehaviour
             _moveSpeed = $"<color=#{hexMoveColor}> MOVE: </color>" + moveSpeed.ToString("F2") + "% <br>";
 
 
-        txtAttributes.text = $"{_atk}{_defense}{_life}{_speedAtk}{_critical}{_atkRange}{_moveSpeed}";
+        txtAttributes.text = $"{_atk}{_defense}{_life}{_critical}{_atkRange}{_moveSpeed}";
         txtName.text = name;
         imgIcon.sprite = icon;
     }

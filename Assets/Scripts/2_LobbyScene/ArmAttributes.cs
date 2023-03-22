@@ -26,7 +26,6 @@ public class ArmAttributes : MonoBehaviour
     [SerializeField] private float armDmg;
     [SerializeField] private float armDefense;
     [SerializeField] private float armLife;
-    [SerializeField] private float armAtkSpeed;
     [SerializeField] private float armCritical;
     [SerializeField] private float armRangeAtk;
     [SerializeField] private float armMoveSpeed;
@@ -35,7 +34,6 @@ public class ArmAttributes : MonoBehaviour
     public float ArmDmg { get => armDmg; }
     public float ArmDefense { get => armDefense; }
     public float ArmLife { get => armLife; }
-    public float ArmAtkSpeed { get => armAtkSpeed; }
     public float ArmCritical { get => armCritical; }
     public float ArmRangeAtk { get => armRangeAtk; }
     public float ArmMoveSpeed { get => armMoveSpeed; }

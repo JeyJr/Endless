@@ -203,7 +203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitLoopActions: 0
   delayToWait: 2
-  mSpeed: 3
   atkPos: {fileID: 6290025692078612201}
   atkRange: 8
   target:
@@ -341,7 +340,6 @@ MonoBehaviour:
   spawnPosition: {fileID: 6290025690264811657}
   enemyAnimName: Peco
   skillsToSpawn:
-  - {fileID: 3486169687931647297, guid: 7be0c52cf11d0954ca14596b8a11eb02, type: 3}
   - {fileID: 5424796956557241475, guid: 46369e0d06fea154aa8fcaba40aadc49, type: 3}
   - {fileID: 8391695893976559183, guid: d03eb859dab3741409351f28d18172f8, type: 3}
   - {fileID: 4161630782915301092, guid: d59241aefdd3cff4d8cb063758ebf4f4, type: 3}
