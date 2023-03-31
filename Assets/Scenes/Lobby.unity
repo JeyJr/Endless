@@ -20575,7 +20575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926434468bffb1c49a144eeb15d9b94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillDrop: 0
   goldDrop: 0
   atk: 0
   def: 0
@@ -20670,7 +20669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743051833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.42, y: -5.91, z: 0}
+  m_LocalPosition: {x: -28.42, y: -5.91, z: 2.44}
   m_LocalScale: {x: 0.9, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32837,14 +32836,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 563734982803346344, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 563734982803346344, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7103068808800043728, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
       propertyPath: m_Name
       value: Player
@@ -32855,11 +32846,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7103068808800043735, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.3
+      value: -35.7
       objectReference: {fileID: 0}
     - target: {fileID: 7103068808800043735, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.47
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7103068808800043735, guid: 2672e103ccfb0b04cb867ae8c1135d65, type: 3}
       propertyPath: m_LocalPosition.z

@@ -5194,20 +5194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae660464801d6b4795d9046b8f29912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteIcons: []
-  iconPosition:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  root: {fileID: 6522426106779569393}
+  mainUISkillsIcons: {fileID: 6522426106779569392}
+  imageRefPosition: []
 --- !u!114 &7044992456137606475
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public bool IsMoving { get => isMoving; private set => isMoving = value; }
 
 
-
     void Start()
     {
         playerStatus = GetComponentInChildren<PlayerStatus>();

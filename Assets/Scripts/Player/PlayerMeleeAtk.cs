@@ -1,10 +1,13 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 //Obj player RightHand
 
 public class PlayerMeleeAtk : MonoBehaviour
 {
+    public float rangeToDetect = 5;
+
     [Header("Detecting targets in atk")]
     [SerializeField] private LayerMask target;
     [SerializeField] private Transform atkPosition;
@@ -23,6 +26,7 @@ public class PlayerMeleeAtk : MonoBehaviour
         StartCoroutine(DelayToAtk());
     }
 
+
     #region ATK animations
     IEnumerator DelayToAtk()
     {
@@ -31,8 +35,6 @@ public class PlayerMeleeAtk : MonoBehaviour
         {
             if (readyToAtk)
             {
-                readyToAtk = false;
-
                 GameData gameData = ManagerData.Load();
                 float atkSpeed = gameData.AtkSpeed;
                 delayBar.maxValue = atkSpeed;
@@ -111,6 +113,7 @@ public class PlayerMeleeAtk : MonoBehaviour
     {
         GameData gameData = ManagerData.Load();
         Debug.DrawRay(atkPosition.position, atkPosition.right * gameData.RangeAtk, Color.yellow);
+        Debug.DrawRay(atkPosition.position, atkPosition.right * rangeToDetect, Color.red);
     }
 
     #endregion

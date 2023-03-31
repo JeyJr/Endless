@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStatus : MonoBehaviour
 {
     [Header("Attributes")]
-    [SerializeField] private float skillDrop;
+    private float skillDrop  = 5;
     [SerializeField] private float goldDrop;
 
     [SerializeField] private float atk;

@@ -181,7 +181,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0.896
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -203,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &563734982072289149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.448
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1476,6 +1476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d48edd2628a1894bae33242b1cfbdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeToDetect: 10
   target:
     serializedVersion: 2
     m_Bits: 128

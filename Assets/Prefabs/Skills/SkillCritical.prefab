@@ -112,17 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bc8d2ba6f0cd449a7c7cb6bcce5e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1004
-  delayTime: 10
-  buffValue: 25
-  xTimes: 0
-  playerController: {fileID: 0}
-  playerStatus: {fileID: 0}
-  target:
-    serializedVersion: 2
-    m_Bits: 0
-  ringOfFire: {fileID: 4439692578723808191, guid: ee362718b51f6f041a3c14e7b8133fbd, type: 3}
-  windBlade: {fileID: 5180954088038042943, guid: 80069215334a44e4f8b385cda13ab44b, type: 3}
+  _sprite: {fileID: 5424796956557241472}
+  _id: 1000
+  _buffValue: 100
+  _buffDurationTime: 30
+  _buffType: 2
+  _msg: Critical + <color=#E73300> 100% </color>
 --- !u!95 &5424796956557241533
 Animator:
   serializedVersion: 4
