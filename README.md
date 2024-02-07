@@ -1,4 +1,4 @@
-# DefendYourLife 
+# Endless Game 
 
 [![Unity Version](https://img.shields.io/badge/Unity-2021.3.11f1-blue.svg)](https://unity.com/) 
 ![Platform](https://img.shields.io/badge/platform-Android-green.svg)
@@ -9,7 +9,7 @@ Não é necessário ter a mesma versão da Unity para abrir o projeto, mas é re
 https://play.google.com/store/apps/details?id=com.JeyJuniorGames.com.unity.EndlessGame
 
 
-![GamePlay](https://imgs-projetos-jeyjr.netlify.app/gamesunity/endless-game/GamePlay_002.png)
+![GamePlay](https://imgs-projetos-jeyjr.netlify.app/imgs/Unity_Endless/principal.png)
 
 
 ---
@@ -36,9 +36,6 @@ https://github.com/JeyJr/2D_Endless/tree/main/Assets/Scenes
 
 
 Em seguida, clique duas vezes no arquivo e selecione a versão da Unity desejada para carregar o projeto. Todos os arquivos de base da Unity serão implementados automaticamente.
-
-
-![Unity](https://imgs-projetos-jeyjr.netlify.app/gamesunity/endless-game/Unity_003.png)
 
 ---
 ## Uso:
